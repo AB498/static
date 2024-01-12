@@ -335,6 +335,7 @@ form {
 }
 
 .progressbar .step .check i {
+    background: white;
     border: 2px solid #C2E4CD;
     border-radius: 70%;
     padding: 7px;
@@ -366,11 +367,27 @@ form {
     bottom: 46%;
 }
 
+.step.active:before,
+.step.active:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 41px;
+    left: 33px;
+    background: #0B9236;
+    bottom: 46%;
+}
+
 .step {
     position: relative;
 }
 
 .active i {
+    color: #0B9236 !important;
+    border-color: #0B9236 !important;
+}
+
+.current .check i {
     color: #0B9236 !important;
     border-color: #0B9236 !important;
 }
@@ -385,41 +402,10 @@ form {
     color: orange;
 }
 
-.active {
+.active.step .check i {
     background: #0B9236;
     color: white !important;
     border: 2px solid #0B9236 !important;
-}
-
-.active::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -2.6rem;
-    transform: translateY(-50%);
-    background: #0B9236;
-    height: 2px;
-    width: 2.5rem;
-}
-
-.firstprog i::after {
-    display: none;
-}
-
-.check i.current {
-    color: #0B9236 !important;
-    border: 2px solid #0B9236 !important;
-}
-
-.check i.current::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -2.6rem;
-    transform: translateY(-50%);
-    background: #0B9236;
-    height: 2px;
-    width: 2.5rem;
 }
 
 .emailError {
