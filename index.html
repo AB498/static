@@ -1,0 +1,154 @@
+<html>
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/pinecone-router@4.x.x/dist/router.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+            theme: {
+                extend: {
+                    colors: {
+                        "bg-primary": "var(--color-primary)",
+                        "bg-secondary": "var(--color-secondary)",
+                        "text-primary": "var(--color-text)",
+                        "text-secondary": "var(--color-text-secondary)",
+                        success: "var(--color-success)",
+                        info: "var(--color-info)",
+                        warn: "var(--color-warn)",
+                        error: "var(--color-error)",
+                        transparent: "transparent",
+                        current: "currentColor",
+                    },
+                },
+            },
+            plugins: [],
+        }; // theme
+    </script>
+
+</head>
+
+<body class="w-screen overflow-auto ">
+    <div x-data="{ globalState:{admin:true, count: 0,id:Date.now()} }" class="bg-bg-secondary text-text-primary">
+        <div class="admin-toolbar bg-black flex center w-full text-blue-300"
+            :class="globalState.admin ? 'bg-black' : 'bg-red-500'">
+            <div class="link p-0" @click="globalState.admin = !globalState.admin">
+                Admin
+            </div>
+            <div class="grow"></div>
+            <div class="link p-0" @click="$router.navigate('/admin')">
+                Manage
+            </div>
+        </div>
+        <!-- Topbar Start -->
+        <div class="container mx-auto">
+            <div class="flex flex-row py-2 px-5 lg:px-0">
+                <div class="hidden lg:flex lg:w-1/2 items-center">
+                    <a href="" class="text-dark">FAQs</a>
+                    <span class="text-muted px-2">|</span>
+                    <a href="" class="text-dark">Help</a>
+                    <span class="text-muted px-2">|</span>
+                    <a href="" class="text-dark">Support</a>
+                </div>
+                <div class="w-full lg:w-1/2 flex justify-center lg:justify-end items-center">
+                    <a href="" class="text-dark px-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="" class="text-dark px-2"><i class="fab fa-twitter"></i></a>
+                    <a href="" class="text-dark px-2"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="" class="text-dark px-2"><i class="fab fa-instagram"></i></a>
+                    <a href="" class="text-dark pl-2"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="flex flex-row items-center p-2 bg-secondary border-b">
+                <div class="hidden lg:block mx-4 ">
+                    <a href="" class="text-decoration-none">
+                        <h1 class="m-0 text-2xl font-semibold">
+                            <span class=" font-bold border px-3 mr-1">E</span>Shopper
+                        </h1>
+                    </a>
+                </div>
+                <div class="relative flex">
+                    <input type="text"
+                        class="w-full py-2 px-4 border border-gray-300 rounded-md placeholder-gray-500 focus:outline-none focus:border-primary"
+                        placeholder="Search for products">
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 ">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
+                <div class="grow"></div>
+                <div class="flex gap-2">
+                    <a href="" class="btn border">
+                        <i class="fa fa-heart"></i>
+                        <span class="badge">0</span>
+                    </a>
+                    <a href="" class="btn border">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span class="badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Navbar Start -->
+        <div class="flex p-2 justify-center">
+            <div class="link" x-on:click="$router.navigate('/home')">Home</div>
+            <div class="link" x-on:click="$router.navigate('/categories')">Categories</div>
+            <div class="link" x-on:click="$router.navigate('/offers')">Offers</div>
+            <div class="link" x-on:click="$router.navigate('/latest')">Latest</div>
+        </div>
+
+        <div x-data="router()">
+
+            <template x-route="/admin" x-handler="[mainMiddleware]" x-template.target.app1="templates/admin.html">
+            </template>
+            <template x-route="/index.html" x-handler="[mainMiddleware]"
+                x-template.target.app1="templates/landing.html">
+            </template>
+            <template x-route="/" x-handler="[mainMiddleware]" x-template.target.app1="templates/landing.html">
+            </template>
+            <template x-route="/home" x-handler="[mainMiddleware]" x-template.target.app1="templates/landing.html">
+            </template>
+            <template x-route="/categories" x-handler="[mainMiddleware]">
+                <div>
+                    categories <div x-text=" $router.path">
+                    </div>
+                </div>
+            </template>
+            <template x-route="notfound" x-handler="[mainMiddleware]"
+                x-template.target.app1="templates/404.html"></template>
+            </template>
+            <template x-route="*" x-handler="[mainMiddleware]" x-template.target.app1="templates/404.html"></template>
+            </template>
+            <div id="app1">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function router() {
+            return { mainMiddleware(context) { document.getElementById("app1").innerHTML = ""; } }
+        }
+        document.addEventListener('alpine:initialized', () => {
+            window.PineconeRouter.settings.basePath = '/' // set the base for the URL, doesn't work with hash routing 
+            window.PineconeRouter.navigate('/home');
+            templateTargetId = "app1" // Set an optional ID for where the external templates will render by default.
+        })
+        new SimpleBar(document.body); 
+    </script>
+</body>
+
+</html>
