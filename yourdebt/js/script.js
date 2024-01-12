@@ -373,6 +373,6 @@ function check(e) {
     let debt_amount = document.querySelector('input[name="debt"]').value;
     let number_creditors = document.querySelector('select[name="creditors"]').value;
     let property_type = document.querySelector('select[name="property"]').value;
-    console.log(window.location.origin + `/calculator.html?debt=${debt_amount}&property=${property_type}&creditors=${number_creditors}`)
-    window.location.href = window.location.origin + `/calculator.html?debt=${debt_amount}&property=${property_type}&creditors=${number_creditors}`
+    console.log(`calculator.html?debt=${debt_amount}&property=${property_type}&creditors=${number_creditors}`)
+    window.location.href = `calculator.html?debt=${debt_amount}&property=${property_type}&creditors=${number_creditors}`
 }
