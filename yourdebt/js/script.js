@@ -280,13 +280,13 @@ prev6?.addEventListener('click', () => {
 
 function updateProgressbar() {
     progressSteps.forEach(step => {
-        step.classList.remove('active');
-        step.classList.remove('current');
+        step?.classList?.remove('active');
+        step?.classList?.remove('current');
     });
     for (let i = 0; i < currentStep; i++) {
-        progressSteps[i].classList.add('active');
+        progressSteps[i]?.classList?.add('active');
     }
-    progressSteps[currentStep].classList.add('current');
+    progressSteps[currentStep]?.classList?.add('current');
 }
 
 function isChecked(option) {
