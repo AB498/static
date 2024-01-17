@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* calculator form design start */
+input[type="radio"]:checked+label {
+    background: #113382;
+    color: white;
+    border: none;
+    border: 3px solid #113382;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.forminfo h2 {
+    color: #333333;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+section.multistepform {
+    background-image: url('../img/review-block-bg.webp');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 105px 0px;
+   
+}
+
+.formcontainer {
+    width: 600px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+label {
+    padding: 16px 1rem;
+    width: 100%;
+    text-align: center;
+    border: 3px solid #113382;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #113382;
+    transition: all 0.2s;
+}
+
+.one_two {
+    display: flex;
+    margin-top: 45px;
+}
+
+.firstoption {
+    width: 45%;
+    margin: auto;
+}
+
+.secondoption {
+    width: 45%;
+    margin: auto;
+}
+
+.three_four {
+    display: flex;
+    margin-top: 24px;
+}
+
+.thirdoption {
+    width: 45%;
+    margin: auto;
+}
+
+.forthoption {
+    width: 45%;
+    margin: auto;
+}
+
+.forminfo {
+    padding: 50px;
+    width: 100% !important;
+    padding-top: 20px;
+}
+
+label:hover {
+    cursor: pointer;
+    background: #113382;
+    color: white;
+}
+
+button.prev_btn {
+    border: none;
+    padding: 10px 30px;
+    background: none;
+    font-size: 12px;
+    font-weight: bold;
+    border: solid 2px #BEBEBE !important;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttondiv {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.fifthoption {
+    margin-top: 24px;
+}
+
+.namediv input {
+    width: 100%;
+    outline: none;
+    padding: 9px 15px;
+    color: #000000;
+    font-weight: bold;
+    border: 1px solid #66666694;
+    border-radius: 3px;
+}
+
+.nextbtn {
+    text-align: center;
+}
+
+.nextbtn button {
+    outline: none;
+    border: none;
+    background: #113382;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 3rem 1rem 3rem !important;
+    border-radius: 4px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
+    margin-top: 48px;
+}
+
+.submtibutton button {
+    outline: none;
+    border: none;
+    background: #113382;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 3rem 1rem 3rem !important;
+    border-radius: 4px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
+    margin-top: 30px;
+}
+
+.submtibutton {
+    text-align: center;
+}
+
+.namediv {
+    padding-top: 30px;
+}
+
+.infodivform p {
+    font-size: 10px;
+    font-weight: bold;
+    color: #969696;
+    text-align: center;
+    margin: 0;
+}
+
+.infodivform p a {
+    color: #969696;
+}
+
+.infodivform p:first-child {
+    padding-bottom: 10px;
+}
+
+.infodivform {
+    margin-top: 40px;
+}
+
+.firstcheckbox {
+    display: flex;
+    align-items: center;
+}
+
+.firstcheckbox p {
+    margin: 0;
+    padding-left: 5px;
+    color: #003a63;
+    font-weight: bold;
+}
+
+.checkboxs {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: auto;
+}
+
+.noticepform p {
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: #969696;
+    padding: 10px 43px;
+    padding-top: 30px;
+}
+
+.lastpform p {
+    margin: 0;
+    font-size: 10px;
+    color: #969696;
+    font-weight: bold;
+    text-align: center;
+}
+
+.lastpform p a {
+    color: #969696;
+}
+
+.lastpform {
+    padding-top: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: start;
+    width: 757%;
+    overflow: hidden;
+}
+
+.form-outer {
+    overflow: hidden;
+}
+
+.forminfo.first-step {
+    background: white;
+    height: 100%;
+    padding-bottom: 60px;
+    border-radius: 0px 0px 20px 20px;
+    width: 600px !important;
+}
+
+.second-step {
+    display: none;
+    background: white;
+    height: 100%;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.third-step {
+    display: none;
+    background: white;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.four-step {
+    display: none;
+    background: white;
+    height: 100%;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+
+
+}
+
+.five-step {
+    display: none;
+    background: white;
+    height: 100%;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+
+
+}
+
+.six-step {
+    display: none;
+    background: white;
+    height: 100%;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+
+
+
+}
+
+.seven-step {
+    display: none;
+    background: white;
+    height: 100%;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+
+
+}
+
+.eight-step {
+    display: none;
+    background: white;
+    height: 100%;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+
+
+}
+
+/* progressbar start */
+.progressbar {
+    height: 15px;
+    border: 2px solid #D9D9D9;
+    max-width: 310px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.progress_status {
+    background: #5EA24D;
+    height: 11px;
+    border-radius: 15px 0px 0px 15px;
+    width: 11%;
+}
+.progressbardiv {
+    background: white;
+    padding: 20px 0px;
+    padding-top: 46px;
+    padding-bottom: 0;
+    border-radius: 20px 20px 0px 0px;
+}
+
+/* progress bar end */
+
+
+.emailError {
+    font-weight: bold;
+    color: #0B9236;
+}
+
+/* caluclator form design end */
