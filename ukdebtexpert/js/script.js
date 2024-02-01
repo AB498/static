@@ -12,6 +12,7 @@ var propertyValue = urlParams.get("property");
 var creditorsValue = urlParams.get("creditors");
 var emailValue = urlParams.get("email");
 var phoneValue = urlParams.get("phone");
+var nameValue = urlParams.get("name");
 console.log(debtValue, propertyValue, creditorsValue);
 
 //navigation
@@ -86,6 +87,8 @@ let sumbitbtn = document.getElementById('submitbtn');
 
 
 
+const totalSteps = 8;
+const progressBarWidth = 310;
 // progress bar
 let progress = document.querySelector('.progress_status');
 //debt question
@@ -154,6 +157,9 @@ let locationOption = document.querySelectorAll('.four-step input[name="location"
 let employOption = document.querySelectorAll('.five-step input[name="employment_status"]');
 // full name
 let nameField = document.getElementById('full_name');
+if (nameValue) {
+    nameField.value = nameValue;
+}
 
 //phone
 let emailEl = document.querySelectorAll('.seven-step input[name="email"]');
@@ -311,8 +317,6 @@ prev6?.addEventListener('click', () => {
     updateProgressbar();
 });
 
-const totalSteps = 8;
-const progressBarWidth = 310;
 function updateProgressbar() {
     const stepWidth = (progressBarWidth / totalSteps);
     const currentProgress = currentStep * stepWidth;
@@ -365,6 +369,9 @@ async function postData() {
             source: sourceParam || "",
             c1: clickIdParam,
             ssid: sourceParam || "",
+            ipaddress: (await (await fetch('https://api.ipify.org/?format=json')).json()).ip,
+            useragent: navigator.userAgent,
+            optinurl: 'ukdebtexpert'
         },
     };
 

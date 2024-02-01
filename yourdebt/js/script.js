@@ -14,6 +14,7 @@ var propertyValue = urlParams.get("property");
 var creditorsValue = urlParams.get("creditors");
 var emailValue = urlParams.get("email");
 var phoneValue = urlParams.get("phone");
+var nameValue = urlParams.get("name");
 console.log(debtValue, propertyValue, creditorsValue);
 
 // faq
@@ -132,6 +133,9 @@ let locationOption = document.querySelectorAll('.four-step input[name="location"
 let employOption = document.querySelectorAll('.five-step input[name="employment_status"]');
 // full name
 let nameField = document.getElementById('full_name');
+if (nameValue) {
+    nameField.value = nameValue;
+}
 
 //phone
 let emailEl = document.querySelectorAll('.seven-step input[name="email"]');
@@ -343,6 +347,9 @@ async function postData() {
             source: sourceParam || "",
             c1: clickIdParam,
             ssid: sourceParam || "",
+            ipaddress: (await (await fetch('https://api.ipify.org/?format=json')).json()).ip,
+            useragent: navigator.userAgent,
+            optinurl: 'yourdebtexpert' // 'ukdebtexpert'
         },
     };
 
