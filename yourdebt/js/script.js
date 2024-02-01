@@ -12,6 +12,8 @@ var clickIdParam = urlParams.get("clickid");
 var debtValue = urlParams.get("debt");
 var propertyValue = urlParams.get("property");
 var creditorsValue = urlParams.get("creditors");
+var emailValue = urlParams.get("email");
+var phoneValue = urlParams.get("phone");
 console.log(debtValue, propertyValue, creditorsValue);
 
 // faq
@@ -132,7 +134,14 @@ let employOption = document.querySelectorAll('.five-step input[name="employment_
 let nameField = document.getElementById('full_name');
 
 //phone
+let emailEl = document.querySelectorAll('.seven-step input[name="email"]');
+if (emailValue) {
+    emailEl[0].value = emailValue;
+}
 let phone = document.querySelectorAll('.eight-step input[name="phone"]');
+if (phoneValue) {
+    phone[0].value = phoneValue;
+}
 
 
 
