@@ -19,8 +19,12 @@ https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <!-- custom css -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- new design css -->
+  <link rel="stylesheet" href="css/newdesign.css">
   <!-- responsive css -->
   <link rel="stylesheet" href="css/responsive.css">
+  <!-- new responsive css -->
+  <link rel="stylesheet" href="css/newresponsive.css">
   <!-- fav icon -->
   <link rel="shortcut icon" href="img/ukde-favicon.png" type="image/x-icon">
 
@@ -28,111 +32,46 @@ https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css
 </head>
 
 <body>
-  <!-- navbar start -->
-  <section class="navbar_section fixed-top" id="sticky-navbar ">
-    <div class="container nav_container">
-      <div class="row navrow">
 
-        <div class="col-xs-12 col-sm-5 col-md-2 logoCol">
-          <div class="logo">
-            <a href="index.html">
-
-              <img src="img/UK-Debt-Expert-Logo.svg" alt="">
-            </a>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-5 col-md-5 mobileimgcol">
-          <div class="mobileimg">
-            <img src="img/TP-hero.svg" alt="">
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-5 col-md-5 menuCol">
-          <div class="navbox">
-            <nav class="navbar navbar-expand-lg navbar-light">
-
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Debt Solutions</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Reviews</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
-                  </li>
-                </ul>
+    <!-- navigation start -->
+    <section class="navbar_section fixed-top">
+        <div class="container">
+            <div class="row navigation_row">
+              
+              <div class="col-xs-12 col-sm-4 logo-col first-logocol">
+                <div class="logo">
+                    <a href="index.html">
+        
+                      <img src="img/UK-Debt-Expert-Logo.svg" alt="">
+                    </a>
+                  </div>
               </div>
+              
+              <div class="col-xs-12 col-sm-4 hidecollogo">
+                <div class="navimg">
+                    <a href="https://uk.trustpilot.com/review/creditfix.co.uk?utm_medium=trustbox&utm_source=Slider">
+                    <img src="img/TP-hero.svg" alt="">
 
-            </nav>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-2 col-md-5 navimgbtncol">
-          <div class="img_btnbox">
-            <div class="navimg">
-              <img src="img/TP-hero.svg" alt="">
-
-            </div>
-            <div class="navhelpbtn">
-              <a href="calculator.html">
-                <button class="debtHelpbtn">Get Debt Help</button>
-              </a>
+                    </a>
+      
+                  </div>
+              </div>
+              
+              <div class="col-xs-12 col-sm-4 logo-col">
+                <div class="navhelpbtn">
+                    <a href="calculator.html">
+                      <button class="debtHelpbtn">Check if you qualify</button>
+                    </a>
+                  </div>
+              </div>
+              
             </div>
           </div>
-        </div>
-        <div class="col-xs-12 col-sm-5 col-md-5 mobileMenucol">
-          <div class="navbox">
-            <nav class="navbar navbar-expand-lg navbar-light">
+    </section>
 
-              <button class="navbar-toggler" type="button" id="toggleMobileMenu">
-                <span class="navbar-icon"><i class="fa-solid fa-bars"></i></span>
-                <i class="fas fa-times close-icon" style="display: none;"></i>
-              </button>
 
-              <div id="mobileMenuPopup" style="display: none;">
-                <ul class="popup-menu">
-                  <li><a href="#">Debt Solutions</a></li>
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Reviews</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                </ul>
-              </div>
-
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Debt Solutions</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Reviews</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
-                  </li>
-                </ul>
-              </div>
-
-            </nav>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  </section>
-
-  <!-- navbar end -->
-
-  <!-- three step  -->
+    <!-- navigation end -->
+     <!-- three step  -->
   <section class="three_steps">
     <div class="container">
       <div class="row">
@@ -143,7 +82,8 @@ https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css
               <i class="fa-regular fa-circle-check"></i>
             </div>
             <div class="steptxt">
-              <p>Stop Interest & Charges</p>
+              <p>Confidential Advice
+            </p>
             </div>
           </div>
         </div>
@@ -154,7 +94,8 @@ https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css
               <i class="fa-regular fa-circle-check"></i>
             </div>
             <div class="steptxt">
-              <p>Write Off Debts Over £7,000
+              <p>Consolidate Debts
+
               </p>
             </div>
           </div>
@@ -166,7 +107,8 @@ https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css
               <i class="fa-regular fa-circle-check"></i>
             </div>
             <div class="steptxt">
-              <p>Lower monthly repayments
+              <p>Lower Monthly Repayments
+
 
               </p>
             </div>
@@ -178,112 +120,56 @@ https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css
   </section>
   <!-- three step end -->
 
-  <!-- hero section start -->
-  <section class="heroSection">
+
+  <!-- header section start -->
+  <section class="header-section">
     <div class="container">
-      <div class="row hero_row">
-
-        <div class="col-xs-12">
-          <div class="contentBox">
-            <div class="heroTitle">
-              <h1>Professional Debt Help <br>
-                Write off up to 81% of your unsecured debt*</h1>
-
-              <h3>We can help using Government Legislation </h3>
-            </div>
+        <div class="row">
+          
+          <div class="col-xs-12">
+            <div class="header-content">
+             <h2>Manage Your Debt with Free Advice
+            </h2>
 
             <div class="btnandimg">
-              <div class="check_btn">
-                <a href="calculator.html">
-                  <button class="ckbtn" type="button">Check if you qualify</button>
-                </a>
+                <div class="check_btn">
+                  <a href="calculator.html">
+                    <button class="ckbtn" type="button">Get Started</button>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="buttonandtag">
 
-              <p><i class="fa-solid fa-lock"></i>Safe, secure & confidential</p>
-            </div>
+              <div class="buttonandtag">
 
-            <div class="ratingimg">
-              <img src="img/TP-Icon.svg" alt="">
-            </div>
-
-            <div class="moblieresponsivediv">
-              <div class="noticeicon">
-                <a href="https://www.moneyhelper.org.uk/en">
-                  <img src="img/money-helper-265x169-1.webp" alt="">
-                </a>
+                <p><i class="fa-solid fa-lock"></i>Safe, secure & confidential</p>
               </div>
-              <div class="noticetxt">
-                <p>To find out more about managing your money and getting free advice, visit Money Helper, independent
-                  service set up to help people manage their money.
+
+
+              <div class="start-excelent">
+                <a href="https://uk.trustpilot.com/review/creditfix.co.uk?utm_medium=trustbox&utm_source=Slider" target="_blank"><h3><img src="img/TP-mobile.svg" alt=""> <span>25,278 Reviews on </span> <img src="img/TP-Icon.svg" alt=""></h3></a>
+                
+              </div>
+
+              <div class="mobile-startdiv">
+                <p><img src="img/TP-mobile.svg" alt=""> **</p>
+              </div>
+
+              <div class="read-heretxt">
+                <p>May not be suitable in all circumstances. Fees and disadvantages may apply, read <a href="#faq">here</a> .
 
                 </p>
               </div>
             </div>
-
-
-            <div class="info">
-              <p>May not be suitable in all circumstances. Fees may apply, read <a
-                  href="https://ukdebtexpert.co.uk/fees/">here</a> . Entering into an IVA will affect your credit
-                rating, read <a href="#faq">here</a>. For potential disadvantages of entering into an IVA, read <a
-                  href="#faq">here</a>.</p>
-            </div>
           </div>
+      
         </div>
-
       </div>
-    </div>
   </section>
 
-  <!-- hero section end -->
-  <!-- three step  -->
-  <section class="three_steps moblieThreestep">
-    <div class="container">
-      <div class="row mobileThreesteprow">
 
-        <div class="col-xs-12 col-sm-4 mobilethreestepcol">
-          <div class="firststep">
-            <div class="icondiv">
-              <i class="fa-regular fa-circle-check"></i>
-            </div>
-            <div class="steptxt">
-              <p>Stop Interest & Charges</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4 mobilethreestepcol">
-          <div class="firststep secondstep">
-            <div class="icondiv">
-              <i class="fa-regular fa-circle-check"></i>
-            </div>
-            <div class="steptxt">
-              <p>Write Off Debts Over £7,000
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-4 mobilethreestepcol">
-          <div class="firststep thirdstep">
-            <div class="icondiv">
-              <i class="fa-regular fa-circle-check"></i>
-            </div>
-            <div class="steptxt">
-              <p>Lower monthly repayments
-
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- three step end -->
-  <!-- noticebar start -->
-  <section class="noticebar">
+  <!-- header section end -->
+   <!-- noticebar start -->
+   <section class="noticebar">
     <div class="container">
       <div class="row">
 
@@ -295,8 +181,9 @@ https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css
               </a>
             </div>
             <div class="noticetxt">
-              <p>To find out more about managing your money and getting free advice, visit Money Helper, independent
-                service set up to help people manage their money.
+              <p>To find out more about managing your money and getting free advice, visit Money Helper, an independent service set up to help people manage their money.
+
+
 
               </p>
             </div>
@@ -309,9 +196,28 @@ https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css
   </section>
   <!-- noticebar end -->
 
-  <!-- card slider start -->
+  <!-- appel text section start -->
+  <section class="appel-section">
+    <div class="container">
+        <div class="row">
+          
+          <div class="col-xs-12">
+            <div class="appel-text">
+              <p>Approved to appear in the NPA’s <b>Your Health Your Pharmacy initiative</b>
 
-  <section class="sliderSection">
+              </p>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+  </section>
+
+  <!-- appel text section end -->
+
+   <!-- card slider start -->
+
+   <section class="sliderSection">
     <div class="container">
       <div class="reviwmaintitle">
         <h2 class="reviwTitle">What our customers are saying.
@@ -767,634 +673,514 @@ https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css
 
 
   <!-- card slider end -->
-  <!-- progress and form section start -->
-  <section class="progress_form">
-    <div class="container-fluid">
-      <div class="row progress_row">
 
-        <div class="col-xs-12 col-sm-6 progress_col stepcolp">
-          <div class="progressdiv">
+  <!-- progress section start -->
+  <section class="progress-section">
+    <div class="container">
+        <div class="prog-header">
             <h3>Our 3 step process</h3>
-            <div class="progress_steps">
-              <div class="stepone">
-                <div class="slno">
-                  <h3>01</h3>
-                </div>
-                <div class="prog_details">
-                  <h4>Get Started</h4>
-                  <p class="firststep-p">Answer a few questions to help us get to know you and your financial situation
-                  </p>
-                </div>
+        </div>
+        <div class="row prog-rowdiv">
+          
+          <div class="col-xs-12 col-sm-4 prog-coldiv">
+            <div class="firstprog-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="69.465" height="74.461" viewBox="0 0 69.465 74.461"><g id="Group_2507" data-name="Group 2507" transform="translate(20818 13610.23)"><path id="Path_1067" data-name="Path 1067" d="M31.155.014a6.06,6.06,0,0,0-6.507,6.03V6.1A3.167,3.167,0,0,1,21.9,9.268c-4.6.537-7.7,1.493-7.7,2.567,0,.119.06,3.284.119,3.343H47.035c.06-.119.119-3.284.119-3.343,0-1.075-3.045-2.03-7.7-2.627a3.07,3.07,0,0,1-2.746-3.164V5.686A6.035,6.035,0,0,0,31.155.014" transform="translate(-20823.723 -13610.23)" fill="#fff"></path><path id="Path_1068" data-name="Path 1068" d="M108.927,47.4a.577.577,0,0,0-.06-.836l-7.881-6.448a.577.577,0,0,0-.836.06L98.3,42.45l8.776,7.224Z" transform="translate(-20857.613 -13626.338)" fill="#fff"></path><rect id="Rectangle_1733" data-name="Rectangle 1733" width="31.105" height="11.343" transform="matrix(0.634, -0.774, 0.774, 0.634, -20781.074, -13557.348)" fill="#fff"></rect><path id="Path_1069" data-name="Path 1069" d="M68.112,97.51l-8.179-6.686L58.5,100.973Z" transform="translate(-20841.574 -13646.832)" fill="#fff"></path><path id="Path_1070" data-name="Path 1070" d="M19.848,55.812l-2.03,1.97-.418-.418a1.14,1.14,0,0,0-1.612,1.612l2.03,1.97,3.642-3.522a1.086,1.086,0,0,0,0-1.612,1.192,1.192,0,0,0-1.612,0" transform="translate(-20824.236 -13632.596)" fill="#fff"></path><path id="Path_1071" data-name="Path 1071" d="M21.315,81.382a1.085,1.085,0,0,0-1.612,0l-.716.716-.716-.716a1.14,1.14,0,0,0-1.612,1.612l.716.716-.716.716a1.085,1.085,0,0,0,0,1.612,1.154,1.154,0,0,0,1.672,0l.716-.716.716.716a1.154,1.154,0,0,0,1.672,0,1.085,1.085,0,0,0,0-1.612l-.716-.716.716-.716a1.2,1.2,0,0,0-.119-1.612" transform="translate(-20824.568 -13642.883)" fill="#fff"></path><path id="Path_1072" data-name="Path 1072" d="M49.731,66.762l-2.687,3.284.6.478L46.268,71l-.239.3-.179-.179-12.776,4.6,1.97-13.433-.179-.179.239-.3.239-1.433.6.478L49.85,43.9V22.524H43.1c-.06,2.149-.179,2.328-.358,2.627l-.478.716H7.761l-.478-.657c-.179-.3-.3-.478-.358-2.627H0V83.538H49.671V66.762ZM20.836,43H44.3a1.134,1.134,0,0,1,1.134,1.134A1.174,1.174,0,0,1,44.3,45.27H20.836A1.134,1.134,0,0,1,19.7,44.136,1.174,1.174,0,0,1,20.836,43M12.418,65.27a5.433,5.433,0,1,1,5.433-5.433,5.453,5.453,0,0,1-5.433,5.433m0-15.582a5.433,5.433,0,1,1,5.433-5.433,5.453,5.453,0,0,1-5.433,5.433M20.836,61.21A1.134,1.134,0,0,1,19.7,60.076a1.174,1.174,0,0,1,1.134-1.134H32.6a1.134,1.134,0,1,1,0,2.269Z" transform="translate(-20818 -13619.308)" fill="#fff"></path></g></svg>
+              <h3>Get started            </h3>
+              <p>Answer a few questions to help us get to know you and your financial situation
+
+              </p>
+            </div>
+          </div>
+          
+          <div class="col-xs-12 col-sm-4 prog-coldiv">
+            <div class="firstprog-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="62.234" height="62.231" viewBox="0 0 62.234 62.231"><g id="Group_2509" data-name="Group 2509" transform="translate(20814.385 13479)"><path id="Path_1073" data-name="Path 1073" d="M31.118,0A31.127,31.127,0,0,0,7.691,51.611L.611,58.691a2.034,2.034,0,0,0-.443,2.268,2.049,2.049,0,0,0,1.908,1.272H31.118A31.116,31.116,0,0,0,31.118,0m6.61,39.33H20a2.074,2.074,0,1,1,0-4.149H37.728a2.074,2.074,0,1,1,0,4.149m4.508-12.28H20A2.074,2.074,0,1,1,20,22.9H42.237a2.074,2.074,0,1,1,0,4.149" transform="translate(-20814.385 -13479)" fill="#fff"></path></g></svg>
+              <h3>Get started            </h3>
+              <p>Our friendly, experienced team will explain all the available options
+
+              </p>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-4 prog-coldiv">
+            <div class="firstprog-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="59.291" height="79.445" viewBox="0 0 59.291 79.445"><g id="Group_2508" data-name="Group 2508" transform="translate(20791.316 13308.957)"><path id="Path_1074" data-name="Path 1074" d="M26.829,8.02a1.765,1.765,0,0,0,1.754-1.754V1.754A1.765,1.765,0,0,0,26.829,0a1.713,1.713,0,0,0-1.754,1.754V6.265A1.821,1.821,0,0,0,26.829,8.02" transform="translate(-20795.443 -13308.957)" fill="#fff"></path><path id="Path_1075" data-name="Path 1075" d="M16.767,11.2a1.7,1.7,0,0,0,1.253.5,1.842,1.842,0,0,0,1.253-.5,1.714,1.714,0,0,0,0-2.423L16.1,5.6a1.713,1.713,0,0,0-2.423,2.423Z" transform="translate(-20793.484 -13309.797)" fill="#fff"></path><path id="Path_1076" data-name="Path 1076" d="M35.146,11.7a1.842,1.842,0,0,0,1.253-.5l3.174-3.174A1.713,1.713,0,1,0,37.151,5.6L33.976,8.776a1.714,1.714,0,0,0,0,2.423,1.649,1.649,0,0,0,1.17.5" transform="translate(-20796.826 -13309.797)" fill="#fff"></path><path id="Path_1077" data-name="Path 1077" d="M59.292,60.842a6.721,6.721,0,0,0-6.767-6.683,7.3,7.3,0,0,0-3.759,1.086,6.691,6.691,0,0,0-6.182-4.093,7.3,7.3,0,0,0-3.759,1.086,6.691,6.691,0,0,0-6.182-4.093,5.823,5.823,0,0,0-3.174.835V41.293h7.519a1.713,1.713,0,0,0,1.754-1.754V18.654A1.713,1.713,0,0,0,36.987,16.9H8.417a1.713,1.713,0,0,0-1.754,1.754V39.539a1.713,1.713,0,0,0,1.754,1.754h7.6V67.775l-4.428-4.428a6.836,6.836,0,0,0-8.6-.835A6.732,6.732,0,0,0,.063,67.19a6.881,6.881,0,0,0,1.5,5.346l7.6,9.022a1.744,1.744,0,0,0,1.337.668,2,2,0,0,0,1.17-.418,1.831,1.831,0,0,0,.251-2.506l-7.6-8.939A3.191,3.191,0,0,1,4.991,65.6a3.288,3.288,0,0,1,4.093.418l5.43,5.43a2.985,2.985,0,0,0,3.174.668,2.9,2.9,0,0,0,1.838-2.673V34.025A3.173,3.173,0,0,1,22.7,30.851a2.905,2.905,0,0,1,2.256.919,3.228,3.228,0,0,1,.919,2.256V58.168a1.754,1.754,0,1,0,3.509,0V54.91a3.174,3.174,0,1,1,6.349,0v6.265a1.754,1.754,0,1,0,3.509,0V57.918a3.174,3.174,0,1,1,6.349,0v6.265a1.754,1.754,0,0,0,3.509,0V60.842a3.174,3.174,0,1,1,6.349,0V80.306a1.754,1.754,0,1,0,3.509,0ZM22.7,27.259a6.721,6.721,0,0,0-6.683,6.767V37.7H10.254V20.409H35.316V37.7H29.552V34.025a6.373,6.373,0,0,0-2-4.762,7.106,7.106,0,0,0-4.845-2" transform="translate(-20791.316 -13311.739)" fill="#fff"></path></g></svg>
+              <h3>Choose your plan
+            </h3>
+              <p>Select the best fit for your circumstances and lifestyle
+
+
+              </p>
+            </div>
+          </div>
+          
+        </div>
+        <div class="progress-btndiv">
+            <div class="check_btn">
+                <a href="calculator.html">
+                  <button class="ckbtn" type="button">Get Free Advice</button>
+                </a>
               </div>
-              <div class="stepone second-step">
-                <div class="slno">
-                  <h3>02</h3>
-                </div>
-                <div class="prog_details">
-                  <h4>Speak to an expert</h4>
-                  <p>Chat to a debt expert for personalised advice </p>
-                </div>
+        </div>
+        
+      </div>
+  </section>
+
+
+  <!-- progress section end -->
+
+
+  <!-- including section start -->
+  <section class="include-section">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-xs-12">
+          <div class="includecontent-box">
+            <div class="includetextandicons">
+              <div class="include-txt">
+                <h3>We can help with most types of unsecured debt, including:</h3>
               </div>
-              <div class="stepone third-sted">
-                <div class="slno">
-                  <h3>03</h3>
+              <div class="include-icons">
+                <div class="first-three">
+                  <div class="iconIN">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="39.016" height="35.214" viewBox="0 0 39.016 35.214"><path id="Path_1110" data-name="Path 1110" d="M2.119,10.606,30.6,4.146,30.209,2.4a.925.925,0,0,0-1.1-.7L2.413,7.72a.923.923,0,0,0-.7,1.1c.136.592.268,1.193.4,1.785M1.883,6.141,28.916.058A2.4,2.4,0,0,1,31.779,1.87l2.833,12.521H32.92L31.635,8.72,3.15,15.18l1.763,7.776.158.689a.515.515,0,0,0,.618.39l.21-.048v1.658l-.031.009a2,2,0,0,1-2.381-1.5L.062,9.01a2.392,2.392,0,0,1,1.82-2.868Zm7.017,8.7a2.4,2.4,0,0,0-2.395,2.4V32.819A2.4,2.4,0,0,0,8.9,35.214H36.617a2.4,2.4,0,0,0,2.4-2.395V17.241a2.4,2.4,0,0,0-2.4-2.4Zm27.134,6.973V18.645a.365.365,0,0,0-.368-.368H28.574a.371.371,0,0,0-.368.368v3.171a.371.371,0,0,0,.368.368h7.092a.371.371,0,0,0,.368-.368m-5.228,9.613a.372.372,0,0,1-.373-.368v-.737a.372.372,0,0,1,.373-.368h4.855a.371.371,0,0,1,.368.368v.737a.371.371,0,0,1-.368.368Zm-6.776,0a.371.371,0,0,1-.368-.368v-.732a.368.368,0,0,1,.368-.368h4.859a.371.371,0,0,1,.368.368v.732a.371.371,0,0,1-.368.368Zm-6.772,0a.371.371,0,0,1-.368-.368v-.732a.368.368,0,0,1,.368-.368h4.859a.371.371,0,0,1,.368.368v.732a.371.371,0,0,1-.368.368Zm-6.771,0a.371.371,0,0,1-.368-.368v-.732a.368.368,0,0,1,.368-.368h4.859a.371.371,0,0,1,.368.368v.732a.371.371,0,0,1-.368.368Z" transform="translate(0 0)" fill="#c93d64" fill-rule="evenodd"></path></svg>
+  
+                    <h3>Credit Cards
+                    </h3>
+                  </div>
+                  <div class="iconIN">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Group_2259" data-name="Group 2259" width="36.925" height="31.15" viewBox="0 0 36.925 31.15"><defs><clipPath id="clip-path"><rect id="Rectangle_1834" data-name="Rectangle 1834" width="36.925" height="31.149" fill="#c93d64"></rect></clipPath></defs><g id="Group_2259-2" data-name="Group 2259" transform="translate(0 0)" clip-path="url(#clip-path)"><path id="Path_1116" data-name="Path 1116" d="M14.6,17.979c0-2.482,5-4.495,11.165-4.495S36.925,15.5,36.925,17.979s-5,4.495-11.165,4.495S14.6,20.462,14.6,17.979M25.76,24.613c-6.166,0-11.165-2.012-11.165-4.495v2.139c0,2.482,5,4.495,11.165,4.495s11.165-2.012,11.165-4.495V20.118c0,2.482-5,4.495-11.165,4.495m0,4.4C19.594,29.011,14.6,27,14.6,24.516v2.139c0,2.482,5,4.495,11.165,4.495s11.165-2.012,11.165-4.495V24.516c0,2.482-5,4.495-11.165,4.495M11.165,8.99c6.166,0,11.165-2.012,11.165-4.495S17.33,0,11.165,0,0,2.012,0,4.495,5,8.99,11.165,8.99m0,2.139C5,11.128,0,9.116,0,6.633V8.772c0,2.482,5,4.495,11.165,4.495s11.165-2.012,11.165-4.495V6.633c0,2.482-5,4.495-11.165,4.495m0,6.537c.659,0,1.3-.023,1.931-.067a3.914,3.914,0,0,1,1.1-2.239,27.01,27.01,0,0,1-3.029.168C5,15.526,0,13.514,0,11.032V13.17c0,2.482,5,4.495,11.165,4.495m0,4.3c.651,0,1.288-.023,1.908-.066V19.762c-.62.043-1.258.066-1.908.066C5,19.828,0,17.816,0,15.333v2.139c0,2.482,5,4.495,11.165,4.495m1.909,2.549v-.477c-.62.043-1.258.066-1.908.066C5,24.105,0,22.093,0,19.61v2.139c0,2.482,5,4.495,11.165,4.495.651,0,1.288-.023,1.908-.066Z" transform="translate(0 0)" fill="#c93d64"></path></g></svg>
+  
+                    <h3>Loans
+                    </h3>
+                  </div>
+                  <div class="iconIN">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Group_2260" data-name="Group 2260" width="34.43" height="33.71" viewBox="0 0 34.43 33.71"><defs><clipPath id="clip-path"><rect id="Rectangle_1835" data-name="Rectangle 1835" width="34.43" height="33.71" fill="#c93d64"></rect></clipPath></defs><g id="Group_2260-2" data-name="Group 2260" clip-path="url(#clip-path)"><path id="Path_1117" data-name="Path 1117" d="M.984.016,6.315,1.223a.907.907,0,0,1,.6.6l.8,3.923,26.05,2.514a.734.734,0,0,1,.6,1.006L30.353,21.641a.756.756,0,0,1-.7.5H11.143l.4,1.911h17.8c1.006,0,1.006,1.81,0,1.81H10.64a.735.735,0,0,1-.7-.6L5.309,2.833.582,1.827c-1.006-.3-.6-2.012.4-1.81" transform="translate(0 0)" fill="#c93d64"></path><path id="Path_1118" data-name="Path 1118" d="M114.312,266.163a3.47,3.47,0,1,1-3.52,3.42,3.478,3.478,0,0,1,3.52-3.42m0,1.71a1.762,1.762,0,0,0-1.71,1.71,1.71,1.71,0,1,0,3.42,0,1.762,1.762,0,0,0-1.71-1.71" transform="translate(-99.649 -239.393)" fill="#c93d64"></path><path id="Path_1119" data-name="Path 1119" d="M223.212,266.163a3.47,3.47,0,1,1-3.42,3.42,3.415,3.415,0,0,1,3.42-3.42m0,1.71a1.676,1.676,0,0,0-1.609,1.71,1.614,1.614,0,0,0,1.609,1.71,1.637,1.637,0,0,0,1.71-1.71,1.7,1.7,0,0,0-1.71-1.71" transform="translate(-197.686 -239.393)" fill="#c93d64"></path></g></svg>
+  
+                    <h3>Store Cards
+  
+                    </h3>
+                  </div>
                 </div>
-                <div class="prog_details">
-                  <h4>Find a solution
-                  </h4>
-                  <p>The expert team will find the best solution for your circumstances
+               <div class="last-three">
+                <div class="iconIN">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Group_2261" data-name="Group 2261" width="29.736" height="31.053" viewBox="0 0 29.736 31.053"><defs><clipPath id="clip-path"><rect id="Rectangle_1849" data-name="Rectangle 1849" width="29.736" height="31.053" fill="#c93d64"></rect></clipPath></defs><rect id="Rectangle_1836" data-name="Rectangle 1836" width="4.541" height="0.707" transform="translate(5.698 2.52)" fill="#c93d64"></rect><rect id="Rectangle_1837" data-name="Rectangle 1837" width="15.897" height="0.707" transform="translate(5.698 6.419)" fill="#c93d64"></rect><rect id="Rectangle_1838" data-name="Rectangle 1838" width="15.897" height="0.707" transform="translate(5.698 9.953)" fill="#c93d64"></rect><rect id="Rectangle_1839" data-name="Rectangle 1839" width="13.521" height="0.707" transform="translate(5.698 13.546)" fill="#c93d64"></rect><rect id="Rectangle_1840" data-name="Rectangle 1840" width="10.398" height="0.707" transform="translate(5.698 17.021)" fill="#c93d64"></rect><rect id="Rectangle_1841" data-name="Rectangle 1841" width="8.066" height="0.707" transform="translate(5.698 20.788)" fill="#c93d64"></rect><rect id="Rectangle_1842" data-name="Rectangle 1842" width="11.055" height="0.707" transform="translate(5.698 24.528)" fill="#c93d64"></rect><rect id="Rectangle_1843" data-name="Rectangle 1843" width="2.727" height="3.179" transform="translate(16.096 19.67) rotate(-45.005)" fill="#c93d64"></rect><rect id="Rectangle_1844" data-name="Rectangle 1844" width="8.483" height="3.179" transform="translate(18.525 17.242) rotate(-45)" fill="#c93d64"></rect><rect id="Rectangle_1845" data-name="Rectangle 1845" width="2.237" height="3.178" transform="translate(25.907 9.86) rotate(-44.995)" fill="#c93d64"></rect><rect id="Rectangle_1846" data-name="Rectangle 1846" width="0.544" height="3.179" transform="translate(25.023 10.744) rotate(-45.026)" fill="#c93d64"></rect><path id="Path_1120" data-name="Path 1120" d="M45.122,59.5l-2.906.659.676-2.924" transform="translate(-27.302 -37.016)" fill="#c93d64"></path><rect id="Rectangle_1847" data-name="Rectangle 1847" width="4.215" height="2.566" transform="translate(17.38 2.874)" fill="#c93d64"></rect><g id="Group_2262" data-name="Group 2262" transform="translate(0 0)"><g id="Group_2261-2" data-name="Group 2261" clip-path="url(#clip-path)"><path id="Path_1121" data-name="Path 1121" d="M54.375,66.327a1.449,1.449,0,1,1-1.449,1.449,1.449,1.449,0,0,1,1.449-1.449" transform="translate(-34.228 -42.895)" fill="#c93d64"></path><rect id="Rectangle_1848" data-name="Rectangle 1848" width="1.562" height="0.707" transform="translate(10.897 2.52)" fill="#c93d64"></rect><path id="Path_1122" data-name="Path 1122" d="M24.654,10.306V0H2.542V2.319H0V31.053H19.462v-2h5.192V18.013H23.241v9.623H3.955V1.413H23.241v8.893ZM18.049,29.05v.59H1.413V3.732H2.542V29.05Z" transform="translate(0 0)" fill="#c93d64"></path></g></g></svg>
+
+                  <h3>Lines of Credit
 
 
-
-                  </p>
+                  </h3>
                 </div>
+                <div class="iconIN">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Group_2265" data-name="Group 2265" width="27.552" height="35.35" viewBox="0 0 27.552 35.35"><defs><clipPath id="clip-path"><rect id="Rectangle_1851" data-name="Rectangle 1851" width="27.552" height="35.35" fill="#c93d64"></rect></clipPath></defs><g id="Group_2264" data-name="Group 2264" clip-path="url(#clip-path)"><path id="Path_1124" data-name="Path 1124" d="M1.727,0H16.709V6.176h6.176v7.986a7.87,7.87,0,0,0-7.231,13.095V28H1.726A1.73,1.73,0,0,1,0,26.274V1.727A1.73,1.73,0,0,1,1.726,0ZM18.442,0l4.443,4.443H18.442Zm2.973,15.757a6.137,6.137,0,1,1-6.137,6.137,6.136,6.136,0,0,1,6.137-6.137m0,3.465a2.672,2.672,0,1,1-2.672,2.672,2.671,2.671,0,0,1,2.672-2.672m0,12.835,4.027,3.292V28.655a7.877,7.877,0,0,1-8.053,0V35.35ZM3.676,5.98a.866.866,0,1,1,0-1.733h7.188a.866.866,0,1,1,0,1.733Zm0,18.793a.866.866,0,1,1,0-1.733h6.555a.866.866,0,1,1,0,1.733Zm0-4.7a.866.866,0,1,1,0-1.733h5.05a.866.866,0,1,1,0,1.733Zm0-4.7a.866.866,0,1,1,0-1.733h8.033a.866.866,0,1,1,0,1.733Zm0-4.7a.866.866,0,1,1,0-1.733h11.57a.866.866,0,1,1,0,1.733Z" fill="#c93d64" fill-rule="evenodd"></path></g></svg>
+
+                  <h3>Overdrafts
+
+
+
+                  </h3>
+                </div>
+                <div class="iconIN">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="27" viewBox="0 0 30 27"><defs><clipPath id="clip-path"><rect id="Rectangle_1850" data-name="Rectangle 1850" width="30" height="27" transform="translate(-0.162 0.166)" fill="#c93d64"></rect></clipPath></defs><g id="Group_2263" data-name="Group 2263" transform="translate(0.603 -0.286)"><g id="Group_2263-2" data-name="Group 2263" transform="translate(-0.441 0.12)" clip-path="url(#clip-path)"><path id="Path_1123" data-name="Path 1123" d="M28.91,14.136v9.576a3.426,3.426,0,0,1-3.374,3.374H3.374A3.426,3.426,0,0,1,0,23.711V14.136H10.761v1.915c0,5.016,7.478,5.016,7.478,0V14.136ZM3.374,5.381H8.937V3.648A3.641,3.641,0,0,1,12.494,0h3.921a3.641,3.641,0,0,1,3.557,3.648V5.381h5.563A3.426,3.426,0,0,1,28.91,8.755v4.013H0V8.755A3.426,3.426,0,0,1,3.374,5.381m7.843,0h6.475V3.648A1.325,1.325,0,0,0,16.415,2.28H12.494a1.39,1.39,0,0,0-1.277,1.368ZM12.4,14.136h4.1v1.915a2.052,2.052,0,1,1-4.1,0Z" transform="translate(0.32 -0.067)" fill="#c93d64" fill-rule="evenodd"></path></g></g></svg>
+
+                  <h3>Business Debt
+
+
+
+
+                  </h3>
+                </div>
+               </div>
+               
               </div>
             </div>
           </div>
         </div>
+    
+      </div>
+    </div>
+  </section>
 
-        <div class="col-xs-12 col-sm-6 iconcols">
-          <div class="ttle">
-            <h2>We can help with most types of unsecured debt, including:
-            </h2>
+  <!-- including section end -->
 
-            <div class="icons">
-              <div class="firstcolicon">
-                <div class="no1">
-                  <i class="fa-solid fa-credit-card"></i>
-                  <p> Credit Cards
-                  </p>
+
+  <!-- advice section start -->
+  <section class="adivcesection">
+    <div class="container">
+      <div class="row advice-row">
+        
+        <div class="col-xs-12 col-sm-6 mobile-displaycol advice_col">
+          <div class="adviceimg-box">
+            <img src="img/debt-advice-help.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 advice_col">
+          <div class="advicetxtbox">
+            <div class="advicetitle">
+              <h3>How debt advice can help
+              </h3>
+            </div>
+            <div class="advicelist">
+              <ul><li>Support tailored to your situation</li></ul>
+              <ul><li>Guidance on all solutions you’re eligible for
+              </li></ul>
+              <ul><li>Sleep easier knowing help is available
+              </li></ul>
+              <ul><li>Improve your financial future
+              </li></ul>
+              <ul><li>Start working towards financial goals
+              </li></ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-6 mobile-hidecol advice_col">
+          <div class="adviceimg-box">
+            <img src="img/debt-advice-help.jpg" alt="">
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </section>
+
+
+  <!-- advice section end -->
+
+  <!-- choose section start -->
+  <section class="choose_section">
+    <div class="container">
+      <div class="why-choosetitle">
+        <h3>Why choose UK Debt Expert?
+        </h3>
+      </div>
+      <div class="row">
+        
+        <div class="col-xs-12">
+          <div class="option-box">
+            <div class="firsttwo-options">
+              <div class="option-one">
+                <div class="option-img">
+                  <img src="img/why-choose-01.svg" alt="">
                 </div>
-                <div class="no1">
-                  <i class="fa-solid fa-sack-dollar"></i>
-
-                  <p> Loans
-                  </p>
-                </div>
-                <div class="no1">
-                  <i class="fa-solid fa-basket-shopping"></i>
-                  <p> Store Cards
-                  </p>
+                <div class="option-textd">
+                  <p>We’ve spoken to over</p>
+                  <h3>25,000 People                  </h3>
+                  <h2>about their debt this year                  </h2>
                 </div>
               </div>
-              <div class="firstcolicon">
-                <div class="no1">
-                  <i class="fa-solid fa-credit-card"></i>
-                  <p>Lines of Credit
-                  </p>
+              <div class="option-one">
+                <div class="option-img">
+                  <img src="img/why-choose-02.svg" alt="">
                 </div>
-                <div class="no1">
-                  <i class="fa-solid fa-lines-leaning"></i>
+                <div class="option-textd">
+                  <p>We are rated 5 star</p>
+                  <h3>by more than 93%
+                  </h3>
+                  <h2>on TrustPilot
 
-                  <p> Overdrafts
-                  </p>
-                </div>
-                <div class="no1">
-                  <i class="fa-solid fa-briefcase"></i>
-                  <p> Business Debt
-                  </p>
+                  </h2>
                 </div>
               </div>
             </div>
+            <div class="firsttwo-options">
+              <div class="option-one">
+                <div class="option-img">
+                  <img src="img/why-choose-03.svg" alt="">
+                </div>
+                <div class="option-textd">
+                  <p>We can help reduce monthly
+
+                  </p>
+                  <h3>Repayments
+
+                  </h3>
+                  <h2>on your debt
+
+                  </h2>
+                </div>
+              </div>
+              <div class="option-one">
+                <div class="option-img">
+                  <img src="img/why-choose-04.svg" alt="">
+                </div>
+                <div class="option-textd">
+                  <p>We’ve helped over
 
 
-            <div class="cmnbtn">
+
+                  </p>
+                  <h3>185,000 People*
+
+
+
+
+
+                  </h3>
+                  <h2>people with their debt
+
+
+
+
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="choose-btn">
               <div class="check_btn">
                 <a href="calculator.html">
                   <button class="ckbtn" type="button">Get Debt Help</button>
                 </a>
               </div>
             </div>
+           
           </div>
         </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- progress and form section end -->
-
-  <!-- debt solution start -->
-  <section class="debt_solution">
-    <div class="container">
-      <div class="debt_solutiontitle">
-        <h2>How a debt solution could help you
-        </h2>
-      </div>
-      <div class="row debt_solutionrow">
-
-        <div class="col-xs-12 col-sm-6 solutioncol">
-          <div class="first_solution_box">
-            <div class="solutiontitle">
-              <h3>Life Benefits</h3>
-            </div>
-            <div class="solutionlist">
-              <div class="sol_list">
-                <div class="list_icon">
-                  <i class="fa-solid fa-circle-check"></i>
-                </div>
-                <div class="listtext">
-                  <p>Recude need to borrow from friends & family</p>
-                </div>
-              </div>
-              <div class="sol_list">
-                <div class="list_icon">
-                  <i class="fa-solid fa-circle-check"></i>
-                </div>
-                <div class="listtext">
-                  <p>Reduce the stress of bills you can't pay
-                  </p>
-                </div>
-              </div>
-              <div class="sol_list">
-                <div class="list_icon">
-                  <i class="fa-solid fa-circle-check"></i>
-                </div>
-                <div class="listtext">
-                  <p>Include Payday loans in your arrangement
-                  </p>
-                </div>
-              </div>
-              <div class="sol_list">
-                <div class="list_icon">
-                  <i class="fa-solid fa-circle-check"></i>
-                </div>
-                <div class="listtext">
-                  <p>Your money will stretch further during the month
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="solutionbtnfooter">
-              <a href="calculator.html">
-                <button>
-                  Check if you qualify
-                </button>
-              </a>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 solutioncol">
-          <div class="first_solution_box second_solution_box">
-            <div class="solutiontitle">
-              <h3>Financial benefits
-              </h3>
-            </div>
-            <div class="solutionlist">
-              <div class="sol_list">
-                <div class="list_icon">
-                  <i class="fa-solid fa-circle-check"></i>
-                </div>
-                <div class="listtext">
-                  <p>One affordable low monthly repayment</p>
-                </div>
-              </div>
-              <div class="sol_list">
-                <div class="list_icon">
-                  <i class="fa-solid fa-circle-check"></i>
-                </div>
-                <div class="listtext">
-                  <p>Freeze all interest and charges on included debts
-
-                  </p>
-                </div>
-              </div>
-              <div class="sol_list">
-                <div class="list_icon">
-                  <i class="fa-solid fa-circle-minus"></i>
-                </div>
-                <div class="listtext">
-                  <p>Can affect credit rating
-
-                  </p>
-                </div>
-              </div>
-              <div class="sol_list">
-                <div class="list_icon">
-                  <i class="fa-solid fa-circle-minus"></i>
-                </div>
-                <div class="listtext">
-                  <p>May limit financial freedom during arrangement
-
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="solutionbtnfooter second_sol_btn">
-              <a href="calculator.html">
-                <button>
-                  Check if you qualify
-                </button>
-              </a>
-
-            </div>
-          </div>
-        </div>
-
+    
       </div>
     </div>
   </section>
 
 
-  <!-- debt solution end -->
+  <!-- choose section end -->
 
   <!-- example section start -->
-  <section class="examplesection">
+  <section class="example-section">
     <div class="container">
-      <div class="exampletitle">
-        <h1>Here’s an example of how we can help.
-        </h1>
-        <p>See how an IVA could help you with this simple example to consolidate debts into one smaller monthly payment
-          and write off unaffordable debt.
+      <div class="exampleherder">
+        <h3>Here’s an example of how we can help
+        </h3>
+        <p>We offer advice on all debt solutions available to you, including Individual Voluntary Arrangements (IVAs). Here’s an example of how this type of solution could work for you. 
 
         </p>
       </div>
-      <div class="row examplerow">
+      <div class="row">
+        
+        <div class="col-xs-12">
+          <img class="arrowimage" src="img/arrow-1.svg" alt="">
+          <div class="examplecontentbox">
+           <div class="maincontent">
+            <div class="beforediv">
+              <h4>Before an IVA
+              </h4>
 
-        <div class="col-xs-12 col-sm-6 examplecol1">
-          <div class="examplefirstdiv">
-            <div class="listdiv">
-              <p class="lettitle">Let's say you owe..</P>
-              <div class="lists">
-                <div class="list1">
-                  <div class="titleinfo">
-                    <p>Bank Loans </p>
-                  </div>
-                  <div class="amountdiv">
-                    <p>£5,366.00</p>
-                  </div>
+              <p>Total amount owed:
+
+              </p>
+
+              <h1>£19,256.57
+
+              </h1>
+            </div>
+            <div class="afterdiv">
+              <h3>After an IVA
+              </h3>
+
+              <div class="debt-iva">
+                <div class="devt">
+                  <h3>Debt Written off
+
+                  </h3>
+                  <h1>65%
+
+                  </h1>
                 </div>
-                <div class="list1">
-                  <div class="titleinfo">
-                    <p>Gas Bills
+                <div class="devt">
+                  <h3>IVA Payments
 
-                    </p>
-                  </div>
-                  <div class="amountdiv">
-                    <p>£129</p>
-                  </div>
-                </div>
-                <div class="list1">
-                  <div class="titleinfo">
-                    <p>Pay Day Loan
 
-                    </p>
-                  </div>
-                  <div class="amountdiv">
-                    <p>£1,989.00 </p>
-                  </div>
-                </div>
-                <div class="list1">
-                  <div class="titleinfo">
-                    <p>Overdraft </p>
-                  </div>
-                  <div class="amountdiv">
-                    <p>£1,234.68
+                  </h3>
+                  <h1>£110
 
-                    </p>
-                  </div>
-                </div>
-                <div class="list1">
-                  <div class="titleinfo">
-                    <p>Debt Collection Agency
 
-                    </p>
-                  </div>
-                  <div class="amountdiv">
-                    <p>£380.16
 
-                    </p>
-                  </div>
-                </div>
-                <div class="list1">
-                  <div class="titleinfo">
-                    <p>Short Term Loan
+                  </h1>
+                  <p>per month
 
-                    </p>
-                  </div>
-                  <div class="amountdiv">
-                    <p>£243.88</p>
-                  </div>
-                </div>
-                <div class="list1">
-                  <div class="titleinfo">
-                    <p>Council Debt
-
-                    </p>
-                  </div>
-                  <div class="amountdiv">
-                    <p>£1,009.24
-
-                    </p>
-                  </div>
-                </div>
-                <div class="list1">
-                  <div class="titleinfo">
-                    <p>Credit Card
-
-                    </p>
-                  </div>
-                  <div class="amountdiv">
-                    <p>£8,433.00 </p>
-                  </div>
-                </div>
-
-                <div class="totalamount">
-                  <div class="titletotal">
-                    <p>Total amount owed: </p>
-                  </div>
-                  <div class="amountotal">
-                    <p>£19,256.57 </p>
-                  </div>
+                  </p>
                 </div>
               </div>
             </div>
-          </div>
+           </div>
 
-        </div>
-
-        <div class="col-xs-12 col-sm-6 examplecol2">
-          <div class="afterbox">
-            <p class="aftertitle">After an IVA</P>
-            <div class="images">
-              <div class="firstimgafter">
-                <img src="img/YDE-write-off (1).svg" alt="">
-
-              </div>
-              <div class="secondimgafter">
-                <img src="img/YDE-IVA-payment (1).svg" alt="">
-
-              </div>
+           <div class="example-btn">
+            <div class="check_btn">
+              <a href="calculator.html">
+                <button class="ckbtn" type="button">Get Debt Help</button>
+              </a>
             </div>
-            <p class="smallp">Monthly payments are based on individual financial circumstances
-            </p>
-            <div class="cmnbtn examplecmn">
-              <div class="check_btn">
-                <a href="calculator.html">
-                  <button class="ckbtn" type="button">Get Debt Help</button>
-                </a>
-              </div>
-            </div>
-            <p class="examplefooterp">Example case completed in 2023. Repayment calculated using income and expenditure
-              data. Monthly payments and write off percentages are based on individual circumstances.
+           </div>
+
+           <div class="bottom-txt">
+            <p>Example case completed in 2023. Repayment calculated using income and expenditure data. Monthly payments and write off percentages are based on individual circumstances.
 
             </p>
+           </div>
           </div>
         </div>
-
+    
       </div>
     </div>
   </section>
+
+
   <!-- example section end -->
 
-
-  <!-- adviser section start -->
-
-  <section class="advisorSection">
+  <!-- feedback section start -->
+  <section class="feedbacksection">
     <div class="container">
-      <div class="row advisor_row">
+      <div class="row feedbackrow">
+        <div class="col-xs-12 col-sm-6 feebackcol">
+          <img src="img/testimonial-deborah.jpg" alt="" class="mimg">
+          <div class="feedbacktext">
+            <h3>“They have been really supportive during my IVA and I’m only 2 months away from being debt free.”</h3>
+            <h2>DEBORAH WALTERS
 
-        <div class="col-xs-12 col-sm-5 advisor_col">
-          <div class="advisorImg">
-            <img src="img/testimonial.webp" alt="">
-          </div>
-        </div>
+            </h2>
 
+            <p>25th November 2023
 
-        <div class="col-xs-12 col-sm-7 advisor_col">
-          <div class="advisertextbox">
-            <img src="img/quote.png" alt="">
-            <h3>The advisers were very knowledgeable and very helpful.</h3>
-
-            <p>SHAVAUGHNE BERNHARDT
             </p>
           </div>
         </div>
-
+        
+        <div class="col-xs-12 col-sm-6 feebackcol2">
+          <div class="feedbackimage">
+            
+          </div>
+        </div>
+        
       </div>
     </div>
   </section>
 
-  <!-- adviser section end -->
+  <!-- feedback section end -->
 
-
-  <!-- accordion start -->
-  <section class="accordion">
-    <div class="container">
-      <div class="accor_sectitle">
-        <h3>Frequently Asked Questions</h3>
-      </div>
-      <div class="row">
-
-        <div class="col-xs-12">
-          <div class="accordionbox">
-            <div class="accordiondiv">
-              <div class="accordion_head">
-                <p><i class="fa-solid fa-caret-right icon"></i>Is an IVA suitable for me?</p>
-              </div>
-              <div class="accordion_body">
-                <p>An Individual Voluntary Arrangement (IVA) is a formal debt solution that creates a legally binding
-                  agreement between you and the people you owe money to. You may decide to enter an IVA if you’re
-                  struggling to repay the total amount of unsecured debt you currently have but can repay some.</p>
-
-                <p> It’s available to people who live in England, Wales and Northern Ireland.</p>
-              </div>
-            </div>
-            <div class="accordiondiv">
-              <div class="accordion_head">
-                <p><i class="fa-solid fa-caret-right icon"></i>How does it work?</p>
-              </div>
-              <div class="accordion_body">
-                <p class="secondAccordonp"> The initial fact-finding and advice call is free and provided by The UK Debt
-                  Expert Limited. That
-                  call will explore all possible debt solutions applicable to the customer, whether these can be
-                  provided by The UK Debt Expert Limited, Creditfix (which is part of the same group) or by a third
-                  party
-
-                <p class="secaccp">If you live in England, Wales or Northern Ireland, an IVA may be a suitable debt
-                  solution. An IVA
-                  will be provided by Creditfix and <a href="https://ukdebtexpert.co.uk/fees/">fees</a> will apply.
-
-                <p class="secaccpp">If you live in Scotland, a Trust Deed or the Debt Arrangement Scheme may be a
-                  suitable debt solution.
-                  Trust Deeds and DAS will be provided by Carrington Dean Group Limited and <a
-                    href="https://ukdebtexpert.co.uk/fees/">fees</a> will apply.</p>
-              </div>
-            </div>
-            <div class="accordiondiv">
-              <div class="accordion_head">
-                <p><i class="fa-solid fa-caret-right icon"></i>Can an IVA affect my credit rating?</p>
-              </div>
-              <div class="accordion_body">
-                <p>Yes, an IVA, or other debt solution such as a Trust Deed, will adversely affect your credit rating as
-                  it will show on your credit report for six years after it has been approved. However, it’s important
-                  to note this is the case for most debt solutions and your credit score will likely already have been
-                  affected by being in debt in the first place.
-                </p>
-
-              </div>
-            </div>
-            <div class="accordiondiv">
-              <div class="accordion_head">
-                <p><i class="fa-solid fa-caret-right icon"></i>Will entering an IVA affect my job?</p>
-              </div>
-              <div class="accordion_body">
-                <p>In most cases entering an IVA won’t affect employment. However, in certain professions, such as
-                  accountants and solicitors, having an IVA may mean that you can no longer practice or you may only be
-                  able to practice under certain conditions.
-                </p>
-
-              </div>
-            </div>
-            <div class="accordiondiv">
-              <div class="accordion_head">
-                <p><i class="fa-solid fa-caret-right icon"></i>Can creditors still contact me when I'm in an IVA?</p>
-              </div>
-              <div class="accordion_body">
-                <p>Once you enter an IVA, creditors can take no further action against you and can’t contact you
-                  directly.
-                </p>
-              </div>
-            </div>
-            <div class="accordiondiv">
-              <div class="accordion_head">
-                <p><i class="fa-solid fa-caret-right icon"></i>How can an IVA change my life?</p>
-              </div>
-              <div class="accordion_body">
-                <p>An IVA can be a positive way to manage unaffordable unsecured debt and allow you to better manage
-                  your monthly finances.
-                  In an IVA a single monthly payment is agreed with your current financial situation taken into
-                  consideration – this payment is then divided between the people you owe money to. During the course of
-                  your plan all interest and fees associated with your debts are frozen.
-                  At the end of the IVA the remaining debts included in the arrangement are written off.</p>
-              </div>
-            </div>
-            <div class="accordiondiv">
-              <div class="accordion_head">
-                <p><i class="fa-solid fa-caret-right icon"></i>What are the advantages of an IVA?</p>
-              </div>
-              <div class="accordion_body">
-                <p>It’s important to be aware of the advantages of an IVA when considering the best debt solution for
-                  your circumstances, such as:
-                </p>
-                <ul>
-                  <li>All creditors are bound by your IVA once approved.</li>
-                  <li>Creditors can’t take legal action against you in an IVA.</li>
-                  <li>Interest and charges on your debts are frozen by law.</li>
-                  <li>All IVA payments are based on what you can afford.</li>
-                  <li>Your IP will distribute payment to creditors on your behalf.</li>
-                  <li>You may get a payment break if your situation changes.</li>
-                  <li>You won’t have to sell your home in an IVA.</li>
-                </ul>
-
-                <p class="ullip">An advisor will talk through all the benefits of an IVA as well as other debt solutions
-                  with you to help you make an informed decision.
-
-
-                </p>
-              </div>
-            </div>
-            <div class="accordiondiv">
-              <div class="accordion_head">
-                <p><i class="fa-solid fa-caret-right icon"></i>What are the disadvantages of an IVA?</p>
-              </div>
-              <div class="accordion_body">
-                <p>It’s important to be aware of the advantages of an IVA when considering the best debt solution for
-                  your circumstances, such as:
-                </p>
-                <ul>
-                  <li>If you are a homeowner and your property has equity in it, you’ll need to try to re-mortgage which
-                    could result in an increased interest rate and a 12 month extension to your arrangement.&nbsp;</li>
-                  <li>Your credit rating will be affected adversely<em>.</em></li>
-                  <li>Only the unsecured debts included in your IVA will be written off at the end of the agreement.
-                  </li>
-                  <li>Your IVA will be recorded on a public register.</li>
-                  <li>If your IVA fails you could be at risk of bankruptcy.</li>
-                  <li>Your financial freedom might be restricted.</li>
-                  <li>Your creditors need to agree to the IVA.</li>
-                </ul>
-
-                <p class="ullip">An advisor will ensure you’re aware of the advantages and disadvantages to help you
-                  make an informed decision.
-
-
-                </p>
-              </div>
-            </div>
-            <div class="accordiondiv">
-              <div class="accordion_head">
-                <p><i class="fa-solid fa-caret-right icon"></i>What services do you offer?</p>
-              </div>
-              <div class="accordion_body">
-                <p>
-                  We offer debt advice tailored to your circumstances. We’ll find out more about your current financial
-                  situation and your lifestyle to advise on the best solution for you.
-
-                </p>
-              </div>
-            </div>
-            <div class="accordiondiv">
-              <div class="accordion_head">
-                <p><i class="fa-solid fa-caret-right icon"></i>What fees apply?</p>
-              </div>
-              <div class="accordion_body">
-                <p>All of our initial advice is <a href="https://ukdebtexpert.co.uk/fees">free</a> ; however, fees will
-                  apply should you decide to enter into an arrangement.</p>
-
-                <p class="feeaccp">We operate a transparent fixed fee model, which incorporates the Nominee Fee,
-                  Supervisory Fee and all costs and expenses associated with the arrangement.</p>
-
-                <p class="fep">Fees will be taken from your monthly payment or asset realisations paid into your
-                  arrangement.</p>
-
-
-                <p class="feelastp">These will be discussed by an expert advisor to make sure you are fully aware of the
-                  costs involved.</p>
-              </div>
-            </div>
-
-          </div>
+    <!-- accordion start -->
+    <section class="accordion">
+      <div class="container">
+        <div class="accor_sectitle">
+          <h3>Frequently Asked Questions</h3>
         </div>
+        <div class="row">
+  
+          <div class="col-xs-12">
+            <div class="accordionbox">
+              <div class="accordiondiv">
+                <div class="accordion_head">
+                  <p><i class="fa-solid fa-caret-right icon"></i>Is an debt solution suitable for me?</p>
+                </div>
+                <div class="accordion_body">
+                  <p>If you’re struggling with unsecured debt, such as credit cards, loans or utility bills, you may consider a debt solution to manage what you owe. It’s important to be aware that there are many solutions available, each with its own eligibility criteria.</p>
 
-      </div>
-    </div>
-  </section>
+                  <p>Before making a decision on entering any solution, it’s important to seek professional debt advice to find out more about each and ensure you choose the most suitable and sustainable solution for your situation.</p>
+                </div>
+              </div>
+              <div class="accordiondiv">
+                <div class="accordion_head">
+                  <p><i class="fa-solid fa-caret-right icon"></i>How does it work?</p>
+                </div>
+                <div class="accordion_body">
+                  <p>The initial fact-finding and advice call is free. That call will explore all possible debt solutions applicable to the customer, whether these can be provided by The UK Debt Expert Limited, Creditfix (which is part of the same group) or by a third party</p>
+                  <p>If you live in England, Wales or Northern Ireland, an IVA may be a suitable debt solution. An IVA will be provided by Creditfix and&nbsp;<a href="https://ukdebtexpert.co.uk/fees/">fees</a>&nbsp;will apply.</p>
+                  <p>If you live in Scotland, a Trust Deed or the Debt Arrangement Scheme may be a suitable debt solution. Trust Deeds and DAS will be provided by Carrington Dean Group Limited and&nbsp;<a href="https://ukdebtexpert.co.uk/fees/">fees</a>&nbsp;will apply.</p>
+                </div>
+              </div>
+              <div class="accordiondiv">
+                <div class="accordion_head">
+                  <p><i class="fa-solid fa-caret-right icon"></i>Can a debt solution affect my credit rating?</p>
+                </div>
+                <div class="accordion_body">
+                 
+                  <p>When considering a debt solution it’s important to be aware it will likely adversely affect your credit rating as it will show on your credit report for six years after it has been approved.</p><p>However, it’s important to note your credit score will likely already have been affected by being in debt in the first place.</p>
+  
+                </div>
+              </div>
+              <div class="accordiondiv">
+                <div class="accordion_head">
+                  <p><i class="fa-solid fa-caret-right icon"></i>Will entering a debt solution effect my job?</p>
+                </div>
+                <div class="accordion_body">
+                  <p>In most cases entering a debt solution won’t affect employment. However, in certain professions, such as accountants and solicitors, having a formal arrangement in place may mean that you can no longer practice or you may only be able to practice under certain conditions. An advisor will be able to discuss this in more detail.</p>
+  
+                </div>
+              </div>
+              <div class="accordiondiv">
+                <div class="accordion_head">
+                  <p><i class="fa-solid fa-caret-right icon"></i>How can a debt solution change my life?</p>
+                </div>
+                <div class="accordion_body">
+                  <p class="textlayer">Entering into a debt solution can be a positive way to manage your debt and finances.</p>
+                  <p>Many debt solutions offer the opportunity to combine several debt repayments into one monthly payment, based on your affordability.</p>
+                  <p>An advisor will discuss all considerations with you before you make the decision to enter a solution.</p>
+                </div>
+              </div>
+              <div class="accordiondiv">
+                <div class="accordion_head">
+                  <p><i class="fa-solid fa-caret-right icon"></i>What services do you offer?</p>
+                </div>
+                <div class="accordion_body">
+                  <p>We offer debt advice tailored to your circumstances. We’ll find out more about your current financial situation and your lifestyle to advise on the best solution for you.</p>
+                </div>
+              </div>
+              <div class="accordiondiv">
+                <div class="accordion_head">
+                  <p><i class="fa-solid fa-caret-right icon"></i>What fees apply?</p>
+                </div>
+                <div class="accordion_body">
+                  <p>All of our initial advice is free; however,&nbsp;<a href="https://ukdebtexpert.co.uk/fees" target="_blank" rel="noopener noreferrer">fees</a>&nbsp;will apply should you decide to enter into an arrangement.</p>
 
-
-  <!-- accordion end -->
-
-
-  <!-- straggluing notice  -->
-  <section class="straguling_notice">
-    <div class="container">
-      <div class="row strug_row">
-
-        <div class="col-xs-12 col-sm-8 strug_col">
-          <div class="noticetxtbox">
-            <p>Struggling with debt? We can help find a solution
-            </p>
+                  <p>These will be discussed by an expert advisor to make sure you are fully aware of the costs involved.</p>
+                </div>
+              </div>
+            
+             
+  
+            </div>
           </div>
+  
         </div>
+      </div>
+    </section>
+  
+  
+    <!-- accordion end -->
 
 
-        <div class="col-xs-12 col-sm-4 strug_col">
-          <div class="noticebtn">
-            <div class="cmnbtn examplecmn noticebtnst">
-              <div class="check_btn">
-                <a href="calculator.html">
-                  <button class="ckbtn" type="button">Get Debt Help</button>
-                </a>
+
+
+    <!-- straggluing notice  -->
+    <section class="straguling_notice">
+      <div class="container">
+        <div class="row strug_row">
+  
+          <div class="col-xs-12 col-sm-8 strug_col">
+            <div class="noticetxtbox">
+              <p>Struggling with debt? We can help find a solution
+              </p>
+            </div>
+          </div>
+  
+  
+          <div class="col-xs-12 col-sm-4 strug_col">
+            <div class="noticebtn">
+              <div class="cmnbtn examplecmn noticebtnst">
+                <div class="check_btn">
+                  <a href="calculator.html">
+                    <button class="ckbtn" type="button">Get Debt Help</button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+  
         </div>
-
       </div>
-    </div>
-  </section>
-  <!-- straggluing notice end  -->
+    </section>
+    <!-- straggluing notice end  -->
+
 
 
   <!-- footer start -->
@@ -1569,4 +1355,4 @@ https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.js
 
 </body>
 
-</html>
+</html>    

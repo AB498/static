@@ -53,7 +53,7 @@ li.nav-item:last-child {
     align-items: center;
 }
 section.navbar_section {
-    padding: 15px 0px;
+    padding: 20px 0px;
     box-shadow: 0 3px 6px 0 rgba(0,0,0,.1607843137254902);
     position: sticky;
     z-index: 2;
@@ -130,7 +130,7 @@ section.navbar_section {
 
 section.three_steps {
     background: #4A76D9;
-    padding: 20px;
+    padding: 10px;
     position: relative;
     z-index: 1;
 }
@@ -160,10 +160,10 @@ section.three_steps {
     text-align: center;
 }
 button.ckbtn {
-    border: 1px solid white;
+    border: 2px solid white;
     background: #64A70B;
     color: white;
-    padding: 20px 30px;
+    padding: 12px 102px;
     border-radius: 12px;
     font-weight: bold;
     transition: all 0.4s;
@@ -184,7 +184,7 @@ button.ckbtn:hover {
 
 .buttonandtag p {
     color: white;
-    font-size: 13px;
+    font-size: 14px;
     padding-top: 10px;
     text-align: center;
 }
@@ -218,7 +218,7 @@ button.ckbtn:hover {
 /* noticebar */
 section.noticebar {
     background: #4A76D9;
-    padding: 13px;
+    padding: 5px;
 }
 .noticecontent {
     align-items: center;
@@ -226,7 +226,7 @@ section.noticebar {
     margin: auto;
     justify-content: center;
     text-align: center; /* Add this line for horizontal centering */
-    max-width: 645px;
+    max-width: 100%;
     margin: auto;
 }
 
@@ -861,6 +861,9 @@ section.advisorSection {
     margin: 0;
     text-decoration: underline;
     cursor: pointer;
+    color: #162b5a;
+    padding: 10px 0px;
+    border-bottom: 1px solid #0000001a;
 }
 
 .accordion_head p i {
@@ -871,6 +874,7 @@ section.advisorSection {
     color: #333333;
     font-size: 15px;
     padding: 15px;
+    padding-bottom: 0;
 }
 
 
@@ -882,9 +886,8 @@ section.advisorSection {
 }
 
 .accordion_head {
-    background: #182B5A;
     color: white;
-    padding: 12px 10px;
+    padding: 0px 10px;
     position: relative;
     margin-bottom: 3px;
 }
