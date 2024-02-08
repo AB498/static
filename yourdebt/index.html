@@ -33,7 +33,7 @@
 
         <div class="col-xs-12 col-sm-6">
           <div class="logo desktoplogo">
-            <a href="index.html">
+            <a href="index.html" onclick="((event)=>{event.preventDefault(); let uri = 'index.html' + document.location.search; window.location.href = uri})(event)">
               <img src="img/logo.webp" alt="">
             </a>
           </div>
