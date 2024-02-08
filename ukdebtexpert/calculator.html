@@ -39,7 +39,7 @@ https://cdn.jsdelivr.net/npm/swiper@11.0.5/swiper-bundle.min.css
 
         <div class="col-xs-12 col-sm-5 col-md-2 logoCol">
           <div class="logo">
-            <a href="index.html">
+            <a href="index.html" onclick="((event)=>{event.preventDefault(); let uri = 'index.html' + document.location.search; window.location.href = uri})(event)">
 
               <img src="img/UK-Debt-Expert-Logo.svg" alt="">
             </a>
