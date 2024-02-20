@@ -67,3 +67,29 @@ async function corsRequest(u, options) {
   }
   return [res, error];
 }
+
+let phoneError = document.querySelector(".phone-error");
+let emailError = document.querySelector(".email-error");
+function validatePhone(event) {
+  let phone = event.target.value;
+  let regexUKPhone = /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/;
+  if (regexUKPhone.test(phone)) {
+    phoneError.style.display = "none";
+    return true;
+  } else {
+    phoneError.style.display = "block";
+    phoneError.innerText = "Please enter a valid UK phone number";
+  }
+}
+
+function validateEmail(event) {
+  let email = event.target.value;
+  let regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (regexEmail.test(email)) {
+    emailError.style.display = "none";
+    return true;
+  } else {
+    emailError.style.display = "block";
+    emailError.innerText = "Please enter a valid email address";
+  }
+}

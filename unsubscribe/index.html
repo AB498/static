@@ -24,7 +24,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tingle/0.8.4/tingle.css"
         integrity="sha512-ZKliQ0+hD8CfDJ2v8kzEzNxT5Y4EnmG5cFV6oFvswCDyckUCRG+1p6nyMMlLgi1vM5srVpX+6YkxiUoF2tOfRw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script src="https://cdn.tailwindcss.com/3.2.4"></script>
+    <script>
+        tailwind.config = {prefix: 'tw-'}
+    </script>
 
 </head>
 
@@ -47,12 +50,15 @@
                         <div class="form">
                             <form action="">
                                 <div class="number">
-                                    <input type="text" placeholder="Mobile Number" name="mobile_number">
-
+                                    <input type="text" placeholder="Mobile Number" name="mobile_number"
+                                        oninput="validatePhone(event)">
+                                    <div class="tw-bg-red-500 tw-rounded tw-bg-opacity-25 phone-error"
+                                        style="display: none;">Error</div>
                                 </div>
                                 <div class="emaildiv">
-                                    <input type="email" placeholder="Email" name="email">
-
+                                    <input type="email" placeholder="Email" name="email" oninput="validateEmail(event)">
+                                    <div class="tw-bg-red-500 tw-rounded tw-bg-opacity-25 email-error"
+                                        style="display: none;">Error</div>
                                 </div>
                                 <button class="submit_btn" type="submit"
                                     onclick="submitForm(event)">Unsubscribe</button>
