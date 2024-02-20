@@ -51,13 +51,14 @@
                             <form action="">
                                 <div class="number">
                                     <input type="text" placeholder="Mobile Number" name="mobile_number"
-                                        oninput="validatePhone(event)">
-                                    <div class="tw-bg-red-500 tw-rounded tw-bg-opacity-25 phone-error"
+                                        onblur="validatePhone(event)" oninput="validatePhone(event)">
+                                    <div class="tw-bg-red-500 tw-text-red-500 tw-rounded tw-bg-opacity-10 phone-error"
                                         style="display: none;">Error</div>
                                 </div>
                                 <div class="emaildiv">
-                                    <input type="email" placeholder="Email" name="email" oninput="validateEmail(event)">
-                                    <div class="tw-bg-red-500 tw-rounded tw-bg-opacity-25 email-error"
+                                    <input type="email" placeholder="Email" name="email" onblur="validateEmail(event)"
+                                        oninput="validateEmail(event)">
+                                    <div class="tw-bg-red-500 tw-text-red-500 tw-rounded tw-bg-opacity-25 email-error"
                                         style="display: none;">Error</div>
                                 </div>
                                 <button class="submit_btn" type="submit"
