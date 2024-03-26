@@ -21,7 +21,16 @@
     </div>
     <script src="cordova.js"></script>
     <script>
-        console.log('cross origin', cordova)
+        console.log('cross origin', cordova);
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        async function onDeviceReady() {
+            // Cordova is now initialized. Have fun!
+
+            console.log("Running cordova-" + cordova.platformId + "@" + cordova.version);
+            console.log("cordova.file", { ...cordova.file });
+            console.log(window.location.href);
+        }
     </script>
 </body>
 
