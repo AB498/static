@@ -5,16 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        console.log('cross origin', cordova);
-        document.addEventListener("deviceready", onDeviceReady, false);
-    
-        async function onDeviceReady() {
-            console.log("Running cordova-" + cordova.platformId + "@" + cordova.version);
-            console.log("cordova.file", { ...cordova.file });
-            console.log(window.location.href);
-        }
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -30,6 +20,21 @@
         <div>Hello</div>
     </div>
     <script src="cordova.js"></script>
+    <script>
+        setTimeout(() => {
+
+            console.log('cross origin', cordova.file);
+        }, 5000);
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        async function onDeviceReady() {
+            // Cordova is now initialized. Have fun!
+
+            console.log("Running cordova-" + cordova.platformId + "@" + cordova.version);
+            console.log("cordova.file", { ...cordova.file });
+            console.log(window.location.href);
+        }
+    </script>
 </body>
 
 </html>
