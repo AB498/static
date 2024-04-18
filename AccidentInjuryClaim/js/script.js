@@ -27,25 +27,25 @@ $(document).ready(function () {
     });
 });
 
+let nameEl = $('input[name="name"]');
+let email = $('input[name="email"]');
+let phone = $('input[name="phone"]');
 $('button[type="submit"]').click(async function (e) {
 
     e.preventDefault();
     let errors = 0;
 
-    let name = $('input[name="name"]');
-    let email = $('input[name="email"]');
-    let phone = $('input[name="phone"]');
 
     let injured = $('input[name="injured"]:checked');
     let fault = $('input[name="fault"]:checked');
     let secondInjured = $('input[name="secondInjured"]:checked');
 
-    if (!name.val()) {
-        name.parents('.name').find('.error-message')[0].style.display = 'block';
-        name.parents('.name').find('.error-message')[0].textContent = 'This field is required';
+    if (!nameEl.val()) {
+        nameEl.parents('.name').find('.error-message')[0].style.display = 'block';
+        nameEl.parents('.name').find('.error-message')[0].textContent = 'This field is required';
         errors = 1;
     } else {
-        name.parents('.name').find('.error-message')[0].style.display = 'none';
+        nameEl.parents('.name').find('.error-message')[0].style.display = 'none';
     }
     if (!email.val()) {
         email.parents('.email').find('.error-message')[0].style.display = 'block';
