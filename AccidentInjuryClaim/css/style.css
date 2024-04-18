@@ -1,0 +1,566 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Roboto", sans-serif;
+}
+/* topbar start */
+.logobox img {
+    width: 122px;
+}
+.p_number a {font-family: "Roboto Condensed", sans-serif;text-decoration: none;font-size: 36px;font-weight: bold;margin: 0;padding: 0;color: white;}
+
+.phonenumberbox {
+    float: right;
+}
+.row.topbar_row {
+    align-items: center;
+}
+section.topbar {
+    background: #1B75BB;
+    padding: 15px 0px;
+    box-shadow: 0 4px 16px -4px rgba(0,0,0,0.23);
+}
+.p_number a i {
+    color: #FDE794;
+}
+.Textbox ul {
+    list-style: none;
+    padding: 0;
+}
+/* topbar end */
+
+/* hero section start */
+section.hero_section {
+    position: relative; /* Ensure the pseudo-element is positioned relative to this element */
+    background-image: url('../image/lp-hero-copy.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px 0px;
+}
+
+.Textbox h1 {
+    font-size: 54px;
+    line-height: 76px;
+    font-weight: 700;
+    font-family: 'Roboto Condensed';
+    color: white;
+}
+span.pp-list-item-icon.far.fa-check-circle {
+    font-size: 30px;
+    font-weight: 400;
+    color: rgb(253, 231, 148);
+}
+
+span.pp-list-item-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    line-height: 36px !important;
+    font-family: 'Roboto Condensed';
+    padding-left: 10px;
+}
+
+
+ul.pp-icon-list-items.pp-list-type-icon li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.sponsorlogo img {
+    width: 360px;
+}
+.formContainer {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+}
+
+input[type="radio"] {
+    -webkit-appearance: none;
+    outline: none;
+    width: 18px;
+    height: 18px;
+    background: #efefef;
+    background-color: #efefef;
+    border: 1px solid #adadad;
+    padding: 2px;
+    border-radius: 50%; /* Make the radio button round */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+input[type=radio]:checked:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #1667a6;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+.firstoption {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.secondoption {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.options label {
+    padding-left: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    color: #312f33;
+    line-height: 21px;
+}
+.options {
+    display: flex;
+    margin-top: 16px;
+}
+form h2 {
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Roboto Condensed';
+    color: #312f33;
+}
+p.ans_p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #312f33;
+    text-align: center;
+}
+.email label {
+    font-size: 16px;
+    line-height: 24px;
+    color: #312f33;
+    font-weight: bold;
+}
+.phone label {
+    font-size: 16px;
+    line-height: 24px;
+    color: #312f33;
+    font-weight: bold;
+}
+.name label {
+    font-size: 16px;
+    line-height: 24px;
+    color: #312f33;
+    font-weight: bold;
+}
+form input[type='text'] {
+    color: #333333;
+    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    width: 100% !important;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+    outline: none;
+    border-color: #eeeeee;
+    background-color: #ffffff;
+}
+
+form input[type='text']:focus {
+    border-color: #719ece;
+}
+.question h5 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+    color: #312f33;
+}
+.submitbtn button {
+    width: 100%;
+    color: #ffffff;
+    background-color: #1b75bb;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    white-space: normal;
+    outline: none;
+    border: none;
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
+.submitbtn button:hover {
+    background: #1667a6;
+}
+.question {
+    margin-bottom: 15px;
+}
+
+.phone {
+    margin-bottom: 10px;
+}
+
+.email {
+    margin-bottom: 10px;
+}
+
+.name {
+    margin-bottom: 10px;
+}
+.submitbtn {
+    padding-top: 20px;
+}
+.row.hero_row {
+    align-items: center;
+}
+.mobileText{
+    display: none;
+}
+.moblieList{
+    display: none;
+}
+.mobileHeader {
+    display: none;
+}
+/* hero section end */
+
+/* google review and trasted section start */
+.google_review_box img {
+    width: 100px;
+}
+.boxicontext {
+    display: flex;
+    align-items: center;
+}
+
+.textdiv h4 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 400;
+    color: #312f33;
+    padding-left: 10px;
+}
+
+.icondiv span i {
+    font-size: 40px;
+    color: #428BCA;
+}
+.boxicontext.trustedbox {
+    float: right;
+}
+.row.trustSectionRow {
+    align-items: center;
+}
+section.trastedsection {
+    padding: 10px 0px;
+}
+
+/* google review and trasted section end */
+
+/* info section start */
+.subheading p {
+    font-size: 24px;
+    font-family: serif;
+    line-height: 36px;
+    font-weight: 400;
+    color: #312f33;
+}
+
+.subheading p span {
+    font-family: 'Roboto Condensed';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+}
+section.infosection {
+    background: #EFEFEF;
+    padding: 40px 0px;
+}
+.blue{
+    color: #4067A6;
+}
+span.logo-text {
+    color: #616265;
+}
+p.lastP {
+    margin: 0;
+    padding: 1px 28px;
+}
+section.committedsection {
+    background: #1667A6;
+    color: white;
+}
+
+.committedBox h1 span {
+    color: #FDE794;
+}
+
+.committedBox h1 {
+    font-family: 'Roboto Condensed';
+    text-transform: uppercase;
+    font-size: 54px;
+    line-height: 74px;
+    font-weight: 700;
+}
+
+.subheading {
+    font-size: 24px;
+    font-family: serif;
+}
+
+.committedBox h3 span {
+    color: #FDE794;
+}
+
+.committedBox h3 {
+    font-size: 24px;
+    line-height: 34px;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.committedBox {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+.revImg img {
+    width: 150px;
+}
+
+.Review_box {
+    text-align: center;
+}
+
+p.revP {
+    margin: 0;
+    font-size: 14px;
+    color: rgb(119, 119, 119);
+    line-height: 21px;
+    padding-top: 20px;
+}
+
+section.reviewSection {
+    background: #EFEFEF;
+    padding: 40px 0px;
+}
+
+h2.reviewheading {
+    font-size: 30px;
+    line-height: 42px;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    color: #3077AF;
+    padding-bottom: 30px;
+}
+
+h2.reviewheading span {
+    color: #312f33;
+}
+/* info section end */
+/* accordion section start */
+.accordion_head {
+    display: flex;
+    align-items: center;
+    background: #F6F6F6;
+    padding: 15px 20px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.accordion_head p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+    font-family: 'Roboto Condensed';
+    text-transform: uppercase;
+    color: #312f33;
+    padding-left: 20px;
+}
+
+.accordion_head span i {
+    font-weight: 900;
+    font-size: 16px;
+}
+.accordion_body {
+    padding: 20px;
+    background: white;
+}
+
+.accordion_body p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: #312f33;
+}
+.accordion_container {
+    margin-bottom: 10px;
+}
+.claimbtn button {
+    outline: none;
+    border: none;
+    background: none;
+}
+
+.claimbtn button a {
+    text-decoration: none;
+    padding: 15px 30px;
+    background: #2267a6;
+    color: white;
+    font-weight: 500;
+    font-family: 'Roboto Condensed';
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
+.claimbtn {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.claimHeading h2 {
+    text-align: center;
+    font-size: 30px;
+    line-height: 42px;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    color: rgb(22, 103, 166);
+    padding-bottom: 40px;
+}
+
+.claimHeading h2 span {
+    color: #312f33;
+}
+
+section.claim_section {
+    padding: 40px 0px;
+}
+/* accordion section end */
+
+/* faq section start */
+
+section.faqSection {
+    background: #1667A6;
+    padding: 50px 0px;
+}
+.faqtitle h2 {
+    color: #FDE794;
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Roboto Condensed';
+    padding-bottom: 45px;
+}
+
+.faqtitle h2 span {
+    color: white;
+}
+.claimbtn.secondClaim button a {
+    background: #FCE794;
+    color: #2267a6;
+}
+.injuryimagebox img {
+    width: 400px;
+    padding-bottom: 30px;
+}
+
+.injuryimagebox p {
+    font-size: 16px;
+    color: #312f33;
+}
+
+.injuryimagebox {
+    text-align: center;
+}
+
+section.injury {
+    padding: 40px 0px;
+    padding-top: 50px;
+}
+
+/* faq section end */
+/* footer start */
+footer.footer {
+    background: #1971B4;
+    color: white;
+    padding: 55px 0px;
+}
+.address {
+    display: flex;
+}
+.iconf {
+    padding-right: 10px;
+}
+
+.textaddress {
+    width: 181px;
+}
+.textaddress p a {
+    text-decoration: none;
+    color: white;
+}
+
+.textaddress p {
+    margin: 0;
+    padding-bottom: 3px;
+}
+.informationlist ul {
+    list-style: none;
+    padding: 0;
+}
+
+.informationlist ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.informationlist ul li {
+    padding-bottom: 10px;
+}
+.informationbox h4 {
+    font-size: 18px;
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+}
+
+.informationbox h4 span {
+    color: #FDE794;
+}
+
+.contactbox h2 {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Roboto Condensed';
+}
+
+.contactbox h2 span {
+    color: #FDE794;
+}
+section.copyRight {
+    background: #1971B4;
+    color: white;
+    padding-top: 10px;
+}
+.col-xs-12.col-sm-6.copyrightCol box p {
+    margin: 0;
+    padding: 0;
+}
+/* footer end */
