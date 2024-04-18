@@ -1,41 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: "Roboto", sans-serif;
 }
+
 /* topbar start */
 .logobox img {
     width: 122px;
 }
-.p_number a {font-family: "Roboto Condensed", sans-serif;text-decoration: none;font-size: 36px;font-weight: bold;margin: 0;padding: 0;color: white;}
+
+.p_number a {
+    font-family: "Roboto Condensed", sans-serif;
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
 
 .phonenumberbox {
     float: right;
 }
+
 .row.topbar_row {
     align-items: center;
 }
+
 section.topbar {
     background: #1B75BB;
     padding: 15px 0px;
-    box-shadow: 0 4px 16px -4px rgba(0,0,0,0.23);
+    box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.23);
 }
+
 .p_number a i {
     color: #FDE794;
 }
+
 .Textbox ul {
     list-style: none;
     padding: 0;
 }
+
 /* topbar end */
 
 /* hero section start */
 section.hero_section {
-    position: relative; /* Ensure the pseudo-element is positioned relative to this element */
+    position: relative;
+    /* Ensure the pseudo-element is positioned relative to this element */
     background-image: url('../image/lp-hero-copy.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -50,6 +68,7 @@ section.hero_section {
     font-family: 'Roboto Condensed';
     color: white;
 }
+
 span.pp-list-item-icon.far.fa-check-circle {
     font-size: 30px;
     font-weight: 400;
@@ -71,9 +90,11 @@ ul.pp-icon-list-items.pp-list-type-icon li {
     display: flex;
     align-items: center;
 }
+
 .sponsorlogo img {
     width: 360px;
 }
+
 .formContainer {
     background: white;
     padding: 30px 20px;
@@ -89,7 +110,8 @@ input[type="radio"] {
     background-color: #efefef;
     border: 1px solid #adadad;
     padding: 2px;
-    border-radius: 50%; /* Make the radio button round */
+    border-radius: 50%;
+    /* Make the radio button round */
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -106,6 +128,7 @@ input[type=radio]:checked:before {
     transform: translate(-50%, -50%);
     border-radius: 50%;
 }
+
 .firstoption {
     display: flex;
     align-items: center;
@@ -117,6 +140,7 @@ input[type=radio]:checked:before {
     align-items: center;
     width: 50%;
 }
+
 .options label {
     padding-left: 5px;
     cursor: pointer;
@@ -125,10 +149,12 @@ input[type=radio]:checked:before {
     color: #312f33;
     line-height: 21px;
 }
+
 .options {
     display: flex;
     margin-top: 16px;
 }
+
 form h2 {
     font-size: 24px;
     line-height: 34px;
@@ -137,6 +163,7 @@ form h2 {
     font-family: 'Roboto Condensed';
     color: #312f33;
 }
+
 p.ans_p {
     font-size: 16px;
     line-height: 24px;
@@ -144,24 +171,28 @@ p.ans_p {
     color: #312f33;
     text-align: center;
 }
+
 .email label {
     font-size: 16px;
     line-height: 24px;
     color: #312f33;
     font-weight: bold;
 }
+
 .phone label {
     font-size: 16px;
     line-height: 24px;
     color: #312f33;
     font-weight: bold;
 }
+
 .name label {
     font-size: 16px;
     line-height: 24px;
     color: #312f33;
     font-weight: bold;
 }
+
 form input[type='text'] {
     color: #333333;
     border-radius: 2px;
@@ -179,12 +210,14 @@ form input[type='text'] {
 form input[type='text']:focus {
     border-color: #719ece;
 }
+
 .question h5 {
     font-size: 16px;
     font-weight: 700;
     line-height: 21px;
     color: #312f33;
 }
+
 .submitbtn button {
     width: 100%;
     color: #ffffff;
@@ -205,6 +238,7 @@ form input[type='text']:focus {
 .submitbtn button:hover {
     background: #1667a6;
 }
+
 .question {
     margin-bottom: 15px;
 }
@@ -220,27 +254,34 @@ form input[type='text']:focus {
 .name {
     margin-bottom: 10px;
 }
+
 .submitbtn {
     padding-top: 20px;
 }
+
 .row.hero_row {
     align-items: center;
 }
-.mobileText{
+
+.mobileText {
     display: none;
 }
-.moblieList{
+
+.moblieList {
     display: none;
 }
+
 .mobileHeader {
     display: none;
 }
+
 /* hero section end */
 
 /* google review and trasted section start */
 .google_review_box img {
     width: 100px;
 }
+
 .boxicontext {
     display: flex;
     align-items: center;
@@ -259,12 +300,15 @@ form input[type='text']:focus {
     font-size: 40px;
     color: #428BCA;
 }
+
 .boxicontext.trustedbox {
     float: right;
 }
+
 .row.trustSectionRow {
     align-items: center;
 }
+
 section.trastedsection {
     padding: 10px 0px;
 }
@@ -286,20 +330,25 @@ section.trastedsection {
     font-weight: bold;
     font-size: 24px;
 }
+
 section.infosection {
     background: #EFEFEF;
     padding: 40px 0px;
 }
-.blue{
+
+.blue {
     color: #4067A6;
 }
+
 span.logo-text {
     color: #616265;
 }
+
 p.lastP {
     margin: 0;
     padding: 1px 28px;
 }
+
 section.committedsection {
     background: #1667A6;
     color: white;
@@ -340,6 +389,7 @@ section.committedsection {
     padding-top: 40px;
     padding-bottom: 10px;
 }
+
 .revImg img {
     width: 150px;
 }
@@ -373,6 +423,7 @@ h2.reviewheading {
 h2.reviewheading span {
     color: #312f33;
 }
+
 /* info section end */
 /* accordion section start */
 .accordion_head {
@@ -399,6 +450,7 @@ h2.reviewheading span {
     font-weight: 900;
     font-size: 16px;
 }
+
 .accordion_body {
     padding: 20px;
     background: white;
@@ -410,9 +462,11 @@ h2.reviewheading span {
     line-height: 24px;
     color: #312f33;
 }
+
 .accordion_container {
     margin-bottom: 10px;
 }
+
 .claimbtn button {
     outline: none;
     border: none;
@@ -435,6 +489,7 @@ h2.reviewheading span {
     margin-top: 50px;
     margin-bottom: 20px;
 }
+
 .claimHeading h2 {
     text-align: center;
     font-size: 30px;
@@ -452,6 +507,7 @@ h2.reviewheading span {
 section.claim_section {
     padding: 40px 0px;
 }
+
 /* accordion section end */
 
 /* faq section start */
@@ -460,6 +516,7 @@ section.faqSection {
     background: #1667A6;
     padding: 50px 0px;
 }
+
 .faqtitle h2 {
     color: #FDE794;
     font-size: 30px;
@@ -473,10 +530,12 @@ section.faqSection {
 .faqtitle h2 span {
     color: white;
 }
+
 .claimbtn.secondClaim button a {
     background: #FCE794;
     color: #2267a6;
 }
+
 .injuryimagebox img {
     width: 400px;
     padding-bottom: 30px;
@@ -503,9 +562,11 @@ footer.footer {
     color: white;
     padding: 55px 0px;
 }
+
 .address {
     display: flex;
 }
+
 .iconf {
     padding-right: 10px;
 }
@@ -513,6 +574,7 @@ footer.footer {
 .textaddress {
     width: 181px;
 }
+
 .textaddress p a {
     text-decoration: none;
     color: white;
@@ -522,6 +584,7 @@ footer.footer {
     margin: 0;
     padding-bottom: 3px;
 }
+
 .informationlist ul {
     list-style: none;
     padding: 0;
@@ -535,6 +598,7 @@ footer.footer {
 .informationlist ul li {
     padding-bottom: 10px;
 }
+
 .informationbox h4 {
     font-size: 18px;
     font-family: 'Roboto Condensed';
@@ -554,13 +618,278 @@ footer.footer {
 .contactbox h2 span {
     color: #FDE794;
 }
+
 section.copyRight {
     background: #1971B4;
     color: white;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
-.col-xs-12.col-sm-6.copyrightCol box p {
+
+.col-xs-12.col-sm-6.copyrightCol .box p {
     margin: 0;
     padding: 0;
 }
+
 /* footer end */
+
+/*privacy policy , cookie, COMPLAINTS page start */
+
+header.header {
+    background-image: url('../image/privacy.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.headerbox h1 {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+.headerbox p {
+    color: white;
+    text-align: center;
+    width: 72%;
+    margin: auto;
+}
+
+.headerbox h1 span {
+    color: #FDE794;
+}
+
+header.header {
+    padding: 50px 0px;
+}
+
+div#introduction h2 {
+    font-size: 22px;
+    color: #1B75BB;
+}
+
+div#introduction p {
+    font-size: 14px;
+    color: #312f33;
+}
+
+section.intorSection {
+    padding: 50px 0px;
+}
+
+div#introduction ol li {
+    font-size: 14px;
+    color: #312f33;
+}
+
+.helptextbox h1 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #1B75BB;
+    font-family: 'Roboto Condensed';
+}
+
+.helptextbox p {
+    font-size: 14px;
+    color: #312f33;
+}
+
+.helptextbox button {
+    border: none;
+    outline: none;
+    background: #1B75BB;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 27px;
+    font-size: 13px;
+}
+
+section.helpsection {
+    background: #F6F6F6;
+}
+
+.helptextbox {
+    padding-top: 67px;
+}
+
+.war_image img {
+    width: 158px;
+    padding-top: 37px;
+}
+
+section.warning {
+    background: #FCFCFC;
+    padding: 50px 0px;
+}
+
+.wor-text h2 {
+    font-size: 24px;
+    color: #1B75BB;
+}
+
+.wor-text p {
+    font-size: 14px;
+    color: #312f33;
+}
+
+.war_image {
+    text-align: center;
+}
+
+.helpimage img {
+    width: 100%;
+}
+
+.helpimage img {
+    width: 100%;
+}
+
+.fl-rich-text H2 {
+    FONT-SIZE: 22PX;
+    color: #1B75BB;
+}
+
+.fl-rich-text p {
+    font-size: 14px;
+    color: #312f33;
+}
+
+.fl-rich-text ol li {
+    font-size: 14px;
+    color: #312f33;
+}
+
+table {
+    font-size: 14px;
+}
+
+.committedBox p {
+    font-size: 16px;
+    color: white;
+}
+
+.Textbox.THANKYOU {
+
+    margin: auto;
+    padding-top: 30px;
+}
+
+/* info section start */
+.subheading p {
+    font-size: 24px;
+    font-family: serif;
+    line-height: 36px;
+    font-weight: 400;
+    color: #312f33;
+}
+
+.subheading p span {
+    font-family: 'Roboto Condensed';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+section.infosection {
+    background: #EFEFEF;
+    padding: 40px 0px;
+}
+
+.blue {
+    color: #4067A6;
+}
+
+span.logo-text {
+    color: #616265;
+}
+
+p.lastP {
+    margin: 0;
+    padding: 1px 28px;
+    font-size: 16px;
+}
+
+section.committedsection {
+    background: #1667A6;
+    color: white;
+    padding-bottom: 30px;
+}
+
+.committedBox h1 span {
+    color: #FDE794;
+}
+
+.committedBox h1 {
+    font-family: 'Roboto Condensed';
+    text-transform: uppercase;
+    font-size: 54px;
+    line-height: 74px;
+    font-weight: 700;
+}
+
+.subheading {
+    font-size: 24px;
+    font-family: serif;
+}
+
+.committedBox h3 span {
+    color: #FDE794;
+}
+
+.committedBox h3 {
+    font-size: 24px;
+    line-height: 34px;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.committedBox {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.revImg img {
+    width: 150px;
+}
+
+.Review_box {
+    text-align: center;
+}
+
+p.revP {
+    margin: 0;
+    font-size: 14px;
+    color: rgb(119, 119, 119);
+    line-height: 21px;
+    padding-top: 20px;
+}
+
+section.reviewSection {
+    background: #EFEFEF;
+    padding: 40px 0px;
+}
+
+h2.reviewheading {
+    font-size: 30px;
+    line-height: 42px;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    color: #3077AF;
+    padding-bottom: 30px;
+}
+
+h2.reviewheading span {
+    color: #312f33;
+}
+
+.thankyouinfo {
+    background-color: white !important;
+}
+
+/* info section end */
+/* privacy policy , cookie, COMPLAINTS page  end*/
