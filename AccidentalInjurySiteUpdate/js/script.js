@@ -3,7 +3,7 @@ var currentURL = window.location.href;
 var urlParams = new URLSearchParams(window.location.search);
 
 var sourceParam = urlParams.get("source");
-var clickIdParam = urlParams.get("clickid");
+var clickIdParam = urlParams.get("c1");
 var ipaddressParam = urlParams.get("ipaddress");
 
 $(document).ready(function () {
