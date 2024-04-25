@@ -28,7 +28,8 @@ $(document).ready(function () {
   });
 });
 
-let nameEl = $('input[name="name"]');
+let firstNameEl = $('input[name="firstname"]');
+let lastNameEl = $('input[name="lastname"]');
 let email = $('input[name="email"]');
 let phone = $('input[name="phone"]');
 $('button[type="submit"]').click(async function (e) {
@@ -39,13 +40,25 @@ $('button[type="submit"]').click(async function (e) {
   let fault = $('input[name="fault"]:checked');
   let secondInjured = $('input[name="secondInjured"]:checked');
 
-  if (!nameEl.val()) {
-    nameEl.parents(".name").find(".error-message")[0].style.display = "block";
-    nameEl.parents(".name").find(".error-message")[0].textContent =
+  if (!firstNameEl.val()) {
+    firstNameEl.parents(".firstname").find(".error-message")[0].style.display =
+      "block";
+    firstNameEl.parents(".firstname").find(".error-message")[0].textContent =
       "This field is required";
     errors = 1;
   } else {
-    nameEl.parents(".name").find(".error-message")[0].style.display = "none";
+    firstNameEl.parents(".firstname").find(".error-message")[0].style.display =
+      "none";
+  }
+  if (!lastNameEl.val()) {
+    lastNameEl.parents(".lastname").find(".error-message")[0].style.display =
+      "block";
+    lastNameEl.parents(".lastname").find(".error-message")[0].textContent =
+      "This field is required";
+    errors = 1;
+  } else {
+    lastNameEl.parents(".lastname").find(".error-message")[0].style.display =
+      "none";
   }
   if (!email.val()) {
     email.parents(".email").find(".error-message")[0].style.display = "block";
@@ -141,7 +154,9 @@ $('button[type="submit"]').click(async function (e) {
 });
 
 async function postData() {
-  let name = $('input[name="name"]');
+  let firstNameEl = $('input[name="firstname"]');
+  let lastNameEl = $('input[name="lastname"]');
+
   let email = $('input[name="email"]');
   let phone = $('input[name="phone"]');
 
@@ -155,7 +170,8 @@ async function postData() {
       campid: "PERSONAL-INJURY",
       sid: sourceParam,
       email: email.val(),
-      fullname: name.val(),
+      firstname: firstNameEl.val(),
+      lastname: lastNameEl.val(),
       phone1: phone.val(),
       // "source": "https://cordellcopersonalinjury.co.uk",
       ipaddress: ipaddressParam || (await getIPAddress()) || "",

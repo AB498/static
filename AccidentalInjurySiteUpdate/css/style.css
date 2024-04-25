@@ -186,7 +186,13 @@ p.ans_p {
     font-weight: bold;
 }
 
-.name label {
+.firstname label {
+    font-size: 16px;
+    line-height: 24px;
+    color: #312f33;
+    font-weight: bold;
+}
+.lastname label {
     font-size: 16px;
     line-height: 24px;
     color: #312f33;
@@ -251,7 +257,10 @@ form input[type='text']:focus {
     margin-bottom: 10px;
 }
 
-.name {
+.firstname {
+    margin-bottom: 10px;
+}
+.lastname {
     margin-bottom: 10px;
 }
 
