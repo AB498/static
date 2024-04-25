@@ -103,6 +103,8 @@ ul.pp-icon-list-items.pp-list-type-icon li {
 
 input[type="radio"] {
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     outline: none;
     width: 18px;
     height: 18px;
