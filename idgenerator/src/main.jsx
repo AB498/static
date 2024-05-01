@@ -115,7 +115,7 @@ let GeneratorItem = ({ data }) => {
   return (
     <div class={"my-1 p-2 border rounded hover:bg-gray-200 full flex gap-2 px-2 items-center" + (open.current ? " bg-yellow-500" : "")} onClick={() => (state.current.currentId = data.id)}>
       <div className="w-8 h-8">
-        <img src={"/images/" + data.icon.slice(data.icon.lastIndexOf("/") + 1)} alt="" className="w-full h-full rounded " />
+        <img src={"images/" + data.icon.slice(data.icon.lastIndexOf("/") + 1)} alt="" className="w-full h-full rounded " />
       </div>
       <div className="text-lg">
         {data.id} {data.name}
@@ -135,7 +135,7 @@ let CustomNestedOptions = ({ data }) => {
       title={
         <div class={"my-1 p-2 border rounded hover:bg-gray-200 full flex gap-2 px-2 items-center" + (open.current ? " bg-yellow-500" : "")}>
           <div className="w-8 h-8">
-            <img src={"/images/" + data.icon.slice(data.icon.lastIndexOf("/") + 1)} alt="" className="w-full h-full rounded " />
+            <img src={"images/" + data.icon.slice(data.icon.lastIndexOf("/") + 1)} alt="" className="w-full h-full rounded " />
           </div>
           <div className="text-lg">{data.title}</div>
         </div>
