@@ -175,7 +175,7 @@ let StepsForm = ({ data }) => {
           <div className="flex flex-col grow">
             {data.steps?.map((step, index) => {
               return (
-                <div className={"full flex flex-col p-6 bg-white shadow rounded-b-xl " + (currentStep.current == index ? " " : "hidden")}>
+                <div className={"full flex flex-col  gap-2 p-6 bg-white shadow rounded-b-xl " + (currentStep.current == index ? " " : "hidden")}>
                   <div className="flex flex-col">
                     {step.fields.map((field) => (
                       <div className="flex flex-col">
@@ -310,7 +310,7 @@ let GeneratorPage = () => {
           )}
           {detailedIdentity?.current ? (
             <div className="sm:basis-1/3">
-              <div className="full bg-white min-h-[100px] shadow rounded-xl border-2 result flex flex-col p-6">
+              <div className="full  gap-2 bg-white min-h-[100px] shadow rounded-xl border-2 result flex flex-col p-6">
                 <div className="text-lg font-bold center">Result</div>
                 <div className="grow"></div>
                 <div class="w-full">
