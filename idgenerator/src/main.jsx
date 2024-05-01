@@ -352,7 +352,7 @@ let GeneratorPage = () => {
               </div>
 
               <div className="basis-full sm:basis-1/2 p-6">
-                <video src="videos/features.mp4" autoPlay loop muted className="w-full"></video>
+                <video controls src="videos/features.mp4" autoPlay loop muted className="w-full"></video>
               </div>
             </div>
           </div>
