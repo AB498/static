@@ -1,0 +1,207 @@
+{
+  "id": 213,
+  "jsx": 243,
+  "template_name": "Photo|template_203",
+  "preview": "generators/previews/netherlands_passport_preview.jpg",
+  "description": "",
+  "image1_default": "generators/Netherlands Passport/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Netherlands Passport/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "netherlands_passport",
+  "name": "Netherlands Passport",
+  "icon": "generators/Netherlands Passport/icon/netherlands.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "netherlands_passport",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 855,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 3047,
+          "input_label": "Surname",
+          "input_placeholder": "Doe",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "^[^\\s].*[^\\s]|[a-zA-Z]$"
+        },
+        {
+          "id": 3048,
+          "input_label": "Given names",
+          "input_placeholder": "John",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "^[^\\s].*[^\\s]|[a-zA-Z]$"
+        },
+        {
+          "id": 3049,
+          "input_label": "Document Number (2 letters + 7 characters)",
+          "input_placeholder": "AB1234567",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z]{2}[0-9a-zA-Z]{7}"
+        },
+        {
+          "id": 3050,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[mMfF]"
+        }
+      ]
+    },
+    {
+      "id": 856,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 3051,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 3052,
+          "input_label": "Date of issue (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2015",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 3053,
+          "input_label": "Date of expiration (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2025",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 857,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 3054,
+          "input_label": "Place of Birth",
+          "input_placeholder": "Amstelveen",
+          "input_name": "POB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "^[^\\s].*[^\\s]|[a-zA-Z]$"
+        },
+        {
+          "id": 3055,
+          "input_label": "Authority",
+          "input_placeholder": "Burg. van Berkelland",
+          "input_name": "AUTHORITY",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "^[^\\s].*[^\\s]|[a-zA-Z]$"
+        },
+        {
+          "id": 3056,
+          "input_label": "Height",
+          "input_placeholder": "1,82 m",
+          "input_name": "HGT",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "^[^\\s].*[^\\s]|[a-zA-Z]$"
+        },
+        {
+          "id": 3057,
+          "input_label": "Personal number (1 + 8 digits)",
+          "input_placeholder": "184538563",
+          "input_name": "PERSONALNUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[0-9]{9}$"
+        },
+        {
+          "id": 3058,
+          "input_label": "CAN (6 digits)",
+          "input_placeholder": "286130",
+          "input_name": "CAN_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "[0-9]{6}"
+        }
+      ]
+    },
+    {
+      "id": 859,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 3043,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "PHOTO|SCAN|PRINT|Photo|Scan|Print|photo|scan|print"
+        },
+        {
+          "id": 3044,
+          "input_label": "Background number 1 - 16 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "([1][0-6]|[1-9])"
+        },
+        {
+          "id": 3045,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 3046,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Netherlands Passport"
+}

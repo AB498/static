@@ -1,0 +1,227 @@
+{
+  "id": 23,
+  "jsx": 47,
+  "template_name": "Photo|template_22",
+  "preview": "generators/previews/Brazil_DL_427.jpg",
+  "description": "",
+  "image1_default": "generators/Brazil ID/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Brazil ID/image2/signature.jpg",
+  "image3_default": "generators/Brazil ID/image3/SignatureWork.jpg",
+  "image4_default": null,
+  "slug": "brazil_dl",
+  "name": "Brazil DL",
+  "icon": "generators/Brazil DL/icon/brazil_opnBD1T.svg",
+  "price": "0.99",
+  "image5_default": null,
+  "identifier": "brazil_dl",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 85,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 264,
+          "input_label": "Name",
+          "input_placeholder": "JOHN DOE DE CAMPOS",
+          "input_name": "NAME",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 265,
+          "input_label": "Document Number",
+          "input_placeholder": "58419471",
+          "input_name": "IDNUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 266,
+          "input_label": "Father and mother name",
+          "input_placeholder": "JUVENAL INACIO DA SILVA  MARIA SOCORRO SILVA",
+          "input_name": "FATHERMOTHER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 267,
+          "input_label": "Category",
+          "input_placeholder": "B",
+          "input_name": "CAT",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 86,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 258,
+          "input_label": "Date of birth (DD/MM/YYYY)",
+          "input_placeholder": "27/03/1983",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])/((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)/(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])/(02))/([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29/02/(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 259,
+          "input_label": "Date of issue (DD/MM/YYYY)",
+          "input_placeholder": "09/07/2018",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])/((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)/(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])/(02))/([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29/02/(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 260,
+          "input_label": "Date of expiration (DD/MM/YYYY)",
+          "input_placeholder": "09/07/2023",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])/((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)/(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])/(02))/([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29/02/(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 270,
+          "input_label": "Date of first issue",
+          "input_placeholder": "05/08/2005",
+          "input_name": "HZ",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3938,
+          "input_label": "Registration number (11 digits)",
+          "input_placeholder": "24980547901",
+          "input_name": "REGISTRORANDOM11",
+          "type": "text",
+          "value": "24980547901",
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 87,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 268,
+          "input_label": "Comment",
+          "input_placeholder": "(optional field)",
+          "input_name": "COMMENT",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 269,
+          "input_label": "Place of birth",
+          "input_placeholder": "SUMARE, SP",
+          "input_name": "LOCAL",
+          "type": "text",
+          "value": "SUMARE, SP",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1994,
+          "input_label": "Document Number (10 digits)",
+          "input_placeholder": "4440190135",
+          "input_name": "NUMBER0",
+          "type": "text",
+          "value": "4440190135",
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1995,
+          "input_label": "Additional data",
+          "input_placeholder": "33860253247",
+          "input_name": "SP_RANDOM9",
+          "type": "text",
+          "value": "33860253247",
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1996,
+          "input_label": "Additional data 2",
+          "input_placeholder": "SP_962989277",
+          "input_name": "RANDOM11",
+          "type": "text",
+          "value": "SP_962989277",
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 3503,
+          "input_label": "SPF Number",
+          "input_placeholder": "714.166.164-62",
+          "input_name": "SPFNUMBER",
+          "type": "text",
+          "value": "714.166.164-62",
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 88,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 261,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 262,
+          "input_label": "Signature 1",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 263,
+          "input_label": "Signature 2",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image3",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Brazil DL"
+}

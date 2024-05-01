@@ -1,0 +1,227 @@
+{
+  "id": 279,
+  "jsx": 304,
+  "template_name": "Photo|template_260",
+  "preview": "generators/previews/Serbia_id.jpg",
+  "description": "<h2>Serbia ID Card online generator</h2>",
+  "image1_default": "generators/Serbia ID/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Serbia ID/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "serbia_id",
+  "name": "Serbia ID",
+  "icon": "generators/Serbia ID/icon/serbia.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "serbia_id",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 1105,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 4028,
+          "input_label": "Surname",
+          "input_placeholder": "МУСЛИН",
+          "input_name": "LN_SERB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 4029,
+          "input_label": "Surname (latin)",
+          "input_placeholder": "MUSLIN",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(^[^\\s].*[^\\s]$)|(^[a-zA-Z]$)"
+        },
+        {
+          "id": 4030,
+          "input_label": "Given names",
+          "input_placeholder": "АВРАМ",
+          "input_name": "FN_SERB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 4031,
+          "input_label": "Given names (latin)",
+          "input_placeholder": "ABRAHAM",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(^[^\\s].*[^\\s]$)|(^[a-zA-Z]$)"
+        },
+        {
+          "id": 4032,
+          "input_label": "Number (9 digits)",
+          "input_placeholder": "123456789",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[0-9]{9}"
+        },
+        {
+          "id": 4033,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[mMfF]"
+        }
+      ]
+    },
+    {
+      "id": 1106,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 4034,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 4035,
+          "input_label": "Date of issue (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2018",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 4036,
+          "input_label": "Date of expiration (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2028",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 1107,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 4037,
+          "input_label": "Personal number (13 digtis) - optional",
+          "input_placeholder": "1234567890123",
+          "input_name": "PERSONAL_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "[0-9]{13}"
+        },
+        {
+          "id": 4038,
+          "input_label": "Additional number (12 characters) - optional",
+          "input_placeholder": "123A12345678B1",
+          "input_name": "NUMBER_BACK",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z0-9]{14}"
+        },
+        {
+          "id": 4039,
+          "input_label": "State of birth",
+          "input_placeholder": "РЕПУБЛИКА СЕРБJИЯ",
+          "input_name": "POB",
+          "type": "text",
+          "value": "РЕПУБЛИКА СЕРБJИЯ",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 4040,
+          "input_label": "Place of Birth",
+          "input_placeholder": "БЕОГРАД,САВСКИ ВЕНАЦ",
+          "input_name": "POB2",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 4041,
+          "input_label": "Authority",
+          "input_placeholder": "ПУ ЗА ГРАД БЕОГРАД",
+          "input_name": "AUTHORITY",
+          "type": "text",
+          "value": "ПУ ЗА ГРАД БЕОГРАД",
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 1108,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 4016,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "PHOTO|SCAN|PRINT|Photo|Scan|Print|photo|scan|print"
+        },
+        {
+          "id": 4017,
+          "input_label": "Background number 1 - 30 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "(30|[12][0-9]|[1-9])"
+        },
+        {
+          "id": 4018,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG file)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 4019,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG file)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Serbia ID"
+}

@@ -1,0 +1,131 @@
+{
+  "id": 218,
+  "jsx": 248,
+  "template_name": "Photo|template_209",
+  "preview": "generators/previews/China_Bill_Power.jpg",
+  "description": "",
+  "image1_default": null,
+  "image2_default": null,
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "china_power_bill",
+  "name": "China Bill Power",
+  "icon": "generators/China Bill Power/icon/china.svg",
+  "price": "4.99",
+  "image5_default": null,
+  "identifier": "china_power_bill",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 876,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 3119,
+          "input_label": "Name",
+          "input_placeholder": "约翰多伊",
+          "input_name": "NAME",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3120,
+          "input_label": "Address",
+          "input_placeholder": "山西省介休市西关5卷50号",
+          "input_name": "ADD",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3121,
+          "input_label": "Account number (not necessary)",
+          "input_placeholder": "1234567890",
+          "input_name": "ACCNUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 3122,
+          "input_label": "Bill Date (DD.MM.YYYY)",
+          "input_placeholder": "09.02.2023",
+          "input_name": "BILL_DATE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 881,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 3132,
+          "input_label": "Name company",
+          "input_placeholder": "国网江西省电力公司南昌市供电公司",
+          "input_name": "NAME_COMPANY",
+          "type": "text",
+          "value": "国网江西省电力公司南昌市供电公司",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3133,
+          "input_label": "Data item name company",
+          "input_placeholder": "国网山西省电力公司",
+          "input_name": "ITEM_NAME_COMPANY",
+          "type": "text",
+          "value": "国网山西省电力公司",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3134,
+          "input_label": "Code city",
+          "input_placeholder": "00391-725",
+          "input_name": "CODE_CITY",
+          "type": "text",
+          "value": "00391-725",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3135,
+          "input_label": "Meter reader",
+          "input_placeholder": "刘晓宇",
+          "input_name": "METER_READER",
+          "type": "text",
+          "value": "刘晓宇",
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 882,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 3136,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "PRINT",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": "PRINT",
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "China Bill Power"
+}

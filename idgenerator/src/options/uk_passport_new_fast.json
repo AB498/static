@@ -1,0 +1,79 @@
+{
+  "id": 264,
+  "jsx": 289,
+  "template_name": "Photo|template_247",
+  "preview": "generators/previews/UK_Passport_fast.jpg",
+  "description": "<p>UK Passport 2020 for AliPay online generator</p>",
+  "image1_default": "generators/UK Passport 2020 for Facebook/image1/PHOTODROP.jpg",
+  "image2_default": null,
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "uk_passport_new_fast",
+  "name": "UK Passport 2020 for AliPay",
+  "icon": "generators/UK Passport 2020 for Facebook/icon/united-kingdom.svg",
+  "price": "0.99",
+  "image5_default": null,
+  "identifier": "uk_passport_new_fast",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 1048,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 3790,
+          "input_label": "Surname",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "^[^\\s].*[^\\s]|[a-zA-Z]$"
+        },
+        {
+          "id": 3791,
+          "input_label": "Given names",
+          "input_placeholder": "JOHN LEE",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "^[^\\s].*[^\\s]|[a-zA-Z]$"
+        },
+        {
+          "id": 3792,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 3793,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": "M",
+          "required": true,
+          "regular_expression": "[mMfF]"
+        },
+        {
+          "id": 3794,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG file)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "UK Passport 2020 for AliPay"
+}

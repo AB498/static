@@ -1,0 +1,79 @@
+{
+  "id": 268,
+  "jsx": 293,
+  "template_name": "Photo|template_253",
+  "preview": "indonesia_passport_preview.jpg",
+  "description": "<p>Indonesia Passport Fast</p>",
+  "image1_default": "generators/Indonesia Passport Fast/image1/PHOTODROP.jpg",
+  "image2_default": null,
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "indonesia_passport_fast",
+  "name": "Indonesia Passport Fast",
+  "icon": "generators/Indonesia Passport Fast/icon/indonesia.svg",
+  "price": "0.99",
+  "image5_default": null,
+  "identifier": "indonesia_passport_fast",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 1064,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 3857,
+          "input_label": "Surname",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "^[^\\s].*[^\\s]|[a-zA-Z]$"
+        },
+        {
+          "id": 3858,
+          "input_label": "Given names",
+          "input_placeholder": "JOHN LEE",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "^[^\\s].*[^\\s]|[a-zA-Z]$"
+        },
+        {
+          "id": 3859,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 3860,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "[mMfF]"
+        },
+        {
+          "id": 3861,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG file)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Indonesia Passport Fast"
+}

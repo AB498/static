@@ -1,0 +1,141 @@
+{
+  "id": 120,
+  "jsx": 148,
+  "template_name": "Photo|template_113",
+  "preview": "generators/previews/Barclays_Statement.jpg",
+  "description": "",
+  "image1_default": null,
+  "image2_default": null,
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "barclays_statement",
+  "name": "Barclays Statement",
+  "icon": "generators/Barclays Statement/icon/united-kingdom.svg",
+  "price": "1.99",
+  "image5_default": null,
+  "identifier": "barclays_statement",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 454,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 1592,
+          "input_label": "Names",
+          "input_placeholder": "John Doe Lee",
+          "input_name": "NAME",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1593,
+          "input_label": "Address (line 1)",
+          "input_placeholder": "10 HUTON GARDENS",
+          "input_name": "ADD1",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1594,
+          "input_label": "Address (line 2)",
+          "input_placeholder": "HARROW",
+          "input_name": "ADD2",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1595,
+          "input_label": "Address (line 3)",
+          "input_placeholder": "HA3 6RA",
+          "input_name": "ADD3",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 455,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 1596,
+          "input_label": "Date 1",
+          "input_placeholder": "09 Jan 2022",
+          "input_name": "DATE1",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1598,
+          "input_label": "Date 2",
+          "input_placeholder": "07 Feb 2022",
+          "input_name": "DATE2",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1599,
+          "input_label": "Account no. (8 digits)",
+          "input_placeholder": "12345678",
+          "input_name": "ACCNUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3002,
+          "input_label": "SWIFTBIC",
+          "input_placeholder": "BUKBGB23",
+          "input_name": "SWIFTBIC",
+          "type": "text",
+          "value": "BUKBGB23",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3003,
+          "input_label": "IBAN",
+          "input_placeholder": "GB23 BUKB 5108 0190 6559 57",
+          "input_name": "XZNUMBER",
+          "type": "text",
+          "value": "GB23 BUKB 5108 0190 6559 57",
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 461,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 1615,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Barclays Statement"
+}

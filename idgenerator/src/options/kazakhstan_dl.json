@@ -1,0 +1,233 @@
+{
+  "id": 118,
+  "jsx": 146,
+  "template_name": "Photo|template_111",
+  "preview": "generators/previews/Kazakhstan_DL_0.jpg",
+  "description": "",
+  "image1_default": "generators/Kazakhstan Driving License/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Kazakhstan Driving License/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "kazakhstan_dl",
+  "name": "Kazakhstan Driving License",
+  "icon": "generators/Kazakhstan Driving License/icon/kazakhstan.svg",
+  "price": "3.99",
+  "image5_default": null,
+  "identifier": "kazakhstan_dl",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 445,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 1566,
+          "input_label": "Surname",
+          "input_placeholder": "Доу",
+          "input_name": "KLN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1567,
+          "input_label": "Given names",
+          "input_placeholder": "Джон Иванович",
+          "input_name": "KFN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1568,
+          "input_label": "Surname (latin)",
+          "input_placeholder": "Doe",
+          "input_name": "LLN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1569,
+          "input_label": "Given names (latin)",
+          "input_placeholder": "John",
+          "input_name": "LFN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 446,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 1571,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 1572,
+          "input_label": "Date of issue (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2015",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 1573,
+          "input_label": "Date of expiry (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2025",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 447,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 1574,
+          "input_label": "Place of Birth",
+          "input_placeholder": "Павлодар.обл",
+          "input_name": "KPOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1575,
+          "input_label": "Place of Birth (latin)",
+          "input_placeholder": "Pavlodar.obl",
+          "input_name": "LPOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1576,
+          "input_label": "Place of issue",
+          "input_placeholder": "ДВД г. Алматы",
+          "input_name": "KPOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1577,
+          "input_label": "Place of issue (latin)",
+          "input_placeholder": "DIA of Almaty",
+          "input_name": "LPOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 448,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 1570,
+          "input_label": "Number (AA № XXXXXX)",
+          "input_placeholder": "ZQ № 123456",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1578,
+          "input_label": "ЖСН/IIN (12 digits)",
+          "input_placeholder": "861016345746",
+          "input_name": "IIN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1579,
+          "input_label": "Optional Data (10 digits) — not necessary",
+          "input_placeholder": "1234567890",
+          "input_name": "HZNUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 449,
+      "name": "Step 5",
+      "fields": [
+        {
+          "id": 1562,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1563,
+          "input_label": "Background number (1 - 30)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1564,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1565,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Kazakhstan Driving License"
+}

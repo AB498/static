@@ -1,0 +1,197 @@
+{
+  "id": 200,
+  "jsx": 230,
+  "template_name": "Photo|template_196",
+  "preview": "generators/previews/new_zeland_preview.jpg",
+  "description": "",
+  "image1_default": "generators/New Zealand Passport/image1/PHOTODROP.jpg",
+  "image2_default": "generators/New Zealand Passport/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "new_zealand_passport",
+  "name": "New Zealand Passport",
+  "icon": "generators/New Zealand Passport/icon/new-zealand.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "new_zealand_passport",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 809,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 2878,
+          "input_label": "Surname",
+          "input_placeholder": "Doe",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z][a-zA-Z ]+[a-zA-Z]|[a-zA-Z]|[a-zA-Z]{2}"
+        },
+        {
+          "id": 2879,
+          "input_label": "Given names",
+          "input_placeholder": "John",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "[a-zA-Z][a-zA-Z ]+[a-zA-Z]|[a-zA-Z]|[a-zA-Z]{2}"
+        },
+        {
+          "id": 2880,
+          "input_label": "Document Number (LH + 6 digits)",
+          "input_placeholder": "LH123456",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z]{2}[0-9]{6}"
+        },
+        {
+          "id": 2881,
+          "input_label": "Document Number (LH + 6 digits)",
+          "input_placeholder": "LH123456",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z]{2}[0-9]{6}"
+        },
+        {
+          "id": 2882,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[mMfF]"
+        }
+      ]
+    },
+    {
+      "id": 810,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 2883,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 2884,
+          "input_label": "Date of issue (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2019",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 2885,
+          "input_label": "Date of expiration (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2024",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 811,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 2886,
+          "input_label": "Place of Birth",
+          "input_placeholder": "TAIHAPE",
+          "input_name": "POB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2887,
+          "input_label": "Authority",
+          "input_placeholder": "TIA WLG",
+          "input_name": "AUTHORITY",
+          "type": "text",
+          "value": "TIA WLG",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2888,
+          "input_label": "Nationaliry",
+          "input_placeholder": "NEW ZEALAND",
+          "input_name": "NATIONALITY",
+          "type": "text",
+          "value": "NEW ZEALAND",
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 812,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 2874,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2875,
+          "input_label": "Background number 1 - 16 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2876,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2877,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "New Zealand Passport"
+}

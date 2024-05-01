@@ -1,0 +1,207 @@
+{
+  "id": 113,
+  "jsx": 141,
+  "template_name": "Photo|template_106",
+  "preview": "generators/previews/Poland_Driving_License.jpg",
+  "description": "",
+  "image1_default": "generators/Poland Driving License/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Poland Driving License/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "poland_dl",
+  "name": "Poland Driving License",
+  "icon": "generators/Poland Driving License/icon/poland.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "poland_dl",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 424,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 1497,
+          "input_label": "Surname",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1498,
+          "input_label": "Name",
+          "input_placeholder": "JOHN LEE",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1499,
+          "input_label": "Number (0XXXX/YY/XXXX)",
+          "input_placeholder": "01234/15/1234",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1500,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 425,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 1494,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 1495,
+          "input_label": "Date of issue (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2015",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 1496,
+          "input_label": "Date of expiry (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2030",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 426,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 1501,
+          "input_label": "Personal Number — not necessary",
+          "input_placeholder": "86101612314",
+          "input_name": "PERSONALNUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1502,
+          "input_label": "Place of Birth",
+          "input_placeholder": "WARSZAWA",
+          "input_name": "POB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1503,
+          "input_label": "Place of issue",
+          "input_placeholder": "PREZYDENT m. st. WARSZAWY",
+          "input_name": "POI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1504,
+          "input_label": "Address (line 1) — not necessary",
+          "input_placeholder": "00-222 WARSZAWA",
+          "input_name": "ADD1",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1505,
+          "input_label": "Address (line 2) — not necessary",
+          "input_placeholder": "SANGUSZKI 1",
+          "input_name": "ADD2",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 427,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 1490,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1491,
+          "input_label": "Background number (1 - 30)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1492,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1493,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Poland Driving License"
+}

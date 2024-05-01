@@ -1,0 +1,253 @@
+{
+  "id": 239,
+  "jsx": 268,
+  "template_name": "Photo|template_226",
+  "preview": "generators/previews/australia_queensland_dl_preview.jpg",
+  "description": "<h2>Australia Queensland Driving License (2012)</h2>",
+  "image1_default": "generators/Australia Queensland Driver licence/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Australia Queensland Driver licence/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "australia_queensland_dl",
+  "name": "Australia Queensland Driver licence",
+  "icon": "generators/Australia Queensland Driver licence/icon/australia.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "australia_queensland_dl",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 960,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 3455,
+          "input_label": "Surname",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(^[^\\s].*[^\\s]$)|(^[a-zA-Z]$)"
+        },
+        {
+          "id": 3456,
+          "input_label": "Given names",
+          "input_placeholder": "JOHN",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(^[^\\s].*[^\\s]$)|(^[a-zA-Z]$)"
+        },
+        {
+          "id": 3457,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[mMfF]"
+        },
+        {
+          "id": 3458,
+          "input_label": "License No",
+          "input_placeholder": "123 456 789",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[0-9]{3}\\s[0-9]{3}\\s[0-9]{3}"
+        }
+      ]
+    },
+    {
+      "id": 961,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 3459,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 3460,
+          "input_label": "Date of issue (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2022",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 3461,
+          "input_label": "Date of expiration (DD.MM.YYYY)",
+          "input_placeholder": "14.12.2025",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 962,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 3462,
+          "input_label": "Address (line 1)",
+          "input_placeholder": "27 Mount Petrie Rd",
+          "input_name": "ADD1",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3463,
+          "input_label": "Address (line 2)",
+          "input_placeholder": "MacKenzie 4153",
+          "input_name": "ADD2",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3464,
+          "input_label": "Card Number",
+          "input_placeholder": "1A2B 3C4B 6E",
+          "input_name": "CARD_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z0-9]{4}\\s[a-zA-Z0-9]{4}\\s[a-zA-Z0-9]{2}"
+        },
+        {
+          "id": 3470,
+          "input_label": "Height",
+          "input_placeholder": "175",
+          "input_name": "HGT",
+          "type": "text",
+          "value": "175",
+          "required": true,
+          "regular_expression": "([7-9][0-9]|[1-2][0-9][0-9])"
+        }
+      ]
+    },
+    {
+      "id": 963,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 3465,
+          "input_label": "Class (line 1)",
+          "input_placeholder": "C",
+          "input_name": "CLASS",
+          "type": "text",
+          "value": "C",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3466,
+          "input_label": "Type (line 1)",
+          "input_placeholder": "O",
+          "input_name": "TYPE",
+          "type": "text",
+          "value": "O",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3467,
+          "input_label": "Class (line 2)",
+          "input_placeholder": "RE",
+          "input_name": "CLASS2",
+          "type": "text",
+          "value": "RE",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3468,
+          "input_label": "Type (line 2)",
+          "input_placeholder": "L",
+          "input_name": "TYPE2",
+          "type": "text",
+          "value": "L",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3469,
+          "input_label": "Conditions",
+          "input_placeholder": "S",
+          "input_name": "CONDITION",
+          "type": "text",
+          "value": "S",
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 964,
+      "name": "Step 5",
+      "fields": [
+        {
+          "id": 3451,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "PHOTO|SCAN|PRINT|Photo|Scan|Print|photo|scan|print"
+        },
+        {
+          "id": 3452,
+          "input_label": "Background number 1 - 30 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "(30|[12][0-9]|[1-9])"
+        },
+        {
+          "id": 3453,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG file)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 3454,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG file)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Australia Queensland Driver licence"
+}

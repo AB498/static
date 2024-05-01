@@ -1,0 +1,177 @@
+{
+  "id": 51,
+  "jsx": 77,
+  "template_name": "Photo|template_47",
+  "preview": "generators/previews/Poland_passport_1.jpg",
+  "description": "",
+  "image1_default": "generators/Poland passport (2011)/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Poland passport (2011)/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "poland_passport",
+  "name": "Poland passport (2011)",
+  "icon": "generators/Poland passport/icon/poland.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "poland_passport",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 192,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 691,
+          "input_label": "Surname",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 692,
+          "input_label": "Given names",
+          "input_placeholder": "JOHN",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 693,
+          "input_label": "Document Number (9 characters)",
+          "input_placeholder": "EB1234567",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 694,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 193,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 695,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 696,
+          "input_label": "Date of issue (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2013",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 697,
+          "input_label": "Date of expiration (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2023",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 194,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 698,
+          "input_label": "Place of Birth",
+          "input_placeholder": "WARSZAWA",
+          "input_name": "POB",
+          "type": "text",
+          "value": "WARSZAWA",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 699,
+          "input_label": "Authority",
+          "input_placeholder": "WODJEWODA MAZOWIECK /1/",
+          "input_name": "AUTHORITY",
+          "type": "text",
+          "value": "WODJEWODA MAZOWIECK /1/",
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 195,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 687,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 688,
+          "input_label": "Background number 1 - 16 (Not necessary!)",
+          "input_placeholder": "7",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 689,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 690,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Poland passport (2011)"
+}

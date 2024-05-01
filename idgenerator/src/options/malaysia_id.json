@@ -1,0 +1,187 @@
+{
+  "id": 169,
+  "jsx": 198,
+  "template_name": "Photo|template_165",
+  "preview": "generators/previews/Malaysia_id.jpg",
+  "description": "",
+  "image1_default": "generators/Malaysia ID card/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Malaysia ID card/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "malaysia_id",
+  "name": "Malaysia ID card",
+  "icon": "generators/Malaysia ID card/icon/malasya.svg",
+  "price": "3.99",
+  "image5_default": null,
+  "identifier": "malaysia_id",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 675,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 2391,
+          "input_label": "Names",
+          "input_placeholder": "John Doe Lee",
+          "input_name": "NAME",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2392,
+          "input_label": "Number",
+          "input_placeholder": "123456-12-1234",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2393,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2404,
+          "input_label": "Religion -- Not necessary!",
+          "input_placeholder": "ISLAM",
+          "input_name": "RELIGION",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 676,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 2394,
+          "input_label": "Address (line 1)",
+          "input_placeholder": "KAMPUNG MASJID",
+          "input_name": "ADD1",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2395,
+          "input_label": "Address (line 2)",
+          "input_placeholder": "P O BOX 42",
+          "input_name": "ADD2",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2396,
+          "input_label": "Address (line 3)",
+          "input_placeholder": "89007 KENINGAU",
+          "input_name": "ADD3",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2397,
+          "input_label": "Address (line 4)",
+          "input_placeholder": "SABAY",
+          "input_name": "ADD4",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 677,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 2398,
+          "input_label": "Back number 1",
+          "input_placeholder": "123456-12-1234-12",
+          "input_name": "HZNUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2399,
+          "input_label": "Back number 2",
+          "input_placeholder": "A1234567",
+          "input_name": "HZNUMBER2",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 678,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 2400,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2401,
+          "input_label": "Background number 1 - 30 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2402,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2403,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Malaysia ID card"
+}

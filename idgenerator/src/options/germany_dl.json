@@ -1,0 +1,167 @@
+{
+  "id": 104,
+  "jsx": 132,
+  "template_name": "Photo|template_96",
+  "preview": "generators/previews/Germany_DL_0.jpg",
+  "description": "",
+  "image1_default": "generators/German Driver's License/image1/PHOTODROP.jpg",
+  "image2_default": "generators/German Driver's License/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "germany_dl",
+  "name": "Germany Driving License",
+  "icon": "generators/Germany Driving License/icon/germany.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "germany_dl",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 391,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 1386,
+          "input_label": "Surname",
+          "input_placeholder": "Doe",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1387,
+          "input_label": "Given names",
+          "input_placeholder": "John",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1388,
+          "input_label": "Document Number (9 characters)",
+          "input_placeholder": "7B9205K0C65",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 392,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 1389,
+          "input_label": "Date of birth (DD.MM.YY)",
+          "input_placeholder": "16.10.86",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "([0-3][0-9]\\.[0-1][0-9]\\.[0-9][0-9])"
+        },
+        {
+          "id": 1390,
+          "input_label": "Date of issue (DD.MM.YY)",
+          "input_placeholder": "15.12.19",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "([0-3][0-9]\\.[0-1][0-9]\\.[0-9][0-9])"
+        },
+        {
+          "id": 1391,
+          "input_label": "Date of expiration (DD.MM.YY)",
+          "input_placeholder": "14.12.34",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "([0-3][0-9]\\.[0-1][0-9]\\.[0-9][0-9])"
+        }
+      ]
+    },
+    {
+      "id": 393,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 1392,
+          "input_label": "Place of Birth",
+          "input_placeholder": "Berlin",
+          "input_name": "POB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1393,
+          "input_label": "Place of issue",
+          "input_placeholder": "Landratsamt Berlin",
+          "input_name": "POI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 394,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 1382,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1383,
+          "input_label": "Background number 1 - 9 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1384,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1385,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Germany Driving License"
+}

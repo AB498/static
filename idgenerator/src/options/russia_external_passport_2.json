@@ -1,0 +1,213 @@
+{
+  "id": 53,
+  "jsx": 78,
+  "template_name": "Photo|template_49",
+  "preview": "generators/previews/russia_passport_ext_2_preview.jpg",
+  "description": "",
+  "image1_default": "generators/Russia external passport 2/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Russia external passport 2/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "russia_external_passport_2",
+  "name": "Russia external passport 2",
+  "icon": "generators/Russia external passport 2/icon/russia.svg",
+  "price": "3.99",
+  "image5_default": null,
+  "identifier": "russia_external_passport_2",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 200,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 719,
+          "input_label": "Surname",
+          "input_placeholder": "ИВАНОВ",
+          "input_name": "SURNAME",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 720,
+          "input_label": "Name",
+          "input_placeholder": "ИВАН",
+          "input_name": "NAME",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 721,
+          "input_label": "Patronymic",
+          "input_placeholder": "ИВАНОВИЧ",
+          "input_name": "PATRONYMIC",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 722,
+          "input_label": "Passport number (9 digits)",
+          "input_placeholder": "123456789",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 201,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 723,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 724,
+          "input_label": "Date of issue (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2020",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 725,
+          "input_label": "Date of expiration (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2030",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 202,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 726,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 727,
+          "input_label": "Place of Birth",
+          "input_placeholder": "МОСКОВСКАЯ ОБЛ./ RUSSIA",
+          "input_name": "POB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 728,
+          "input_label": "Authority",
+          "input_placeholder": "ФМС 1324",
+          "input_name": "AUTHORITY",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 203,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 4234,
+          "input_label": "Surname (latin) — optional",
+          "input_placeholder": "IVANOV",
+          "input_name": "LLN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 4235,
+          "input_label": "Given names (latin) — optional",
+          "input_placeholder": "IVAN",
+          "input_name": "LFN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 1161,
+      "name": "Step 5",
+      "fields": [
+        {
+          "id": 715,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 716,
+          "input_label": "Background number 1 - 16 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 717,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 718,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Russia external passport 2"
+}

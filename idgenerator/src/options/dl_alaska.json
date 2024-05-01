@@ -1,0 +1,243 @@
+{
+  "id": 131,
+  "jsx": 159,
+  "template_name": "Photo|template_124",
+  "preview": "generators/previews/USA_Alaska_DL_218_Yv14UVy.jpg",
+  "description": "",
+  "image1_default": "generators/USA Alaska Driver License/image1/PHOTODROP.jpg",
+  "image2_default": "generators/USA Alaska Driver License/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "dl_alaska",
+  "name": "USA Alaska Driver License",
+  "icon": "generators/USA Alaska Driver License/icon/ak.png",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "dl_alaska",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 499,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 1752,
+          "input_label": "Surname",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1753,
+          "input_label": "First Name",
+          "input_placeholder": "JOHN",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1754,
+          "input_label": "Middle name (Not necessary!)",
+          "input_placeholder": "LEE",
+          "input_name": "MN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1755,
+          "input_label": "Document number (7 digits)",
+          "input_placeholder": "1234567",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1756,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 500,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 1757,
+          "input_label": "Date of birth (MM/DD/YYYY)",
+          "input_placeholder": "10/16/1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1758,
+          "input_label": "Date of issue (MM/DD/YYYY)",
+          "input_placeholder": "12/15/2020",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1759,
+          "input_label": "Date of expiry (MM/DD/YYYY)",
+          "input_placeholder": "10/16/2025",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 501,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 1760,
+          "input_label": "Address",
+          "input_placeholder": "123 OLD MAIN ST",
+          "input_name": "ADDRESS",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1761,
+          "input_label": "City",
+          "input_placeholder": "ANYTOWN",
+          "input_name": "CITY",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1762,
+          "input_label": "Zip Code",
+          "input_placeholder": "12345",
+          "input_name": "INDEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 502,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 1763,
+          "input_label": "Height (in inches!)",
+          "input_placeholder": "071 IN",
+          "input_name": "HGT",
+          "type": "text",
+          "value": "071 IN",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1764,
+          "input_label": "Weight",
+          "input_placeholder": "130",
+          "input_name": "WGT",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1765,
+          "input_label": "Eye Color Code",
+          "input_placeholder": "BRO",
+          "input_name": "EYE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1766,
+          "input_label": "DL Class",
+          "input_placeholder": "D",
+          "input_name": "CLASS",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 503,
+      "name": "Step 5",
+      "fields": [
+        {
+          "id": 1748,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1749,
+          "input_label": "Background number (1 - 30)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "(30|[12][0-9]|[1-9])"
+        },
+        {
+          "id": 1750,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1751,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "USA Alaska Driver License"
+}

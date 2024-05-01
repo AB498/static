@@ -1,0 +1,233 @@
+{
+  "id": 183,
+  "jsx": 212,
+  "template_name": "Photo|template_177",
+  "preview": "generators/previews/France_ID_Card_old_0.jpg",
+  "description": "",
+  "image1_default": "generators/France ID Card (old)/image1/PHOTODROP.jpg",
+  "image2_default": "generators/France ID Card (old)/image2/signature.jpg",
+  "image3_default": "generators/France ID Card (old)/image3/signature2.jpg",
+  "image4_default": null,
+  "slug": "france_id_old",
+  "name": "France ID Card (old)",
+  "icon": "generators/France ID Card (old)/icon/france.svg",
+  "price": "3.99",
+  "image5_default": null,
+  "identifier": "france_id_old",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 735,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 2622,
+          "input_label": "Surname",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2623,
+          "input_label": "Given names",
+          "input_placeholder": "JOHN, LEE, MORGAN",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2624,
+          "input_label": "Document number (12 digits)",
+          "input_placeholder": "101212345678",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2625,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 736,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 2626,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 2627,
+          "input_label": "Date of issue (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2010",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 2628,
+          "input_label": "Date of expiry (DD.MM.YYYY)",
+          "input_placeholder": "14.12.2025",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 737,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 2629,
+          "input_label": "Place of Birth",
+          "input_placeholder": "PARIS (75)",
+          "input_name": "POB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2630,
+          "input_label": "Address (line 1)",
+          "input_placeholder": "1 AVENUE GONZALVE",
+          "input_name": "ADD1",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2631,
+          "input_label": "Address (line 2) — not necessary",
+          "input_placeholder": "91342 LE PLESSIS-TREVISE",
+          "input_name": "ADD2",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2633,
+          "input_label": "Place of issue",
+          "input_placeholder": "PRÉFECTURE DES BOUCHES-DU-RHÔNE (14)",
+          "input_name": "POI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 738,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 2632,
+          "input_label": "Height",
+          "input_placeholder": "1,78",
+          "input_name": "HGT",
+          "type": "text",
+          "value": "1,78",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2634,
+          "input_label": "Optional Data (6 digits) — not necessary",
+          "input_placeholder": "075017",
+          "input_name": "IDNUMBER",
+          "type": "text",
+          "value": "075017",
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 739,
+      "name": "Step 5",
+      "fields": [
+        {
+          "id": 2617,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2618,
+          "input_label": "Background number (1 - 10)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2619,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2620,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2621,
+          "input_label": "Signature 2",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image3",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "France ID Card (old)"
+}

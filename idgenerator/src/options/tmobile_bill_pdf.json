@@ -1,0 +1,141 @@
+{
+  "id": 191,
+  "jsx": 220,
+  "template_name": "Photo|template_i3",
+  "preview": "generators/previews/tmobile_bill_preview.jpg",
+  "description": "",
+  "image1_default": null,
+  "image2_default": null,
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "tmobile_bill_pdf",
+  "name": "T-Mobile Bill (PDF)",
+  "icon": "generators/T-Mobile Bill (PDF)/icon/united-states_2.png",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "tmobile_bill_pdf",
+  "is_pdf": true,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 773,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 2741,
+          "input_label": "First Name",
+          "input_placeholder": "JOHN",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2742,
+          "input_label": "Last Name",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2743,
+          "input_label": "Account no. (9 digits)",
+          "input_placeholder": "123456789",
+          "input_name": "ACCNUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2748,
+          "input_label": "Optional Number — not necessary",
+          "input_placeholder": "0409773905851123210000020006902016216",
+          "input_name": "HZNUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2749,
+          "input_label": "Phone Number",
+          "input_placeholder": "(562) 381-0194",
+          "input_name": "PHONENUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 774,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 2746,
+          "input_label": "Statement period start date",
+          "input_placeholder": "2022-05-20",
+          "input_name": "START_DATE_FIELD",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2747,
+          "input_label": "Statement period end date",
+          "input_placeholder": "2022-06-20",
+          "input_name": "END_DATE_FIELD",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 775,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 2744,
+          "input_label": "Address (line 1)",
+          "input_placeholder": "ANYWHERE ST. 223",
+          "input_name": "ADD1",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2745,
+          "input_label": "Address (line 2)",
+          "input_placeholder": "Anytown CA",
+          "input_name": "ADD2",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2750,
+          "input_label": "Zip Code",
+          "input_placeholder": "27483-6432",
+          "input_name": "ZIP",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "T-Mobile Bill (PDF)"
+}

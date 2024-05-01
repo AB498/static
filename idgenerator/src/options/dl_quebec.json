@@ -1,0 +1,263 @@
+{
+  "id": 172,
+  "jsx": 201,
+  "template_name": "Photo|template_164",
+  "preview": "generators/previews/Quebec_DL_1.jpg",
+  "description": "",
+  "image1_default": "generators/Canada Quebec Driver License/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Canada Quebec Driver License/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "dl_quebec",
+  "name": "Canada Quebec Driver License",
+  "icon": "generators/Canada Quebec Driver License/icon/canada.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "dl_quebec",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 687,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 2447,
+          "input_label": "First Name",
+          "input_placeholder": "JOHN",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2448,
+          "input_label": "Last Name",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2449,
+          "input_label": "Middle name (Not necessary!)",
+          "input_placeholder": "LEE",
+          "input_name": "MN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2450,
+          "input_label": "Document number",
+          "input_placeholder": "L1234-123456-12",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2451,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 688,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 2452,
+          "input_label": "Date of birth (YYYY-MM-DD)",
+          "input_placeholder": "1986-10-16",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2453,
+          "input_label": "Date of issue (YYYY-MM-DD)",
+          "input_placeholder": "2017-12-15",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2454,
+          "input_label": "Date of expiry (YYYY-MM-DD)",
+          "input_placeholder": "2025-10-16",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 689,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 2455,
+          "input_label": "Address",
+          "input_placeholder": "123 Anywhere street",
+          "input_name": "ADDRESS",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2456,
+          "input_label": "City",
+          "input_placeholder": "Anytown",
+          "input_name": "CITY",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2457,
+          "input_label": "Zip Code",
+          "input_placeholder": "H3A 1S8",
+          "input_name": "INDEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 690,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 2458,
+          "input_label": "Document Class",
+          "input_placeholder": "5",
+          "input_name": "CLASS",
+          "type": "text",
+          "value": "5",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2459,
+          "input_label": "Cond.",
+          "input_placeholder": "A",
+          "input_name": "CONDITIONS",
+          "type": "text",
+          "value": "A",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2460,
+          "input_label": "Mention(s)",
+          "input_placeholder": "FMT",
+          "input_name": "MENTION",
+          "type": "text",
+          "value": "FMT",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2461,
+          "input_label": "Height (cm)",
+          "input_placeholder": "182",
+          "input_name": "HGT",
+          "type": "text",
+          "value": "182",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2462,
+          "input_label": "Eye Color Code",
+          "input_placeholder": "BRO",
+          "input_name": "EYE",
+          "type": "text",
+          "value": "BRO",
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2463,
+          "input_label": "Reference No. — not necessary!",
+          "input_placeholder": "PDBT8A1QC",
+          "input_name": "DD",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 691,
+      "name": "Step 5",
+      "fields": [
+        {
+          "id": 2443,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2444,
+          "input_label": "Background number 1 - 30 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2445,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2446,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Canada Quebec Driver License"
+}

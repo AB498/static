@@ -1,0 +1,177 @@
+{
+  "id": 106,
+  "jsx": 134,
+  "template_name": "Photo|template_98",
+  "preview": "generators/previews/ru_dl_previw.jpg",
+  "description": "",
+  "image1_default": "generators/Russia DL Full/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Russia DL Full/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "russia_dl_2",
+  "name": "Russia DL Full",
+  "icon": "generators/Russia DL Full/icon/russia_YBnY4DQ.svg",
+  "price": "3.99",
+  "image5_default": null,
+  "identifier": "russia_dl_2",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 396,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 1398,
+          "input_label": "Surname (Фамилия) — not necessary (необязательно)",
+          "input_placeholder": "ИВАНОВ",
+          "input_name": "SURNAMEK",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "[а-яёА-ЯЁ][а-яёА-ЯЁ ]+[а-яёА-ЯЁ]|[а-яёА-ЯЁ]|[а-яёА-ЯЁ]{2}"
+        },
+        {
+          "id": 1399,
+          "input_label": "Name (Имя) — not necessary (необязательно)",
+          "input_placeholder": "ИВАН",
+          "input_name": "NAMEK",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "[а-яёА-ЯЁ][а-яёА-ЯЁ ]+[а-яёА-ЯЁ]|[а-яёА-ЯЁ]|[а-яёА-ЯЁ]{2}"
+        },
+        {
+          "id": 1400,
+          "input_label": "Patronymic (Отчество) — not necessary (необязательно)",
+          "input_placeholder": "ИВАНОВИЧ",
+          "input_name": "PATRONYMICK",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "[а-яёА-ЯЁ][а-яёА-ЯЁ ]+[а-яёА-ЯЁ]|[а-яёА-ЯЁ]|[а-яёА-ЯЁ]{2}"
+        },
+        {
+          "id": 1402,
+          "input_label": "Document Number",
+          "input_placeholder": "18 01 123456",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 397,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 1408,
+          "input_label": "Date of birth (DD.MM.YYYY) — Дата рождения (ДД.ММ.ГГГГ)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 1409,
+          "input_label": "Date of issue (DD.MM.YYYY) — Дата выдачи (ДД.ММ.ГГГГ)",
+          "input_placeholder": "15.12.2019",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 398,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 1403,
+          "input_label": "Place of Birth (Место рождения) — not necessary (необязательно)",
+          "input_placeholder": "БЕЛГОРОДСКАЯ ОБЛ.",
+          "input_name": "POIK",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1404,
+          "input_label": "Traffic police department (отделение ГИБДД) — not necessary (необязательно)",
+          "input_placeholder": "ГИБДД 1801",
+          "input_name": "GIBDDK",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 3252,
+          "input_label": "Special marks - 14",
+          "input_placeholder": "GCL",
+          "input_name": "COMMENTS",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 399,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 1405,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1406,
+          "input_label": "Background number 1 - 9 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1407,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1745,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Russia DL Full"
+}

@@ -1,0 +1,187 @@
+{
+  "id": 171,
+  "jsx": 200,
+  "template_name": "Photo|template_66",
+  "preview": "generators/previews/Vietnam_passport.jpg",
+  "description": "",
+  "image1_default": "generators/Vietnam Passport/image1/PHOTODROP.jpg",
+  "image2_default": null,
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "vietnam_passport",
+  "name": "Vietnam Passport",
+  "icon": "generators/Vietnam Passport/icon/vietnam.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "vietnam_passport",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 683,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 2436,
+          "input_label": "Surname",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2437,
+          "input_label": "Given names",
+          "input_placeholder": "JOHN LEE",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2438,
+          "input_label": "Document Number (8 characters)",
+          "input_placeholder": "C1234567",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2439,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3000,
+          "input_label": "Name (vietnamese)",
+          "input_placeholder": "Tâm Huỳnh",
+          "input_name": "FULLNAME",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 684,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 2432,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 2433,
+          "input_label": "Date of issue (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2015",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 2434,
+          "input_label": "Date of expiry (DD.MM.YYYY)",
+          "input_placeholder": "14.12.2025",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 685,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 2440,
+          "input_label": "Place of Birth",
+          "input_placeholder": "LÂM ĐÔNG",
+          "input_name": "POB",
+          "type": "text",
+          "value": "LÂM ĐÔNG",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2441,
+          "input_label": "Place of issue",
+          "input_placeholder": "Cục Quản lý xuất nhập cảnh",
+          "input_name": "POI",
+          "type": "text",
+          "value": "Cục Quản lý xuất nhập cảnh",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2442,
+          "input_label": "ID Number (9 digits) -- Not necessary!",
+          "input_placeholder": "123456789",
+          "input_name": "IDNUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 686,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 2428,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2429,
+          "input_label": "Background number 1 - 30 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2431,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Vietnam Passport"
+}

@@ -1,0 +1,137 @@
+{
+  "id": 135,
+  "jsx": 164,
+  "template_name": "Photo|template_129",
+  "preview": "generators/previews/rostelecom_bill_result_image_Wos7Sby.jpg",
+  "description": "",
+  "image1_default": null,
+  "image2_default": null,
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "rostelecom_bill",
+  "name": "Russia Rostelecom Bill",
+  "icon": "generators/Russia Rostelecom Bill/icon/russia.svg",
+  "price": "1.99",
+  "image5_default": null,
+  "identifier": "rostelecom_bill",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 518,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 1828,
+          "input_label": "Фамилия",
+          "input_placeholder": "Иванов",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1829,
+          "input_label": "Имя",
+          "input_placeholder": "Иван",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1830,
+          "input_label": "Отчество",
+          "input_placeholder": "Иванович",
+          "input_name": "MN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1831,
+          "input_label": "Лицевой счет",
+          "input_placeholder": "123456789123",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 519,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 1832,
+          "input_label": "Адрес (первая строка)",
+          "input_placeholder": "Московская обл, г. Химки",
+          "input_name": "ADD1",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1833,
+          "input_label": "Адрес (вторая строка)",
+          "input_placeholder": "ул. Ленина, д. 4",
+          "input_name": "ADD2",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 520,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 1834,
+          "input_label": "Дата формирования счета",
+          "input_placeholder": "05.11.2021",
+          "input_name": "DATE1",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1835,
+          "input_label": "Оплатить до",
+          "input_placeholder": "25.11.2021",
+          "input_name": "DATE2",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 521,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 1836,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Russia Rostelecom Bill"
+}

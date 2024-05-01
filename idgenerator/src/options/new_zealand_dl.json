@@ -1,0 +1,227 @@
+{
+  "id": 245,
+  "jsx": 274,
+  "template_name": "Photo|template_229",
+  "preview": "generators/previews/new_zealand_drivers_license_preview.jpg",
+  "description": "",
+  "image1_default": "generators/New Zealand Driver Licence/image1/PHOTODROP.jpg",
+  "image2_default": "generators/New Zealand Driver Licence/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "new_zealand_dl",
+  "name": "New Zealand Driver Licence",
+  "icon": "generators/New Zealand Driver Licence/icon/new-zealand.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "new_zealand_dl",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 987,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 3553,
+          "input_label": "Surname",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(^[^\\s].*[^\\s]$)|(^[a-zA-Z]$)"
+        },
+        {
+          "id": 3554,
+          "input_label": "First Names",
+          "input_placeholder": "JOHN",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(^[^\\s].*[^\\s]$)|(^[a-zA-Z]$)"
+        },
+        {
+          "id": 3592,
+          "input_label": "Middle Names",
+          "input_placeholder": "LEE",
+          "input_name": "MN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "(^[^\\s].*[^\\s]$)|(^[a-zA-Z]$)"
+        },
+        {
+          "id": 3593,
+          "input_label": "License Number",
+          "input_placeholder": "BS123456",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z0-9]{8}"
+        }
+      ]
+    },
+    {
+      "id": 988,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 3556,
+          "input_label": "Date of birth (DD-MM-YYYY)",
+          "input_placeholder": "16-10-1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])-((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)-(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])-(02))-([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29-02-(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 3557,
+          "input_label": "Date of issue (DD-MM-YYYY)",
+          "input_placeholder": "15-12-2016",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])-((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)-(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])-(02))-([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29-02-(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 3558,
+          "input_label": "Date of expiration (DD-MM-YYYY)",
+          "input_placeholder": "16-10-2026",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])-((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)-(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])-(02))-([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29-02-(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 989,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 3559,
+          "input_label": "Address (line 1)",
+          "input_placeholder": "4 GODDARD ROAD",
+          "input_name": "ADD1",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3560,
+          "input_label": "Address (line 2)",
+          "input_placeholder": "TASMAN",
+          "input_name": "ADD2",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 3561,
+          "input_label": "Donor status",
+          "input_placeholder": "DONOR",
+          "input_name": "DONOR_STATUS",
+          "type": "text",
+          "value": "DONOR",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3562,
+          "input_label": "Version",
+          "input_placeholder": "195",
+          "input_name": "VERSION",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 3563,
+          "input_label": "Code 128 (not necessary)",
+          "input_placeholder": "BS123456/00201",
+          "input_name": "CODE128",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 3564,
+          "input_label": "Additional number (front)",
+          "input_placeholder": "7173",
+          "input_name": "HZNUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 3565,
+          "input_label": "Additional number (back)",
+          "input_placeholder": "PLACARD4293652",
+          "input_name": "HZNUMBER2",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 990,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 3549,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "PHOTO|SCAN|PRINT|Photo|Scan|Print|photo|scan|print"
+        },
+        {
+          "id": 3550,
+          "input_label": "Background number 1 - 30 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "(30|[12][0-9]|[1-9])"
+        },
+        {
+          "id": 3551,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG file)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 3552,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG file)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "New Zealand Driver Licence"
+}

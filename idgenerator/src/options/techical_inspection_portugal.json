@@ -1,0 +1,161 @@
+{
+  "id": 274,
+  "jsx": 299,
+  "template_name": "Photo|template_267",
+  "preview": "generators/previews/Periodic_Techical_Inspection.jpg",
+  "description": "",
+  "image1_default": "generators/Periodic Techical Inspection (Portugal)/image1/signature.jpg",
+  "image2_default": null,
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "techical_inspection_portugal",
+  "name": "Periodic Techical Inspection (Portugal)",
+  "icon": "generators/Periodic Techical Inspection (Portugal)/icon/portugal.svg",
+  "price": "4.99",
+  "image5_default": null,
+  "identifier": "techical_inspection_portugal",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 1085,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 3950,
+          "input_label": "Document Number (7 digits)",
+          "input_placeholder": "1234567",
+          "input_name": "NUMBER1",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3951,
+          "input_label": "License plate number",
+          "input_placeholder": "00-AA-00 / P",
+          "input_name": "NUMBER_CAR",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3952,
+          "input_label": "VIN Code (17 values)",
+          "input_placeholder": "ABCD0EFG0HI123456",
+          "input_name": "VIN_CODE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3954,
+          "input_label": "Car mileage (km)",
+          "input_placeholder": "100000",
+          "input_name": "CAR_MILEAGE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3956,
+          "input_label": "Vehicle Category",
+          "input_placeholder": "M1",
+          "input_name": "CATEGORY",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 1086,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 3953,
+          "input_label": "Date 1st registration (YYYY.MM.DD)",
+          "input_placeholder": "2004.07.10",
+          "input_name": "DATE_1_NUMBER_CAR",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3955,
+          "input_label": "Date / Time (YYYY.MM.DD HH:MM)",
+          "input_placeholder": "2024.01.15 10:12",
+          "input_name": "DATE",
+          "type": "text",
+          "value": "2024.01.15  10:12",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3957,
+          "input_label": "The date of next inspection (YYYY.MM.DD)",
+          "input_placeholder": "2024.12.20",
+          "input_name": "NEXT_INSPECTION",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3958,
+          "input_label": "Additional Comments",
+          "input_placeholder": "Inspeção realizada ao abrigo da Lei n° 45/2018",
+          "input_name": "COMMENTS",
+          "type": "text",
+          "value": "Inspeção realizada ao abrigo da Lei n° 45/2018",
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 3959,
+          "input_label": "Inspector Code",
+          "input_placeholder": "1265",
+          "input_name": "CODE_OF_INSPECTOR",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 1087,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 3960,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "PRINT",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": "PRINT",
+          "required": false,
+          "regular_expression": "PHOTO|SCAN|PRINT|Photo|Scan|Print|photo|scan|print"
+        },
+        {
+          "id": 3961,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG file)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Periodic Techical Inspection (Portugal)"
+}

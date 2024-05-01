@@ -1,0 +1,187 @@
+{
+  "id": 204,
+  "jsx": 234,
+  "template_name": "Photo|template_192",
+  "preview": "generators/previews/hungary_passport_preview_jOvLfmf.jpg",
+  "description": "",
+  "image1_default": "generators/Hungary Passport/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Hungary Passport/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "hungary_passport",
+  "name": "Hungary Passport",
+  "icon": "generators/Hungary Passport/icon/hungary.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "hungary_passport",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 817,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 2908,
+          "input_label": "Surname",
+          "input_placeholder": "Doe",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z][a-zA-Z\\- ]+[a-zA-Z]|[a-zA-Z]|[a-zA-Z]{2}"
+        },
+        {
+          "id": 2909,
+          "input_label": "Given names",
+          "input_placeholder": "John",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z][a-zA-Z\\- ]+[a-zA-Z]|[a-zA-Z]|[a-zA-Z]{2}"
+        },
+        {
+          "id": 2910,
+          "input_label": "Document Number (B + 8 characters)",
+          "input_placeholder": "BD1234567",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z][a-zA-Z0-9][0-9]{7}"
+        },
+        {
+          "id": 2911,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[mMfF]"
+        }
+      ]
+    },
+    {
+      "id": 818,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 2912,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 2913,
+          "input_label": "Date of issue (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2019",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 2914,
+          "input_label": "Date of expiration (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2029",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 819,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 2915,
+          "input_label": "Place of Birth",
+          "input_placeholder": "BUDAPEST 07",
+          "input_name": "POB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2916,
+          "input_label": "Authority",
+          "input_placeholder": "KEK KH",
+          "input_name": "AUTHORITY",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2917,
+          "input_label": "Nationaliry",
+          "input_placeholder": "MAGYAR/HUNGARIAN",
+          "input_name": "NATIONALITY",
+          "type": "text",
+          "value": "MAGYAR/HUNGARIAN",
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 820,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 2904,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2905,
+          "input_label": "Background number 1 - 16 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2906,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2907,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Hungary Passport"
+}

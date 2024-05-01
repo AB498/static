@@ -1,0 +1,247 @@
+{
+  "id": 36,
+  "jsx": 61,
+  "template_name": "Photo|template_34",
+  "preview": "generators/previews/alabama_dl_preview.jpg",
+  "description": "",
+  "image1_default": "generators/USA Alabama DL/image1/PHOTODROP.jpg",
+  "image2_default": "generators/USA Alabama DL/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "dl_al",
+  "name": "USA Alabama DL",
+  "icon": "generators/USA Alabama DL/icon/al.png",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "dl_al",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 135,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 470,
+          "input_label": "First Name",
+          "input_placeholder": "JOHN",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 471,
+          "input_label": "Last Name",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 472,
+          "input_label": "Middle name (Not necessary!)",
+          "input_placeholder": "LEE",
+          "input_name": "MN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 473,
+          "input_label": "Address",
+          "input_placeholder": "123 Old Main Street",
+          "input_name": "HOUSESTREET",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 474,
+          "input_label": "City",
+          "input_placeholder": "Anytown",
+          "input_name": "CITY",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 475,
+          "input_label": "Zip Code",
+          "input_placeholder": "12345-0000",
+          "input_name": "INDEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 476,
+          "input_label": "Date of birth (MM-DD-YYYY)",
+          "input_placeholder": "10-16-1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 477,
+          "input_label": "Date of issue (MM-DD-YYYY)",
+          "input_placeholder": "01-21-2020",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 478,
+          "input_label": "Date of expiration (MM-DD-YYYY)",
+          "input_placeholder": "01-21-2024",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 479,
+          "input_label": "Document Number (7 digits)",
+          "input_placeholder": "1234567",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 480,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 137,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 481,
+          "input_label": "Height",
+          "input_placeholder": "071 IN",
+          "input_name": "HGT",
+          "type": "text",
+          "value": "071 IN",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 482,
+          "input_label": "Weight",
+          "input_placeholder": "152",
+          "input_name": "WGT",
+          "type": "text",
+          "value": "152",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 483,
+          "input_label": "Eye Color Code",
+          "input_placeholder": "BRO",
+          "input_name": "EYES",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 484,
+          "input_label": "Hair Color Code",
+          "input_placeholder": "SDY",
+          "input_name": "HAIR",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2999,
+          "input_label": "Optional Number",
+          "input_placeholder": "CV123",
+          "input_name": "RANDOMNUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 138,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 486,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 487,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 488,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1790,
+          "input_label": "Background number 1 - 30 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "(30|[12][0-9]|[1-9])"
+        }
+      ]
+    }
+  ],
+  "name_default": "USA Alabama DL"
+}

@@ -1,0 +1,247 @@
+{
+  "id": 25,
+  "jsx": 49,
+  "template_name": "Photo|template_24",
+  "preview": "generators/previews/texas_old_2.jpg",
+  "description": "",
+  "image1_default": "generators/USA Texas DL/image1/PHOTODROP.jpg",
+  "image2_default": "generators/USA Texas DL/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "dl_texas_old",
+  "name": "USA Texas Driver License",
+  "icon": "generators/USA Texas Driver License/icon/tx.png",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "dl_texas_old",
+  "is_pdf": false,
+  "is_active": false,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 93,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 291,
+          "input_label": "First Name",
+          "input_placeholder": "JOHN",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z][a-zA-Z ]+[a-zA-Z]|[a-zA-Z]|[a-zA-Z]{2}"
+        },
+        {
+          "id": 292,
+          "input_label": "Last Name",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z][a-zA-Z ]+[a-zA-Z]|[a-zA-Z]|[a-zA-Z]{2}"
+        },
+        {
+          "id": 293,
+          "input_label": "Middle name (Not necessary!)",
+          "input_placeholder": "LEE",
+          "input_name": "MN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "[a-zA-Z][a-zA-Z ]+[a-zA-Z]|[a-zA-Z]|[a-zA-Z]{2}"
+        },
+        {
+          "id": 294,
+          "input_label": "Address",
+          "input_placeholder": "2120 Old Main street",
+          "input_name": "HOUSESTREET",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 295,
+          "input_label": "City",
+          "input_placeholder": "Anytown",
+          "input_name": "CITY",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 296,
+          "input_label": "Zip Code",
+          "input_placeholder": "12345",
+          "input_name": "INDEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[0-9]{5}$"
+        }
+      ]
+    },
+    {
+      "id": 94,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 297,
+          "input_label": "Date of birth (MM/DD/YYYY)",
+          "input_placeholder": "10/16/1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "((((0[13578]|1[02])/(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)/(0[1-9]|[12][0-9]|30))|(02)/(0[1-9]|[1][0-9]|2[0-8]))/([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(02/29/(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 299,
+          "input_label": "Date of issue (MM/DD/YYYY)",
+          "input_placeholder": "06/13/2017",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "((((0[13578]|1[02])/(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)/(0[1-9]|[12][0-9]|30))|(02)/(0[1-9]|[1][0-9]|2[0-8]))/([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(02/29/(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 300,
+          "input_label": "Date of expiration (MM/DD/YYYY)",
+          "input_placeholder": "10/16/2027",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "((((0[13578]|1[02])/(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)/(0[1-9]|[12][0-9]|30))|(02)/(0[1-9]|[1][0-9]|2[0-8]))/([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(02/29/(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 301,
+          "input_label": "Document Number (8 digits)",
+          "input_placeholder": "12354678",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[0-9]{8}$"
+        },
+        {
+          "id": 302,
+          "input_label": "Document Number (8 digits)",
+          "input_placeholder": "12354678",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[0-9]{8}$"
+        },
+        {
+          "id": 303,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[MmFf]"
+        }
+      ]
+    },
+    {
+      "id": 95,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 304,
+          "input_label": "Height",
+          "input_placeholder": "069 IN",
+          "input_name": "HGT",
+          "type": "text",
+          "value": "071 IN",
+          "required": true,
+          "regular_expression": "0[1-9][0-9]\\s(IN|in|In|iN)"
+        },
+        {
+          "id": 305,
+          "input_label": "Eye Color Code",
+          "input_placeholder": "BLU",
+          "input_name": "EYES",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "BLU|BRO|GRY|GRN|HAZ|MAR|PNK|DIC|UNK|blu|bro|gry|grn|haz|mar|pnk|dic|unk|Blu|Bro|Gry|Grn|Haz|Mar|Pnk|Dic|Unk"
+        },
+        {
+          "id": 307,
+          "input_label": "Weight (lb)",
+          "input_placeholder": "140",
+          "input_name": "WGT",
+          "type": "text",
+          "value": "150",
+          "required": true,
+          "regular_expression": "([7-9][0-9]|[1-5][0-9][0-9])"
+        },
+        {
+          "id": 308,
+          "input_label": "Hair Color Code",
+          "input_placeholder": "SDY",
+          "input_name": "HAIR",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "BAL|BLK|BLN|BRO|GRY|RED|SDY|WHI|UNK|bal|blk|bln|bro|gry|red|sdy|whi|unk|Bal|Blk|Bln|Bro|Gry|Red|Sdy|Whi|Unk"
+        }
+      ]
+    },
+    {
+      "id": 96,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 288,
+          "input_label": "Image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "PHOTO|SCAN|PRINT|Photo|Scan|Print|photo|scan|print"
+        },
+        {
+          "id": 289,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 290,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1193,
+          "input_label": "Background number 1 - 9 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "[1-9]"
+        }
+      ]
+    }
+  ],
+  "name_default": "USA Texas Driver License"
+}

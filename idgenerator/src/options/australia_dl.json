@@ -1,0 +1,177 @@
+{
+  "id": 157,
+  "jsx": 186,
+  "template_name": "Photo|template_151",
+  "preview": "generators/previews/australia_dl_0.jpg",
+  "description": "",
+  "image1_default": "generators/Australia Driver License/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Australia Driver License/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "australia_dl",
+  "name": "Australia Driver License",
+  "icon": "generators/Australia Driver License/icon/australia.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "australia_dl",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 616,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 2185,
+          "input_label": "Name",
+          "input_placeholder": "John Doe",
+          "input_name": "NAME",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2186,
+          "input_label": "License number",
+          "input_placeholder": "12345678",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2187,
+          "input_label": "Card Number",
+          "input_placeholder": "1 123 123 123",
+          "input_name": "CARDNUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2188,
+          "input_label": "Class",
+          "input_placeholder": "C",
+          "input_name": "CLASS",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 617,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 2189,
+          "input_label": "Date of birth",
+          "input_placeholder": "16 OCT 1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2190,
+          "input_label": "Date of expiry",
+          "input_placeholder": "12 DEC 2025",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 618,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 2191,
+          "input_label": "Address (line 1)",
+          "input_placeholder": "123 Anywhere street",
+          "input_name": "ADD1",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2192,
+          "input_label": "Address (line 2)",
+          "input_placeholder": "Winterfell NSW 2000",
+          "input_name": "ADD2",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2193,
+          "input_label": "Back number",
+          "input_placeholder": "74 764 786",
+          "input_name": "NUMBER2",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 620,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 2181,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2182,
+          "input_label": "Background number 1 - 30 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2183,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2184,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Australia Driver License"
+}

@@ -1,0 +1,207 @@
+{
+  "id": 6,
+  "jsx": 3,
+  "template_name": "Photo|template_16",
+  "preview": "generators/previews/usa_passport_preview_new.jpg",
+  "description": "<h2>USA Passport Online Generator</h2><p>&nbsp;</p><p>You can create high quality USA Passport without Photoshop and PSD templates in 2 minutes. Enter data in all fields, upload your photo and signature, and click Generate button.</p><p>&nbsp;</p><h3>Validation</h3><p>After you have created a document, you should definitely check it with scanners. We recommend using <a href=\"https://api.regulaforensics.com/\" rel=\"nofollow\">Regula</a>.</p>",
+  "image1_default": "generators/USA Passport/image1/PHOTODROP.jpg",
+  "image2_default": "generators/USA Passport/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "usa_passport",
+  "name": "USA Passport",
+  "icon": "generators/USA Passport/icon/united-states.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "usa_passport",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 11,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 40,
+          "input_label": "Surname",
+          "input_placeholder": "Housten",
+          "input_name": "SURNAME",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z][a-zA-Z ]+[a-zA-Z]|[a-zA-Z]|[a-zA-Z]{2}"
+        },
+        {
+          "id": 48,
+          "input_label": "Given Names",
+          "input_placeholder": "Jacob",
+          "input_name": "GIVENNAMES",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z][a-zA-Z ]+[a-zA-Z]|[a-zA-Z]|[a-zA-Z]{2}"
+        },
+        {
+          "id": 52,
+          "input_label": "Document Number",
+          "input_placeholder": "123456789",
+          "input_name": "NO",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[0-9]{9}"
+        },
+        {
+          "id": 53,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[MmFf]"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 49,
+          "input_label": "Date of birth",
+          "input_placeholder": "01 Jan 1996",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[0-9]{2}\\s[a-zA-Z]{3}\\s[0-9]{4}"
+        },
+        {
+          "id": 50,
+          "input_label": "Date of issue",
+          "input_placeholder": "02 Apr 2017",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[0-9]{2}\\s[a-zA-Z]{3}\\s[0-9]{4}"
+        },
+        {
+          "id": 51,
+          "input_label": "Date of expiration",
+          "input_placeholder": "01 Apr 2027",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[0-9]{2}\\s[a-zA-Z]{3}\\s[0-9]{4}"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 54,
+          "input_label": "Nationality",
+          "input_placeholder": "UNITED STATES OF AMERICA",
+          "input_name": "NATIONALITY",
+          "type": "text",
+          "value": "UNITED STATES OF AMERICA",
+          "required": true,
+          "regular_expression": "[A-Za-z\\s]+$"
+        },
+        {
+          "id": 55,
+          "input_label": "Place of Birth",
+          "input_placeholder": "California, U. S. A.",
+          "input_name": "POB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 56,
+          "input_label": "Endorsements",
+          "input_placeholder": "See Page 27",
+          "input_name": "ENDORSEMENTS",
+          "type": "text",
+          "value": "See Page 27",
+          "required": true,
+          "regular_expression": "[a-zA-Z0-9][a-zA-Z0-9 ]+[a-zA-Z0-9]|[a-zA-Z0-9]|[a-zA-Z0-9]{2}"
+        },
+        {
+          "id": 244,
+          "input_label": "SSN (leave blank for random number)",
+          "input_placeholder": "123456789",
+          "input_name": "SSN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "[0-9]{9}$"
+        },
+        {
+          "id": 3699,
+          "input_label": "Additional number (4 digits)",
+          "input_placeholder": "1234",
+          "input_name": "ADD_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "[0-9]{4}"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Step4",
+      "fields": [
+        {
+          "id": 38,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG file)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 45,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG file)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 221,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "PHOTO|SCAN|PRINT|Photo|Scan|Print|photo|scan|print"
+        },
+        {
+          "id": 3109,
+          "input_label": "Background number (1 - 16)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "([1][0-6]|[1-9])"
+        }
+      ]
+    }
+  ],
+  "name_default": "USA Passport"
+}

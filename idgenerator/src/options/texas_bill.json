@@ -1,0 +1,131 @@
+{
+  "id": 95,
+  "jsx": 122,
+  "template_name": "Photo|template_87",
+  "preview": "generators/previews/texas_bill_preview.jpg",
+  "description": "",
+  "image1_default": null,
+  "image2_default": null,
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "texas_bill",
+  "name": "Texas Bill",
+  "icon": "generators/Texas Bill/icon/united-states.png",
+  "price": "1.99",
+  "image5_default": null,
+  "identifier": "texas_bill",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 356,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 1288,
+          "input_label": "Name",
+          "input_placeholder": "JOHN DOE LEE",
+          "input_name": "NAME",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1289,
+          "input_label": "Address",
+          "input_placeholder": "123 Old Main Street",
+          "input_name": "HOUSESTREET",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1290,
+          "input_label": "City",
+          "input_placeholder": "Anytown",
+          "input_name": "CITY",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1292,
+          "input_label": "Zip Code",
+          "input_placeholder": "12345",
+          "input_name": "INDEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 357,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 1294,
+          "input_label": "Bill Date",
+          "input_placeholder": "04/16/2021",
+          "input_name": "DATE1",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1295,
+          "input_label": "Due Date",
+          "input_placeholder": "07/06/2021",
+          "input_name": "DATE2",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1296,
+          "input_label": "Account Number (10 digits)",
+          "input_placeholder": "6735412792",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": "6735412792",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3001,
+          "input_label": "Card number",
+          "input_placeholder": "*1234",
+          "input_name": "CARDNUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 358,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 1293,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Texas Bill"
+}

@@ -1,0 +1,105 @@
+{
+  "id": 93,
+  "jsx": 120,
+  "template_name": "Photo|template_85",
+  "preview": "generators/previews/cc_2.jpg",
+  "description": "",
+  "image1_default": null,
+  "image2_default": null,
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "credit-card",
+  "name": "Credit Card",
+  "icon": "generators/Credit Card/icon/atm-card.png",
+  "price": "1.99",
+  "image5_default": null,
+  "identifier": "cc",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 351,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 1268,
+          "input_label": "Bank's name",
+          "input_placeholder": "Bank of America",
+          "input_name": "NAMEBANK",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1269,
+          "input_label": "Number",
+          "input_placeholder": "5012 1234 1234 1234",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[0-9]{4}\\s[0-9]{4}\\s[0-9]{4}\\s[0-9]{3,4}"
+        },
+        {
+          "id": 1270,
+          "input_label": "Valid thru",
+          "input_placeholder": "01/22",
+          "input_name": "VALIDTHRU",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[0-9]{2}[/][0-9]{2}"
+        },
+        {
+          "id": 1271,
+          "input_label": "Name",
+          "input_placeholder": "JOHN DOE",
+          "input_name": "NAME",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z][a-zA-Z ]+[a-zA-Z]|[a-zA-Z]|[a-zA-Z]{2}"
+        }
+      ]
+    },
+    {
+      "id": 352,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 1276,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": "PHOTO",
+          "required": false,
+          "regular_expression": "PHOTO|SCAN|PRINT|Photo|Scan|Print|photo|scan|print"
+        },
+        {
+          "id": 1277,
+          "input_label": "Background number 1 - 9 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "[1-9]"
+        },
+        {
+          "id": 1278,
+          "input_label": "Card backgroud number (1-7)",
+          "input_placeholder": "1",
+          "input_name": "CARD_BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[1-7]"
+        }
+      ]
+    }
+  ],
+  "name_default": "Credit Card"
+}

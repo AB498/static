@@ -1,0 +1,237 @@
+{
+  "id": 41,
+  "jsx": 66,
+  "template_name": "Photo|template_38",
+  "preview": "generators/previews/wisconsin_dl_preview.jpg",
+  "description": "<h2>Wisconsin Driver's Licnese (Rev. 09/01/2015)</h2><p>&nbsp;</p><p>Please check document before purchasing with <a href=\"https://apps.apple.com/app/show-me-id/id1552200807\">Show-me ID</a> and <a href=\"https://apps.apple.com/app/scandit-barcode-scanner/id453880584\">Scandit</a> scanner:</p><p>&nbsp;</p><figure class=\"image image_resized\" style=\"width:48.19%;\"><img src=\"/media/imgonline-com-ua-2to1-9hdcfGsuuq.jpg\"></figure>",
+  "image1_default": "generators/USA Wisconsin DL/image1/PHOTODROP.jpg",
+  "image2_default": "generators/USA Wisconsin DL/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "dl_wi",
+  "name": "USA Wisconsin DL",
+  "icon": "generators/USA Wisconsin DL/icon/wi.png",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "dl_wi",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 152,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 551,
+          "input_label": "First Name",
+          "input_placeholder": "JOHN",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 552,
+          "input_label": "Last Name",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 553,
+          "input_label": "Middle name (Not necessary!)",
+          "input_placeholder": "LEE",
+          "input_name": "MN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 554,
+          "input_label": "Address",
+          "input_placeholder": "123 Old Main Street",
+          "input_name": "HOUSESTREET",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 555,
+          "input_label": "City",
+          "input_placeholder": "Anytown",
+          "input_name": "CITY",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 556,
+          "input_label": "Zip Code",
+          "input_placeholder": "123451234",
+          "input_name": "INDEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[0-9]{9}"
+        }
+      ]
+    },
+    {
+      "id": 153,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 557,
+          "input_label": "Date of birth (MM/DD/YYYY)",
+          "input_placeholder": "10/16/1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "((((0[13578]|1[02])/(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)/(0[1-9]|[12][0-9]|30))|(02)/(0[1-9]|[1][0-9]|2[0-8]))/([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(02/29/(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 558,
+          "input_label": "Date of issue (MM/DD/YYYY)",
+          "input_placeholder": "01/21/2016",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "((((0[13578]|1[02])/(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)/(0[1-9]|[12][0-9]|30))|(02)/(0[1-9]|[1][0-9]|2[0-8]))/([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(02/29/(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 559,
+          "input_label": "Date of expiration (MM/DD/YYYY)",
+          "input_placeholder": "10/16/2024",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "((((0[13578]|1[02])/(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)/(0[1-9]|[12][0-9]|30))|(02)/(0[1-9]|[1][0-9]|2[0-8]))/([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(02/29/(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 560,
+          "input_label": "Document Number",
+          "input_placeholder": "S111-2222-3333-44",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "[a-zA-Z][0-9]{3}-[0-9]{4}-[0-9]{4}-[0-9]{2}"
+        },
+        {
+          "id": 561,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "[mMfF]"
+        }
+      ]
+    },
+    {
+      "id": 154,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 562,
+          "input_label": "Height (inches)",
+          "input_placeholder": "71",
+          "input_name": "HGT",
+          "type": "text",
+          "value": "71",
+          "required": true,
+          "regular_expression": "[1-9][0-9]"
+        },
+        {
+          "id": 564,
+          "input_label": "Eye Color Code",
+          "input_placeholder": "BLU",
+          "input_name": "EYES",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 565,
+          "input_label": "Hair Color Code",
+          "input_placeholder": "SDY",
+          "input_name": "HAIR",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 3937,
+          "input_label": "Weight",
+          "input_placeholder": "150",
+          "input_name": "WGT",
+          "type": "text",
+          "value": "150",
+          "required": true,
+          "regular_expression": "[7-9][0-9]|[1-5][0-9][0-9]"
+        }
+      ]
+    },
+    {
+      "id": 155,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 547,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 548,
+          "input_label": "Background number 1 - 30 (Not necessary!)",
+          "input_placeholder": "3",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "(30|[12][0-9]|[1-9])"
+        },
+        {
+          "id": 549,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 550,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "USA Wisconsin DL"
+}

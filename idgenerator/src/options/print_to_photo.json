@@ -1,0 +1,49 @@
+{
+  "id": 105,
+  "jsx": 133,
+  "template_name": "Photo|template_97",
+  "preview": "generators/previews/print_to_photo_1.jpg",
+  "description": "",
+  "image1_default": "generators/PRINT to PHOTO/image1/IDPRINT.jpg",
+  "image2_default": null,
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "print_to_photo",
+  "name": "Print to Photo",
+  "icon": "generators/PRINT to PHOTO/icon/data-transformation.png",
+  "price": "1.00",
+  "image5_default": null,
+  "identifier": "print_to_photo",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 395,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 1396,
+          "input_label": "Image for printing",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1397,
+          "input_label": "Background number 1 - 30 (Not necessary!)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "([1-9]|[1][0-9]|[2][0-9]|30)"
+        }
+      ]
+    }
+  ],
+  "name_default": "Print to Photo"
+}

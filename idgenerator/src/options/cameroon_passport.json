@@ -1,0 +1,223 @@
+{
+  "id": 197,
+  "jsx": 226,
+  "template_name": "Photo|template_191",
+  "preview": "generators/previews/cameroon_passport_preview.jpg",
+  "description": "",
+  "image1_default": "generators/Cameroon passport/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Cameroon passport/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "cameroon_passport",
+  "name": "Cameroon passport",
+  "icon": "generators/Cameroon passport/icon/cameroon.svg",
+  "price": "3.99",
+  "image5_default": null,
+  "identifier": "cameroon_passport",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 801,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 2841,
+          "input_label": "Surname",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2842,
+          "input_label": "Given names",
+          "input_placeholder": "JOHN LEE",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2843,
+          "input_label": "Document number (0XXXXXXX)",
+          "input_placeholder": "01234567",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2844,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 802,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 2845,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 2846,
+          "input_label": "Date of issue (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2020",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 2847,
+          "input_label": "Date of expiry (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2025",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 803,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 2848,
+          "input_label": "Nationality",
+          "input_placeholder": "CAMEROONIAN",
+          "input_name": "NATIONALITY",
+          "type": "text",
+          "value": "CAMEROONIAN",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2849,
+          "input_label": "Place of Birth",
+          "input_placeholder": "DOUALA",
+          "input_name": "POB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2850,
+          "input_label": "Residence",
+          "input_placeholder": "DOUALA",
+          "input_name": "RESIDENCE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2851,
+          "input_label": "Authrority",
+          "input_placeholder": "DGSN",
+          "input_name": "AUTHORITY",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 804,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 2852,
+          "input_label": "Height (m)",
+          "input_placeholder": "1.78",
+          "input_name": "HGT",
+          "type": "text",
+          "value": "1.78",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2853,
+          "input_label": "Personal Number (M0XXXXXX) — not necessary",
+          "input_placeholder": "M0123456",
+          "input_name": "PERSONALNUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 805,
+      "name": "Step 5",
+      "fields": [
+        {
+          "id": 2837,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2838,
+          "input_label": "Background number (1 - 16)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2839,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2840,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Cameroon passport"
+}

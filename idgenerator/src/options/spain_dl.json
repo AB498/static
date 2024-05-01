@@ -1,0 +1,177 @@
+{
+  "id": 182,
+  "jsx": 211,
+  "template_name": "Photo|template_176",
+  "preview": "generators/previews/spain_dl_result.jpg",
+  "description": "",
+  "image1_default": "generators/Spain Drivers License/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Spain Drivers License/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "spain_dl",
+  "name": "Spain Drivers License",
+  "icon": "generators/Spain Drivers License/icon/spain.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "spain_dl",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 731,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 2604,
+          "input_label": "Surname",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2605,
+          "input_label": "Given names",
+          "input_placeholder": "JOHN LEE",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2610,
+          "input_label": "Document number",
+          "input_placeholder": "Y0025161-X",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2611,
+          "input_label": "Category",
+          "input_placeholder": "AM B",
+          "input_name": "CATEGORY",
+          "type": "text",
+          "value": "AM B",
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 732,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 2612,
+          "input_label": "Date of birth (DD-MM-YYYY)",
+          "input_placeholder": "16-10-1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])-((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)-(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])-(02))-([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29-02-(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 2613,
+          "input_label": "Date of issue (DD-MM-YYYY)",
+          "input_placeholder": "15-12-2025",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])-((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)-(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])-(02))-([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29-02-(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 2614,
+          "input_label": "Date of expiry (DD-MM-YYYY)",
+          "input_placeholder": "15-12-2025",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])-((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)-(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])-(02))-([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29-02-(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 733,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 2615,
+          "input_label": "Place of Birth",
+          "input_placeholder": "ESPAÑA",
+          "input_name": "POB",
+          "type": "text",
+          "value": "ESPAÑA",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 2616,
+          "input_label": "Place of issue",
+          "input_placeholder": "33-00",
+          "input_name": "POI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 734,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 2606,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2607,
+          "input_label": "Background number (1 - 30)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2608,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 2609,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Spain Drivers License"
+}

@@ -1,0 +1,247 @@
+{
+  "id": 132,
+  "jsx": 160,
+  "template_name": "Photo|template_127",
+  "preview": "generators/previews/res_Nigeria_DL.jpg",
+  "description": "",
+  "image1_default": "generators/Nigeria Driving License/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Nigeria Driving License/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "nigeria_dl",
+  "name": "Nigeria Driving License",
+  "icon": "generators/Nigeria Driving License/icon/nigeria.svg",
+  "price": "3.99",
+  "image5_default": null,
+  "identifier": "nigeria_dl",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 504,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 1772,
+          "input_label": "First Name",
+          "input_placeholder": "JOHN",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1773,
+          "input_label": "Last Name",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1774,
+          "input_label": "Middle name (Not necessary!)",
+          "input_placeholder": "LEE",
+          "input_name": "MN",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1780,
+          "input_label": "Sex",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 505,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 1781,
+          "input_label": "Document Number (12 symbols)",
+          "input_placeholder": "ABC85254AB02",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": "ABC85254AB02",
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1783,
+          "input_label": "Date of birth (DD-MM-YYYY)",
+          "input_placeholder": "15-08-1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])-((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)-(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])-(02))-([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29-02-(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 1784,
+          "input_label": "Date of issue (DD-MM-YYYY)",
+          "input_placeholder": "25-01-2016",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])-((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)-(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])-(02))-([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29-02-(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 1785,
+          "input_label": "Date of expiration (DD-MM-YYYY)",
+          "input_placeholder": "15-08-2019",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])-((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)-(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])-(02))-([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29-02-(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 506,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 1775,
+          "input_label": "Address (Line 1)",
+          "input_placeholder": "BESIDE YORUBA MOSQUE",
+          "input_name": "ADD1",
+          "type": "text",
+          "value": "BESIDE YORUBA MOSQUE",
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1777,
+          "input_label": "Address (Line 2)",
+          "input_placeholder": "GALADIMAWA VILLAGE AIRPORT ROAD",
+          "input_name": "ADD2",
+          "type": "text",
+          "value": "GALADIMAWA VILLAGE AIRPORT ROAD",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 1778,
+          "input_label": "City",
+          "input_placeholder": "ABUGA",
+          "input_name": "CITY",
+          "type": "text",
+          "value": "ABUGA",
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1779,
+          "input_label": "State",
+          "input_placeholder": "FCT",
+          "input_name": "STATE",
+          "type": "text",
+          "value": "FCT",
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1786,
+          "input_label": "Height",
+          "input_placeholder": "1.57M",
+          "input_name": "HGT",
+          "type": "text",
+          "value": "1.57M",
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1787,
+          "input_label": "GL",
+          "input_placeholder": "N",
+          "input_name": "GL",
+          "type": "text",
+          "value": "N",
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1788,
+          "input_label": "N of K (11 digits)",
+          "input_placeholder": "16324851367",
+          "input_name": "NOFK",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1789,
+          "input_label": "N of K (11 digits)",
+          "input_placeholder": "16324851367",
+          "input_name": "NOFK",
+          "type": "text",
+          "value": "16324851367",
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 507,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 1768,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1769,
+          "input_label": "Background number (1 - 30)",
+          "input_placeholder": "1",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": "(30|[12][0-9]|[1-9])"
+        },
+        {
+          "id": 1770,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 1771,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Nigeria Driving License"
+}

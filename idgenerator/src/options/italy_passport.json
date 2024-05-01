@@ -1,0 +1,217 @@
+{
+  "id": 46,
+  "jsx": 71,
+  "template_name": "Photo|template_42",
+  "preview": "generators/previews/italy_passport_pre.jpg",
+  "description": "",
+  "image1_default": "generators/Italy passport/image1/PHOTODROP.jpg",
+  "image2_default": "generators/Italy passport/image2/signature.jpg",
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "italy_passport",
+  "name": "Italy passport",
+  "icon": "generators/Italy passport/icon/italy.svg",
+  "price": "8.99",
+  "image5_default": null,
+  "identifier": "italy_passport",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 171,
+      "name": "Step 1",
+      "fields": [
+        {
+          "id": 614,
+          "input_label": "Surname",
+          "input_placeholder": "DOE",
+          "input_name": "LN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 619,
+          "input_label": "Given names",
+          "input_placeholder": "JOHN",
+          "input_name": "FN",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 620,
+          "input_label": "Document Number (9 characters)",
+          "input_placeholder": "AB1234567",
+          "input_name": "NUMBER",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 621,
+          "input_label": "Sex (M or F)",
+          "input_placeholder": "M",
+          "input_name": "SEX",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 627,
+          "input_label": "Nationality",
+          "input_placeholder": "ITALIANA",
+          "input_name": "NATIONALITY",
+          "type": "text",
+          "value": "ITALIANA",
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 172,
+      "name": "Step 2",
+      "fields": [
+        {
+          "id": 622,
+          "input_label": "Date of birth (DD.MM.YYYY)",
+          "input_placeholder": "16.10.1986",
+          "input_name": "DOB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 623,
+          "input_label": "Date of issue (DD.MM.YYYY)",
+          "input_placeholder": "15.12.2019",
+          "input_name": "DOI",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        },
+        {
+          "id": 624,
+          "input_label": "Date of expiration (DD.MM.YYYY)",
+          "input_placeholder": "14.12.2029",
+          "input_name": "DOE",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
+        }
+      ]
+    },
+    {
+      "id": 173,
+      "name": "Step 3",
+      "fields": [
+        {
+          "id": 625,
+          "input_label": "Height",
+          "input_placeholder": "170",
+          "input_name": "HGT",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 626,
+          "input_label": "Eye Color Code",
+          "input_placeholder": "CELESTI",
+          "input_name": "EYES",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 628,
+          "input_label": "Residense",
+          "input_placeholder": "LATISANA (UD)",
+          "input_name": "RESIDENCE",
+          "type": "text",
+          "value": "LATISANA (UD)",
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 629,
+          "input_label": "Place of Birth",
+          "input_placeholder": "LATISANA (UD)",
+          "input_name": "POB",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        },
+        {
+          "id": 952,
+          "input_label": "Authority",
+          "input_placeholder": "MINISTRO AFFARI ESTERI",
+          "input_name": "AUTHORITY",
+          "type": "text",
+          "value": "MINISTRO AFFARI ESTERI",
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    },
+    {
+      "id": 175,
+      "name": "Step 4",
+      "fields": [
+        {
+          "id": 615,
+          "input_label": "Result image Type (Photo, Scan, Print)",
+          "input_placeholder": "Photo",
+          "input_name": "BACKGROUND",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 616,
+          "input_label": "Background number 1 - 16 (Not necessary!)",
+          "input_placeholder": "2",
+          "input_name": "BACKGROUND_NUMBER",
+          "type": "text",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 617,
+          "input_label": "Photo",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image1",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        },
+        {
+          "id": 618,
+          "input_label": "Signature",
+          "input_placeholder": "Upload your photo (JPG or PNG)",
+          "input_name": "image2",
+          "type": "file",
+          "value": null,
+          "required": false,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Italy passport"
+}

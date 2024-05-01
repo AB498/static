@@ -1,0 +1,39 @@
+{
+  "id": 42,
+  "jsx": 85,
+  "template_name": "Photo|template_99",
+  "preview": "generators/previews/code_128_result_image.jpg",
+  "description": "",
+  "image1_default": null,
+  "image2_default": null,
+  "image3_default": null,
+  "image4_default": null,
+  "slug": "code128_generator",
+  "name": "Code 128",
+  "icon": "generators/Code 128/icon/tool.png",
+  "price": "0.00",
+  "image5_default": null,
+  "identifier": "code128_generator",
+  "is_pdf": false,
+  "is_active": true,
+  "is_compress": true,
+  "steps": [
+    {
+      "id": 156,
+      "name": "Online barcode generator",
+      "fields": [
+        {
+          "id": 567,
+          "input_label": "Data",
+          "input_placeholder": "123456789",
+          "input_name": "CODE128",
+          "type": "text",
+          "value": null,
+          "required": true,
+          "regular_expression": null
+        }
+      ]
+    }
+  ],
+  "name_default": "Code 128"
+}
