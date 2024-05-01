@@ -199,14 +199,19 @@ let StepsForm = ({ data }) => {
 let NewsPage = () => {
   return (
     <div className="sm:basis-2/3">
-      <div className="text-xl font-bold text-yellow-500">What is Verif Tools?</div>
-      Verif Tools is a service for creating high-quality photos of ID documents. You can create passports, ID cards, driver's licenses, bills, and bank statements of different countries in just 2
-      minutes. Legal usage of the service is your responsibility. By using the service, you must be aware of the local, state and federal laws in your jurisdiction and take sole responsibility for
-      your actions.
-      <br />
-      <div className="text-xl font-bold text-yellow-500">Contact Us</div>
-      Need help? Write to support. Join our Telegram channel. There is always the latest information and news. In addition, we often hold draws! Subscribe!
-      <br />
+      <div className="div">
+        <div className="text-xl font-bold text-yellow-500">What is Verif Tools?</div>
+        Verif Tools is a service for creating high-quality photos of ID documents. You can create passports, ID cards, driver's licenses, bills, and bank statements of different countries in just 2
+        minutes. Legal usage of the service is your responsibility. By using the service, you must be aware of the local, state and federal laws in your jurisdiction and take sole responsibility for
+        your actions.
+      </div>
+      <div className="my-4"></div>
+
+      <div>
+        <div className="text-xl font-bold text-yellow-500">Contact Us</div>
+        Need help? Write to support. Join our Telegram channel. There is always the latest information and news. In addition, we often hold draws! Subscribe!
+      </div>
+      <div className="my-4"></div>
 
       <div className="div">
         <div className=" text-xl font-bold text-yellow-500">F.A.Q</div>
