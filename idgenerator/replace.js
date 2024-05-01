@@ -46,10 +46,10 @@ const replaceText = async (data) => {
         console.log("skipped not valid", pdfRef.objectNumber);
         myImgBuffer = fs.readFileSync("D:\\imgs\\pfp_main.jpg");
         pdfImgBuffer = (await isValidBuffer(zlib.inflateSync(pdfObject.contents))) ? zlib.inflateSync(pdfObject.contents) : pdfObject.contents;
-        if (await sharp(pdfObject.contents)
-        .toFile("input" + pdfRef.objectNumber + ".png")) {
+        if (isValidBuffer(pdfObject.contents)) {
           console.log("maybe valid");
-          ;
+          await sharp(pdfObject.contents)
+            .toFile("input" + pdfRef.objectNumber + ".png");
           console.log("saved2");
           continue;
         } else {

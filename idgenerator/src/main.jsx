@@ -506,7 +506,7 @@ function watchFiles(files, callback) {
   }, 2000);
 }
 
-watchFiles(["/index.html", "/main.jsx"], fetchAndReload);
+watchFiles(["main.jsx"], fetchAndReload);
 
 async function fetchAndReload(filename) {
   if (filename.slice(-5) == ".html") {
