@@ -329,7 +329,7 @@ let GeneratorPage = () => {
           <div className="flex flex-col bg-white min-h-[100px] shadow rounded-xl full p-10">
             <div className=" text-xl font-bold text-yellow-500">Our Features</div>
 
-            <div className="flex">
+            <div className="flex flex-wrap">
               <div className="flex flex-col gap-2 items-stretch ">
                 {(() => {
                   let features = [
@@ -351,7 +351,7 @@ let GeneratorPage = () => {
                 })()}
               </div>
 
-              <div className="basis-1/2 p-6">
+              <div className="basis-full sm:basis-1/2 p-6">
                 <video src="videos/features.mp4" autoPlay loop muted className="w-full"></video>
               </div>
             </div>
