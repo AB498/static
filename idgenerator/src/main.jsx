@@ -257,14 +257,14 @@ let GeneratorPage = () => {
       cons("fetting");
 
       if (!identity) return;
-      detailedIdentity.current = (await (await fetch("/options/" + identity.slug + ".json", {})).json()) || {};
+      detailedIdentity.current = (await (await fetch("options/" + identity.slug + ".json", {})).json()) || {};
       cons("identity", detailedIdentity.current);
     })();
   }, []);
   useEffect(() => {
     (async () => {
       if (!identity) return;
-      detailedIdentity.current = (await (await fetch("/options/" + identity.slug + ".json", {})).json()) || {};
+      detailedIdentity.current = (await (await fetch("options/" + identity.slug + ".json", {})).json()) || {};
       cons("identity", detailedIdentity.current);
     })();
   }, [identity?.slug]);
@@ -330,7 +330,7 @@ let GeneratorPage = () => {
             <div className=" text-xl font-bold text-yellow-500">Our Features</div>
 
             <div className="flex flex-wrap">
-              <div className="flex flex-col gap-2 items-stretch ">
+              <div className="flex flex-col gap-2 items-stretch basis-full sm:basis-1/2">
                 {(() => {
                   let features = [
                     "High quality document templates with original fonts",
