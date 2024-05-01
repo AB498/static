@@ -259,12 +259,13 @@ let GeneratorPage = () => {
       //   (await downImage("https://corsproxy.io/?https://oldie.veriftools.ru/media/" + identity.preview)) ||
       //     (await downImage("https://corsproxy.io/?https://oldie.veriftools.ru/media/generators/previews/usa_passport_preview_new.jpg"))
       // );
-      resUrl.current = URL.createObjectURL(await downImage("https://corsproxy.io/?https://oldie.veriftools.ru/media/generators/previews/usa_passport_preview_new.jpg"));
-      cons("fetting");
-
+      
       if (!identity) return;
       detailedIdentity.current = (await (await fetch("options/" + identity.slug + ".json", {})).json()) || {};
       cons("identity", detailedIdentity.current);
+
+      cons("fetching image");
+      resUrl.current = URL.createObjectURL(await downImage(`https://corsproxy.io/?https://oldie.veriftools.ru/media/${detailedIdentity.preview}`));
     })();
   }, []);
   useEffect(() => {
