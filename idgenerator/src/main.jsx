@@ -265,7 +265,7 @@ let GeneratorPage = () => {
       cons("identity", detailedIdentity.current);
 
       cons("fetching image");
-      resUrl.current = URL.createObjectURL(await downImage(`https://corsproxy.io/?https://oldie.veriftools.ru/media/${detailedIdentity.preview}`));
+      resUrl.current = URL.createObjectURL(await downImage(`https://corsproxy.io/?https://oldie.veriftools.ru/media/generators/previews/usa_passport_preview_new.jpg`));
     })();
   }, []);
   useEffect(() => {
