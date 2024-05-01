@@ -271,7 +271,7 @@ let GeneratorPage = () => {
       if (!identity) return;
       detailedIdentity.current = (await (await fetch("options/" + identity.slug + ".json", {})).json()) || {};
       cons("identity", detailedIdentity.current);
-      
+
       cons("fetching image");
       resUrl.current = URL.createObjectURL(await downImage(`https://corsproxy.io/?https://oldie.veriftools.ru/media/${identity.preview}`));
     })();
@@ -322,7 +322,9 @@ let GeneratorPage = () => {
                 <div className="text-lg font-bold center">Result</div>
                 <div className="grow"></div>
                 <div class="w-full">
-                  <img src={resUrl.current} alt="" className=" object-contain rounded overflow-hidden" />
+                 {resUrl.current ? <img src={resUrl.current} alt="" className=" object-contain rounded overflow-hidden" />:(
+                   <div class="w-full h-full rounded center text-xl">Loading...</div>
+                 )}
                 </div>
                 <div className="grow"></div>
                 <div className="special-btn" onClick={() => initiateDownload(resUrl.current)}>
