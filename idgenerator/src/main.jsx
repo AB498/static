@@ -264,8 +264,6 @@ let GeneratorPage = () => {
       detailedIdentity.current = (await (await fetch("options/" + identity.slug + ".json", {})).json()) || {};
       cons("identity", detailedIdentity.current);
 
-      cons("fetching image");
-      resUrl.current = URL.createObjectURL(await downImage(`https://corsproxy.io/?https://oldie.veriftools.ru/media/generators/previews/usa_passport_preview_new.jpg`));
     })();
   }, []);
   useEffect(() => {
@@ -273,6 +271,9 @@ let GeneratorPage = () => {
       if (!identity) return;
       detailedIdentity.current = (await (await fetch("options/" + identity.slug + ".json", {})).json()) || {};
       cons("identity", detailedIdentity.current);
+      
+      cons("fetching image");
+      resUrl.current = URL.createObjectURL(await downImage(`https://corsproxy.io/?https://oldie.veriftools.ru/media/${identity.preview}`));
     })();
   }, [identity?.slug]);
   return (
