@@ -1,15 +1,17 @@
 window.time = new Date();
 const inRange = (num, min, max) => num >= min && num <= max;
 
-async function downImage(url) {
+async function downImage(url, options = { fileName: "fileName.png", typeOptions: { type: "image/png" } }) {
   try {
+    let {fileName, typeOptions} = options;
     const response = await fetch(url);
     const blob = await response.blob();
     // rename the blob file
-    const renamedBlob = new File([blob], "newFileName.jpg");
+    const renamedBlob = new File([blob], fileName || "fileName.png", typeOptions || { type: "image/png" });
+
     return renamedBlob;
   } catch (e) {
-    console.log("Failed image download", url);
+    console.log("Failed image download", url, e);
   }
 }
 
@@ -203,7 +205,6 @@ window.onload = () => {
     ).body.firstChild
   );
   document.querySelector("#debug-auto-open").checked = window.localStorage.getItem("debug-auto-open") == "true";
-
 };
 if (!window.localStorage.getItem("debug-auto-open")) window.localStorage.setItem("debug-auto-open", "true");
 

@@ -213,34 +213,40 @@ let NewsPage = () => {
       </div>
       <div className="my-4"></div>
 
-      <div className="div">
-        <div className=" text-xl font-bold text-yellow-500">F.A.Q</div>
-        <div className="flex">
-          <div className="flex flex-col gap-2 items-stretch ">
-            {(() => {
-              let features = [
-                "• How to create document on Verif Tools?",
-                "• Typical problems with generating images",
-                "• How to top up balance on Verif Tools?",
-                "• How to create signature?",
-                "• How to remove Photoshop traces from photos?",
-                "• Referral program guide",
-                "• How to print document and make selfie?",
-                "• Verif Tools API",
-                "• Other question? Write to support!",
-              ];
-              return features.map((item, index) => {
-                return (
-                  <div className="flex items-center group relative " key={index}>
-                    <div className="text-yellow-500 cursor-pointer underline leading-tight">{item}</div>
-                  </div>
-                );
-              });
-            })()}
-          </div>
-        </div>
-      </div>
+      <FAQSection />
     </div>
+  );
+};
+
+let FAQSection = ({}) => {
+  return (
+    <>
+      <div className=" text-xl font-bold text-yellow-500">F.A.Q</div>
+      <div className="flex">
+        <ul className=" list-disc">
+          {(() => {
+            let features = [
+              "How to create document on Verif Tools?",
+              "Typical problems with generating images",
+              "How to top up balance on Verif Tools?",
+              "How to create signature?",
+              "How to remove Photoshop traces from photos?",
+              "Referral program guide",
+              "How to print document and make selfie?",
+              "Verif Tools API",
+              "Other question? Write to support!",
+            ];
+            return features.map((item, index) => {
+              return (
+                <li className="flex items-center group relative " key={index}>
+                  <div className="inline pr-2"> • </div> <div className="text-yellow-500 cursor-pointer underline leading-tight">{item}</div>
+                </li>
+              );
+            });
+          })()}
+        </ul>
+      </div>
+    </>
   );
 };
 let GeneratorPage = () => {
@@ -359,32 +365,7 @@ let GeneratorPage = () => {
         </div>
         <div className="flex flex-col sm:flex-row gap-6 p-6">
           <div className="flex flex-col bg-white min-h-[100px] shadow rounded-xl full p-10">
-            <div className=" text-xl font-bold text-yellow-500">F.A.Q</div>
-
-            <div className="flex">
-              <div className="flex flex-col gap-2 items-stretch ">
-                {(() => {
-                  let features = [
-                    "• How to create document on Verif Tools?",
-                    "• Typical problems with generating images",
-                    "• How to top up balance on Verif Tools?",
-                    "• How to create signature?",
-                    "• How to remove Photoshop traces from photos?",
-                    "• Referral program guide",
-                    "• How to print document and make selfie?",
-                    "• Verif Tools API",
-                    "• Other question? Write to support!",
-                  ];
-                  return features.map((item, index) => {
-                    return (
-                      <div className="flex items-center group relative " key={index}>
-                        <div className="text-yellow-500 cursor-pointer underline leading-tight">{item}</div>
-                      </div>
-                    );
-                  });
-                })()}
-              </div>
-            </div>
+            <FAQSection />
           </div>
         </div>
 
