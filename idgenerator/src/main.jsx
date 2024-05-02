@@ -250,6 +250,7 @@ let FAQSection = ({}) => {
   );
 };
 let GeneratorPage = () => {
+  aTransfer.ads.ada.sda=32;
   let identity = getIndentityById(state.current.currentId); // || 6);
   let resUrl = reactive("");
   let detailedIdentity = reactive(null);

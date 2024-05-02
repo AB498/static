@@ -161,8 +161,8 @@
             if (args?.[0] && args?.[0]?.name && !(funcType(args[0]) == "class") && args[0].name != "FlashChange" && args[0].name != "WithError" && args[0].name != "Funn"
                 && ![...Object.keys(React), ...Object.keys(ReactRouterDOM)].includes(args[0].name)
             ) {
-                let ell = original_createElement(...args);
-                return <WithError args={args}>{ell}</WithError>;
+                // let ell = original_createElement(...args);
+                return <WithError args={args}></WithError>;
             }
             return original_createElement(...args);
         };
@@ -215,102 +215,21 @@
 
             render() {
                 // return <FlashChange remaining={this.state.remaining} hasError={this.state.hasError} errorInfo={this.state.errorInfo} error={this.state.error} args={this.props?.args[0] ? this.props.args : "IS null"}>{this.props.children}</FlashChange>;
-                return this.props.hasError && getErrDiv(this.props.error, this.props.errorInfo?.componentStack) || this.props.children;
+                return this.props.hasError && getErrDiv(this.props.error, this.props.errorInfo?.componentStack) || <FlashChange args={this.props.args}></FlashChange>;
             }
         }
-        let Funn = ({ reff, args }) => {
-            let animation = React.useRef(null);
-            useEffect(() => {
-                // console.log(args[0].name)
-                if (!args) return () => console.log("no args");
-                if (animation.current && animation.current.isActive()) {
-                    animation.current.kill();
-                }
-
-                animation.current = gsap.to(reff.current, {
-                    keyframes: [
-                        {
-                            duration: 0,
-                            clearProps: "all",
-                            onComplete: () => { },
-                        },
-                        {
-                            backgroundColor: "rgba(217, 255, 140, 1)",
-                            color: "rgba(217, 255, 140, 1)",
-                            outline: "3px solid gray",
-                            duration: 0.1,
-                        },
-                        {
-                            backgroundColor: "rgba(255, 255, 255, 1)",
-                            color: "rgba(255, 255, 255, 1)",
-                            outline: "3px solid gray",
-                            duration: 0.2,
-                        },
-                        {
-                            duration: 0,
-                            clearProps: "all",
-                            onComplete: () => { },
-                        },
-                    ],
-                });
-                animation.current.restart();
-
-            });
-
-            let Chd = args[0]({ ...args[1], children: args[2] });
-            return Chd && <Chd.type {...Chd.props} ref={reff} style={{ ...Chd.props.style, display: "none" }}></Chd.type>
+        let Funn = ({  args }) => {
+            let Chd = args[0]({ ...args[1] });
+            // cons("args", args, Chd);
+            return Chd && <Chd.type {...Chd.props}></Chd.type>
 
         }
         let FlashChange = (props) => {
             let { args, hasError, error, errorInfo, remaining, Chdd, children } = props;
-            let ref = React.useRef(null);
-            let animation = React.useRef(null);
-            let [id, setId] = React.useState(uuid());
-            useEffect(() => {
-                // console.log(args[0].name)
-                if (!props) return () => { };
-                if (!args) return () => console.log("no args");
-                if (animation.current && animation.current.isActive()) {
-                    animation.current.kill();
-                }
-
-                animation.current = gsap.to(ref.current, {
-                    keyframes: [
-                        {
-                            backgroundColor: "rgba(217, 255, 140, 1)",
-                            color: "rgba(217, 255, 140, 1)",
-                            outline: "3px solid gray",
-                            duration: 0.1,
-                        },
-                        {
-                            backgroundColor: "rgba(255, 255, 255, 1)",
-                            color: "rgba(255, 255, 255, 1)",
-                            outline: "3px solid gray",
-                            duration: 0.2,
-                        },
-                        {
-                            duration: 0,
-                            clearProps: "all",
-                            onComplete: () => { },
-                        },
-                    ],
-                });
-                animation.current.restart();
-
-            });
-
-
-
-            // console.log('args[0]', args[0]?.name, args);
-            // if (!args[0]) return console.log("no args[0] 2");
-            // cons(args[0]);
-            // Chd.props = { ...Chd.props };
-            // console.log('Chd', Chd)
-
-
+       
             let el;
             try {
-                el = hasError && (getErrDiv(error, errorInfo?.componentStack)) || <Funn reff={ref} args={args} />;
+                el = hasError && (getErrDiv(error, errorInfo?.componentStack)) || <Funn  args={args} />;
             } catch (e) {
                 console.log(e);
                 el = getErrDiv(e, e.stack);

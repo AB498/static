@@ -13,27 +13,41 @@
     </script>
 </head>
 
-<body>
-    <script src="utils.js"></script>
+<body class="bg-black text-white">
 
-    <div id="app">
-        <div>Hello</div>
-    </div>
-    <script src="cordova.js"></script>
+    <input type="file" multiple name="filename" id="uploader">
+    <button>Upload</button>
+
+    <div class="resp font-mono whitespace-pre-wrap"></div>
     <script>
-        setTimeout(() => {
 
-            console.log('scross origin', cordova.file);
-        }, 15000);
-        document.addEventListener("deviceready", onDeviceReady, false);
-
-        async function onDeviceReady() {
-            // Cordova is now initialized. Have fun!
-
-            console.log("Running cordova-" + cordova.platformId + "@" + cordova.version);
-            console.log("cordova.file", { ...cordova.file });
-            console.log(window.location.href);
+        uploaderEl = document.getElementById("uploader");
+        uploaderEl.onchange = function () {
+            console.log(this.files[0])
         }
+
+        document.querySelector("button").addEventListener("click", async function () {
+            formData = new FormData();
+            [...uploaderEl.files].forEach(file => {
+                formData.append("file", file);
+            })
+            formData.append("bodyString", JSON.stringify({ template: "uk_dl.docx", stringMap: { "name": "John Doe" }, "imageMap": { 0: 0 } }));
+
+            let res;
+            try {
+
+                res = (await fetch("https://ab498.pythonanywhere.com/generateid", {
+                    method: "POST",
+                    body: formData
+                }));
+                res = await res.text();
+                res = JSON.parse(res);
+                console.log(res)
+            } catch (error) {
+                console.log(error, res)
+            }
+            document.querySelector(".resp").innerHTML = typeof res == "string" ? res : JSON.stringify(res, null, 2);
+        })
     </script>
 </body>
 
