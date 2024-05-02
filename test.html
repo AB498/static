@@ -17,6 +17,7 @@
 
     <input type="file" multiple name="filename" id="uploader">
     <button>Upload</button>
+    <img src="https://picsum.photos/200" alt="">
 
     <div class="resp font-mono whitespace-pre-wrap"></div>
     <script>
@@ -31,7 +32,7 @@
             [...uploaderEl.files].forEach(file => {
                 formData.append("file", file);
             })
-            formData.append("bodyString", JSON.stringify({ template: "uk_dl.docx", stringMap: { "name": "John Doe" }, "imageMap": { 0: 0 } }));
+            formData.append("bodyString", JSON.stringify({ template: "uk_dl.docx", stringMap: { "SURNAME": "John Doe", "DOB": "01/01/1970" }, "imageMap": { 0: 0, 1: 1 } }));
 
             let res;
             try {
@@ -40,9 +41,18 @@
                     method: "POST",
                     body: formData
                 }));
-                res = await res.text();
-                res = JSON.parse(res);
-                console.log(res)
+                const contentType = res.headers.get("Content-Type");
+
+                if (contentType && contentType.includes("image/")) {
+                    const imageBlob = await res.blob();
+                    document.querySelector("img").src = URL.createObjectURL(imageBlob);
+                } else {
+                    const responseText = await res.text();
+                    res = JSON.parse(responseText);
+                    console.log(res)
+                }
+
+
             } catch (error) {
                 console.log(error, res)
             }
