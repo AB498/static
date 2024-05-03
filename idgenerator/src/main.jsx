@@ -141,7 +141,7 @@ let CustomNestedOptions = ({ data }) => {
   if (data.name) {
     return <GeneratorItem data={data} />;
   }
-  
+
   if (!data.implemented) return null;
   let open = reactive(false);
   return (
@@ -487,7 +487,7 @@ let GeneratorPage = () => {
                     })()}
                   </div>
                   <div className="grow"></div>
-                  <div className="special-btn" onClick={() => initiateDownload(state.current.resultUrl, detailedIdentity.current?.name)}>
+                  <div className="special-btn" onClick={() => state.current.resultUrl && initiateDownload(state.current.resultUrl, detailedIdentity.current?.name)}>
                     Download
                   </div>
                 </div>
