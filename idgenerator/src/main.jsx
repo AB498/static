@@ -1,7 +1,7 @@
-function initiateDownload(url) {
+function initiateDownload(url, filename) {
   const link = document.createElement("a");
   link.href = url;
-  link.download = url;
+  link.download = filename || "id";
   link.click();
   link.remove();
 }
@@ -113,7 +113,13 @@ let SpecialAccordion = ({ title, children, defaultOpen = false, stylize = false,
 };
 let GeneratorItem = ({ data }) => {
   return (
-    <div class={"my-1 p-2 border rounded hover:bg-gray-200 full flex gap-2 px-2 items-center" + (open.current ? " bg-yellow-500" : "")} onClick={() => (state.current.currentId = data.id)}>
+    <div
+      class={(ids_implemented.includes(data.slug) ? "" : "opacity-50") + " my-1 p-2 border rounded hover:bg-gray-200 full flex gap-2 px-2 items-center" + (open.current ? " bg-yellow-500" : "")}
+      onClick={() => {
+        state.current.currentId = data.id;
+        // navigate(`/generator/${data.slug}`);
+      }}
+    >
       <div className="w-8 h-8">
         <img src={"images/" + data.icon.slice(data.icon.lastIndexOf("/") + 1)} alt="" className="w-full h-full rounded " />
       </div>
@@ -154,6 +160,73 @@ let CustomNestedOptions = ({ data }) => {
   return <div>No Data {data.title}</div>;
 };
 let StepsForm = ({ data }) => {
+  let flattenedData =
+    data?.steps.reduce((acc, step) => {
+      return [...acc, ...step.fields];
+    }, []) || [];
+  async function generateAndShow() {
+    let uploaderEl = document.getElementById("uploader");
+    let formData = new FormData();
+    // await Promise.all(
+    //   [1, 1].map(async (file) => {
+    //     formData.append("file", await downImage("https://picsum.photos/200"));
+    //   })
+    // );
+    let stringMap = { SURNAME: "John Doe", DOB: "01/01/1970" };
+    let errors = false;
+
+    let uploaderEls = [];
+    function pushAtIndex(arr, index, value) {
+      if (index >= arr.length) {
+        arr.length = index + 1;
+      }
+      arr[index] = value;
+    }
+
+    flattenedData.forEach((item) => {
+      let inputEl = document.querySelector(".form-input." + item.input_name);
+      if (!inputEl.value) {
+        inputEl.parentElement.querySelector(".error").classList.remove("hidden");
+        errors = true;
+      } else inputEl.parentElement.querySelector(".error").classList.add("hidden");
+
+      if (item.type == "text") stringMap[item.input_name] = inputEl.value || item.input_placeholder;
+      else if (item.type == "file") {
+        pushAtIndex(uploaderEls, item.target_index, document.querySelector(".form-input." + item.input_name));
+      }
+    });
+
+    cons(uploaderEls);
+    uploaderEls.forEach((el) => {
+      let file = el.files[0];
+      formData.append("file", file);
+    });
+
+    if (errors) {
+      return;
+    }
+
+    formData.append("bodyString", JSON.stringify({ template: `${data.slug}.docx`, stringMap, imageMap: { 0: 0, 1: 1 } }));
+
+    console.log("formData", formData);
+
+    let res = await await fetch("https://ab498.pythonanywhere.com/generateid", {
+      method: "POST",
+      body: formData,
+    });
+
+    const contentType = res.headers.get("Content-Type");
+
+    if (contentType && contentType.includes("image/")) {
+      const imageBlob = await res.blob();
+      console.log("got results");
+      state.current.resultUrl = URL.createObjectURL(imageBlob);
+    } else {
+      const responseText = await res.text();
+      res = safeParse(responseText) || res;
+      console.log(res);
+    }
+  }
   let currentStep = reactive(0);
   useEffect(() => {}, []);
   return (
@@ -176,16 +249,32 @@ let StepsForm = ({ data }) => {
             {data.steps?.map((step, index) => {
               return (
                 <div className={"full flex flex-col  gap-2 p-6 bg-white shadow rounded-b-xl " + (currentStep.current == index ? " " : "hidden")}>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col gap-4">
                     {step.fields.map((field) => (
                       <div className="flex flex-col">
-                        <label>{field.input_label}</label>
-                        <input type="text" value={field.input_value} placeholder={field.input_placeholder} class="rounded border full p-2" />
+                        <label>* {field.input_label}</label>
+                        <input
+                          type={field.type}
+                          value={field.input_value}
+                          placeholder={field.input_placeholder}
+                          class={"rounded border full p-2 form-input " + field.input_name}
+                          onChange={(e) =>
+                            !e.target.value ? e.target.parentElement.querySelector(".error").classList.remove("hidden") : e.target.parentElement.querySelector(".error").classList.add("hidden")
+                          }
+                          onBlur={(e) =>
+                            !e.target.value ? e.target.parentElement.querySelector(".error").classList.remove("hidden") : e.target.parentElement.querySelector(".error").classList.add("hidden")
+                          }
+                        />
+                        <div className="error hidden text-red-500 text-sm">This field is required</div>
                       </div>
                     ))}
                   </div>
                   <div className="grow"></div>
-                  {currentStep.current == data.steps.length - 1 && <button class="special-btn">Generate</button>}
+                  {currentStep.current == data.steps.length - 1 && (
+                    <button class="special-btn" onClick={() => generateAndShow()}>
+                      Generate
+                    </button>
+                  )}
                 </div>
               );
             })}
@@ -249,32 +338,49 @@ let FAQSection = ({}) => {
     </>
   );
 };
+
+window.ids_implemented = ["uk_dl"];
+async function safe(fn) {
+  try {
+    return await fn();
+  } catch (e) {
+    console.log("errored", e);
+    return null;
+  }
+}
+
 let GeneratorPage = () => {
-  aTransfer.ads.ada.sda=32;
   let identity = getIndentityById(state.current.currentId); // || 6);
   let resUrl = reactive("");
   let detailedIdentity = reactive(null);
+  let searchResults = reactive(null);
   useEffect(() => {
     (async () => {
-      // resUrl.current = URL.createObjectURL(
-      //   (await downImage("https://corsproxy.io/?https://oldie.veriftools.ru/media/" + identity.preview)) ||
-      //     (await downImage("https://corsproxy.io/?https://oldie.veriftools.ru/media/generators/previews/usa_passport_preview_new.jpg"))
-      // );
-      
       if (!identity) return;
+
       detailedIdentity.current = (await (await fetch("options/" + identity.slug + ".json", {})).json()) || {};
       cons("identity", detailedIdentity.current);
-
     })();
   }, []);
+
   useEffect(() => {
     (async () => {
       if (!identity) return;
       detailedIdentity.current = (await (await fetch("options/" + identity.slug + ".json", {})).json()) || {};
-      cons("identity", detailedIdentity.current);
 
-      cons("fetching image");
-      resUrl.current = URL.createObjectURL(await downImage(`https://corsproxy.io/?https://oldie.veriftools.ru/media/${identity.preview}`));
+      cons("available", ids_implemented.includes(identity.slug));
+      cons("identity", detailedIdentity.current);
+      state.current.resultUrl = -1;
+      state.current.resultUrl = await safe(async () => {
+        try {
+          return URL.createObjectURL(
+            (await downImage("https://corsproxy.io/?https://oldie.veriftools.ru/media/" + identity.preview)) ||
+              (await downImage("https://corsproxy.io/?https://oldie.veriftools.ru/media/generators/previews/usa_passport_preview_new.jpg"))
+          );
+        } catch (error) {}
+      });
+      // cons("fetching image");
+      // state.current.resultUrl = URL.createObjectURL(await downImage(`https://corsproxy.io/?https://oldie.veriftools.ru/media/${identity.preview}`));
     })();
   }, [identity?.slug]);
   return (
@@ -292,48 +398,67 @@ let GeneratorPage = () => {
         <div className="flex flex-col sm:flex-row gap-6 p-6">
           <div className="sm:basis-1/3 flex flex-col gap-6 all-options ">
             <div className="bg-white min-h-[100px] shadow rounded-xl border-2 logo center">
-              <div className="text-xl font-bold">LOGO</div>
+              <div className="text-xl font-bold h-16 ">
+                <img src="logo.jpg"  className="aspect-video w-full h-full" alt="" />
+              </div>
             </div>
             <div className="bg-white min-h-[100px] shadow rounded-xl border-2 id-type-select grow  p-6">
               <div className="text-xl text-yellow-600 center">All Generators</div>
+              <input
+                placeholder="Search..."
+                class={"rounded border w-full p-2 my-2 form-input "}
+                onChange={(e) => {
+                  if (!e.target.value) {
+                    searchResults.current = null;
+                    return;
+                  }
+                  searchResults.current = flattenedGenerators.filter((item) => item.name.toLowerCase().includes(e.target.value.toLowerCase()));
+                }}
+              />
               <div className="max-h-[80vh] overflow-auto">
-                {allOptions.current.map((item) => (
-                  <CustomNestedOptions data={item} />
-                ))}
+                {searchResults.current ? searchResults.current.map((item) => <CustomNestedOptions data={item} />) : allOptions.current.map((item) => <CustomNestedOptions data={item} />)}
               </div>
             </div>
           </div>
-          {detailedIdentity?.current ? (
-            <div className="sm:basis-1/3 flex flex-col gap-6">
-              <div className="bg-white min-h-[100px] shadow rounded-xl border-2 id-title p-6">
-                <div className="text-lg font-bold center">{detailedIdentity.current?.name || "Title"}</div>
-                <div className="center text-sm">${detailedIdentity.current?.price || "---"}</div>
+          {ids_implemented.includes(identity?.slug) ? (
+            <div className="flex flex-col sm:flex-row basis-2/3 gap-6 ">
+              <div className="sm:basis-1/2 flex flex-col gap-6">
+                <div className="bg-white min-h-[100px] shadow rounded-xl border-2 id-title p-6">
+                  <div className="text-lg font-bold center">{detailedIdentity.current?.name || "Title"}</div>
+                  <div className="center text-sm">${detailedIdentity.current?.price || "---"}</div>
+                </div>
+                <div className=" min-h-[100px] id-form grow">
+                  {(detailedIdentity?.current && <StepsForm data={detailedIdentity?.current || null} />) || (
+                    <div className="full  gap-2 bg-white min-h-[100px] shadow rounded-xl border-2 result flex flex-col p-6">
+                      <div class="w-full h-full rounded center text-xl">Loading...</div>
+                    </div>
+                  )}
+                  {/* <LinearForm data={detailedIdentity.current} /> */}
+                </div>
               </div>
-              <div className=" min-h-[100px] id-form grow">
-                <StepsForm data={detailedIdentity?.current || null} />
-                {/* <LinearForm data={detailedIdentity.current} /> */}
+              <div className="sm:basis-1/2">
+                <div className="full  gap-2 bg-white min-h-[100px] shadow rounded-xl border-2 result flex flex-col p-6">
+                  <div className="text-lg font-bold center">Result</div>
+                  <div className="grow"></div>
+                  <div class="w-full center">
+                    {state.current.resultUrl == -1 ? (
+                      <div class="w-full h-full rounded center text-xl">Loading...</div>
+                    ) : !state.current.resultUrl ? (
+                      <div class="w-full h-full rounded center text-xl">Failed!</div>
+                    ) : (
+                      <img src={state.current.resultUrl} alt="" className="full object-contain rounded overflow-hidden" />
+                    )}
+                  </div>
+                  <div className="grow"></div>
+                  <div className="special-btn" onClick={() => initiateDownload(state.current.resultUrl, detailedIdentity.current?.name)}>
+                    Download
+                  </div>
+                </div>
               </div>
             </div>
           ) : (
-            <NewsPage />
+            <div className="center grow bg-white min-h-[100px] shadow rounded-xl border-2 font-bold text-xl">Unavailable</div>
           )}
-          {detailedIdentity?.current ? (
-            <div className="sm:basis-1/3">
-              <div className="full  gap-2 bg-white min-h-[100px] shadow rounded-xl border-2 result flex flex-col p-6">
-                <div className="text-lg font-bold center">Result</div>
-                <div className="grow"></div>
-                <div class="w-full">
-                 {resUrl.current ? <img src={resUrl.current} alt="" className=" object-contain rounded overflow-hidden" />:(
-                   <div class="w-full h-full rounded center text-xl">Loading...</div>
-                 )}
-                </div>
-                <div className="grow"></div>
-                <div className="special-btn" onClick={() => initiateDownload(resUrl.current)}>
-                  Download
-                </div>
-              </div>
-            </div>
-          ) : null}
         </div>
 
         <div className="flex flex-col sm:flex-row gap-6 p-6">
@@ -430,10 +555,26 @@ function getIndentityById(id, root = allOptions.current) {
     if (res) return res;
   }
 }
+
+window.flatten = (arr, childKeys, fn) => {
+  let res = [];
+  for (let item of arr) {
+    if (fn(item)) {
+      res.push(item);
+    } else {
+      for (let childKey of childKeys) {
+        let clFlat = item[childKey] ? flatten(item[childKey], childKeys, fn) : [];
+        res = [...res, ...clFlat];
+      }
+    }
+  }
+  return res;
+};
 let App = () => {
   let history = useHistory();
   let state = reactive({ currentId: null });
   window.state = state;
+  let flattenedGenerators = [];
 
   let allOptions = reactive([]);
   window.allOptions = allOptions;
@@ -441,7 +582,9 @@ let App = () => {
   useEffect(() => {
     (async () => {
       allOptions.current = await (await fetch("allOptions.json")).json();
+      flattenedGenerators = flatten(allOptions.current, ["child", "generator"], (item) => item.name);
       window.allOptions = allOptions;
+      window.flattenedGenerators = flattenedGenerators;
     })();
   }, []);
 

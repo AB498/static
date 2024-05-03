@@ -219,10 +219,14 @@
             }
         }
         let Funn = ({  args }) => {
-            let Chd = args[0]({ ...args[1] });
+            try {
+                let Chd = args[0]({ ...args[1], children: args[2] });
+                return Chd && <Chd.type {...Chd.props}></Chd.type>
+            }catch (e) {
+                return getErrDiv(e, e.stack);
+            }
             // cons("args", args, Chd);
-            return Chd && <Chd.type {...Chd.props}></Chd.type>
-
+            
         }
         let FlashChange = (props) => {
             let { args, hasError, error, errorInfo, remaining, Chdd, children } = props;
