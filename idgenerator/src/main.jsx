@@ -150,7 +150,7 @@ let CustomNestedOptions = ({ data }) => {
           </div>
           <div className="text-lg">{data.title}</div>
           <div className="grow"></div>
-          <div className={"px-2 fa fa-angle-down duration-300 "+(open.current ? "rotate-180" : "")}></div>
+          <div className={"px-2 fa fa-angle-down duration-300 " + (open.current ? "rotate-180" : "")}></div>
         </div>
       }
       stylize={false}
@@ -166,12 +166,13 @@ let CustomNestedOptions = ({ data }) => {
   );
   return <div>No Data {data.title}</div>;
 };
-let StepsForm = ({ data }) => {
+let StepsForm = ({ data, generationProgress }) => {
   let flattenedData =
     data?.steps.reduce((acc, step) => {
       return [...acc, ...step.fields];
     }, []) || [];
   async function generateAndShow() {
+    generationProgress.current = { progress: 0, status: "running" };
     let uploaderEl = document.getElementById("uploader");
     let formData = new FormData();
     // await Promise.all(
@@ -228,10 +229,12 @@ let StepsForm = ({ data }) => {
       const imageBlob = await res.blob();
       console.log("got results");
       state.current.resultUrl = URL.createObjectURL(imageBlob);
+      generationProgress.current = { progress: 100, status: "completed" };
     } else {
       const responseText = await res.text();
       res = safeParse(responseText) || res;
       console.log(res);
+      generationProgress.current = { progress: 100, status: "failed" };
     }
   }
   let currentStep = reactive(0);
@@ -357,6 +360,8 @@ async function safe(fn) {
 }
 
 let GeneratorPage = () => {
+  let generationProgress = reactive({ progress: 0, status: "unstarted" });
+
   let identity = getIndentityById(state.current.currentId); // || 6);
   let resUrl = reactive("");
   let detailedIdentity = reactive(null);
@@ -373,20 +378,18 @@ let GeneratorPage = () => {
   useEffect(() => {
     (async () => {
       if (!identity) return;
-      detailedIdentity.current = null;
       detailedIdentity.current = (await (await fetch("options/" + identity.slug + ".json", {})).json()) || {};
 
       cons("available", ids_implemented.includes(identity.slug));
       cons("identity", detailedIdentity.current);
-      state.current.resultUrl = -1;
-      state.current.resultUrl = await safe(async () => {
-        try {
-          return URL.createObjectURL(
+      state.current.previewImage =
+        (await safe(async () =>
+          URL.createObjectURL(
             (await downImage("https://corsproxy.io/?https://oldie.veriftools.ru/media/" + identity.preview)) ||
               (await downImage("https://corsproxy.io/?https://oldie.veriftools.ru/media/generators/previews/usa_passport_preview_new.jpg"))
-          );
-        } catch (error) {}
-      });
+          )
+        )) || "no-image.png";
+      cons("state.current.previewImage", state.current.previewImage);
       // cons("fetching image");
       // state.current.resultUrl = URL.createObjectURL(await downImage(`https://corsproxy.io/?https://oldie.veriftools.ru/media/${identity.preview}`));
     })();
@@ -429,46 +432,45 @@ let GeneratorPage = () => {
             </div>
           </div>
 
-          {ids_implemented.includes(detailedIdentity?.current?.slug) ? (
-            !detailedIdentity.current ? (
-              <div className="center grow bg-white min-h-[100px] shadow rounded-xl border-2 font-bold text-xl">Loading...</div>
-            ) : (
-              <div className="flex flex-col sm:flex-row basis-2/3 gap-6 ">
-                <div className="sm:basis-1/2 flex flex-col gap-6">
-                  <div className="bg-white min-h-[100px] shadow rounded-xl border-2 id-title p-6">
-                    <div className="text-lg font-bold center">{detailedIdentity.current?.name || "Title"}</div>
-                    <div className="center text-sm">${detailedIdentity.current?.price || "---"}</div>
-                  </div>
-                  <div className=" min-h-[100px] id-form grow">
-                    {(detailedIdentity?.current && <StepsForm data={detailedIdentity?.current || null} />) || (
-                      <div className="full  gap-2 bg-white min-h-[100px] shadow rounded-xl border-2 result flex flex-col p-6">
-                        <div class="w-full h-full rounded center text-xl">Loading...</div>
-                      </div>
-                    )}
-                    {/* <LinearForm data={detailedIdentity.current} /> */}
-                  </div>
+          {!state.current.currentId ? (
+            <NewsPage />
+          ) : !detailedIdentity.current ? (
+            <div className="center grow bg-white min-h-[100px] shadow rounded-xl border-2 font-bold text-xl">Loading...</div>
+          ) : ids_implemented.includes(detailedIdentity?.current?.slug) ? (
+            <div className="flex flex-col sm:flex-row basis-2/3 gap-6 ">
+              <div className="sm:basis-1/2 flex flex-col gap-6">
+                <div className="bg-white min-h-[100px] shadow rounded-xl border-2 id-title p-6">
+                  <div className="text-lg font-bold center">{detailedIdentity.current?.name || "Title"}</div>
+                  <div className="center text-sm">${detailedIdentity.current?.price || "---"}</div>
                 </div>
-                <div className="sm:basis-1/2">
-                  <div className="full  gap-2 bg-white min-h-[100px] shadow rounded-xl border-2 result flex flex-col p-6">
-                    <div className="text-lg font-bold center">Result</div>
-                    <div className="grow"></div>
-                    <div class="w-full center">
-                      {state.current.resultUrl == -1 ? (
-                        <div class="w-full h-full rounded center text-xl">Loading...</div>
-                      ) : !state.current.resultUrl ? (
-                        <div class="w-full h-full rounded center text-xl">Failed!</div>
-                      ) : (
-                        <img src={state.current.resultUrl} alt="" className="full object-contain rounded overflow-hidden" />
-                      )}
+                <div className=" min-h-[100px] id-form grow">
+                  {(detailedIdentity?.current && <StepsForm generationProgress={generationProgress} data={detailedIdentity?.current || null} />) || (
+                    <div className="full  gap-2 bg-white min-h-[100px] shadow rounded-xl border-2 result flex flex-col p-6">
+                      <div class="w-full h-full rounded center text-xl">Loading...</div>
                     </div>
-                    <div className="grow"></div>
-                    <div className="special-btn" onClick={() => initiateDownload(state.current.resultUrl, detailedIdentity.current?.name)}>
-                      Download
-                    </div>
+                  )}
+                  {/* <LinearForm data={detailedIdentity.current} /> */}
+                </div>
+              </div>
+              <div className="sm:basis-1/2">
+                <div className="full  gap-2 bg-white min-h-[100px] shadow rounded-xl border-2 result flex flex-col p-6">
+                  <div className="text-lg font-bold center">Result</div>
+                  <div className="grow"></div>
+                  <div class="w-full center">
+                    {(() => {
+                      if (generationProgress.current.status == "running") return <div class="w-full h-full rounded center text-xl">Loading...</div>;
+                      else if (generationProgress.current.status == "failed") return <div class="w-full h-full rounded center text-xl">Preview Not Available!</div>;
+                      else if (generationProgress.current.status == "completed") return <img src={state.current.resultUrl} alt="" className="full object-contain rounded overflow-hidden" />;
+                      else return <img src={state.current.previewImage} alt="" className="full object-contain rounded overflow-hidden" />;
+                    })()}
+                  </div>
+                  <div className="grow"></div>
+                  <div className="special-btn" onClick={() => initiateDownload(state.current.previewImage, detailedIdentity.current?.name)}>
+                    Download
                   </div>
                 </div>
               </div>
-            )
+            </div>
           ) : (
             <div className="center grow bg-white min-h-[100px] shadow rounded-xl border-2 font-bold text-xl">Unavailable</div>
           )}
