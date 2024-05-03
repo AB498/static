@@ -399,7 +399,7 @@ let GeneratorPage = () => {
           <div className="sm:basis-1/3 flex flex-col gap-6 all-options ">
             <div className="bg-white min-h-[100px] shadow rounded-xl border-2 logo center">
               <div className="text-xl font-bold h-16 ">
-                <img src="logo.jpg"  className="aspect-video w-full h-full" alt="" />
+                <img src="logo.jpg" className="aspect-video w-full h-full" alt="" />
               </div>
             </div>
             <div className="bg-white min-h-[100px] shadow rounded-xl border-2 id-type-select grow  p-6">
@@ -550,6 +550,7 @@ function findIdentityRecursive(id, root = allOptions.current) {
   }
 }
 function getIndentityById(id, root = allOptions.current) {
+  if (!root) return null;
   for (let item of allOptions.current) {
     let res = findIdentityRecursive(id, item);
     if (res) return res;
