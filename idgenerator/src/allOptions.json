@@ -1,11 +1,13 @@
 [
     {
+        "implemented": true,
         "id": 8,
         "title": "Countries",
         "generator": [],
         "icon": "category1/icons/countries.png",
         "child": [
             {
+                "implemented": true,
                 "id": 23,
                 "title": "USA",
                 "generator": [
@@ -811,6 +813,7 @@
                 "child": []
             },
             {
+                "implemented": true,
                 "id": 69,
                 "title": "United Kingdom",
                 "generator": [

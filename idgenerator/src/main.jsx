@@ -135,11 +135,14 @@ let GeneratorItem = ({ data }) => {
   );
 };
 
+let countries_implemented = ["USA", "United Kingdom"];
+
 let CustomNestedOptions = ({ data }) => {
   if (data.name) {
     return <GeneratorItem data={data} />;
   }
-
+  
+  if (!data.implemented) return null;
   let open = reactive(false);
   return (
     <SpecialAccordion
@@ -396,7 +399,7 @@ let GeneratorPage = () => {
     })();
   }, [identity?.slug]);
   return (
-    <div className="w-full h-full flex flex-col">
+    <div className="w-full h-full flex flex-col items-center">
       <div className="navbar  h-16 shrink-0 bg-white w-full shadow ">
         <div className="full max-w-6xl mx-auto flex items-center  px-6 gap-4">
           <div className="grow"></div>
@@ -406,15 +409,15 @@ let GeneratorPage = () => {
         </div>
       </div>
 
-      <div className="main-body max-w-6xl mx-auto">
-        <div className="flex flex-col sm:flex-row gap-6 p-6">
+      <div className="main-body max-w-6xl w-full">
+        <div className="flex flex-col sm:flex-row gap-6 p-3 sm:p-6 ">
           <div className="sm:basis-1/3 flex flex-col gap-6 all-options ">
             <div className="bg-white min-h-[100px] shadow rounded-xl border-2 logo center">
-              <div className="text-xl font-bold h-16 ">
-                <img src="logo.jpg" className="aspect-video w-full h-full" alt="" />
+              <div className="text-xl font-bold h-16 w-full center">
+                <img src="logo.jpg" className="object-contain w-full h-full" alt="" />
               </div>
             </div>
-            <div className="bg-white min-h-[100px] shadow rounded-xl border-2 id-type-select grow  p-6">
+            <div className="bg-white min-h-[100px] shadow rounded-xl border-2 id-type-select grow  p-3 sm:p-6 w-full overflow-auto">
               <div className="text-xl text-yellow-600 center">All Generators</div>
               <input
                 placeholder="Search..."
@@ -495,8 +498,8 @@ let GeneratorPage = () => {
           )}
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-6 p-6">
-          <div className="flex flex-col bg-white min-h-[100px] shadow rounded-xl full p-10">
+        <div className="flex flex-col sm:flex-row gap-6 p-3 sm:p-6">
+          <div className="flex flex-col bg-white min-h-[100px] shadow rounded-xl full p-5 sm:p-10">
             <div className=" text-xl font-bold text-yellow-500">Our Features</div>
 
             <div className="flex flex-wrap">
@@ -521,20 +524,20 @@ let GeneratorPage = () => {
                 })()}
               </div>
 
-              <div className="basis-full sm:basis-1/2 p-6">
+              <div className="basis-full sm:basis-1/2 p-3 sm:p-6">
                 <video controls src="videos/features.mp4" autoPlay loop muted className="w-full"></video>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row gap-6 p-6">
-          <div className="flex flex-col bg-white min-h-[100px] shadow rounded-xl full p-10">
+        <div className="flex flex-col sm:flex-row gap-6 p-3 sm:p-6">
+          <div className="flex flex-col bg-white min-h-[100px] shadow rounded-xl full p-5 sm:p-10">
             <FAQSection />
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-6 p-6">
-          <div className="flex flex-col bg-white min-h-[100px] shadow rounded-xl full p-10">
+        <div className="flex flex-col sm:flex-row gap-6 p-3 sm:p-6">
+          <div className="flex flex-col bg-white min-h-[100px] shadow rounded-xl full p-5 sm:p-10">
             <div className=" text-xl font-bold text-yellow-500">Don't have a signature?</div>
 
             <div className="my-2"></div>
@@ -559,8 +562,8 @@ let GeneratorPage = () => {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-6 p-6">
-          <div className="flex flex-col bg-white min-h-[100px] shadow rounded-xl full p-10">
+        <div className="flex flex-col sm:flex-row gap-6 p-3 sm:p-6">
+          <div className="flex flex-col bg-white min-h-[100px] shadow rounded-xl full p-5 sm:p-10">
             <div className=" text-xl font-bold text-yellow-500">Contact Us</div>
 
             <div className="">
