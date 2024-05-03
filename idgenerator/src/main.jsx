@@ -211,6 +211,7 @@ let StepsForm = ({ data, generationProgress }) => {
     });
 
     if (errors) {
+      generationProgress.current = { progress: 0, status: "unstarted" };
       return;
     }
 
