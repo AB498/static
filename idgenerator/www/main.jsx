@@ -70,21 +70,27 @@ let GeneratorPage = () => {
       if (item.type == "text") stringMap[item.input_name] = inputEl.value || item.input_placeholder;
     });
 
-    pushAtIndex(uploaderEls, doc.images.find((item) => item.input_name == "photo").target_index, document.querySelector(".form-input.photo").files[0]);
-    pushAtIndex(uploaderEls, doc.images.find((item) => item.input_name == "signature").target_index, document.querySelector(".form-input.signature").files[0]);
 
-    uploaderEls.forEach((item) => {
-      formData.append("file", item);
-    });
+    let imgMap = {};
+    for (let i = 0; i < doc.images.length; i++) {
+      let img = doc.images[i];
+      imgMap[i] = img.target_index;
+      formData.append("file", document.querySelector(".form-input."+img.input_name).files[0]);
+    }
+    // pushAtIndex(uploaderEls, document.querySelector(".form-input.photo").files[0]);
+    // pushAtIndex(uploaderEls, doc.images.find((item) => item.input_name == "signature").target_index, document.querySelector(".form-input.signature").files[0]);
+
+    // uploaderEls.forEach((item) => {
+    // });
 
     if (errors) {
       generationProgress.current = { progress: 0, status: "unstarted" };
       return;
     }
 
-    formData.append("bodyString", JSON.stringify({ template: `${doc.slug}.docx`, stringMap, imageMap: { 0: 0, 1: 1 } }));
+    formData.append("bodyString", JSON.stringify({ template: `${doc.slug}.docx`, stringMap, imageMap: imgMap }));
 
-    console.log("formData", stringMap, uploaderEls);
+    console.log("formData", stringMap, imgMap, uploaderEls);
 
     let res = await await fetch("https://ab498.pythonanywhere.com/generateid", {
       method: "POST",
@@ -109,9 +115,9 @@ let GeneratorPage = () => {
 
   let docs = [
     {
-      slug: "uk_dl",
-      name: "UK Driving License",
-      icon: "images/ukdl.png",
+      slug: "uk_passport",
+      name: "UK Passport",
+      // icon: "images/ukdl.png",
       fields: [
         {
           id: 206,
@@ -375,6 +381,11 @@ let GeneratorPage = () => {
       name: "Driver's License",
       country: "United Kingdom",
       slug: "uk_dl",
+    },
+    {
+      name: "Passport",
+      country: "United Kingdom",
+      slug: "uk_passport",
     },
   ];
 
