@@ -109,9 +109,9 @@ let GeneratorPage = () => {
 
   let docs = [
     {
-      slug: "uk_passport",
-      name: "UK Passport",
-      // icon: "images/ukdl.png",
+      slug: "uk_dl",
+      name: "UK Driving License",
+      icon: "images/ukdl.png",
       fields: [
         {
           id: 206,
@@ -375,11 +375,6 @@ let GeneratorPage = () => {
       name: "Driver's License",
       country: "United Kingdom",
       slug: "uk_dl",
-    },
-    {
-      name: "Passport",
-      country: "United Kingdom",
-      slug: "uk_passport",
     },
   ];
 
