@@ -17,10 +17,6 @@
   "is_pdf": false,
   "is_active": true,
   "is_compress": true,
-  "steps": [
-    {
-      "id": 67,
-      "name": "Step 1",
       "fields": [
         {
           "id": 189,
@@ -61,13 +57,7 @@
           "value": null,
           "required": true,
           "regular_expression": "[a-zA-Z]{2}[0-9]{8}"
-        }
-      ]
-    },
-    {
-      "id": 68,
-      "name": "Step 2",
-      "fields": [
+        },
         {
           "id": 193,
           "input_label": "Date of birth (DD.MM.YYYY)",
@@ -98,13 +88,7 @@
           "required": true,
           "regular_expression": "(((0[1-9]|[12][0-9]|3[01])\\.((0[13578]|1[02]))|((0[1-9]|[12][0-9]|30)\\.(0[469]|11))|(0[1-9]|[1][0-9]|2[0-8])\\.(02))\\.([0-9]{3}[1-9]|[0-9]{2}[1-9][0-9]{1}|[0-9]{1}[1-9][0-9]{2}|[1-9][0-9]{3}))|(29\\.02\\.(([0-9]{2})(0[48]|[2468][048]|[13579][26])|((0[48]|[2468][048]|[3579][26])00)))"
         }
-      ]
-    },
-    {
-      "id": 69,
-      "name": "Step 3",
-      "fields": [
-        {
+,        {
           "id": 196,
           "input_label": "Place of Birth",
           "input_placeholder": "UNITED KINGDOM",
@@ -154,13 +138,7 @@
           "required": false,
           "regular_expression": "[a-zA-Z0-9][a-zA-Z0-9 ]+[a-zA-Z0-9]|[a-zA-Z0-9]|[a-zA-Z0-9]{2}"
         }
-      ]
-    },
-    {
-      "id": 70,
-      "name": "Step 4",
-      "fields": [
-        {
+,        {
           "id": 200,
           "input_label": "Result image Type (Photo, Scan, Print)",
           "input_placeholder": "Photo",
