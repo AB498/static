@@ -1,0 +1,23 @@
+####
+POST https://api.hoodpay.io/v1/businesses/15732/payments
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE2OTg0IiwiZXhwIjoyMDMwMzQ4NDcwfQ.7KT7nrdqTwOxsLOw7G54QPW62y8nZWsZpjCCratCmcc
+
+{
+    "name":"TEST 1 Document Photo",
+    "description":"Buying 1 Document Photo",
+    "currency":"USD",
+    "amount": 10,
+    "redirectUrl":"https://ab498.pythonanywhere.com/idgenerator/www",
+}
+####
+####
+####
+####
+####
+####
+####
+####
+####
+####

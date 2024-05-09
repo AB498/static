@@ -45,70 +45,213 @@ let GeneratorPage = () => {
 
   async function generateAndShow() {
     generationProgress.current = { progress: 0, status: "running" };
-    let uploaderEl = document.getElementById("uploader");
-    let formData = new FormData();
+    try {
+      let uploaderEl = document.getElementById("uploader");
+      let formData = new FormData();
 
-    let stringMap = { SURNAME: "John Doe", DOB: "01/01/1970" };
-    let errors = false;
+      let stringMap = { SURNAME: "John Doe", DOB: "01/01/1970" };
+      let errors = false;
 
-    let uploaderEls = [];
-    function pushAtIndex(arr, index, value) {
-      if (index >= arr.length) {
-        arr.length = index + 1;
+      let uploaderEls = [];
+      function pushAtIndex(arr, index, value) {
+        if (index >= arr.length) {
+          arr.length = index + 1;
+        }
+        arr[index] = value;
       }
-      arr[index] = value;
-    }
 
-    doc.fields.forEach((item) => {
-      let inputEl = document.querySelector(".form-input." + item.input_name);
-      if (!inputEl.value) {
-        inputEl.parentElement.querySelector(".error").classList.remove("hidden");
-        inputEl.parentElement.querySelector(".error").innerHTML = "Please fill this field";
-        errors = true;
-      } else inputEl.parentElement.querySelector(".error").classList.add("hidden");
+      doc.fields.forEach((item) => {
+        let inputEl = document.querySelector(".form-input." + item.input_name);
+        if (!inputEl.value) {
+          inputEl.parentElement.querySelector(".error").classList.remove("hidden");
+          inputEl.parentElement.querySelector(".error").innerHTML = "Please fill this field";
+          errors = true;
+        } else inputEl.parentElement.querySelector(".error").classList.add("hidden");
 
-      if (item.type == "text") stringMap[item.input_name] = inputEl.value || item.input_placeholder;
-    });
+        if (item.type == "text") stringMap[item.input_name] = inputEl.value || item.input_placeholder;
+      });
 
+      let imgMap = {};
+      for (let i = 0; i < doc.images.length; i++) {
+        let img = doc.images[i];
+        imgMap[i] = img.target_index;
+        formData.append("file", document.querySelector(".form-input." + img.input_name).files[0]);
+      }
+      // pushAtIndex(uploaderEls, document.querySelector(".form-input.photo").files[0]);
+      // pushAtIndex(uploaderEls, doc.images.find((item) => item.input_name == "signature").target_index, document.querySelector(".form-input.signature").files[0]);
 
-    let imgMap = {};
-    for (let i = 0; i < doc.images.length; i++) {
-      let img = doc.images[i];
-      imgMap[i] = img.target_index;
-      formData.append("file", document.querySelector(".form-input."+img.input_name).files[0]);
-    }
-    // pushAtIndex(uploaderEls, document.querySelector(".form-input.photo").files[0]);
-    // pushAtIndex(uploaderEls, doc.images.find((item) => item.input_name == "signature").target_index, document.querySelector(".form-input.signature").files[0]);
+      // uploaderEls.forEach((item) => {
+      // });
 
-    // uploaderEls.forEach((item) => {
-    // });
+      if (errors) {
+        generationProgress.current = { progress: 0, status: "unstarted" };
+        alertify.error("Please fill all required fields");
+        return;
+      }
 
-    if (errors) {
-      generationProgress.current = { progress: 0, status: "unstarted" };
-      return;
-    }
+      formData.append("bodyString", JSON.stringify({ template: `${doc.slug}.docx`, stringMap, imageMap: imgMap }));
 
-    formData.append("bodyString", JSON.stringify({ template: `${doc.slug}.docx`, stringMap, imageMap: imgMap }));
+      console.log("formData", stringMap, imgMap, uploaderEls);
 
-    console.log("formData", stringMap, imgMap, uploaderEls);
+      let res = await await fetch("https://ab498.pythonanywhere.com/generateid", {
+        method: "POST",
+        body: formData,
+      });
 
-    let res = await await fetch("https://ab498.pythonanywhere.com/generateid", {
-      method: "POST",
-      body: formData,
-    });
+      const contentType = res.headers.get("Content-Type");
+      function ImageDataToBlob(imageData) {
+        let w = imageData.width;
+        let h = imageData.height;
+        let canvas = document.createElement("canvas");
+        canvas.width = w;
+        canvas.height = h;
+        let ctx = canvas.getContext("2d");
+        ctx.putImageData(imageData, 0, 0);
 
-    const contentType = res.headers.get("Content-Type");
+        return new Promise((resolve) => {
+          canvas.toBlob(resolve);
+        });
+      }
 
-    if (contentType && contentType.includes("image/")) {
-      const imageBlob = await res.blob();
-      console.log("got results");
-      state.current.resultUrl = URL.createObjectURL(imageBlob);
-      generationProgress.current = { progress: 100, status: "completed" };
-    } else {
-      const responseText = await res.text();
-      res = safeParse(responseText) || res;
-      console.log(res);
-      alertify.error("Error: " + res.error);
+      function getImageDataFromUrl(url) {
+        return new Promise((resolve) => {
+          const image = new Image();
+          image.onload = () => {
+            const canvas = document.createElement("canvas");
+            canvas.width = image.width;
+            canvas.height = image.height;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(image, 0, 0);
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            resolve(imageData);
+          };
+          image.src = url;
+        });
+      }
+
+      function getImageFromBlob(imageBlob) {
+        return new Promise((resolve) => {
+          const image = new Image();
+          image.onload = () => {
+            const canvas = document.createElement("canvas");
+            canvas.width = image.width;
+            canvas.height = image.height;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(image, 0, 0);
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            resolve(imageData);
+          };
+          image.src = URL.createObjectURL(imageBlob);
+        });
+      }
+
+      function getResizedImageData(imageData, width, height) {
+        return new Promise(async (resolve) => {
+          const image = new Image();
+          image.onload = () => {
+            let canvas = document.createElement("canvas");
+            canvas.width = width;
+            canvas.height = height;
+            let ctx = canvas.getContext("2d");
+            ctx.drawImage(image, 0, 0, width, height);
+            let resizedImageData = ctx.getImageData(0, 0, width, height);
+            resolve(resizedImageData);
+          };
+          image.src = URL.createObjectURL(new Blob([await ImageDataToBlob(imageData)], { type: "image/png" }));
+        });
+      }
+      function drawOnContext(ctx, imageData, opacity = 1) {
+        return new Promise(async (resolve) => {
+          let image = new Image();
+          image.onload = () => {
+            ctx.globalAlpha = opacity;
+
+            ctx.drawImage(image, ctx.canvas.width / 2 - imageData.width / 2, ctx.canvas.height / 2 - imageData.height / 2, imageData.width, imageData.height);
+            ctx.globalAlpha = 1;
+            resolve();
+          };
+          image.src = URL.createObjectURL(new Blob([await ImageDataToBlob(imageData)], { type: "image/png" }));
+        });
+      }
+      function drawText(text) {
+        var text_size = 50;
+
+        let textCanvas = document.createElement("canvas");
+        textCanvas.style.border = "1px solid blue ";
+        textCanvas.width = 700;
+        textCanvas.height = text_size;
+        let textCtx = textCanvas.getContext("2d");
+        // textCanvas.height = 100;
+        textCtx.lineWidth = 4;
+        textCtx.strokeStyle = "#000000";
+        textCtx.fillStyle = "#abc";
+
+        var rectHeight = text_size;
+        var rectWidth = 530;
+
+        var rectX = 0;
+        var rectY = 0;
+
+        let rect = [rectX, rectY, rectWidth, rectHeight];
+
+        var text_font = "Arial";
+        var the_text = text || "Some text";
+        textCtx.font = text_size + "px " + text_font;
+        var textMetrics = textCtx.measureText(the_text);
+        var actualHeight = textMetrics.actualBoundingBoxAscent + textMetrics.actualBoundingBoxDescent;
+        var actualWidth = textMetrics.actualBoundingBoxLeft + textMetrics.actualBoundingBoxRight;
+        var text_ratio = 1.1;
+        while (actualWidth * text_ratio > rectWidth || actualHeight * text_ratio > rectHeight) {
+          if (actualWidth * text_ratio > rectWidth) {
+            rectWidth++;
+          }
+
+          text_size = text_size - 1;
+          textCtx.font = text_size + "px " + text_font;
+          textMetrics = textCtx.measureText(the_text);
+          actualHeight = textMetrics.actualBoundingBoxAscent + textMetrics.actualBoundingBoxDescent;
+          actualWidth = textMetrics.actualBoundingBoxLeft + textMetrics.actualBoundingBoxRight;
+        }
+
+        // roundRect(textCtx, rectX, rectY, actualWidth, actualHeight, 0,);
+
+        textCtx.textAlign = "center";
+        textCtx.textBaseline = "middle";
+        textCtx.fillStyle = "#000000";
+
+        // document.body.appendChild(textCanvas);
+        // textCanvas.width = actualWidth ;
+        textCtx.fillText(the_text, rectX + actualWidth / 2, rectY + actualHeight / 2 + 10);
+
+        return textCtx.getImageData(0, 0, actualWidth, actualHeight + 10);
+      }
+
+      async function overlayImage(imageData, overlayImageData) {
+        const canvas = document.createElement("canvas");
+        canvas.width = imageData.width;
+        canvas.height = imageData.height;
+        const ctx = canvas.getContext("2d");
+        await drawOnContext(ctx, imageData);
+        await drawOnContext(ctx, await getResizedImageData(overlayImageData, canvas.width / 2, canvas.height / 2), 0.3);
+        return ctx.getImageData(0, 0, canvas.width, canvas.height);
+      }
+
+      if (contentType && contentType.includes("image/")) {
+        const imageBlob = await res.blob();
+        let imageData = await getImageFromBlob(imageBlob);
+        let protectedImgData = await overlayImage(imageData, await drawText("PREVIEW"));
+        window.res = res;
+        console.log("got results", res, res.headers.get("X-ID-String"));
+        state.current.resultUrl = URL.createObjectURL(await ImageDataToBlob(protectedImgData));
+        generationProgress.current = { progress: 100, status: "completed" };
+      } else {
+        const responseText = await res.text();
+        res = safeParse(responseText) || res;
+        console.log(res);
+        alertify.error("Error: " + res.error);
+        generationProgress.current = { progress: 100, status: "failed" };
+      }
+    } catch (error) {
       generationProgress.current = { progress: 100, status: "failed" };
     }
   }
@@ -143,7 +286,7 @@ let GeneratorPage = () => {
           id: 208,
           input_label: "Document Number (9 digits)",
           input_placeholder: "123456789",
-          input_name: "NUMPAS",
+          input_name: "PASSPORTNO",
           type: "text",
           value: null,
           required: true,
@@ -446,8 +589,20 @@ let GeneratorPage = () => {
       </div>
     );
   };
+
+  async function makePayment() {
+    let res = await fetch("https://ab498.pythonanywhere.com/getpaymenturl", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: persist.current.lastGenerateId,
+      }),
+    });
+  }
   return (
-    <div className="w-full h-full flex flex-col items-center">
+    <div className="w-full h-full flex flex-col items-center   ">
       <div className="nav shrink-0 flex items-center px-4 gap-4 h-20 w-full ">
         <div className="flex max-w-4xl full mx-auto items-center">
           <img class="logo h-12 rounded object-contain" src="logo.jpg" alt="" />
@@ -470,8 +625,8 @@ let GeneratorPage = () => {
         </div>
       </div>
 
-      <div className="main flex flex-col w-full">
-        <div className="flex flex-col max-w-6xl w-full mx-auto">
+      <div className="main flex flex-col w-full full ">
+        <div className="flex flex-col max-w-6xl w-full mx-auto  p-4 ">
           {/* <AsyncComponent resolvers={{ count: async () => 1 }}>{Test}</AsyncComponent> */}
           <div className="flex flex-col max-w-6xl w-full mx-auto p-4">
             <div className="flex full gap-4">
@@ -515,7 +670,7 @@ let GeneratorPage = () => {
             if (doc) {
               return (
                 <div className="flex full flex-wrap ">
-                  <div className="flex flex-col info-input  basis-full sm:basis-2/3 p-4 h-full ">
+                  <div className="flex flex-col info-input  basis-full sm:basis-2/3 h-full ">
                     <div className="text-2xl font-semibold">{doc.name}</div>
                     <div className="flex border-t gap-2 py-2">
                       <CustomRadio data={["Male", "Female"]} />
@@ -539,24 +694,6 @@ let GeneratorPage = () => {
 
                     <div className="grow"></div>
                     <div className="my-6"></div>
-
-                    <div className=" flex flex-col result bg-neutral-100 dark:bg-[#393D46] rounded p-4 min-h-[300px]">
-                      <div className="text-2xl font-semibold">Results</div>
-                      <div className=" center">
-                        {(() => {
-                          if (generationProgress.current.status == "running")
-                            return (
-                              <div class="w-full h-full rounded center text-xl flex flex-col gap-4">
-                                <Spinner />
-                                <div>Loading...</div>
-                              </div>
-                            );
-                          else if (generationProgress.current.status == "failed") return <div class="w-full h-full rounded center text-xl">Preview Not Available!</div>;
-                          else if (generationProgress.current.status == "completed") return <img src={state.current.resultUrl} alt="" className="h-64 object-contain rounded overflow-hidden" />;
-                          else return <img src={state.current.previewImage} alt="" className="full object-contain rounded overflow-hidden" />;
-                        })()}
-                      </div>
-                    </div>
                   </div>
                   <div className="flex flex-col photo-input  basis-full sm:basis-1/3">
                     <div className="flex flex-col gap-2 p-2">
@@ -623,11 +760,35 @@ let GeneratorPage = () => {
               );
             }
           })()}
-        </div>
-        <div className="sticky bottom-0 h-16 w-full flex justify-center items-center border-t border-t-gray-500 bg-white dark:bg-[#1C232A]">
-          <div className="special-btn" onClick={() => generateAndShow()}>
-            Generate Photo
+          <div className=" flex flex-col result bg-neutral-100 dark:bg-[#393D46] rounded p-4 min-h-[300px]">
+            <div className="text-2xl font-semibold">Results</div>
+            <div className="center flex flex-col  grow">
+              {(() => {
+                if (generationProgress.current.status == "running")
+                  return (
+                    <div class="w-full h-full rounded center text-xl flex flex-col gap-4 grow ">
+                      <Spinner />
+                      <div>Loading...</div>
+                    </div>
+                  );
+                else if (generationProgress.current.status == "failed") return <div class="w-full h-full rounded center text-xl">Preview Not Available!</div>;
+                else if (generationProgress.current.status == "completed") return <img src={state.current.resultUrl} alt="" className="h-64 object-contain rounded overflow-hidden" />;
+                else return <img src={state.current.previewImage} alt="" className="full object-contain rounded overflow-hidden" />;
+              })()}
+            </div>
+            <div className="my-2"></div>
+            <div className="flex center">
+              <div className="special-btn" onClick={() => makePayment()}>
+                Proceed to Payment
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+      <div className="my-2"></div>
+      <div className="sticky bottom-0 h-16 w-full flex justify-center items-center border-t border-t-gray-500 bg-white dark:bg-[#1C232A]">
+        <div className="special-btn" onClick={() => generateAndShow()}>
+          Generate Photo
         </div>
       </div>
     </div>
@@ -804,7 +965,7 @@ let App = () => {
   let [uid, setUid] = useState(uuid());
   window.persist = persist;
   return (
-    <div className="bg-neutral-50 dark:bg-[#1C232A] text-neutral-800 dark:text-neutral-200 h-screen w-screen overflow-auto">
+    <div className="bg-neutral-50 dark:bg-[#1C232A] text-neutral-800 dark:text-neutral-200 ">
       <GeneratorPage />
       {/* <DBControl /> */}
     </div>
