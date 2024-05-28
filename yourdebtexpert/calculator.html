@@ -42,7 +42,7 @@
 
 <body>
     <!-- topbar start -->
-    <section class="topbar pt-3 pb-3">
+    <section class="pt-3 pb-3 topbar">
         <div class="container">
             <div class="row topbarrow">
                 <div class="col-xs-12 col-sm-6">
@@ -75,7 +75,7 @@
         <div class="container-fluid form-container">
             <div class="row form-row">
                 <div class="col-xs-12 form-col">
-                    <div class="formcontainer  min-h-screen  p-4 sm:p-20  w-full max-w-2xl">
+                    <div class="w-full max-w-2xl min-h-screen p-4 formcontainer sm:p-20">
                         <div class="progressbar">
                             <div class="step">
                                 <div class="check firstprog">
@@ -117,48 +117,43 @@
                                     <i class="fa-solid fa-check"></i>
                                 </div>
                             </div>
-                            <div class="step">
-                                <div class="check">
-                                    <i class="fa-solid fa-check"></i>
-                                </div>
-                            </div>
                         </div>
-                        <div class="allforms w-full ">
+                        <div class="w-full allforms ">
                             <div class="w-full">
-                                <form action="" class=" overflow-auto w-full flex flex-col w-full ">
+                                <form action="" class="flex flex-col w-full overflow-auto ">
                                     <div
-                                        class="flex flex-col p-6 pt-0 gap-4 bg-white w-full items-center rounded-b-2xl zeroth-step ">
-                                        <div class="text-3xl font-bold text-center my-4">At the end of this process, you
+                                        class="flex flex-col items-center w-full gap-4 p-6 pt-0 bg-white rounded-b-2xl zeroth-step ">
+                                        <div class="my-4 text-3xl font-bold text-center">At the end of this process, you
                                             will:</div>
-                                        <div class="flex flex-col  gap-2">
+                                        <div class="flex flex-col gap-2">
 
-                                            <div class="flex w-full  items-center gap-2 px-2">
+                                            <div class="flex items-center w-full gap-2 px-2">
                                                 <i
-                                                    class="flex fa-solid fa-check rounded-full bg-green-500 text-white p-2 text-xs  flex items-center justify-center aspect-square w-6 h-6 shrink-0 ">
+                                                    class="flex items-center justify-center w-6 h-6 p-2 text-xs text-white bg-green-500 rounded-full fa-solid fa-check aspect-square shrink-0 ">
                                                 </i>
                                                 <div class="font-semibold">
                                                     Discover ways you could lower your monthly repayments
                                                 </div>
                                             </div>
-                                            <div class="flex w-full  items-center gap-2 px-2">
+                                            <div class="flex items-center w-full gap-2 px-2">
                                                 <i
-                                                    class="flex fa-solid fa-check rounded-full bg-green-500 text-white p-2 text-xs  flex items-center justify-center aspect-square w-6 h-6 shrink-0 ">
+                                                    class="flex items-center justify-center w-6 h-6 p-2 text-xs text-white bg-green-500 rounded-full fa-solid fa-check aspect-square shrink-0 ">
                                                 </i>
                                                 <div class="font-semibold">
                                                     Get a personalised debt plan tailored to you
                                                 </div>
                                             </div>
-                                            <div class="flex w-full  items-center gap-2 px-2">
+                                            <div class="flex items-center w-full gap-2 px-2">
                                                 <i
-                                                    class="flex fa-solid fa-check rounded-full bg-green-500 text-white p-2 text-xs  flex items-center justify-center aspect-square w-6 h-6 shrink-0 ">
+                                                    class="flex items-center justify-center w-6 h-6 p-2 text-xs text-white bg-green-500 rounded-full fa-solid fa-check aspect-square shrink-0 ">
                                                 </i>
                                                 <div class="font-semibold">
                                                     Get a free debt advice call with a trained debt specialist
                                                 </div>
                                             </div>
-                                            <div class="flex w-full  items-center gap-2 px-2">
+                                            <div class="flex items-center w-full gap-2 px-2">
                                                 <i
-                                                    class="flex fa-solid fa-check rounded-full bg-green-500 text-white p-2 text-xs  flex items-center justify-center aspect-square w-6 h-6 shrink-0 ">
+                                                    class="flex items-center justify-center w-6 h-6 p-2 text-xs text-white bg-green-500 rounded-full fa-solid fa-check aspect-square shrink-0 ">
                                                 </i>
                                                 <div class="font-semibold">
                                                     Join more than 250,000 people UK Debt Expert has helped already
@@ -171,13 +166,13 @@
                                         </div>
                                     </div>
                                     <div
-                                        class=" flex flex-col p-12 gap-4 bg-white w-full items-center rounded-b-2xl  first-step w-full">
+                                        class="flex flex-col items-center w-full gap-4 p-12 bg-white rounded-b-2xl first-step">
                                         <h2>How much debt do you have?</h2>
 
                                         <div class="one_two">
                                             <div class="firstoption">
                                                 <input type="radio" name="debt" value="£10000+" id="debt" />
-                                                <label for="debt">£10000+</label>
+                                                <label for="debt">£10,000+</label>
                                             </div>
                                             <div class="secondoption">
                                                 <input type="radio" name="debt" value="£6,000 - £10,000"
@@ -197,14 +192,23 @@
                                                 <label for="debt_forth">£0 - £2,000</label>
                                             </div>
                                         </div>
-                                        <div class="buttondiv">
+                                        <div class="flex flex-col items-center mt-10 text-center">
+                                            <div class="font-semibold">Why are we asking this question?</div>
+                                            <div class="my-2"></div>
+                                            <div>
+                                                This allows us to determine what solutions you may be eligible for.
+                                                Don’t
+                                                forget to include the following missed debts: HMRC, council tax arrears,
+                                                overdrafts and CCJs.</div>
+                                        </div>
+                                        <!-- <div class="buttondiv">
                                             <button type="button" id="stepone_prevbtn" class="prev_btn">Previous
                                                 Question</button>
-                                        </div>
+                                        </div> -->
                                     </div>
 
                                     <div
-                                        class="flex flex-col p-12 gap-4 bg-white w-full items-center rounded-b-2xl second-steps  ">
+                                        class="flex flex-col items-center w-full gap-4 p-12 bg-white rounded-b-2xl second-steps ">
                                         <h2>Which debt are you most worried about?</h2>
 
                                         <div class="one_two">
@@ -244,14 +248,20 @@
                                             </div>
                                         </div>
 
-
+                                        <div class="flex flex-col items-center mt-10 text-center">
+                                            <div class="font-semibold">Why are we asking this question?</div>
+                                            <div class="my-2"></div>
+                                            <div>
+                                                This will allow us to tailor our advice to your current situation.
+                                            </div>
+                                        </div>
                                         <div class="buttondiv">
                                             <button type="button" id="steptwo_prevbtn" class="prev_btn">Previous
                                                 Question</button>
                                         </div>
                                     </div>
                                     <div
-                                        class="flex flex-col p-12 gap-4 bg-white w-full items-center rounded-b-2xl second_third-step">
+                                        class="flex flex-col items-center w-full gap-4 p-12 bg-white rounded-b-2xl second_third-step">
                                         <h2>What is your biggest concern about your debt?</h2>
 
                                         <div class="three_four">
@@ -291,6 +301,15 @@
                                             </div>
                                         </div>
 
+                                        <div class="flex flex-col items-center mt-10 text-center">
+                                            <div class="font-semibold">Why are we asking this question?</div>
+                                            <div class="my-2"></div>
+                                            <div>
+                                                This is helpful to know not only to ensure we give the best advice but
+                                                to allow us to help put your mind at ease.
+                                            </div>
+                                        </div>
+
                                         <div class="buttondiv">
                                             <button type="button" id="step_second_third_prevbtn"
                                                 class="prev_btn">Previous Question</button>
@@ -298,7 +317,7 @@
                                     </div>
 
                                     <div
-                                        class="flex flex-col p-12 gap-4 bg-white w-full items-center rounded-b-2xl  third-steps">
+                                        class="flex flex-col items-center w-full gap-4 p-12 bg-white rounded-b-2xl third-steps">
                                         <h2>What type of property do you live in?</h2>
 
                                         <div class="one_two">
@@ -326,13 +345,21 @@
                                             </div>
                                         </div>
 
+                                        <div class="flex flex-col items-center mt-10 text-center">
+                                            <div class="font-semibold">Why are we asking this question?</div>
+                                            <div class="my-2"></div>
+                                            <div>
+                                                Letting us know this helps us provide appropriate advice and ensure your
+                                                property isn’t at risk.
+                                            </div>
+                                        </div>
                                         <div class="buttondiv">
                                             <button type="button" id="step_threeprevbtn" class="prev_btn">Previous
                                                 Question</button>
                                         </div>
                                     </div>
                                     <div
-                                        class="flex flex-col p-12 gap-4 bg-white w-full items-center rounded-b-2xl  four-steps">
+                                        class="flex flex-col items-center w-full gap-4 p-12 bg-white rounded-b-2xl four-steps">
                                         <h2>Where do you live?</h2>
 
                                         <div class="one_two">
@@ -361,6 +388,14 @@
                                             </div>
                                         </div>
 
+                                        <div class="flex flex-col items-center mt-10 text-center">
+                                            <div class="font-semibold">Why are we asking this question?</div>
+                                            <div class="my-2"></div>
+                                            <div>
+                                                Telling us your location allows us to offer information about the debt
+                                                solutions available in your area.
+                                            </div>
+                                        </div>
                                         <div class="buttondiv">
                                             <button type="button" id="stepfourprev" class="prev_btn">Previous
                                                 Question</button>
@@ -368,7 +403,7 @@
                                     </div>
 
                                     <div
-                                        class="flex flex-col p-12 gap-4 bg-white w-full items-center rounded-b-2xl  five-steps">
+                                        class="flex flex-col items-center w-full gap-4 p-12 bg-white rounded-b-2xl five-steps">
                                         <h2>What's your employment status?</h2>
 
                                         <div class="one_two">
@@ -403,7 +438,13 @@
                                                 <label for="Unemployed">Unemployed</label>
                                             </div>
                                         </div>
-
+                                        <div class="flex flex-col items-center mt-10 text-center">
+                                            <div class="font-semibold">Why are we asking this question?</div>
+                                            <div class="my-2"></div>
+                                            <div>
+                                                This information helps us tailor advice to your current situation.
+                                            </div>
+                                        </div>
                                         <div class="buttondiv">
                                             <button type="button" id="five_prev" class="prev_btn">Previous
                                                 Question</button>
@@ -411,17 +452,26 @@
                                     </div>
 
                                     <div
-                                        class="flex flex-col p-12 gap-4 bg-white w-full items-center rounded-b-2xl  six-steps">
+                                        class="flex flex-col items-center w-full gap-4 p-12 bg-white rounded-b-2xl six-steps">
                                         <h2>What is your full name?</h2>
 
                                         <div class="namediv">
                                             <!-- name field -->
                                             <input type="text" name="name" placeholder="Eg. John Doe" id="full_name" />
                                         </div>
+                                        <div class="flex flex-col items-center mt-10 text-center">
+                                            <div class="font-semibold">Why are we asking this question?</div>
+                                            <div class="my-2"></div>
+                                            <div>
+                                                This allows us to get to know you and build your profile.
 
+                                            </div>
+                                        </div>
                                         <div class="nextbtn">
                                             <button class="next" type="button" id="next_question">Next Question</button>
                                         </div>
+
+
                                         <div class="buttondiv">
                                             <button type="button" id="six_prev" class="prev_btn">Previous
                                                 Question</button>
@@ -429,7 +479,7 @@
                                     </div>
 
                                     <div
-                                        class="flex flex-col p-12 gap-4 bg-white w-full items-center rounded-b-2xl  seven-steps">
+                                        class="flex flex-col items-center w-full gap-4 p-12 bg-white rounded-b-2xl seven-steps">
                                         <h2>What is your email address?</h2>
 
                                         <div class="namediv">
@@ -439,18 +489,26 @@
 
                                             <span class="emailError"></span>
                                         </div>
-
+                                        <div class="flex flex-col items-center mt-10 text-center">
+                                            <div class="font-semibold">Why are we asking this question?</div>
+                                            <div class="my-2"></div>
+                                            <div>
+                                                Sharing your email address will allow us to keep in touch going forward.
+                                            </div>
+                                        </div>
                                         <div class="nextbtn">
                                             <button class="next" type="button" id="email_next_question">Next
                                                 Question</button>
                                         </div>
+
+
                                         <div class="buttondiv">
                                             <button type="button" id="seven_prev" class="prev_btn">Previous
                                                 Question</button>
                                         </div>
                                     </div>
                                     <div
-                                        class="flex flex-col p-12 gap-4 bg-white w-full items-center rounded-b-2xl  eight-steps">
+                                        class="flex flex-col items-center w-full gap-4 p-12 bg-white rounded-b-2xl eight-steps">
                                         <h2>What is your phone number?</h2>
                                         <div class="namediv">
                                             <!-- phone field -->
@@ -458,6 +516,14 @@
                                             <span class="phoneError"></span>
                                         </div>
 
+                                        <div class="flex flex-col items-center mt-10 text-center">
+                                            <div class="font-semibold">Why are we asking this question?</div>
+                                            <div class="my-2"></div>
+                                            <div>
+                                                Again, this is important to allow us to contact you moving forward.
+
+                                            </div>
+                                        </div>
                                         <div class=" nextbtn" id="next_phone">
                                             <button class="next" type="button" id="email_next_question">Next
                                                 Question</button>
@@ -469,21 +535,21 @@
                                     </div>
 
                                     <div
-                                        class="flex flex-col p-12 gap-4 bg-white w-full items-center rounded-b-2xl  nine-steps">
+                                        class="flex flex-col items-center w-full gap-4 p-12 bg-white rounded-b-2xl nine-steps">
 
 
-                                        <h2>What is your preffered contact method?</h2>
+                                        <h2>What is your preferred contact method?</h2>
 
                                         <div class="three_four">
                                             <div class="firstoption">
                                                 <input type="radio" name="preffered_contact_method" value="email"
-                                                    class="peer hidden" id="preffered_contact_method_one1" />
+                                                    class="hidden peer" id="preffered_contact_method_one1" />
                                                 <label for="preffered_contact_method_one1"
                                                     class="peer-[:checked]:bg-green-600 peer-[:checked]:text-white">Email</label>
                                             </div>
                                             <div class="secondoption">
                                                 <input type="radio" name="preffered_contact_method" value="phone"
-                                                    class="peer hidden" id="preffered_contact_method_second2" />
+                                                    class="hidden peer" id="preffered_contact_method_second2" />
                                                 <label for="preffered_contact_method_second2"
                                                     class="peer-[:checked]:bg-green-600 peer-[:checked]:text-white">Phone</label>
                                             </div>
@@ -491,13 +557,13 @@
                                         <div class="three_four">
                                             <div class="firstoption">
                                                 <input type="radio" name="preffered_contact_method" value="sms"
-                                                    class="peer hidden" id="preffered_contact_method_one3" />
+                                                    class="hidden peer" id="preffered_contact_method_one3" />
                                                 <label for="preffered_contact_method_one3"
                                                     class="peer-[:checked]:bg-green-600 peer-[:checked]:text-white">SMS</label>
                                             </div>
                                             <div class="secondoption">
                                                 <input type="radio" name="preffered_contact_method" value="whatsapp"
-                                                    class="peer hidden" id="preffered_contact_method_second4" />
+                                                    class="hidden peer" id="preffered_contact_method_second4" />
                                                 <label for="preffered_contact_method_second4"
                                                     class="peer-[:checked]:bg-green-600 peer-[:checked]:text-white">
                                                     WhatsApp</label>

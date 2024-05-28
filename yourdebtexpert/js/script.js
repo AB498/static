@@ -58,7 +58,7 @@ allSteps.forEach((step) => {
   step && (step.style.display = "none");
 });
 
-debtDescription && (debtDescription.style.display = "block");
+debtForm && (debtForm.style.display = "block");
 
 let currentStep = 0;
 let prev0 = document.getElementById("stepone_prevbtn");
@@ -171,7 +171,7 @@ debtOpton.forEach((option) => {
     if (cons(isChecked(debtOpton), 'debtOpton')) {
       debtForm.style.display = "none";
       whichDebt.style.display = "block";
-      currentStep = 2;
+      currentStep = 1;
       updateProgressbar();
     }
   });
@@ -183,7 +183,7 @@ whichDebtOption.forEach((option) => {
     if (cons(isChecked(whichDebtOption), 'whichDebtOption')) {
       whichDebt.style.display = "none";
       debtConcern.style.display = "block";
-      currentStep = 3;
+      currentStep = 2;
       updateProgressbar();
     }
   });
@@ -193,7 +193,7 @@ debtConcernOption.forEach((option) => {
     if (cons(isChecked(debtConcernOption), 'debtConcernOption')) {
       debtConcern.style.display = "none";
       propertyForm.style.display = "block";
-      currentStep = 4;
+      currentStep = 3;
       updateProgressbar();
     }
   });
@@ -203,7 +203,7 @@ propertyOption.forEach((option) => {
     if (cons(isChecked(propertyOption), 'propertyOption')) {
       propertyForm.style.display = "none";
       locationForm.style.display = "block";
-      currentStep = 5;
+      currentStep = 4;
       updateProgressbar();
     }
   });
@@ -213,7 +213,7 @@ locationOption.forEach((option) => {
     if (cons(isChecked(locationOption), 'locationOption')) {
       locationForm.style.display = "none";
       statusForm.style.display = "block";
-      currentStep = 6;
+      currentStep = 5;
       updateProgressbar();
     }
   });
@@ -223,7 +223,7 @@ employOption.forEach((option) => {
     if (cons(isChecked(employOption), 'employOption')) {
       statusForm.style.display = "none";
       nameForm.style.display = "block";
-      currentStep = 7;
+      currentStep = 6;
       updateProgressbar();
     }
   });
