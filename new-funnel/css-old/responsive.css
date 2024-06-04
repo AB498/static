@@ -1,0 +1,2455 @@
+/*1025-1199*/
+@media only screen and (min-width: 1025px) and (max-width: 1199px) {
+
+    /* how it work section start */
+    .iconst {
+        display: flex;
+        justify-content: space-around;
+        padding: 35px 20px;
+        margin-right: 0px;
+        padding-left: 20px;
+    }
+
+    .iconandtextdiv h4 {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        color: white;
+        padding: 12px 18px;
+        margin: auto;
+        margin-right: 18px;
+    }
+
+    .col-xs-12.col-sm-6.workcol {
+        padding: 20px 40px;
+        margin: 40px 0px;
+
+    }
+
+    /* how it work section end */
+}
+
+/*992-1024*/
+@media only screen and (min-width: 992px) and (max-width: 1024px) {
+
+    /* noticebar start */
+    section.noticebar {
+        display: none;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        box-shadow: 0px 1px 3px;
+    }
+
+    /* notice bar end */
+    /* progress and form section start */
+    .prog_details p {
+        padding-right: 38px;
+    }
+
+    output {
+        width: 68%;
+    }
+
+    /* progress and form section end */
+    /* how works section start */
+
+    .iconandtextdiv h4 {
+        margin-right: 35px;
+        padding: 12px 5px;
+    }
+
+    .iconst {
+        display: flex;
+        justify-content: space-around;
+        padding: 36px 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+    }
+
+    .col-xs-12.col-sm-6.workcol {
+        padding: 20px 44px;
+        margin: 40px 0px;
+    }
+
+    /* how work section end */
+    /* after section start*/
+    .firstimgafter {
+        margin: 5px;
+    }
+    
+    .secondimgafter {
+        margin: 5px;
+    }
+    /* after section end*/
+
+}
+
+/*768-991*/
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    output {
+        width: 52%;
+    }
+
+    /* noticebar start */
+    section.noticebar {
+        display: none;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        box-shadow: 0px 1px 3px;
+    }
+
+    /* notice bar end */
+    /* header section start */
+    h1.headertitle {
+        font-size: 45px;
+    }
+
+    .info p {
+
+        padding: 4px 12px;
+
+    }
+
+    .steptxt p {
+        font-size: 14px;
+    }
+
+    /* header section end */
+    /* progress and form section start */
+    .prog_details p {
+        padding-right: 0px;
+    }
+
+    .progress_steps {
+        margin-right: 10px;
+    }
+
+    .prog_details {
+        padding-left: 26px;
+    }
+
+    .progressdiv h3 {
+        font-size: 26px;
+    }
+
+    .dbtitle p {
+        font-size: 16px;
+    }
+
+    /* progress and form section end */
+    /* how it work section start */
+    .col-xs-12.col-sm-6.workcol {
+        padding: 20px 20px;
+        margin: 40px 0px;
+
+    }
+
+    .iconandtextdiv h4 {
+        padding: 12px 0px;
+        margin-right: 20px;
+    }
+
+    .iconst {
+        padding: 35px 0px;
+        margin-right: 12px;
+        padding-left: 0px;
+    }
+
+    .first_three {
+        width: 48%;
+    }
+
+    /* how it section end */
+     /* after section start*/
+     .firstimgafter {
+        margin: 5px;
+    }
+    
+    .secondimgafter {
+        margin: 5px;
+    }
+    .titleinfo p {
+        font-size: 15px;
+    }
+    .amountdiv p {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .titletotal p {
+        color: #333333;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .amountotal p {
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+    }
+    .listdiv {
+        padding: 40px 22px;
+    }
+    .checkbtn.aftersecbtn button {
+        width: 61%;
+        font-size: 15px;
+        padding: 14px 20px;
+        background: #6AB061;
+    }
+    /* after section end*/
+    /* footer start */
+    .footermenubox ul{
+        display: block;
+    }
+    .footermenubox ul li {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .footermenubox ul li:last-child{
+        padding-bottom: 0px;
+    }
+
+    /* footer end */
+
+}
+
+/*576-767*/
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    /* topbar start */
+    .logo.mobilelogo {
+        display: block;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        background: #4EAD33;
+    }
+
+    .logo.mobilelogo a img {
+        width: 185px;
+    }
+
+    .phonecall.float-end {
+        display: none;
+    }
+
+    .logo.desktoplogo {
+        display: none;
+    }
+
+    /* topbar end */
+
+
+    /* noticebar start */
+    section.noticebar {
+        display: none;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+        border-bottom: 1px solid;
+    }
+
+    /* notice bar end */
+    /* header section start */
+    header.header {
+        background: white;
+        position: relative;
+        z-index: 1;
+        padding-top: 45px;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        position: relative;
+        z-index: 3;
+    }
+
+    h1.headertitle {
+        font-size: 28px;
+        font-weight: 800;
+        color: #00741b;
+        text-align: center;
+        margin: 0;
+    }
+
+    .headercontent h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        padding-bottom: 0;
+    }
+
+    .buttonandtag button {
+
+        background: #00741B;
+        padding: 20px 70px 20px 70px;
+        width: 100%;
+        font-size: 17px;
+        font-weight: bold;
+        color: white;
+        margin-top: 20px;
+    }
+
+    .buttonandtag p {
+        color: black;
+    }
+
+    .buttonandtag p i {
+        color: black;
+    }
+
+    .info p {
+        font-size: 15px;
+        color: #d9d9d9;
+        padding: 4px 0px;
+        font-weight: bold;
+    }
+
+    section.ratting {
+        display: none;
+    }
+
+    section.three_steps {
+        display: none;
+    }
+
+    .mobliebuttetpoint {
+        display: block;
+        padding-top: 16px;
+        padding-bottom: 4px;
+    }
+
+    .no1txt p {
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .no1 {
+        padding-top: 10px;
+    }
+
+    .moblietrustpilot {
+        display: block;
+        max-width: 100%;
+        display: flex;
+        margin-top: 35px;
+    }
+
+    .texttrustpilot {
+        width: 50%;
+        padding: 0;
+    }
+
+    .firstimg img {
+        width: 80%;
+    }
+
+    /* header section end */
+    /* progress and form section start */
+    .prog_details p {
+        padding-right: 0px;
+    }
+
+    .progress_steps {
+        margin-right: 10px;
+    }
+
+    .prog_details {
+        padding-left: 26px;
+    }
+
+    .progressdiv h3 {
+        font-size: 26px;
+    }
+
+    .dbtitle p {
+        font-size: 16px;
+    }
+
+    .row.progress_row {
+        display: block;
+    }
+
+    .col-xs-12.col-sm-6.progress_col {
+        width: 100%;
+    }
+
+    .formdiv {
+        margin-top: 60px;
+    }
+
+    output {
+        width: 72%;
+    }
+
+    /* progress and form section end */
+    /* how it work section start */
+    .row.workrow {
+        display: block;
+    }
+
+    .col-xs-12.col-sm-6.workcol {
+        width: 100%;
+        padding: 40px 30px;
+        margin-top: 0;
+        background: white;
+    }
+
+    .howitworkdetails h3 {
+        color: #00741c;
+    }
+
+    .howitworkdetails p {
+        color: #2f2f2f;
+    }
+
+    .checkbtn.workbtn button {
+        font-size: 17px;
+        box-shadow: none;
+        background: #00741A;
+        color: white;
+        transition: all 0.4s;
+        border-radius: 50px;
+    }
+
+    .checkbtn.workbtn {
+        width: 100%;
+        font-size: 17px;
+    }
+
+    .col-xs-12.col-sm-6.iconcols {
+        width: 100%;
+        padding-bottom: 50px;
+    }
+
+    .iconandtextdiv {
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+
+    .iconandtextdiv h4 {
+        font-size: 28px;
+        padding: 12px 30px;
+        margin-right: 0px;
+    }
+
+    .iconst {
+        display: flex;
+        justify-content: space-around;
+        padding: 35px 0px;
+        margin-right: 0px;
+        padding-left: 22px;
+    }
+
+    .iconst {
+        display: none;
+    }
+
+    .iconst.mobileiconst {
+        display: flex;
+    }
+
+    .mobilehidebtn {
+        display: block;
+    }
+
+    .checkbtn.workbtn.pt-3 button {
+        background: white;
+        color: black;
+        box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    /* how it work section end */
+      /* after section start*/
+      .firstimgafter {
+        margin: 5px;
+    }
+    
+    .secondimgafter {
+        margin: 5px;
+    }
+    .titleinfo p {
+        font-size: 16px;
+    }
+    .amountdiv p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .titletotal p {
+        color: #333333;
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .amountotal p {
+        font-size: 24px;
+        font-weight: bold;
+        color: black;
+    }
+    .listdiv {
+        padding: 40px 22px;
+    }
+    .checkbtn.aftersecbtn button {
+        width: 61%;
+        font-size: 15px;
+        padding: 14px 20px;
+        background: #6AB061;
+    }
+    .row.examplerow {
+        display: block;
+    }
+    
+    .col-xs-12.col-sm-6.examplecol1 {
+        width: 100%;
+        border-radius: 20px 20px 0px 0px;
+    }
+    
+    .col-xs-12.col-sm-6.examplecol2 {
+        width: 100%;
+        border-radius: 0px 0px 20px 20px;
+        padding-bottom: 30px;
+    }
+    .exampletitle p {
+        font-size: 19px;
+        text-align: center;
+        padding: 10px 0px;
+        padding-bottom: 30px;
+    }
+    /* after section end*/
+    /* faq section start */
+
+    .questionbox {
+        width: 100%;
+        margin: auto;
+    }
+    .faqtittle h3{
+        font-size: 30px;
+    }
+
+    /* faq section end */
+     /* footer start */
+     .footermenubox ul{
+        display: block;
+        padding: 0;
+    }
+    .footermenubox ul li {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .footermenubox ul li:last-child{
+        padding-bottom: 0px;
+    }
+    .row.footerfirstrow {
+        display: block;
+    }
+    
+    .footerfirstcol {
+        width: 100%;
+    }
+    
+    .footerlogo img {
+        text-align: center;
+    }
+    
+    .footerlogo {
+        text-align: center;
+    }
+    
+    .footerlogotxt {
+        text-align: center;
+    }
+    
+    .row.secondsecrow {
+        display: block;
+    }
+    
+    .footersecondcol {
+        width: 100%;
+        padding-bottom: 43px;
+    }
+    
+    .footersecondcol:last-child {
+        padding-bottom: 20px;
+    }
+    
+    .row.footerforthrow {
+        display: block;
+    }
+    
+    .footerforthcol {
+        width: 100%;
+    }
+    
+    .footerlbox {
+        text-align: center;
+    }
+    
+    .footerlbox img {
+        width: 200px;
+        padding-bottom: 29px;
+    }
+    /* footer end */
+
+
+
+}
+
+/*480-575*/
+@media only screen and (min-width: 480px) and (max-width: 575px) {
+
+    /* topbar start */
+    .logo.mobilelogo {
+        display: block;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        background: #4EAD33;
+    }
+
+    .logo.mobilelogo a img {
+        width: 185px;
+    }
+
+    .phonecall.float-end {
+        display: none;
+    }
+
+    .logo.desktoplogo {
+        display: none;
+    }
+
+    /* topbar end */
+
+
+    /* noticebar start */
+    section.noticebar {
+        display: none;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+        border-bottom: 1px solid;
+    }
+
+    /* notice bar end */
+    /* header section start */
+    header.header {
+        background: white;
+        position: relative;
+        z-index: 1;
+        padding-top: 45px;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        position: relative;
+        z-index: 3;
+    }
+
+    h1.headertitle {
+        font-size: 28px;
+        font-weight: 800;
+        color: #00741b;
+        text-align: center;
+        margin: 0;
+        padding-bottom: 22px;
+    }
+
+    .headercontent h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        padding-bottom: 0;
+    }
+
+    .buttonandtag button {
+        background: #00741B;
+        padding: 18px 70px;
+        width: 100%;
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        margin-top: 20px;
+
+    }
+
+    .buttonandtag p {
+        color: black;
+    }
+
+    .buttonandtag p i {
+        color: black;
+    }
+
+    .info p {
+        font-size: 15px;
+        color: #d9d9d9;
+        padding: 4px 0px;
+        font-weight: bold;
+    }
+
+    section.ratting {
+        display: none;
+    }
+
+    section.three_steps {
+        display: none;
+    }
+
+    .mobliebuttetpoint {
+        display: block;
+        padding-top: 16px;
+        padding-bottom: 4px;
+    }
+
+    .no1txt p {
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .no1 {
+        padding-top: 10px;
+    }
+
+    .moblietrustpilot {
+        display: block;
+        max-width: 100%;
+        display: flex;
+        margin-top: 35px;
+    }
+
+    .texttrustpilot {
+        width: 50%;
+        padding: 0;
+    }
+
+    .firstimg img {
+        width: 68%;
+    }
+
+    .texttrustpilot p {
+        font-size: 15px;
+    }
+
+    /* header section end */
+    /* progress and form section start */
+    .prog_details p {
+        padding-right: 87px;
+    }
+
+    .progress_steps {
+        margin-right: 0px;
+    }
+
+    .prog_details {
+        padding-left: 35px;
+    }
+
+    .progressdiv h3 {
+        font-size: 26px;
+        color: white;
+    }
+
+    .dbtitle p {
+        font-size: 16px;
+        display: none;
+    }
+
+    .row.progress_row {
+        display: block;
+    }
+
+    .col-xs-12.col-sm-6.progress_col {
+        width: 100%;
+    }
+
+    .formdiv {
+        margin-top: 30px;
+    }
+
+    .slno h3 {
+        font-size: 30px;
+    }
+
+    .stepcolp {
+        background: #00741B;
+        color: white;
+        padding-bottom: 45px;
+        padding-top: 45px;
+    }
+
+    section.progress_form {
+        padding-top: 0;
+    }
+
+    .prog_details a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .prog_details h4 {
+        color: #ffffff;
+    }
+
+    .dbtitle h2 {
+        display: none;
+    }
+
+    output {
+        width: 68%;
+    }
+
+    /* progress and form section end */
+    /* how it work section start */
+    .row.workrow {
+        display: block;
+    }
+
+    .col-xs-12.col-sm-6.workcol {
+        width: 100%;
+        padding: 40px 30px;
+        margin-top: 0;
+        background: white;
+    }
+
+    .howitworkdetails h3 {
+        color: #00741c;
+    }
+
+    .howitworkdetails p {
+        color: #2f2f2f;
+    }
+
+    .checkbtn.workbtn button {
+        font-size: 17px;
+        box-shadow: none;
+        background: #00741A;
+        color: white;
+        transition: all 0.4s;
+        border-radius: 50px;
+    }
+
+    .checkbtn.workbtn {
+        width: 100%;
+        font-size: 17px;
+    }
+
+    .col-xs-12.col-sm-6.iconcols {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+
+    .iconandtextdiv {
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+
+    .iconandtextdiv h4 {
+        font-size: 28px;
+        padding: 12px 30px;
+        margin-right: 0px;
+    }
+
+    .iconst {
+        display: flex;
+        justify-content: space-around;
+        padding: 35px 0px;
+        margin-right: 0px;
+        padding-left: 22px;
+    }
+
+    .iconst {
+        display: none;
+    }
+
+    .iconst.mobileiconst {
+        display: flex;
+    }
+
+    .mobilehidebtn {
+        display: block;
+    }
+
+    .checkbtn.workbtn.pt-3 button {
+        background: white;
+        color: black;
+        box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    .jtxt {
+        width: 57%;
+    }
+
+    .icn i {
+        font-size: 31px;
+        color: white;
+    }
+
+    .checkbtn.workbtn.pt-3 {
+        padding-top: 0px !important;
+    }
+
+    /* how it work section end */
+      /* after section start*/
+      .firstimgafter {
+        margin: 5px;
+    }
+    
+    .secondimgafter {
+        margin: 5px;
+    }
+    .titleinfo p {
+        font-size: 16px;
+    }
+    .amountdiv p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .titletotal p {
+        color: #333333;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .amountotal p {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+    }
+    .listdiv {
+        padding: 40px 22px;
+    }
+    .checkbtn.aftersecbtn button {
+        width: 61%;
+        font-size: 15px;
+        padding: 14px 20px;
+        background: #6AB061;
+    }
+    .row.examplerow {
+        display: block;
+        margin: 10px;
+    }
+    
+    .col-xs-12.col-sm-6.examplecol1 {
+        width: 100%;
+        border-radius: 20px 20px 0px 0px;
+    }
+    
+    .col-xs-12.col-sm-6.examplecol2 {
+        width: 100%;
+        border-radius: 0px 0px 20px 20px;
+        padding-bottom: 30px;
+    }
+    .exampletitle p {
+        font-size: 19px;
+        text-align: center;
+        padding: 10px 0px;
+        padding-bottom: 30px;
+    }
+    .exampletitle h1 {
+        font-size: 25px;
+    }
+    /* after section end*/
+    /* faq section start */
+
+    .questionbox {
+        width: 95%;
+        margin: auto;
+    }
+    .faqtittle h3{
+        font-size: 25px;
+        padding-bottom: 0px;
+    }
+
+    /* faq section end */
+     /* footer start */
+     .footermenubox ul{
+        display: block;
+        padding: 0;
+    }
+    .footermenubox ul li {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .footermenubox ul li:last-child{
+        padding-bottom: 0px;
+    }
+    .row.footerfirstrow {
+        display: block;
+    }
+    
+    .footerfirstcol {
+        width: 100%;
+    }
+    
+    .footerlogo img {
+        text-align: center;
+    }
+    
+    .footerlogo {
+        text-align: center;
+    }
+    
+    .footerlogotxt {
+        text-align: center;
+    }
+    
+    .row.secondsecrow {
+        display: block;
+    }
+    
+    .footersecondcol {
+        width: 100%;
+        padding-bottom: 43px;
+    }
+    
+    .footersecondcol:last-child {
+        padding-bottom: 20px;
+    }
+    
+    .row.footerforthrow {
+        display: block;
+    }
+    
+    .footerforthcol {
+        width: 100%;
+    }
+    
+    .footerlbox {
+        text-align: center;
+    }
+    
+    .footerlbox img {
+        width: 200px;
+        padding-bottom: 29px;
+    }
+    /* footer end */
+
+
+}
+
+/*425-479*/
+@media only screen and (min-width: 425px) and (max-width: 479px) {
+
+    /* topbar start */
+    .logo.mobilelogo {
+        display: block;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        background: #4EAD33;
+    }
+
+    .logo.mobilelogo a img {
+        width: 185px;
+    }
+
+    .phonecall.float-end {
+        display: none;
+    }
+
+    .logo.desktoplogo {
+        display: none;
+    }
+
+    /* topbar end */
+
+
+    /* noticebar start */
+    section.noticebar {
+        display: none;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+        border-bottom: 1px solid;
+    }
+
+    /* notice bar end */
+
+    /* header section start */
+    header.header {
+        background: white;
+        position: relative;
+        z-index: 1;
+        padding-top: 45px;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        position: relative;
+        z-index: 3;
+    }
+
+    h1.headertitle {
+        font-size: 28px;
+        font-weight: 800;
+        color: #00741b;
+        text-align: center;
+        margin: 0;
+        padding-bottom: 22px;
+    }
+
+    .headercontent h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        padding-bottom: 0;
+    }
+
+    .buttonandtag button {
+        background: #00741B;
+        padding: 18px 70px;
+        width: 100%;
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        margin-top: 20px;
+
+    }
+
+    .buttonandtag p {
+        color: black;
+    }
+
+    .buttonandtag p i {
+        color: black;
+    }
+
+    .info p {
+        font-size: 15px;
+        color: #d9d9d9;
+        padding: 4px 0px;
+        font-weight: bold;
+    }
+
+    section.ratting {
+        display: none;
+    }
+
+    section.three_steps {
+        display: none;
+    }
+
+    .mobliebuttetpoint {
+        display: block;
+        padding-top: 16px;
+        padding-bottom: 4px;
+    }
+
+    .no1txt p {
+        font-weight: bold;
+        font-size: 14px;
+        padding-left: 8px;
+    }
+
+    .no1 {
+        padding-top: 10px;
+    }
+
+    .moblietrustpilot {
+        display: block;
+        max-width: 100%;
+        display: flex;
+        margin-top: 35px;
+    }
+
+    .texttrustpilot {
+        width: 50%;
+        padding: 0;
+    }
+
+    .firstimg img {
+        width: 68%;
+    }
+
+    .texttrustpilot p {
+        font-size: 15px;
+    }
+
+    /* header section end */
+    /* progress and form section start */
+    .prog_details p {
+        padding-right: 32px;
+    }
+
+    .progress_steps {
+        margin-right: 0px;
+    }
+
+    .prog_details {
+        padding-left: 35px;
+    }
+
+    .progressdiv h3 {
+        font-size: 26px;
+        color: white;
+    }
+
+    .dbtitle p {
+        font-size: 16px;
+        display: none;
+    }
+
+    .row.progress_row {
+        display: block;
+    }
+
+    .col-xs-12.col-sm-6.progress_col {
+        width: 100%;
+    }
+
+    .formdiv {
+        margin-top: 30px;
+    }
+
+    .slno h3 {
+        font-size: 30px;
+    }
+
+    .stepcolp {
+        background: #00741B;
+        color: white;
+        padding-bottom: 45px;
+        padding-top: 45px;
+    }
+
+    section.progress_form {
+        padding-top: 0;
+    }
+
+    .prog_details a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .prog_details h4 {
+        color: #ffffff;
+    }
+
+    .dbtitle h2 {
+        display: none;
+    }
+
+    output {
+        width: 66%;
+    }
+
+    .formdiv {
+        padding: 30px 30px;
+    }
+
+    /* progress and form section end */
+    /* how it work section start */
+    .row.workrow {
+        display: block;
+    }
+
+    .col-xs-12.col-sm-6.workcol {
+        width: 100%;
+        padding: 40px 30px;
+        margin-top: 0;
+        background: white;
+    }
+
+    .howitworkdetails h3 {
+        color: #00741c;
+    }
+
+    .howitworkdetails p {
+        color: #2f2f2f;
+    }
+
+    .checkbtn.workbtn button {
+        font-size: 17px;
+        box-shadow: none;
+        background: #00741A;
+        color: white;
+        transition: all 0.4s;
+        border-radius: 50px;
+    }
+
+    .checkbtn.workbtn {
+        width: 100%;
+        font-size: 17px;
+    }
+
+    .col-xs-12.col-sm-6.iconcols {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+
+    .iconandtextdiv {
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+
+    .iconandtextdiv h4 {
+        font-size: 26px;
+        padding: 12px 30px;
+        margin-right: 0px;
+    }
+
+    .iconst {
+        display: flex;
+        justify-content: space-around;
+        padding: 35px 0px;
+        margin-right: 0px;
+        padding-left: 22px;
+    }
+
+    .iconst {
+        display: none;
+    }
+
+    .iconst.mobileiconst {
+        display: flex;
+        padding-left: 0px;
+    }
+
+    .mobilehidebtn {
+        display: block;
+    }
+
+    .checkbtn.workbtn.pt-3 button {
+        background: white;
+        color: black;
+        box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.5);
+        padding: 17px;
+    }
+
+    .jtxt {
+        width: 57%;
+    }
+
+    .icn i {
+        font-size: 27px;
+        color: white;
+    }
+
+    .checkbtn.workbtn.pt-3 {
+        padding-top: 0px !important;
+    }
+
+    .jtxt p {
+        font-size: 14px;
+    }
+
+    .icon_txt {
+        padding-bottom: 30px;
+        width: 100%;
+    }
+
+    /* how it work section end */
+    /* after section start*/
+    .firstimgafter {
+        margin: 5px;
+        width: 50%;
+    }
+    
+    .secondimgafter {
+        margin: 5px;
+        width: 50%;
+    }
+    .titleinfo p {
+        font-size: 16px;
+    }
+    .amountdiv p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .titletotal p {
+        color: #333333;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .amountotal p {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+    }
+    .listdiv {
+        padding: 40px 22px;
+    }
+    .checkbtn.aftersecbtn button {
+        width: 61%;
+        font-size: 15px;
+        padding: 14px 20px;
+        background: #6AB061;
+    }
+    .row.examplerow {
+        display: block;
+        margin: 10px;
+    }
+    
+    .col-xs-12.col-sm-6.examplecol1 {
+        width: 100%;
+        border-radius: 20px 20px 0px 0px;
+    }
+    
+    .col-xs-12.col-sm-6.examplecol2 {
+        width: 100%;
+        border-radius: 0px 0px 20px 20px;
+        padding-bottom: 30px;
+    }
+    .exampletitle p {
+        font-size: 17px;
+        text-align: center;
+        padding: 10px 0px;
+        padding-bottom: 30px;
+    }
+    .exampletitle h1 {
+        font-size: 31px;
+    }
+    .images {
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0px 0px;
+        width: 100%;
+    }
+    .secondimgafter img {
+        width: 95%;
+    }
+    .firstimgafter img {
+        width: 95%;
+    }
+    /* after section end*/
+    /* faq section start */
+
+    .questionbox {
+        width: 95%;
+        margin: auto;
+    }
+    .faqtittle h3{
+        font-size: 25px;
+        padding-bottom: 0px;
+    }
+    .accordion_head{
+        padding: 5px 0px;
+    }
+
+    /* faq section end */
+     /* footer start */
+     .footermenubox ul{
+        display: block;
+        padding: 0;
+    }
+    .footermenubox ul li {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .footermenubox ul li:last-child{
+        padding-bottom: 0px;
+    }
+    .row.footerfirstrow {
+        display: block;
+    }
+    
+    .footerfirstcol {
+        width: 100%;
+    }
+    
+    .footerlogo img {
+        text-align: center;
+    }
+    
+    .footerlogo {
+        text-align: center;
+    }
+    
+    .footerlogotxt {
+        text-align: center;
+    }
+    
+    .row.secondsecrow {
+        display: block;
+    }
+    
+    .footersecondcol {
+        width: 100%;
+        padding-bottom: 43px;
+    }
+    
+    .footersecondcol:last-child {
+        padding-bottom: 20px;
+    }
+    
+    .row.footerforthrow {
+        display: block;
+    }
+    
+    .footerforthcol {
+        width: 100%;
+    }
+    
+    .footerlbox {
+        text-align: center;
+    }
+    
+    .footerlbox img {
+        width: 200px;
+        padding-bottom: 29px;
+    }
+    /* footer end */
+
+}
+
+/*375-424*/
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+
+    /* topbar start */
+    .logo.mobilelogo {
+        display: block;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        background: #4EAD33;
+    }
+
+    .logo.mobilelogo a img {
+        width: 180px;
+    }
+
+    .phonecall.float-end {
+        display: none;
+    }
+
+    .logo.desktoplogo {
+        display: none;
+    }
+
+    /* topbar end */
+
+
+    /* noticebar start */
+    section.noticebar {
+        display: none;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        border-bottom: 1px solid;
+    }
+
+    /* notice bar end */
+    /* header section start */
+    header.header {
+        background: white;
+        position: relative;
+        z-index: 1;
+        padding-top: 37px;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        position: relative;
+        z-index: 3;
+    }
+
+    h1.headertitle {
+        font-size: 40px !important;
+        font-weight: 800 !important;
+        color: #00741b;
+        text-align: center;
+        margin: 0;
+        padding-bottom: 22px;
+    }
+
+    .headercontent h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        padding-bottom: 0;
+    }
+
+    .buttonandtag button {
+        background: #00741B;
+        padding: 18px 70px;
+        width: 100%;
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        margin-top: 20px;
+
+    }
+
+    .buttonandtag p {
+        color: black;
+    }
+
+    .buttonandtag p i {
+        color: black;
+    }
+
+    .info p {
+        font-size: 15px;
+        color: #d9d9d9;
+        padding: 4px 0px;
+        font-weight: bold;
+    }
+
+    section.ratting {
+        display: none;
+    }
+
+    section.three_steps {
+        display: none;
+    }
+
+    .mobliebuttetpoint {
+        display: block;
+        padding-top: 16px;
+        padding-bottom: 4px;
+    }
+
+    .no1txt p {
+        font-weight: bold;
+        font-size: 14px;
+        padding-left: 8px;
+        text-align: left;
+    }
+
+    .no1 {
+        padding-top: 10px;
+    }
+
+    .moblietrustpilot {
+        display: block;
+        max-width: 100%;
+        display: flex;
+        margin-top: 35px;
+    }
+
+    .texttrustpilot {
+        width: 50%;
+        padding: 0;
+    }
+
+    .firstimg img {
+        width: 68%;
+    }
+
+    .texttrustpilot p {
+        font-size: 15px;
+    }
+
+    .moblietrustpilot {
+        padding: 30px 20px;
+    }
+
+    /* header section end */
+    /* progress and form section start */
+    .prog_details p {
+        padding-right: 0px;
+    }
+
+    .progress_steps {
+        margin-right: 0px;
+    }
+
+    .prog_details {
+        padding-left: 26px;
+    }
+
+    .progressdiv h3 {
+        font-size: 26px;
+        color: white;
+    }
+
+    .dbtitle p {
+        font-size: 16px;
+        display: none;
+    }
+
+    .row.progress_row {
+        display: block;
+    }
+
+    .col-xs-12.col-sm-6.progress_col {
+        width: 100%;
+    }
+
+    .formdiv {
+        margin-top: 30px;
+    }
+
+    .slno h3 {
+        font-size: 30px;
+    }
+
+    .stepcolp {
+        background: #00741B;
+        color: white;
+        padding-bottom: 45px;
+        padding-top: 45px;
+    }
+
+    section.progress_form {
+        padding-top: 0;
+    }
+
+    .prog_details a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .prog_details h4 {
+        color: #ffffff;
+    }
+
+    .dbtitle h2 {
+        display: none;
+    }
+
+    output {
+        width: 62%;
+    }
+
+    .formdiv {
+        padding: 30px 20px;
+    }
+
+    .howmanyPeople label {
+        font-size: 16px;
+    }
+
+    select {
+        font-size: 15px;
+    }
+
+    select option {
+        font-size: 15px;
+    }
+
+    /* progress and form section end */
+    /* how it work section start */
+    .row.workrow {
+        display: block;
+    }
+
+    .col-xs-12.col-sm-6.workcol {
+        width: 100%;
+        padding: 40px 30px;
+        margin-top: 0;
+        background: white;
+    }
+
+    .howitworkdetails h3 {
+        color: #00741c;
+    }
+
+    .howitworkdetails p {
+        color: #2f2f2f;
+    }
+
+    .checkbtn.workbtn button {
+        font-size: 17px;
+        box-shadow: none;
+        background: #00741A;
+        color: white;
+        transition: all 0.4s;
+        border-radius: 50px;
+    }
+
+    .checkbtn.workbtn {
+        width: 100%;
+        font-size: 17px;
+    }
+
+    .col-xs-12.col-sm-6.iconcols {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+
+    .iconandtextdiv {
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+
+    .iconandtextdiv h4 {
+        font-size: 28px;
+        padding: 12px 30px;
+        margin-right: 0px;
+    }
+
+    .iconst {
+        display: flex;
+        justify-content: space-around;
+        padding: 35px 0px;
+        margin-right: 0px;
+        padding-left: 22px;
+    }
+
+    .iconst {
+        display: none;
+    }
+
+    .iconst.mobileiconst {
+        display: flex;
+        padding-left: 0px;
+    }
+
+    .mobilehidebtn {
+        display: block;
+    }
+
+    .checkbtn.workbtn.pt-3 button {
+        background: white;
+        color: black;
+        box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    .jtxt {
+        width: 57%;
+    }
+
+    .icn i {
+        font-size: 31px;
+        color: white;
+    }
+
+    .checkbtn.workbtn.pt-3 {
+        padding-top: 0px !important;
+    }
+
+    .jtxt p {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .icon_txt {
+        padding-bottom: 30px;
+        width: 100%;
+    }
+
+    /* how it work section end */
+    /* after section start*/
+    .firstimgafter {
+        margin: 5px;
+    }
+    
+    .secondimgafter {
+        margin: 5px;
+    }
+    .titleinfo p {
+        font-size: 16px;
+    }
+    .amountdiv p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .titletotal p {
+        color: #333333;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .amountotal p {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+    }
+    .listdiv {
+        padding: 40px 22px;
+    }
+    .checkbtn.aftersecbtn button {
+        width: 61%;
+        font-size: 15px;
+        padding: 14px 20px;
+        background: #6AB061;
+    }
+    .row.examplerow {
+        display: block;
+        margin: 10px;
+    }
+    
+    .col-xs-12.col-sm-6.examplecol1 {
+        width: 100%;
+        border-radius: 20px 20px 0px 0px;
+    }
+    
+    .col-xs-12.col-sm-6.examplecol2 {
+        width: 100%;
+        border-radius: 0px 0px 20px 20px;
+        padding-bottom: 30px;
+    }
+    .exampletitle p {
+        font-size: 19px;
+        text-align: center;
+        padding: 10px 0px;
+        padding-bottom: 30px;
+    }
+    .exampletitle h1 {
+        font-size: 25px;
+    }
+    .images {
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0px 0px;
+        width: 100%;
+    }
+    .secondimgafter img {
+        width: 95%;
+    }
+    .firstimgafter img {
+        width: 95%;
+    }
+    /* after section end*/
+      /* faq section start */
+
+      .questionbox {
+        width: 95%;
+        margin: auto;
+    }
+    .faqtittle h3{
+        font-size: 25px;
+        padding-bottom: 0px;
+    }
+    .accordion_head{
+        padding: 5px 0px;
+    }
+
+    /* faq section end */
+     /* footer start */
+     .footermenubox ul{
+        display: block;
+        padding: 0;
+    }
+    .footermenubox ul li {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .footermenubox ul li:last-child{
+        padding-bottom: 0px;
+    }
+    .row.footerfirstrow {
+        display: block;
+    }
+    
+    .footerfirstcol {
+        width: 100%;
+    }
+    
+    .footerlogo img {
+        text-align: center;
+    }
+    
+    .footerlogo {
+        text-align: center;
+    }
+    
+    .footerlogotxt {
+        text-align: center;
+    }
+    
+    .row.secondsecrow {
+        display: block;
+    }
+    
+    .footersecondcol {
+        width: 100%;
+        padding-bottom: 43px;
+    }
+    
+    .footersecondcol:last-child {
+        padding-bottom: 20px;
+    }
+    
+    .row.footerforthrow {
+        display: block;
+    }
+    
+    .footerforthcol {
+        width: 100%;
+    }
+    
+    .footerlbox {
+        text-align: center;
+    }
+    
+    .footerlbox img {
+        width: 200px;
+        padding-bottom: 29px;
+    }
+    /* footer end */
+
+}
+
+/*320-374*/
+@media only screen and (min-width: 320px) and (max-width: 374px) {
+
+    /* topbar start */
+    .logo.mobilelogo {
+        display: block;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        background: #4EAD33;
+    }
+
+    .logo.mobilelogo a img {
+        width: 175px;
+    }
+
+    .phonecall.float-end {
+        display: none;
+    }
+
+    .logo.desktoplogo {
+        display: none;
+    }
+
+    /* topbar end */
+
+
+    /* noticebar start */
+    section.noticebar {
+        display: none;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.5);
+        border-bottom: 1px solid;
+    }
+
+    /* notice bar end */
+    /* header section start */
+    header.header {
+        background: white;
+        position: relative;
+        z-index: 1;
+        padding-top: 37px;
+    }
+
+    section.topbar.pt-3.pb-3 {
+        position: relative;
+        z-index: 3;
+    }
+
+    h1.headertitle {
+        font-size: 28px;
+        font-weight: 800;
+        color: #00741b;
+        text-align: center;
+        margin: 0;
+        padding-bottom: 22px;
+    }
+
+    .headercontent h3 {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        padding-bottom: 0;
+    }
+
+    .buttonandtag button {
+        background: #00741B;
+        padding: 18px 70px;
+        width: 100%;
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        margin-top: 20px;
+
+    }
+
+    .buttonandtag p {
+        color: black;
+    }
+
+    .buttonandtag p i {
+        color: black;
+    }
+
+    .info p {
+        font-size: 15px;
+        color: #d9d9d9;
+        padding: 4px 0px;
+        font-weight: bold;
+    }
+
+    section.ratting {
+        display: none;
+    }
+
+    section.three_steps {
+        display: none;
+    }
+
+    .mobliebuttetpoint {
+        display: block;
+        padding-top: 16px;
+        padding-bottom: 4px;
+    }
+
+    .no1txt p {
+        font-weight: bold;
+        font-size: 14px;
+        padding-left: 8px;
+        text-align: left;
+    }
+
+    .no1 {
+        padding-top: 10px;
+    }
+
+    .moblietrustpilot {
+        display: block;
+        max-width: 100%;
+        display: flex;
+        margin-top: 35px;
+    }
+
+    .texttrustpilot {
+        width: 50%;
+        padding: 0;
+    }
+
+    .firstimg img {
+        width: 68%;
+    }
+
+    .texttrustpilot p {
+        font-size: 15px;
+    }
+
+    .moblietrustpilot {
+        padding: 10px 20px;
+    }
+
+    /* header section end */
+    /* progress and form section start */
+    .prog_details p {
+        padding-right: 0px;
+    }
+
+    .progress_steps {
+        margin-right: 0px;
+    }
+
+    .prog_details {
+        padding-left: 26px;
+    }
+
+    .progressdiv h3 {
+        font-size: 26px;
+        color: white;
+    }
+
+    .dbtitle p {
+        font-size: 16px;
+        display: none;
+    }
+
+    .row.progress_row {
+        display: block;
+    }
+
+    .col-xs-12.col-sm-6.progress_col {
+        width: 100%;
+    }
+
+    .formdiv {
+        margin-top: 30px;
+    }
+
+    .slno h3 {
+        font-size: 30px;
+    }
+
+    .stepcolp {
+        background: #00741B;
+        color: white;
+        padding-bottom: 45px;
+        padding-top: 45px;
+    }
+
+    section.progress_form {
+        padding-top: 0;
+    }
+
+    .prog_details a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .prog_details h4 {
+        color: #ffffff;
+    }
+
+    .dbtitle h2 {
+        display: none;
+    }
+
+    output {
+        width: 53%;
+    }
+
+    .formdiv {
+        padding: 30px 20px;
+    }
+
+    .howmanyPeople label {
+        font-size: 16px;
+    }
+
+    select {
+        font-size: 15px;
+    }
+
+    select option {
+        font-size: 15px;
+    }
+
+    .stepone {
+        padding: 20px 0px;
+    }
+
+    /* progress and form section end */
+    /* how it work section start */
+    .row.workrow {
+        display: block;
+    }
+
+    .col-xs-12.col-sm-6.workcol {
+        width: 100%;
+        padding: 40px 30px;
+        margin-top: 0;
+        background: white;
+    }
+
+    .howitworkdetails h3 {
+        color: #00741c;
+    }
+
+    .howitworkdetails p {
+        color: #2f2f2f;
+    }
+
+    .checkbtn.workbtn button {
+        font-size: 17px;
+        box-shadow: none;
+        background: #00741A;
+        color: white;
+        transition: all 0.4s;
+        border-radius: 50px;
+    }
+
+    .checkbtn.workbtn {
+        width: 100%;
+        font-size: 17px;
+    }
+
+    .col-xs-12.col-sm-6.iconcols {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+
+    .iconandtextdiv {
+        padding-top: 0px;
+        padding-left: 0px;
+    }
+
+    .iconandtextdiv h4 {
+        font-size: 25px;
+        padding: 12px 30px;
+        margin-right: 0px;
+    }
+
+    .iconst {
+        display: flex;
+        justify-content: space-around;
+        padding: 35px 0px;
+        margin-right: 0px;
+        padding-left: 22px;
+    }
+
+    .iconst {
+        display: none;
+    }
+
+    .iconst.mobileiconst {
+        display: flex;
+        padding-left: 0px;
+    }
+
+    .mobilehidebtn {
+        display: block;
+    }
+
+    .checkbtn.workbtn.pt-3 button {
+        background: white;
+        color: black;
+        box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    .jtxt {
+        width: 57%;
+    }
+
+    .icn i {
+        font-size: 31px;
+        color: white;
+    }
+
+    .checkbtn.workbtn.pt-3 {
+        padding-top: 0px !important;
+    }
+
+    .jtxt p {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .icon_txt {
+        padding-bottom: 30px;
+        width: 100%;
+    }
+
+    /* how it work section end */
+    /* after section start*/
+    .firstimgafter {
+        margin: 5px;
+    }
+    
+    .secondimgafter {
+        margin: 5px;
+    }
+    .titleinfo p {
+        font-size: 16px;
+    }
+    .amountdiv p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .titletotal p {
+        color: #333333;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .amountotal p {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+    }
+    .listdiv {
+        padding: 40px 22px;
+    }
+    .checkbtn.aftersecbtn button {
+        width: 61%;
+        font-size: 15px;
+        padding: 14px 20px;
+        background: #6AB061;
+    }
+    .row.examplerow {
+        display: block;
+        margin: 10px;
+    }
+    
+    .col-xs-12.col-sm-6.examplecol1 {
+        width: 100%;
+        border-radius: 20px 20px 0px 0px;
+    }
+    
+    .col-xs-12.col-sm-6.examplecol2 {
+        width: 100%;
+        border-radius: 0px 0px 20px 20px;
+        padding-bottom: 30px;
+    }
+    .exampletitle p {
+        font-size: 19px;
+        text-align: center;
+        padding: 10px 0px;
+        padding-bottom: 30px;
+    }
+    .exampletitle h1 {
+        font-size: 25px;
+    }
+    .images {
+        text-align: center;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0px 0px;
+        width: 100%;
+    }
+    .secondimgafter img {
+        width: 95%;
+    }
+    .firstimgafter img {
+        width: 95%;
+    }
+    /* after section end*/
+      /* faq section start */
+
+      .questionbox {
+        width: 95%;
+        margin: auto;
+    }
+    .faqtittle h3{
+        font-size: 25px;
+        padding-bottom: 0px;
+    }
+    .accordion_head{
+        padding: 5px 0px;
+    }
+
+    /* faq section end */
+     /* footer start */
+     .footermenubox ul{
+        display: block;
+        padding: 0;
+    }
+    .footermenubox ul li {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    .footermenubox ul li:last-child{
+        padding-bottom: 0px;
+    }
+    .row.footerfirstrow {
+        display: block;
+    }
+    
+    .footerfirstcol {
+        width: 100%;
+    }
+    
+    .footerlogo img {
+        text-align: center;
+    }
+    
+    .footerlogo {
+        text-align: center;
+    }
+    
+    .footerlogotxt {
+        text-align: center;
+    }
+    
+    .row.secondsecrow {
+        display: block;
+    }
+    
+    .footersecondcol {
+        width: 100%;
+        padding-bottom: 43px;
+    }
+    
+    .footersecondcol:last-child {
+        padding-bottom: 20px;
+    }
+    
+    .row.footerforthrow {
+        display: block;
+    }
+    
+    .footerforthcol {
+        width: 100%;
+    }
+    
+    .footerlbox {
+        text-align: center;
+    }
+    
+    .footerlbox img {
+        width: 200px;
+        padding-bottom: 29px;
+    }
+    /* footer end */
+
+}

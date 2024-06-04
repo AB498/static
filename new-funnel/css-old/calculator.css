@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* calculator form design start */
+input[type="radio"]:checked+label {
+    background: #0B9236;
+    color: white;
+    border: none;
+    border: 3px solid #0b9236;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.forminfo h2 {
+    color: #333333;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+section.multistepform {
+    background: #00741A;
+    padding: 100px 0px;
+    padding-top: 70px;
+}
+
+.formcontainer {
+    width: 600px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+label {
+    padding: 16px 1rem;
+    width: 100%;
+    text-align: center;
+    border: 3px solid #0b9236;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0b9236;
+}
+
+.one_two {
+    display: flex;
+    margin-top: 45px;
+}
+
+.firstoption {
+    width: 45%;
+    margin: auto;
+}
+
+.secondoption {
+    width: 45%;
+    margin: auto;
+}
+
+.three_four {
+    display: flex;
+    margin-top: 24px;
+}
+
+.thirdoption {
+    width: 45%;
+    margin: auto;
+}
+
+.forthoption {
+    width: 45%;
+    margin: auto;
+}
+
+.forminfo {
+    padding: 50px;
+    width: 100% !important;
+    padding-top: 20px;
+}
+
+label:hover {
+    cursor: pointer;
+    background: #0B9236;
+    color: white;
+}
+
+button.prev_btn {
+    border: none;
+    padding: 10px 30px;
+    background: none;
+    font-size: 12px;
+    font-weight: bold;
+    border: solid 2px #BEBEBE !important;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.buttondiv {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.fifthoption {
+    margin-top: 24px;
+}
+
+.namediv input {
+    width: 100%;
+    outline: none;
+    padding: 9px 15px;
+    color: #000000;
+    font-weight: bold;
+    border: 1px solid #66666694;
+    border-radius: 3px;
+}
+
+.nextbtn {
+    text-align: center;
+}
+
+.nextbtn button {
+    outline: none;
+    border: none;
+    background: #0B9236;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 3rem 1rem 3rem !important;
+    border-radius: 4px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
+    margin-top: 48px;
+}
+
+.submtibutton button {
+    outline: none;
+    border: none;
+    background: #0B9236;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 3rem 1rem 3rem !important;
+    border-radius: 4px;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
+    margin-top: 30px;
+}
+
+.submtibutton {
+    text-align: center;
+}
+
+.namediv {
+    padding-top: 30px;
+}
+
+.infodivform p {
+    font-size: 10px;
+    font-weight: bold;
+    color: #969696;
+    text-align: center;
+    margin: 0;
+}
+
+.infodivform p a {
+    color: #969696;
+}
+
+.infodivform p:first-child {
+    padding-bottom: 10px;
+}
+
+.infodivform {
+    margin-top: 40px;
+}
+
+.firstcheckbox {
+    display: flex;
+    align-items: center;
+}
+
+.firstcheckbox p {
+    margin: 0;
+    padding-left: 5px;
+    color: #003a63;
+    font-weight: bold;
+}
+
+.checkboxs {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: auto;
+}
+
+.noticepform p {
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: #969696;
+    padding: 10px 43px;
+    padding-top: 30px;
+}
+
+.lastpform p {
+    margin: 0;
+    font-size: 10px;
+    color: #969696;
+    font-weight: bold;
+    text-align: center;
+}
+
+.lastpform p a {
+    color: #969696;
+}
+
+.lastpform {
+    padding-top: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: start;
+    width: 757%;
+    overflow: hidden;
+}
+
+.form-outer {
+    overflow: hidden;
+}
+
+.forminfo.first-step {
+    background: white;
+    height: 100%;
+    padding-bottom: 60px;
+    border-radius: 0px 0px 20px 20px;
+    width: 600px !important;
+}
+
+.second-step {
+    display: none;
+    background: white;
+    height: 100%;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.third-step {
+    display: none;
+    background: white;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.four-step {
+    display: none;
+    background: white;
+    height: 100%;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+
+
+}
+
+.five-step {
+    display: none;
+    background: white;
+    height: 100%;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+
+
+}
+
+.six-step {
+    display: none;
+    background: white;
+    height: 100%;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+
+
+
+}
+
+.seven-step {
+    display: none;
+    background: white;
+    height: 100%;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+
+
+}
+
+.eight-step {
+    display: none;
+    background: white;
+    height: 100%;
+    width: 600px !important;
+    border-radius: 0px 0px 20px 20px;
+
+
+}
+
+/*  */
+.progressbar {
+    display: flex;
+    padding: 20px 10px;
+    width: 100%;
+    justify-content: space-around;
+    background: white;
+    padding-top: 70px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.progressbar step {
+    width: 100%;
+    text-align: center;
+}
+
+.progressbar step {
+    border: 2px solid white;
+}
+
+.progressbar .step .check i {
+    border: 2px solid #C2E4CD;
+    border-radius: 70%;
+    padding: 7px;
+    height: 36px;
+    width: 36px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #C2E4CD;
+}
+
+.progressbar .step .check i {
+    background: white;
+    border: 2px solid #C2E4CD;
+    border-radius: 70%;
+    padding: 7px;
+    height: 33px;
+    width: 33px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #C2E4CD;
+}
+
+.check i {
+    font-size: 19px;
+    text-align: center;
+}
+
+.step:last-child:before,
+.step:last-child:after {
+    display: none;
+}
+
+.step:before,
+.step:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 41px;
+    left: 33px;
+    background: #C2E4CD;
+    bottom: 46%;
+}
+
+.step.active:before,
+.step.active:after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 41px;
+    left: 33px;
+    background: #0B9236;
+    bottom: 46%;
+}
+
+.step {
+    position: relative;
+}
+
+.active i {
+    color: #0B9236 !important;
+    border-color: #0B9236 !important;
+}
+
+.current .check i {
+    color: #0B9236 !important;
+    border-color: #0B9236 !important;
+}
+
+.check.active i {
+    background: orange;
+    color: white !important;
+}
+
+.check.firstprog i {
+    border: 2px solid !important;
+    color: orange;
+}
+
+.active.step .check i {
+    background: #0B9236;
+    color: white !important;
+    border: 2px solid #0B9236 !important;
+}
+
+.emailError {
+    font-weight: bold;
+    color: #0B9236;
+}
+
+/* caluclator form design end */
