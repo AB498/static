@@ -458,7 +458,7 @@ async function postData() {
   return response;
 }
 async function corsGET(u, options) {
-  const url = "proxy.php/?" + encodeURIComponent(u);
+  const url = "/proxy.php/?" + encodeURIComponent(u);
   let res = null;
   let error = null;
   try {
