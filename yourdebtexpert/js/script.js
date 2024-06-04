@@ -333,43 +333,43 @@ prev0?.addEventListener("click", () => {
   updateProgressbar();
 });
 prev1?.addEventListener("click", () => {
-  currentStep = 1;
+  currentStep = 0;
   debtForm.style.display = "block";
   whichDebt.style.display = "none";
   updateProgressbar();
 });
 prev_2_3?.addEventListener("click", () => {
-  currentStep = 2;
+  currentStep = 1;
   whichDebt.style.display = "block";
   debtConcern.style.display = "none";
   updateProgressbar();
 });
 prev2?.addEventListener("click", () => {
-  currentStep = 3;
+  currentStep = 2;
   debtConcern.style.display = "block";
   propertyForm.style.display = "none";
   updateProgressbar();
 });
 prev3?.addEventListener("click", () => {
-  currentStep = 4;
+  currentStep = 3;
   propertyForm.style.display = "block";
   locationForm.style.display = "none";
   updateProgressbar();
 });
 prev4?.addEventListener("click", () => {
-  currentStep = 5;
+  currentStep = 4;
   locationForm.style.display = "block";
   statusForm.style.display = "none";
   updateProgressbar();
 });
 prev5?.addEventListener("click", () => {
-  currentStep = 6;
+  currentStep = 5;
   statusForm.style.display = "block";
   nameForm.style.display = "none";
   updateProgressbar();
 });
 prev6?.addEventListener("click", () => {
-  currentStep = 7;
+  currentStep = 6;
   nameForm.style.display = "block";
   emailForm.style.display = "none";
   updateProgressbar();
@@ -413,7 +413,7 @@ async function isValidPhone(phoneNumber) {
   let api_key = "e85a586bb27e1330b8e7467a73ce2b2e";
 
   let url = "https://monetise.leadbyte.co.uk/restapi/v1.2/validate/mobile?key=" + api_key + "&value=" + phoneNumber;
-  return log(await corsGET(url))[0]?.status?.toLowerCase() == "valid";
+  return log(await corsGET(url))?.[0]?.status?.toLowerCase() == "valid";
 }
 async function postData() {
 
@@ -458,19 +458,17 @@ async function postData() {
   return response;
 }
 async function corsGET(u, options) {
-  const url = "https://corsproxy.io/?" + encodeURIComponent(u);
+  const url = "/proxy.php/?" + encodeURIComponent(u);
   let res = null;
   let error = null;
   try {
     res = await fetch(url, options);
+    let responseText = await res.text();
     try {
-      res = await res.json();
+      res = JSON.parse(responseText);
     } catch (error) {
-      try {
-        res = await res.text();
-      } catch (error) {
-        res = await res.arrayBuffer();
-      }
+      console.log(error, responseText);
+      res = responseText;
     }
   } catch (e) {
     error = e;

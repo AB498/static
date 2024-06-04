@@ -13,7 +13,16 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE2OTg0IiwiZ
 }
 ####
 ####
+POST https://corsproxy.io/?https://monetise.leadbyte.co.uk/restapi/v1.2/leads
+Content-Type: "application/json",
+
+{
+    "key": "42c4ea91c662a693e6479788c105bf6f"
+}
 ####
+GET http://localhost:8000/proxy.php/?myurl
+
+
 ####
 ####
 ####
