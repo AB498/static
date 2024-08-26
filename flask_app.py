@@ -116,16 +116,16 @@ def repeat_pull():
     try:
         with open(relative_path('./logs.txt'), 'w') as f:
             f.write("")
-        while True:
-            res = str(git_pull())
-            print(res)
-            bf = ""
-            with open(relative_path('./logs.txt'), 'r') as f2:
-                bf = f2.read()
-            with open(relative_path('./logs.txt'), 'w') as f:
-                cur_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-                f.write( cur_time + '\n' + res + '\n' + bf)
-            time.sleep(0.1)  # 5 minutes = 300 seconds
+        # while True:
+        #     res = str(git_pull())
+        #     print(res)
+        #     bf = ""
+        #     with open(relative_path('./logs.txt'), 'r') as f2:
+        #         bf = f2.read()
+        #     with open(relative_path('./logs.txt'), 'w') as f:
+        #         cur_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        #         f.write( cur_time + '\n' + res + '\n' + bf)
+        #     time.sleep(0.1)  # 5 minutes = 300 seconds
     except Exception as e:
         print(e)
 
