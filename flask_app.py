@@ -149,7 +149,7 @@ def git_pull():
             res += subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10, stderr=subprocess.STDOUT).stdout or "Success"
             return res
         except Exception as e:
-            return f"{e}"
+            return f"{res} {e}"
         
 
 def repeat_pull():
