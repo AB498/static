@@ -53,19 +53,21 @@ def before_request():
         setup_reload_callback()
         callback_ran = True
 
+def relative_path(path):
+    return os.path.join(file_directory, path)
+
+    
 @app.route('/')
 def hello_world():
     return 'v2'
 
 @app.route('/logs')
 def logs():
-    return send_from_directory( 'logs.txt')
+    return send_from_directory(relative_path( 'logs.txt'))
 
 
 file_directory = os.path.dirname(os.path.abspath(__file__))
 
-def relative_path(path):
-    return os.path.join(file_directory, path)
 
 @app.route('/static/', defaults={'path': ''})
 @app.route('/static/<path:path>')
