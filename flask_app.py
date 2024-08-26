@@ -284,23 +284,29 @@ def upload_file():
 
 
 def git_pull():
-    dirs = ["/home/ab498/main_app/static"]
-    for dirr in dirs:
-        os.chdir(dirr)
-        try:
+    while True:
+        dirs = ["/home/ab498/static"]
+        for dirr in dirs:
+            os.chdir(dirr)
             try:
-                subprocess.run(['rm', '-rf', '.git/*.lock', '.git/ORIG_HEAD*', '.git/refs/heads', '.git/index.lock'], text=True, check=True, timeout=10)
+                try:
+                    subprocess.run(['rm', '-rf', '.git/*.lock', '.git/ORIG_HEAD*', '.git/refs/heads', '.git/index.lock'], text=True, check=True, timeout=10)
+                except Exception as e:
+                    pass
+                subprocess.run(['git', 'fetch', '--all'], text=True, check=True, timeout=10)
+                subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10)
+                return {"output": "Success"}
             except Exception as e:
-                pass
-            subprocess.run(['git', 'fetch', '--all'], text=True, check=True, timeout=10)
-            subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10)
-            return {"output": "Success"}
-        except Exception as e:
-            return {"output": "Fail", "error": f"An error occurred: {e}"}
+                return {"output": "Fail", "error": f"An error occurred: {e}"}
+    time.sleep(5)  # 5 minutes = 300 seconds
+
 
 
 with open(os.devnull, 'w') as fp:
-    cmd = subprocess.Popen(['python', '/home/ab498/main_app/git_cron.py'], stdout=fp)
+    thread = threading.Thread(target=git_pull)
+    thread.start()
+    
+    # cmd = subprocess.Popen(['python', '/home/ab498/main_app/git_cron.py'], stdout=fp)
 
 def on_exit(signum, frame):
     process.terminate()
