@@ -1,0 +1,133 @@
+pulled
+
+pulled
+
+pulled
+
+pulled
+
+pulled
+
+pulled
+
+pulled
+
+Command '['git', 'pull', '-X', 'ours']' returned non-zero exit status 3221225786.
+pulled
+
+pulled
+
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Success
+Command '['git', 'pull', '-X', 'ours']' returned non-zero exit status 130.
+SuccessSuccess
+SuccessSuccess
+SuccessSuccess
+SuccessSuccess
+SuccessSuccess
+SuccessSuccess
+SuccessSuccess
+SuccessSuccess
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+Command '['git', 'fetch', '--all']' returned non-zero exit status 130.
+Command '['git', 'fetch', '--all']' returned non-zero exit status 130.
+Command '['git', 'fetch', '--all']' returned non-zero exit status 130.
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+Command '['git', 'fetch', '--all']' returned non-zero exit status 130.
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "NoneType") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+Command '['git', 'fetch', '--all']' returned non-zero exit status 130.
+Command '['git', 'fetch', '--all']' returned non-zero exit status 130.
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+Command '['git', 'fetch', '--all']' returned non-zero exit status 130.
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
+can only concatenate str (not "CompletedProcess") to str
