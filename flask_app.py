@@ -57,26 +57,32 @@ def before_request():
 def hello_world():
     return 'v2'
 
+
+file_directory = os.path.dirname(os.path.abspath(__file__))
+
+def relative_path(path):
+    return os.path.join(file_directory, path)
+
 @app.route('/static/', defaults={'path': ''})
 @app.route('/static/<path:path>')
 def send_static(path):
     print('static')
-    file_path = os.path.join('./static', path)
+    file_path = os.path.join(relative_path( './static'), path)
     if os.path.isfile(file_path):
         print('sending '+file_path)
-        return send_from_directory('./static', path)
+        return send_from_directory(relative_path( './static'), path)
     else:
         print('exact match not found. Trying index.html')
 
         index_path = os.path.join(path, 'index.html')
-        file_path = os.path.join('./static', index_path)
+        file_path = os.path.join(relative_path( './static'), index_path)
         if os.path.isfile(file_path):
-            return send_from_directory('./static', index_path)
+            return send_from_directory(relative_path( './static'), index_path)
         else:
             index_path = path+'.html'
-            file_path = os.path.join('./static', path+'.html')
+            file_path = os.path.join(relative_path( './static'), path+'.html')
             if os.path.isfile(file_path):
-                return send_from_directory('./static', index_path)
+                return send_from_directory(relative_path( './static'), index_path)
             else:
                 return {'error': file_path+' not found'}
 
