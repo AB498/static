@@ -16,7 +16,6 @@ import json
 import heapq
 from flask import Flask, send_file
 import io
-import threading
 
 state = {"running": False}
 
