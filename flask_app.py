@@ -100,8 +100,11 @@ def hello_world():
 
 @app.route('/test')
 def test():
-    response = requests.get('http://127.0.0.1:5000/')
-    return response.text
+    try:
+        response = requests.get('http://127.0.0.1:5000/')
+        return response.text
+    except Exception as e:
+        return str(e)
 
 @app.route('/logs')
 def logs():
