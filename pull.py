@@ -1,3 +1,29 @@
+# pip install flask requests flask_cors flask_mysqldb psutil pillow
+from flask import send_from_directory, abort, Flask, request, jsonify, redirect, url_for, render_template, make_response, Response
+import requests
+import subprocess
+from flask_cors import CORS
+from flask_mysqldb import MySQL
+import re
+# from bs4 import BeautifulSoup
+from flask import send_from_directory
+import time
+import os
+import psutil
+import signal
+import sys
+import json
+import heapq
+from flask import Flask, send_file
+import io
+import threading
+
+
+file_directory = os.path.dirname(os.path.abspath(__file__))
+
+def relative_path(path):
+    return os.path.join(file_directory, path)
+
 def git_pull():
     dirs = ["./"]
     res = ""

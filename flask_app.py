@@ -193,8 +193,6 @@ def start():
 
 
 
-
-
 # exit if ketboard interrupt signal:
 signal.signal(signal.SIGINT, lambda x, y: exit_task())
 
