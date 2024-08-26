@@ -146,9 +146,11 @@ def start():
 # exit if ketboard interrupt signal:
 signal.signal(signal.SIGINT, lambda x, y: exit_task())
 
-try:
-    start()
-    exit_task()
-except (OSError, KeyboardInterrupt, ZeroDivisionError, Exception) as e:
-    print("Error", e)
-    exit_task()
+
+if __name__ == '__main__':
+    try:
+        start()
+        exit_task()
+    except (OSError, KeyboardInterrupt, ZeroDivisionError, Exception) as e:
+        print("Error", e)
+        exit_task()
