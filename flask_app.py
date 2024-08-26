@@ -98,6 +98,12 @@ def serve_html():
 def hello_world():
     return 'v2'
 
+import requests; 
+@app.route('/test')
+def test():
+    response = requests.get('http://127.0.0.1:5000/')
+    return response.text
+
 @app.route('/logs')
 def logs():
     return send_from_directory(relative_path( './'), 'logs.txt')
