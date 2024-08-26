@@ -21,38 +21,100 @@ import threading
 state = {"running": False}
 
 
+app = Flask(__name__, static_folder=None)
+
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'flask'
+
+mysql = MySQL(app)
+
+CORS(app, resources={r"/*": {"origins": "*"}})
+
+
+def exit_task():
+    state["running"] = False
+    os._exit(0)
+
+callback_ran = False  # Flag to ensure the callback runs only once
+
+def on_reload():
+    print("Flask application is reloading...")
+
+def setup_reload_callback():
+    if os.getenv('FLASK_ENV') == 'development':
+        signal.signal(signal.SIGTERM, lambda *args: on_reload())
+
+@app.before_request
+def before_request():
+    global callback_ran
+    if not callback_ran:
+        setup_reload_callback()
+        callback_ran = True
+
+@app.route('/')
+def hello_world():
+    return 'v2'
+
+@app.route('/static/', defaults={'path': ''})
+@app.route('/static/<path:path>')
+def send_static(path):
+    print('static')
+    file_path = os.path.join('./static', path)
+    if os.path.isfile(file_path):
+        print('sending '+file_path)
+        return send_from_directory('./static', path)
+    else:
+        print('exact match not found. Trying index.html')
+
+        index_path = os.path.join(path, 'index.html')
+        file_path = os.path.join('./static', index_path)
+        if os.path.isfile(file_path):
+            return send_from_directory('./static', index_path)
+        else:
+            index_path = path+'.html'
+            file_path = os.path.join('./static', path+'.html')
+            if os.path.isfile(file_path):
+                return send_from_directory('./static', index_path)
+            else:
+                return {'error': file_path+' not found'}
+
+
+
 def git_pull():
     dirs = ["./"]
     res = ""
-    for dirr in dirs:
-        os.chdir(dirr)
-        try:
-            try:
-                res +=  subprocess.run(['rm', '-rf', '.git/*.lock', '.git/ORIG_HEAD*', '.git/refs/heads', '.git/index.lock'], text=True, check=True, timeout=10).stdout or ".git removed\n"
-            except Exception as e:
-                pass
-            res += subprocess.run(['git', 'pull', '-X', 'ours'], text=True, check=True, timeout=10).stdout or "pulled\n"
-            # res += subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or "Success"
-            return res
-        except Exception as e:
-            return f"{e}"
-    
+    with open(os.devnull, 'w') as fp:
 
+        for dirr in dirs:
+            os.chdir(dirr)
+            try:
+                try:
+                    res +=  subprocess.run(['rm', '-rf', '.git/*.lock', '.git/ORIG_HEAD*', '.git/refs/heads', '.git/index.lock'], text=True, check=True, timeout=10).stdout or ".git removed\n"
+                except Exception as e:
+                    pass
+                res += subprocess.run(['git', 'pull', '-X', 'theirs'], text=True, check=True,stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=10).stdout or "pulled\n"
+                # res += subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or "Success"
+                return res
+            except Exception as e:
+                return f"{e}"
+        
 
 def repeat_pull():
     try:
-        if not os.path.exists('./logs.txt'):
-            with open('./logs.txt', 'w') as f:
-                f.write("")
+        with open('./logs.txt', 'w') as f:
+            f.write("")
         while True:
             res = git_pull()
-            print(res)
+            # print(res)
             bf = ""
             with open('./logs.txt', 'r') as f2:
                 bf = f2.read()
             with open('./logs.txt', 'w') as f:
-                f.write(res + '\n' + bf)
-            time.sleep(5)  # 5 minutes = 300 seconds
+                cur_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+                f.write( cur_time + '\n' + res + '\n' + bf)
+            time.sleep(0.1)  # 5 minutes = 300 seconds
     except Exception as e:
         print(e)
 
@@ -61,34 +123,25 @@ def repeat_pull():
     # cmd = subprocess.Popen(['python', '/home/ab498/main_app/git_cron.py'], stdout=fp)
 
 
+
 def start():
-    app = Flask(__name__)
-
-    app.config['MYSQL_HOST'] = 'localhost'
-    app.config['MYSQL_USER'] = 'root'
-    app.config['MYSQL_PASSWORD'] = ''
-    app.config['MYSQL_DB'] = 'flask'
-
-    mysql = MySQL(app)
-
-    CORS(app, resources={r"/*": {"origins": "*"}})
 
 
-    thread = threading.Thread(target=repeat_pull)
-    thread.start()
-    
-    state["running"] = True
-    print('Started')
-    
+    try:
+        thread = threading.Thread(target=repeat_pull)
+        thread.start()
+        
+        state["running"] = True
+        print('Started')
+        
 
-    app.run(debug=True)
+        app.run()# debug=True)
+    except Exception as e:
+        print(e)
 
 
-    
 
-def exit_task():
-    state["running"] = False
-    os._exit(0)
+
 
 # exit if ketboard interrupt signal:
 signal.signal(signal.SIGINT, lambda x, y: exit_task())
