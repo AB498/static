@@ -97,20 +97,19 @@ def send_static(path):
 def git_pull():
     dirs = ["./"]
     res = ""
-    with open(os.devnull, 'w') as fp:
-
-        for dirr in dirs:
-            os.chdir(dirr)
+    # with open(os.devnull, 'w') as fp:
+    for dirr in dirs:
+        os.chdir(dirr)
+        try:
             try:
-                try:
-                    res +=  subprocess.run(['rm', '-rf', '.git/*.lock', '&&', 'git', 'fetch', '--all', '&&', 'git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or ".git removed\n"
-                except Exception as e:
-                    pass
-                # res += subprocess.run(['git', 'reset',  '--hard', 'origin/main'], text=True, check=True,stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=10).stdout or "pulled\n"
-                # res += subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or "Success"
-                return res
+                res +=  subprocess.run(['rm', '-rf', '.git/*.lock', '&&', 'git', 'fetch', '--all', '&&', 'git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or ".git removed\n"
             except Exception as e:
-                return f"{e}"
+                pass
+            # res += subprocess.run(['git', 'reset',  '--hard', 'origin/main'], text=True, check=True,stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=10).stdout or "pulled\n"
+            # res += subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or "Success"
+            return res
+        except Exception as e:
+            return f"{e}"
         
 
 def repeat_pull():
@@ -118,7 +117,7 @@ def repeat_pull():
         with open(relative_path('./logs.txt'), 'w') as f:
             f.write("")
         while True:
-            res = git_pull()
+            res = str(git_pull())
             print(res)
             bf = ""
             with open(relative_path('./logs.txt'), 'r') as f2:
