@@ -1,5 +1,5 @@
 # pip install flask requests flask_cors flask_mysqldb psutil pillow
-from flask import send_from_directory, abort, Flask, request, jsonify, redirect, url_for, render_template, make_response
+from flask import send_from_directory, abort, Flask, request, jsonify, redirect, url_for, render_template, make_response, Response
 import requests
 import subprocess
 from flask_cors import CORS
