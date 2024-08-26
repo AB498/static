@@ -65,10 +65,30 @@ def curpath():
 exec_html = '''
 <body>
     <textarea id="code"></textarea>
-    <button id="run">Run</button>
+    <button id="run" onclick="run()">Run</button>
     <div id="output" style="white-space: pre-wrap; border: 1px solid black; width: 100%;"></div>
+    <script>
+        function run() {
+            var code = document.getElementById("code").value;
+            var output = document.getElementById("output");
+            var result = await (await fetch("/exec_backend?code="+encodeURIComponent(code))).text();
+            output.innerHTML = result;
+        }
+    </script>
 </body>
 '''
+
+def exec_code(code):
+    # execute python code locally:
+    try:
+        return subprocess.check_output(["python", "-c", code]).decode("utf-8")
+    except subprocess.CalledProcessError as e:
+        return str(e)
+
+@app.route('/exec_backend')
+def exec_backend():
+    code = request.args.get('code')
+    return exec_code(code)
 
 @app.route('/exec')
 def serve_html():
