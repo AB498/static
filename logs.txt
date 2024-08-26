@@ -12,6 +12,23 @@ pulled
 
 pulled
 
+pulled
+
+Command '['git', 'pull', '-X', 'ours']' returned non-zero exit status 128.
+pulled
+
+pulled
+
+pulled
+
+pulled
+
+pulled
+
+pulled
+
+pulled
+
 Command '['git', 'pull', '-X', 'ours']' returned non-zero exit status 3221225786.
 pulled
 
