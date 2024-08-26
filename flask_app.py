@@ -137,11 +137,11 @@ def git_pull():
         os.chdir(dirr)
         try:
             try:
-                res +=  subprocess.run(['rm', '-rf', '.git/*.lock', '||', 'true', '&&', 'git', 'fetch', '--all', '&&', 'git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or ".git removed\n"
+                res +=  subprocess.run(['rm', '-rf', '.git/*.lock'], text=True, check=True, timeout=10).stdout or ".git removed\n"
             except Exception as e:
                 res += f"{e}\n"
                 pass
-            # res += subprocess.run(['git', 'reset',  '--hard', 'origin/main'], text=True, check=True,stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=10).stdout or "pulled\n"
+            res += subprocess.run(['git', 'fetch', '--all', '&&', 'git', 'reset', '--hard', 'origin/main'], text=True, check=True,stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=10).stdout or "pulled\n"
             # res += subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or "Success"
             return res
         except Exception as e:
