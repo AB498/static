@@ -98,11 +98,10 @@ def serve_html():
 def hello_world():
     return 'v2'
 
-
 @app.route('/test')
 def test():
-    # response = requests.get('http://127.0.0.1:5000/')
-    return Response(exec_html, mimetype='text/html')
+    response = requests.get('http://127.0.0.1:5000/')
+    return response.text
 
 @app.route('/logs')
 def logs():
