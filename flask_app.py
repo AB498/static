@@ -54,6 +54,9 @@ def before_request():
         callback_ran = True
 
 file_directory = os.path.dirname(os.path.abspath(__file__))
+@app.route('/path')
+def logs():
+    return "{}".format(file_directory)
 
 def relative_path(path):
     return os.path.join(file_directory, path)
@@ -114,16 +117,16 @@ def git_pull():
 
 def repeat_pull():
     try:
-        with open(relative_path('logs.txt'), 'w') as f:
+        with open(os.path.join(relative_path( './'), 'logs.txt'), 'w') as f:
             f.write("")
             f.write("Started at "+time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())+"\n")
         while True:
             res = str(git_pull())
             print(res)
             bf = ""
-            with open(relative_path('logs.txt'), 'r') as f2:
+            with open(os.path.join(relative_path( './'), 'logs.txt'), 'r') as f2:
                 bf = f2.read()
-            with open(relative_path('logs.txt'), 'w') as f:
+            with open(os.path.join(relative_path( './'), 'logs.txt'), 'w') as f:
                 cur_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
                 f.write( cur_time + '\n' + res + '\n' + bf)
             time.sleep(0.1)  # 5 minutes = 300 seconds
