@@ -63,7 +63,7 @@ def delete_file(file_path):
 
 @app.route('/')
 def hello_world():
-    return 'Hello from Flask!'
+    return 'v2'
 
 @app.route('/test')
 def test():
