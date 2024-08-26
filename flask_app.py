@@ -137,8 +137,9 @@ def git_pull():
         os.chdir(dirr)
         try:
             try:
-                res +=  subprocess.run(['rm', '-rf', '.git/*.lock', '&&', 'git', 'fetch', '--all', '&&', 'git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or ".git removed\n"
+                res +=  subprocess.run(['rm', '-rf', '.git/*.lock', '||', 'true', '&&', 'git', 'fetch', '--all', '&&', 'git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or ".git removed\n"
             except Exception as e:
+                res += f"{e}\n"
                 pass
             # res += subprocess.run(['git', 'reset',  '--hard', 'origin/main'], text=True, check=True,stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=10).stdout or "pulled\n"
             # res += subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or "Success"
@@ -176,17 +177,16 @@ def start():
 
     try:
         thread = threading.Thread(target=repeat_pull)
+        thread.daemon = True
         thread.start()
         
         state["running"] = True
         print('Started')
         
 
-        app.run()# debug=True)
+        app.run(debug=True)
     except Exception as e:
         print(e)
-
-
 
 
 
