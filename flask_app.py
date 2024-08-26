@@ -59,7 +59,7 @@ def hello_world():
 
 @app.route('/logs')
 def logs():
-    return send_from_directory(relative_path( './'), 'logs.txt')
+    return send_from_directory( 'logs.txt')
 
 
 file_directory = os.path.dirname(os.path.abspath(__file__))
