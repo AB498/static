@@ -130,7 +130,7 @@ def send_static(path):
 
 @app.route('/pull')
 def git_pull():
-    dirs = ["./"]
+    dirs = [relative_path("./")]
     res = ""
     # with open(os.devnull, 'w') as fp:
     for dirr in dirs:
