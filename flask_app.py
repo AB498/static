@@ -103,10 +103,10 @@ def git_pull():
             os.chdir(dirr)
             try:
                 try:
-                    res +=  subprocess.run(['rm', '-rf', '.git/*.lock'], text=True, check=True, timeout=10).stdout or ".git removed\n"
+                    res +=  subprocess.run(['rm', '-rf', '.git/*.lock', '&&', 'git', 'fetch', '--all', '&&', 'git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or ".git removed\n"
                 except Exception as e:
                     pass
-                res += subprocess.run(['git', 'reset',  '--hard', 'origin/main'], text=True, check=True,stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=10).stdout or "pulled\n"
+                # res += subprocess.run(['git', 'reset',  '--hard', 'origin/main'], text=True, check=True,stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=10).stdout or "pulled\n"
                 # res += subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or "Success"
                 return res
             except Exception as e:
@@ -115,15 +115,15 @@ def git_pull():
 
 def repeat_pull():
     try:
-        with open('./logs.txt', 'w') as f:
+        with open(relative_path('./logs.txt'), 'w') as f:
             f.write("")
         while True:
             res = git_pull()
             # print(res)
             bf = ""
-            with open('./logs.txt', 'r') as f2:
+            with open(relative_path('./logs.txt'), 'r') as f2:
                 bf = f2.read()
-            with open('./logs.txt', 'w') as f:
+            with open(relative_path('./logs.txt'), 'w') as f:
                 cur_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
                 f.write( cur_time + '\n' + res + '\n' + bf)
             time.sleep(0.1)  # 5 minutes = 300 seconds
