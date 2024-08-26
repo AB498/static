@@ -98,7 +98,7 @@ def serve_html():
 def hello_world():
     return 'v2'
 
-import requests; 
+
 @app.route('/test')
 def test():
     response = requests.get('http://127.0.0.1:5000/')
