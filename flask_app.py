@@ -54,13 +54,13 @@ def before_request():
         callback_ran = True
 
 file_directory = os.path.dirname(os.path.abspath(__file__))
-@app.route('/path')
-def curpath():
-    return "{}".format(file_directory)
 
 def relative_path(path):
     return os.path.join(file_directory, path)
 
+@app.route('/path')
+def curpath():
+    return "{}".format(file_directory)+'\n'+os.path.join(relative_path( './') )
 
 exec_html = '''
 <body>
