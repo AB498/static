@@ -80,7 +80,7 @@ exec_html = '''
 def exec_code(code):
     # execute python code locally:
     try:
-        return subprocess.check_output(["python", "-c", code]).decode("utf-8")
+        return subprocess.check_output(["python", "-c", code], stderr=subprocess.STDOUT).decode("utf-8")
     except subprocess.CalledProcessError as e:
         return str(e)
 
