@@ -176,9 +176,12 @@ def start():
 
 
     try:
-        thread = threading.Thread(target=repeat_pull)
-        thread.daemon = True
-        thread.start()
+        # thread = threading.Thread(target=repeat_pull)
+        # thread.daemon = True
+        # thread.start()
+        
+        subprocess.Popen(['python', 'pull.py'])
+
         
         state["running"] = True
         print('Started')
@@ -187,6 +190,8 @@ def start():
         app.run(debug=True)
     except Exception as e:
         print(e)
+
+
 
 
 
