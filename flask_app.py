@@ -141,8 +141,8 @@ def git_pull():
             except Exception as e:
                 res += f"{e}\n"
                 pass
-            res += subprocess.run(['git', 'fetch', '--all', '&&', 'git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or "pulled\n"
-            # res += subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or "Success"
+            res += subprocess.run(['git', 'fetch', '--all'] , text=True, check=True, timeout=10).stdout or "pulled\n"
+            res += subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or "Success"
             return res
         except Exception as e:
             return f"{e}"
