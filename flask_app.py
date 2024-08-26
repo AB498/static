@@ -119,7 +119,7 @@ def repeat_pull():
             f.write("")
         while True:
             res = git_pull()
-            # print(res)
+            print(res)
             bf = ""
             with open(relative_path('./logs.txt'), 'r') as f2:
                 bf = f2.read()
