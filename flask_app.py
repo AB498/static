@@ -55,7 +55,7 @@ def before_request():
 
 file_directory = os.path.dirname(os.path.abspath(__file__))
 @app.route('/path')
-def logs():
+def curpath():
     return "{}".format(file_directory)
 
 def relative_path(path):
