@@ -62,6 +62,18 @@ def relative_path(path):
     return os.path.join(file_directory, path)
 
 
+exec_html = '''
+<body>
+    <textarea id="code"></textarea>
+    <button id="run">Run</button>
+    <div id="output" style="white-space: pre-wrap; border: 1px solid black; width: 100%;"></div>
+</body>
+'''
+
+@app.route('/exec')
+def serve_html():
+    return Response(exec_html, mimetype='text/html')
+
 
 @app.route('/')
 def hello_world():
