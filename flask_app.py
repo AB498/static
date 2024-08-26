@@ -65,9 +65,7 @@ def hello_world():
 
 @app.route('/logs')
 def logs():
-    return send_from_directory(relative_path( 'logs.txt'))
-
-
+    return send_from_directory(relative_path( './'), 'logs.txt')
 
 
 @app.route('/static/', defaults={'path': ''})
