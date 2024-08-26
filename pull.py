@@ -25,7 +25,7 @@ def relative_path(path):
     return os.path.join(file_directory, path)
 
 def git_pull():
-    dirs = ["./"]
+    dirs = [relative_path("./")]
     res = ""
     # with open(os.devnull, 'w') as fp:
     for dirr in dirs:
@@ -36,13 +36,16 @@ def git_pull():
             except Exception as e:
                 res += f"{e}\n"
                 pass
-            res += subprocess.run(['git', 'fetch', '--all'] , text=True, check=True, timeout=10).stdout or "pulled\n"
-            res += subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10).stdout or "Success"
+            try:
+                res += subprocess.check_output(['git', 'fetch', '--all'] , text=True, timeout=10, stderr=subprocess.STDOUT) or "pulled\n"
+            except subprocess.CalledProcessError as e:
+                res += str(e.output)
+
+            res += subprocess.run(['git', 'reset', '--hard', 'origin/main'], text=True, check=True, timeout=10, stderr=subprocess.STDOUT).stdout or "Success"
             return res
         except Exception as e:
-            return f"{e}"
+            return f"{res} {e}"
         
-
 def repeat_pull():
     try:
         with open(os.path.join(relative_path( './'), 'logs.txt'), 'w') as f:
