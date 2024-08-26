@@ -99,8 +99,8 @@ def hello_world():
     return 'v2'
 
 
-@app.route('/test')
-def test():
+@app.route('/testd')
+def testd():
     response = requests.get('http://127.0.0.1:5000/')
     return response.text
 
