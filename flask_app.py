@@ -57,6 +57,10 @@ def before_request():
 def hello_world():
     return 'v2'
 
+@app.route('/logs')
+def hello_world():
+    return send_from_directory(relative_path( './'), 'logs.txt')
+
 
 file_directory = os.path.dirname(os.path.abspath(__file__))
 
