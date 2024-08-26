@@ -68,7 +68,7 @@ exec_html = '''
     <button id="run" onclick="run()">Run</button>
     <div id="output" style="white-space: pre-wrap; border: 1px solid black; width: 100%;"></div>
     <script>
-        function run() {
+        async function run() {
             var code = document.getElementById("code").value;
             var output = document.getElementById("output");
             var result = await (await fetch("/exec_backend?code="+encodeURIComponent(code))).text();
