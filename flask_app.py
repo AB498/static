@@ -128,6 +128,7 @@ def send_static(path):
 
 
 
+@app.route('/pull')
 def git_pull():
     dirs = ["./"]
     res = ""
