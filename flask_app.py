@@ -179,7 +179,7 @@ def start():
         # thread.daemon = True
         # thread.start()
         
-        subprocess.Popen(['python', 'pull.py'])
+        subprocess.Popen(['python', relative_path('pull.py')])
 
         
         state["running"] = True
