@@ -58,7 +58,7 @@ def hello_world():
     return 'v2'
 
 @app.route('/logs')
-def hello_world():
+def logs():
     return send_from_directory(relative_path( './'), 'logs.txt')
 
 
