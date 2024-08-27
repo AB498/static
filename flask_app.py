@@ -192,6 +192,10 @@ def start():
         # thread.daemon = True
         # thread.start()
         
+        with open(os.path.join(relative_path( './'), 'logs.txt'), 'w') as f:
+            f.write("")
+            f.write("Started at "+time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())+"\n")
+            
         subprocess.Popen(['python', relative_path('pull.py')])
 
         
