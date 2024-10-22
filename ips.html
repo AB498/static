@@ -226,7 +226,7 @@
                 <div className="">
                     {children}
                     <Modal open={open} onClose={onClose || (() => { })}>
-                        <div className="relative p-4 w-screen h-screen flex flex-col items-center justify-center" onClick={(e) => {
+                        <div className="relative p-4 w-screen h-screen flex flex-col items-center justify-center overflow-auto" onClick={(e) => {
                             if (e.target === e.currentTarget) onClose()
                         }}>
                             {render}
