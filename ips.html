@@ -226,7 +226,7 @@
                 <div className="">
                     {children}
                     <Modal open={open} onClose={onClose || (() => { })}>
-                        <div className="relative p-4 w-screen h-screen flex flex-col items-center justify-center overflow-auto" onClick={(e) => {
+                        <div className="relative p-4 w-screen h-screen flex flex-col items-center overflow-auto" onClick={(e) => {
                             if (e.target === e.currentTarget) onClose()
                         }}>
                             {render}
@@ -826,8 +826,8 @@
             let history = useHistory();
             window.navigate = (path) => history.push(path);
 
-            let breakpoint = useBreakpoint();
-            window.breakpoint = breakpoint;
+            // let breakpoint = useBreakpoint();
+            // window.breakpoint = breakpoint;
             // let { next } = useQuery();
 
             let [logs] = useStream((cb) => subscribeFnSync(async () => await (await fetch('https://corsproxy.io/?https://ab498.pythonanywhere.com/get-logs')).json(), cb), async () => await (await fetch('https://corsproxy.io/?https://ab498.pythonanywhere.com/get-logs')).json())
