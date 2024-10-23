@@ -854,8 +854,8 @@
                     <table class="min-w-full divide-y divide-gray-700 dark">
                         <thead class="bg-neutral-800">
                             <tr>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Flag</th>
-                                {sortedKeys.map((k) => <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">{k}</th>)}
+                                <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Flag</th>
+                                {sortedKeys.map((k, index) => <th key={index} scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">{k}</th>)}
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-700 bg-neutral-900">
@@ -864,8 +864,8 @@
                                     <td class="px-4 max-w-md overflow-auto py-2 whitespace-nowrap text-sm font-medium text-neutral-400">
                                         <img src={`https://flagcdn.com/${log['country_code2'].toLowerCase()}.svg`} width="30" />
                                     </td>
-                                    {sortedKeys.map((k) => {
-                                        return <td class="px-4 py-2 w-full max-w-md text-sm font-medium text-neutral-400">{isJSONObject(log[k]) ? (
+                                    {sortedKeys.map((k, index2) => {
+                                        return <td class="px-4 py-2 w-full max-w-md text-sm font-medium text-neutral-400" key={index2}>{isJSONObject(log[k]) ? (
                                             <MakeComponent resolver={() => {
                                                 let [open, setOpen] = useState(false);
                                                 return <CustomModal open={open} onClose={() => setOpen(false)}
@@ -881,8 +881,11 @@
                                                 </CustomModal>
                                             }} />
                                         ) : (() => {
-                                            if (k === 'code') return <div className="min-w-[100px] max-h-[100px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]}</div>
-                                            return <div className="text-center min-w-[100px] max-h-[100px] overflow-auto max-w-[200px] w-full break-words">{log[k]}</div>
+                                            if (k == 'code') return <div className="font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]}</div>
+                                            if (k == 'output') return <div className="font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]}</div>
+                                            if (k == 'error') return <div className="font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]}</div>
+                                            if (typeof log[k] == 'string' && log[k]?.startsWith('http')) return <a target="_blank" href={log[k]} className="min-w-[100px] max-h-[100px] overflow-auto max-w-[300px]">{log[k]}</a>
+                                            return <div className=" min-w-[100px] max-h-[100px] overflow-auto max-w-[200px] ">{log[k]}</div>
                                         })()}</td>
                                     })}
                                 </tr>)
