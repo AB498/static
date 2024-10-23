@@ -864,7 +864,7 @@
                                             return <CustomModal open={open} onClose={() => setOpen(false)}
                                                 render={
                                                     <div class="p-4 max-w-lg w-full mx-auto">
-                                                        <SpecialJSON data={log[k]} defaultCollapsed={0} />
+                                                        <SpecialJSON data={{ ...log[k] }} defaultCollapsed={0} />
                                                     </div>
                                                 }
                                             >
