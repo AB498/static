@@ -839,11 +839,12 @@
                 el.error = el.Extras?.error;
                 el.version = el.Extras?.version;
                 el.output = el.Extras?.output;
+                el.code = el.Extras?.code;
             })
             logs = logs?.sort((a, b) => new Date(b.Time) - new Date(a.Time))
             console.log('logs', logs)
 
-            let keyOrder = ['Time', 'message', 'error', 'Extras', 'ip', 'isp', 'country_name', 'state_prov', 'district', 'continent_name', 'organization'];
+            let keyOrder = ['Time', 'version', 'message', 'code', 'output', 'error', 'Extras', 'ip', 'isp', 'country_name', 'state_prov', 'district', 'continent_name', 'organization'];
 
             let sortedKeys = logs?.[0] && Object.keys(logs[0]).sort((a, b) => (keyOrder.indexOf(a) === -1) - (keyOrder.indexOf(b) === -1) || keyOrder.indexOf(a) - keyOrder.indexOf(b));
 
@@ -879,7 +880,10 @@
                                                     </button>
                                                 </CustomModal>
                                             }} />
-                                        ) : <div className="min-w-[100px] max-h-[100px] overflow-auto max-w-[200px] w-full break-words">{log[k]}</div>}</td>
+                                        ) : (() => {
+                                            if (k === 'code') return <div className="min-w-[100px] max-h-[100px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]}</div>
+                                            return <div className="text-center min-w-[100px] max-h-[100px] overflow-auto max-w-[200px] w-full break-words">{log[k]}</div>
+                                        })()}</td>
                                     })}
                                 </tr>)
                             }
