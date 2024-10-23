@@ -832,18 +832,23 @@
 
             let [logs] = useStream((cb) => subscribeFnSync(async () => await (await fetch('https://corsproxy.io/?https://ab498.pythonanywhere.com/get-logs')).json(), cb), async () => await (await fetch('https://corsproxy.io/?https://ab498.pythonanywhere.com/get-logs')).json())
 
+            if (!logs) return;
+
+            logs.forEach(el => {
+                el.message = el.Extras?.message;
+                el.error = el.Extras?.error;
+                el.version = el.Extras?.version;
+                el.output = el.Extras?.output;
+            })
             logs = logs?.sort((a, b) => new Date(b.Time) - new Date(a.Time))
             console.log('logs', logs)
 
-            let keyOrder = ['Time', 'Extras', 'ip', 'isp', 'country_name', 'state_prov', 'district', 'continent_name', 'organization'];
+            let keyOrder = ['Time', 'message', 'error', 'Extras', 'ip', 'isp', 'country_name', 'state_prov', 'district', 'continent_name', 'organization'];
 
             let sortedKeys = logs?.[0] && Object.keys(logs[0]).sort((a, b) => (keyOrder.indexOf(a) === -1) - (keyOrder.indexOf(b) === -1) || keyOrder.indexOf(a) - keyOrder.indexOf(b));
 
 
-
-            return useSetup(() => {
-                stateRef.current.sidebar = { open: false }
-            }, false) || logs && (
+            return logs && (
                 <div className="bg-neutral-100">
                     <table class="min-w-full divide-y divide-gray-700 dark">
                         <thead class="bg-neutral-800">
@@ -855,25 +860,27 @@
                         <tbody class="divide-y divide-gray-700 bg-neutral-900">
                             {
                                 logs.map((log, index) => <tr class="border-b border-gray-700" key={index}>
-                                    <td class="px-6 max-w-md overflow-auto py-4 whitespace-nowrap text-sm font-medium text-neutral-400">
+                                    <td class="px-4 max-w-md overflow-auto py-2 whitespace-nowrap text-sm font-medium text-neutral-400">
                                         <img src={`https://flagcdn.com/${log['country_code2'].toLowerCase()}.svg`} width="30" />
                                     </td>
-                                    {sortedKeys.map((k) => <td class="px-6 max-w-[200px] overflow-auto py-4 whitespace-nowrap text-sm font-medium text-neutral-400">{isJSONObject(log[k]) ? (
-                                        <MakeComponent resolver={() => {
-                                            let [open, setOpen] = useState(false);
-                                            return <CustomModal open={open} onClose={() => setOpen(false)}
-                                                render={
-                                                    <div class="p-4 max-w-lg w-full mx-auto">
-                                                        <SpecialJSON data={{ ...log[k] }} defaultCollapsed={0} />
-                                                    </div>
-                                                }
-                                            >
-                                                <button onClick={() => setOpen(true)} className={BTN_CLASS}>
-                                                    OPEN
-                                                </button>
-                                            </CustomModal>
-                                        }} />
-                                    ) : log[k]}</td>)}
+                                    {sortedKeys.map((k) => {
+                                        return <td class="px-4 py-2 w-full max-w-md text-sm font-medium text-neutral-400">{isJSONObject(log[k]) ? (
+                                            <MakeComponent resolver={() => {
+                                                let [open, setOpen] = useState(false);
+                                                return <CustomModal open={open} onClose={() => setOpen(false)}
+                                                    render={
+                                                        <div class="p-4 max-w-lg w-full mx-auto">
+                                                            <SpecialJSON data={{ ...log[k] }} defaultCollapsed={0} />
+                                                        </div>
+                                                    }
+                                                >
+                                                    <button onClick={() => setOpen(true)} className={BTN_CLASS}>
+                                                        OPEN
+                                                    </button>
+                                                </CustomModal>
+                                            }} />
+                                        ) : <div className="min-w-[100px] max-h-[100px] overflow-auto max-w-[200px] w-full break-words">{log[k]}</div>}</td>
+                                    })}
                                 </tr>)
                             }
                         </tbody>
