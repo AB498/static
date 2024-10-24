@@ -881,7 +881,7 @@
                                                 </CustomModal>
                                             }} />
                                         ) : (() => {
-                                            if (k == 'code') return <textarea className="font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre" rows={5}>{log[k]}</textarea>
+                                            if (k == 'code') return <textarea className="bg-neutral-800 font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre" rows={5}>{log[k]}</textarea>
                                             if (k == 'output') return <div className="font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]}</div>
                                             if (k == 'error') return <div className="font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]}</div>
                                             if (typeof log[k] == 'string' && log[k]?.startsWith('http')) return <a target="_blank" href={log[k]} className="min-w-[100px] max-h-[100px] overflow-auto max-w-[300px]">{log[k]}</a>
