@@ -1,6 +1,6 @@
 (async () => {
     const browser = await require('puppeteer').launch({
-        headless: true,
+        headless: false,
         args: [
             '--disable-web-security',
             '--disable-features=IsolateOrigins,site-per-process',
