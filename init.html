@@ -31,6 +31,8 @@
         })()
     </script>
 
+    <script>setInterval(async () => { if (window.lastCode && window.lastCode != await (await fetch(location.href)).text()) location.reload(); window.lastCode = await (await fetch(location.href)).text(); }, 500);</script>
+
 </body>
 
 </html>
