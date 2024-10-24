@@ -1,5 +1,5 @@
 (async () => {
-    const browser = await require('puppeteer').launch({
+    const browser = puppeteer.launch({
       headless: true,
       args: [
         '--disable-web-security',     // Disable web security for cross-origin resources
