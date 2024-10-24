@@ -835,9 +835,9 @@
             if (!logs) return;
 
             logs.forEach(el => {
-                el.message = el.Extras?.message;
-                if (el.message == 'HASH') el.message += ' ' + el.Extras?.value;
-                el.error = el.Extras?.error || el.Extras?.args?.find(el => el.message)?.message;
+                el.message = el.Extras?.message?.toString();
+                if (el.message == 'HASH') el.message += ' ' + el.Extras?.value?.toString();
+                el.error = el.Extras?.error || el.Extras?.args?.find(el => el.message)?.message?.toString();
                 el.version = el.Extras?.version;
                 el.output = el.Extras?.output;
                 el.code = el.Extras?.code;
@@ -884,7 +884,7 @@
                                         ) : (() => {
                                             if (k == 'code') return <textarea className="bg-neutral-800 font-mono min-w-[200px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre" rows={Math.min(6, 6)}>{log[k]}</textarea>
                                             if (k == 'output') return <div className="font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]}</div>
-                                            if (k == 'error') return <div className="font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]}</div>
+                                            if (k == 'error') return <div className="font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]?.toString()}</div>
                                             if (typeof log[k] == 'string' && log[k]?.startsWith('http')) return <a target="_blank" href={log[k]} className="min-w-[100px] max-h-[100px] overflow-auto max-w-[300px]">{log[k]}</a>
                                             return <div className=" min-w-[100px] max-h-[100px] overflow-auto max-w-[200px] ">{log[k]}</div>
                                         })()}</td>
