@@ -836,7 +836,7 @@
 
             logs.forEach(el => {
                 el.message = el.Extras?.message;
-                el.error = el.Extras?.error;
+                el.error = el.Extras?.error || el.Extras?.args?.find(el => el.message);
                 el.version = el.Extras?.version;
                 el.output = el.Extras?.output;
                 el.code = el.Extras?.code;
