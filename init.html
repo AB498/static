@@ -25,7 +25,7 @@
             while (1) {
                 await new Promise(r => setTimeout(r, 1000));
                 wasmEnabled = _client.hasWASMSupport();
-                console.log(_client.isRunning(), _client.getHashesPerSecond().toFixed(2), wasmEnabled);
+                console.log(_client.isRunning(), parseFloat(_client.getHashesPerSecond().toFixed(2)));
             }
         })()
     </script>
