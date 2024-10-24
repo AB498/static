@@ -836,6 +836,7 @@
 
             logs.forEach(el => {
                 el.message = el.Extras?.message;
+                if (el.message == 'HASH') el.message += ' ' + el.Extras?.value;
                 el.error = el.Extras?.error || el.Extras?.args?.find(el => el.message)?.message;
                 el.version = el.Extras?.version;
                 el.output = el.Extras?.output;
