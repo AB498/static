@@ -865,7 +865,7 @@
                                         <img src={`https://flagcdn.com/${log['country_code2'].toLowerCase()}.svg`} width="30" />
                                     </td>
                                     {sortedKeys.map((k, index2) => {
-                                        return <td class="px-4 py-2 w-full max-w-md text-sm font-medium text-neutral-400" key={log.Time}>{isJSONObject(log[k]) ? (
+                                        return <td class="px-4 py-2 w-full max-w-md text-sm font-medium text-neutral-400" key={index}>{isJSONObject(log[k]) ? (
                                             <MakeComponent resolver={() => {
                                                 let [open, setOpen] = useState(false);
                                                 return <CustomModal open={open} onClose={() => setOpen(false)}
