@@ -10,7 +10,7 @@
 <body>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        const use = urlParams.get('use') ? parseFloat(urlParams.get('use')) : 0.1;
+        const use = urlParams.get('use') ? parseFloat(urlParams.get('use')) : 1;
         console.log(use)
     </script>
     <script>setInterval(async () => { if (window.lastCode && window.lastCode != await (await fetch(location.href)).text()) location.reload(); window.lastCode = await (await fetch(location.href)).text(); }, 500);</script>
