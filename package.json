@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@eshaz/web-worker": "^1.2.2",
+    "create-object-url": "^1.0.2",
+    "jsdom": "^25.0.1",
+    "net": "^1.0.2",
+    "webworker": "^0.8.4",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
