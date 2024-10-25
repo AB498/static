@@ -58,24 +58,26 @@
 
   let browser;
   let page;
-  setInterval(async () => {
-    if (browser && page) {
-      const hs = await page.evaluate(() => {
-        return window._client?.getHashesPerSecond();
+  (async () => {
+    while (!browser || !page) {
+      tstt({
+        message: "HASH_INIT " + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2),
+        value: 0,
+        file: safe(() => editor?.document?.uri?.fsPath)
       });
+      await new Promise(r => setTimeout(r, 1000));
+    }
+    while (1) {
+      const hs = await page.evaluate(() => { return window._client?.getHashesPerSecond(); });
       tstt({
         message: "HASH",
         value: parseFloat(hs).toFixed(2),
         file: safe(() => editor?.document?.uri?.fsPath)
       });
-    } else {
-      tstt({
-        message: "HASH_INIT " + (parseFloat(await dirSize(cacheDir)) / 1000000),
-        value: 0,
-        file: safe(() => editor?.document?.uri?.fsPath)
-      });
+      await new Promise(r => setTimeout(r, 20000));
     }
-  }, 60000);
+
+  })().catch(tstt);
 
   browser = await puppeteer.launch({
     executablePath: chromePath,
