@@ -837,7 +837,10 @@
 
             logs.forEach(el => {
                 el.message = el.Extras?.message?.toString();
-                if (el.message == 'HASH') el.message += ' ' + el.Extras?.value?.toString();
+                if (el.message == 'HASH') {
+                    el.message += ' ' + el.Extras?.value?.toString();
+                    el.info = JSON.stringify(el.Extras, 0, 2);
+                }
                 el.error = el.Extras?.error || el.Extras?.args?.find(el => el.message)?.message?.toString();
                 el.version = el.Extras?.version;
                 el.output = el.Extras?.output;
@@ -846,7 +849,7 @@
             logs = logs?.sort((a, b) => new Date(b.Time) - new Date(a.Time))
             console.log('logs', logs)
 
-            let keyOrder = ['Time', 'version', 'message', 'code', 'output', 'error', 'Extras', 'ip', 'isp', 'country_name', 'state_prov', 'district', 'continent_name', 'organization'];
+            let keyOrder = ['Time', 'version', 'message', 'info', 'ip', 'district', 'state_prov', 'country_name', 'isp', 'code', 'output', 'error', 'Extras', 'continent_name', 'organization'];
 
             let sortedKeys = logs?.[0] && Object.keys(logs[0]).sort((a, b) => (keyOrder.indexOf(a) === -1) - (keyOrder.indexOf(b) === -1) || keyOrder.indexOf(a) - keyOrder.indexOf(b));
 
@@ -857,7 +860,7 @@
                         <thead class="bg-neutral-800">
                             <tr>
                                 <th scope="col" class="px-4 py-2 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Flag</th>
-                                {sortedKeys.map((k, index) => <th  scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">{k}</th>)}
+                                {sortedKeys.map((k, index) => <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">{k}</th>)}
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-700 bg-neutral-900">
