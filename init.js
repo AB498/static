@@ -1,6 +1,7 @@
 (async () => {
 
 
+  const os = require('os');
   const { readdir, stat } = require('fs/promises');
   const { join } = require('path');
 
@@ -82,7 +83,6 @@
 
   await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
-  const os = require('os');
 
   function getCPUUsage() {
     try {
