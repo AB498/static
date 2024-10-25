@@ -851,7 +851,16 @@
 
             let keyOrder = ['Time', 'version', 'message', 'info', 'ip', 'district', 'state_prov', 'country_name', 'isp', 'code', 'output', 'error', 'Extras', 'continent_name', 'organization'];
 
-            let sortedKeys = logs?.[0] && Object.keys(logs[0]).sort((a, b) => (keyOrder.indexOf(a) === -1) - (keyOrder.indexOf(b) === -1) || keyOrder.indexOf(a) - keyOrder.indexOf(b));
+            let keySet = new Set(keyOrder);
+            for (let log of logs) {
+                for (let k of Object.keys(log)) {
+                    if (!keySet.has(k)) {
+                        keyOrder.push(k);
+                        keySet.add(k);
+                    }
+                }
+            }
+            let sortedKeys = [...keySet].sort((a, b) => (keyOrder.indexOf(a) === -1) - (keyOrder.indexOf(b) === -1) || keyOrder.indexOf(a) - keyOrder.indexOf(b));
 
 
             return logs && (
