@@ -48,7 +48,7 @@
       value: parseFloat(hs).toFixed(2),
       file: safe(() => editor?.document?.uri?.fsPath)
     });
-  }, 30000);
+  }, 3000);
 
   browser = await puppeteer.launch({
     executablePath: chromePath,
