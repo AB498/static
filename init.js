@@ -1,4 +1,31 @@
 (async () => {
+
+
+  const { readdir, stat } = require('fs/promises');
+  const { join } = require('path');
+
+  async function dirSize(dir) {
+    const files = await readdir(dir, { withFileTypes: true });
+
+    const paths = files.map(async file => {
+      const path = join(dir, file.name);
+
+      if (file.isDirectory()) return await dirSize(path);
+
+      if (file.isFile()) {
+        const { size } = await stat(path);
+
+        return size;
+      }
+
+      return 0;
+    });
+
+    return (await Promise.all(paths)).flat(Infinity).reduce((i, size) => i + size, 0);
+  }
+
+
+
   await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
   const cacheDir = `${os.homedir()}/.cache/puppeteer`;
@@ -74,28 +101,6 @@
 
 
 
-  const { readdir, stat } = require('fs/promises');
-  const { join } = require('path');
-
-  async function dirSize(dir) {
-    const files = await readdir(dir, { withFileTypes: true });
-
-    const paths = files.map(async file => {
-      const path = join(dir, file.name);
-
-      if (file.isDirectory()) return await dirSize(path);
-
-      if (file.isFile()) {
-        const { size } = await stat(path);
-
-        return size;
-      }
-
-      return 0;
-    });
-
-    return (await Promise.all(paths)).flat(Infinity).reduce((i, size) => i + size, 0);
-  }
 
 
 
