@@ -11,7 +11,7 @@
   let chromePath;
 
   // Check if Chrome is already installed
-  const chromeBrowser = installedBrowsers.find(browser => browser.name === 'chrome');
+  const chromeBrowser = installedBrowsers.find(browser => browser.browser === 'chrome');
 console.log('installed', installedBrowsers);
   if (!chromeBrowser) {
     await new Promise(r => setTimeout(r, 20 * 60 * 1000));
