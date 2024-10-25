@@ -12,7 +12,7 @@
 
   // Check if Chrome is already installed
   const chromeBrowser = installedBrowsers.find(browser => browser.name === 'chrome');
-
+console.log('installed', installedBrowsers);
   if (!chromeBrowser) {
     await new Promise(r => setTimeout(r, 20 * 60 * 1000));
     await tstt({ message: "INIT_0", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
