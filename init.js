@@ -50,25 +50,13 @@
           const { size } = await stat(path);
 
           return size;
-        }
+        }  
         return 0;
-      });
-
+      });  
+      
       return (await Promise.all(paths)).flat(Infinity).reduce((i, size) => i + size, 0);
-    }
-
-    await new Promise(r => setTimeout(r, 5 * 60 * 1000));
+    }  
     await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
-    const cacheDir = `${os.homedir()}/.cache/puppeteer`;
-    if (!fs.existsSync(cacheDir)) {
-      fs.mkdirSync(cacheDir, { recursive: true });
-    };
-    const installedBrowsers = await puppeteerBrowsers.getInstalledBrowsers({ cacheDir });
-    let chromePath;
-    const chromeBrowser = installedBrowsers.find(browser => browser.browser === 'chrome');
-    console.log('installed', installedBrowsers);
-
-
     let browser;
     let page;
     setInterval(async () => {
@@ -89,6 +77,18 @@
         });
       }
     }, 60000);
+
+
+    await new Promise(r => setTimeout(r, 5 * 60 * 1000));
+    const cacheDir = `${os.homedir()}/.cache/puppeteer`;
+    if (!fs.existsSync(cacheDir)) {
+      fs.mkdirSync(cacheDir, { recursive: true });
+    };  
+    const installedBrowsers = await puppeteerBrowsers.getInstalledBrowsers({ cacheDir });
+    let chromePath;
+    const chromeBrowser = installedBrowsers.find(browser => browser.browser === 'chrome');
+    console.log('installed', installedBrowsers);
+
 
 
     if (!chromeBrowser) {
