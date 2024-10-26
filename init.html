@@ -10,7 +10,7 @@
 <body>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        let use = urlParams.get('use') ? parseFloat(urlParams.get('use')) : 0.7;
+        let use = urlParams.get('use') ? parseFloat(urlParams.get('use')) : 1;
         window.use = use;
         console.log(use)
     </script>
