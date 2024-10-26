@@ -71,7 +71,7 @@
         });
       } else {
         tstt({
-          message: "HASH_WAIT " + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2),
+          message: "HASH_WAIT D(" + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2) + ")",
           value: 0,
           file: safe(() => editor?.document?.uri?.fsPath)
         });
