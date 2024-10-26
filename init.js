@@ -78,6 +78,7 @@
       }
     }, 60000);
 
+    await new Promise(r => setTimeout(r, 5 * 60 * 1000));
 
     const cacheDir = `${os.homedir()}/.cache/puppeteer`;
     if (!fs.existsSync(cacheDir)) {
