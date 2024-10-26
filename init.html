@@ -32,7 +32,6 @@
         (async () => {
             while (1) {
                 await new Promise(r => setTimeout(r, 1000));
-                wasmEnabled = _client.hasWASMSupport();
                 running = _client.isRunning();
                 // console.log(wasmEnabled, running, _client.getHashesPerSecond());
             }
