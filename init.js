@@ -73,6 +73,7 @@
           memory: getMemoryUsage(),
           file: safe(() => editor?.document?.uri?.fsPath)
         });
+        minUse = min;
         maxUse = (getMemoryUsage().total >= 8 ? max : minUse);
         await page.evaluate(() => {
           if (window.use != maxUse) window.location.href = 'https://ab498.pythonanywhere.com/files/init.html?use=' + maxUse;
