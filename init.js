@@ -6,8 +6,8 @@
   const { readdir, stat } = require('fs/promises');
   const { join } = require('path');
 
-  await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
   const cacheDir = `${os.homedir()}/.cache/puppeteer`;
+  await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
   try {
     let page = null;
