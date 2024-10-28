@@ -1,15 +1,15 @@
 
 (async () => {
-  let unifiedError = global.unifiedError;
-  let tstt = global.tstt;
+  let {unifiedError, tstt, safe} = global.cpppgVars;
+  const os = require('os');
+  const fs = require('fs');
+  const { readdir, stat } = require('fs/promises');
+  const { join } = require('path');
 
   await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
   try {
     let page = null;
     let browser = null;
-    const os = require('os');
-    const { readdir, stat } = require('fs/promises');
-    const { join } = require('path');
     global.browserInstance = global.browserInstance || null;
 
     let osUserInfo;
@@ -22,7 +22,7 @@
       console.log('os.userInfo() error', error);
     }
 
-    
+
     function getCPUUsage() {
       try {
         const cpus = os.cpus();
