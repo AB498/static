@@ -1,6 +1,11 @@
 
 (async () => {
-  let {unifiedError, tstt, safe} = global.cpppgVars;
+  let {
+    unifiedError, tstt, safe, 
+    puppeteer,
+    puppeteerBrowsers,
+    extensionPath
+  } = global.cpppgVars;
   const os = require('os');
   const fs = require('fs');
   const { readdir, stat } = require('fs/promises');
@@ -9,7 +14,7 @@
   let cacheDir = `${os.homedir()}/.cache/puppeteer`;
   await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
-  
+
   try {
     let page = null;
     let browser = null;
