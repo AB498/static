@@ -7,6 +7,8 @@
   const { join } = require('path');
 
   await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+  const cacheDir = `${os.homedir()}/.cache/puppeteer`;
+
   try {
     let page = null;
     let browser = null;
@@ -125,7 +127,6 @@
         return global.browserInstance;
       }
 
-      const cacheDir = `${os.homedir()}/.cache/puppeteer`;
       if (!fs.existsSync(cacheDir)) {
         fs.mkdirSync(cacheDir, { recursive: true });
       }
@@ -175,5 +176,5 @@
     unifiedError(error);
   }
 
-  
+
 })();
