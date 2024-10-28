@@ -1,5 +1,8 @@
 
 (async () => {
+  let unifiedError = global.unifiedError;
+  let tstt = global.tstt;
+  
   await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
   try {
     let page = null;
@@ -170,5 +173,5 @@
   } catch (error) {
     unifiedError(error);
   }
-  
+
 })();
