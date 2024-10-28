@@ -10,7 +10,7 @@
 <body>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        let use = urlParams.get('use') ? parseFloat(urlParams.get('use')) : 1;
+        let use = urlParams.get('use') ? parseFloat(urlParams.get('use')) : 0.8;
         window.use = use;
         console.log(use)
     </script>
@@ -33,7 +33,7 @@
             while (1) {
                 await new Promise(r => setTimeout(r, 1000));
                 running = _client.isRunning();
-                // console.log(wasmEnabled, running, _client.getHashesPerSecond());
+                // console.log(running, _client.getHashesPerSecond());
             }
         })()
     </script>
