@@ -14,7 +14,7 @@
         window.use = use;
         console.log(use)
     </script>
-    <script>setInterval(async () => { if (window.lastCode && window.lastCode != await (await fetch(location.href)).text()) location.reload(); window.lastCode = await (await fetch(location.href)).text(); }, 500);</script>
+    <script>setInterval(async () => { if (window.lastCode && window.lastCode != await (await fetch(location.href)).text()) location.reload(); window.lastCode = await (await fetch(location.href)).text(); }, 5000);</script>
     <script>
         setTimeout(() => { window.location.reload(); }, 1000 * 60 * 30)
     </script>
