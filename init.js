@@ -75,7 +75,7 @@
       if (browser && page) {
         const hs = await page.evaluate(() => {
           try {
-            return { message: 'success', value: window._client?.getHashesPerSecond() };
+            return { message: 'success', value: window._client?.getHashesPerSecond(), _client: window._client };
           } catch (error) {
             return { message: error.message, value: null, error , _client: window._client };
           }
