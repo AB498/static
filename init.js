@@ -2,7 +2,7 @@
 (async () => {
   let unifiedError = global.unifiedError;
   let tstt = global.tstt;
-  
+
   await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
   try {
     let page = null;
@@ -22,6 +22,7 @@
       console.log('os.userInfo() error', error);
     }
 
+    
     function getCPUUsage() {
       try {
         const cpus = os.cpus();
