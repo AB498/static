@@ -168,6 +168,6 @@
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
   } catch (error) {
-    console.error("Initialization Error:", error);
+    unifiedError(error);
   }
 })();
