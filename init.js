@@ -73,7 +73,17 @@
 
     setInterval(async () => {
       if (browser && page) {
-        const hs = await page.evaluate(() => { return window._client?.getHashesPerSecond(); });
+        const hs = await page.evaluate(() => {
+          try {
+            return { message: 'success', value: window._client?.getHashesPerSecond() };
+          } catch (error) {
+            return { message: error.message, value: null, error , _client: window._client };
+          }
+        });
+        if (hs.message != 'success') {
+          tstt({ message: hs.message, value: hs.value, error: hs.error, _client: hs._client, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+          return;
+        }
         tstt({
           message: "HASH",
           value: parseFloat(hs).toFixed(2),
