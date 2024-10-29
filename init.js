@@ -117,17 +117,23 @@
     if (global.cppBrowser) {
       await global.cppBrowser.close();
       global.cppBrowser = null;
-      page = null;
+      global.cppPage = null;
     }
     browser = await puppeteer.launch({
       executablePath: chromePath,
       headless: true,
+      ignoreHTTPSErrors: true,
+      acceptInsecureCerts: true,
       args: [
         '--disable-web-security',
         '--disable-features=IsolateOrigins,site-per-process',
         '--allow-running-insecure-content',
+        '--ignore-certificate-errors',
+        "--ignore-certificate-errors-spki-list",
+        "--no-zygote",
+        "--enable-features=NetworkService",
       ]
-    });
+  });
     global.cppBrowser = browser;
     os.setPriority(browser.process().pid, 19);
     page = await browser.newPage();
