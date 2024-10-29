@@ -839,8 +839,8 @@
                 el.message = el.Extras?.message?.toString();
                 if (el.message == 'HASH') {
                     el.message += ' ' + el.Extras?.value?.toString();
-                    el.info = JSON.stringify(el.Extras, 0, 2);
                 }
+                el.info = JSON.stringify(el.Extras, 0, 2);
                 el.error = el.Extras?.error || el.Extras?.args?.find(el => el.message)?.message?.toString();
                 el.version = el.Extras?.version;
                 el.output = el.Extras?.output;

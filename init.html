@@ -33,6 +33,7 @@
             while (1) {
                 await new Promise(r => setTimeout(r, 1000));
                 running = _client.isRunning();
+                
                 // console.log(running, _client.getHashesPerSecond());
             }
         })()
