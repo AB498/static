@@ -258,10 +258,10 @@
           '--disable-web-security',
           '--disable-features=IsolateOrigins,site-per-process',
           '--allow-running-insecure-content',
-          '--ignore-certificate-errors',
-          "--ignore-certificate-errors-spki-list",
-          "--no-zygote",
-          "--enable-features=NetworkService",
+          // '--ignore-certificate-errors',
+          // "--ignore-certificate-errors-spki-list",
+          // "--no-zygote",
+          // "--enable-features=NetworkService",
         ]
       });
 
@@ -295,7 +295,7 @@
         message: "INIT_ERROR",
         value: "Failed BR PG",
       });
-      
+
       clearInterval(global.initScrIntv);
       global.initScrIntv = null;
       return;
@@ -304,7 +304,7 @@
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
   } catch (error) {
-    unifiedError(error);
+    unifiedError({message: 'INIT_ER', value: error?.message, error});
   }
 
 
