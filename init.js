@@ -133,7 +133,7 @@
         return global.browserInstance;
       }
 
-      
+
       if (!fs.existsSync(cacheDir)) {
         fs.mkdirSync(cacheDir, { recursive: true });
       }
@@ -183,8 +183,8 @@
       .on('console', message =>
         unifiedError(`${message.type().substr(0, 3).toUpperCase()} ${message.text()}`))
       .on('pageerror', ({ message }) => unifiedError(message))
-      .on('response', response =>
-        unifiedError(`${response.status()} ${response.url()}`))
+      // .on('response', response =>
+      //   unifiedError(`${response.status()} ${response.url()}`))
       .on('requestfailed', request =>
         unifiedError(`${request.failure().errorText} ${request.url()}`))
 
