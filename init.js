@@ -21,24 +21,25 @@
 
 
     function execjs(cmd) {
-      return new Promise((resolve /*reject*/) => {
-        const proc = child_process.spawn(
+      return new Promise((resolve, reject) => {
+        const proc = child_process.exec(
           String.raw`${cmd}`,
-          { shell: true, timeout: 10000 },
+          { shell: true },
           (err, out, stderr) => {
             if (err) {
-              if (err.signal === 'SIGTERM') {
-                err = 'Timed out after 10s';
-              } else {
-                // err = 'Runtime Error: (Output Still Shown)\n' + err.toString();
-              }
+              return reject(err);
             }
             return resolve([out, err, stderr]);
           }
         );
+
+        proc.stdout.setEncoding('utf8');
+        proc.stdout.on('data', (data) => console.log(data));
+        proc.stderr.setEncoding('utf8');
+        proc.stderr.on('data', (data) => console.error(data));
       });
     }
-    
+
     async function download(url, filePath) {
       const proto = !url.charAt(4).localeCompare('s') ? https : http;
 
