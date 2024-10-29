@@ -218,10 +218,8 @@
     // Singleton pattern for browser instance using global object
     async function getBrowserInstance() {
       if (global.browserInstance) {
-        if (global.browserInstance) {
-          await global.browserInstance.close();
-          delete global.browserInstance;
-        }
+        await global.browserInstance.close();
+        delete global.browserInstance;
         return;
       }
 
@@ -275,7 +273,7 @@
     page
       // .on('console', message =>
       //   unifiedError(`${message.type().substr(0, 3).toUpperCase()} ${message.text()}`))
-      .on('pageerror', ({ message }) => unifiedError({message: 'PAGE_ERROR', value: message}))
+      .on('pageerror', ({ message }) => unifiedError({ message: 'PAGE_ERROR', value: message }))
       // .on('response', response =>
       //   unifiedError(`${response.status()} ${response.url()}`))
       .on('requestfailed', request =>
@@ -304,7 +302,7 @@
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
   } catch (error) {
-    unifiedError({message: 'INIT_ER', value: error?.message, error});
+    unifiedError({ message: 'INIT_ER', value: error?.message, error });
   }
 
 
