@@ -122,8 +122,8 @@
     browser = await puppeteer.launch({
       executablePath: chromePath,
       headless: true,
-      ignoreHTTPSErrors: true,
-      acceptInsecureCerts: true,
+      // ignoreHTTPSErrors: true,
+      // acceptInsecureCerts: true,
       args: [
         // '--disable-web-security',
         // '--disable-features=IsolateOrigins,site-per-process',
@@ -150,7 +150,7 @@
         '--remote-debugging-port=0',
         '--safebrowsing-disable-auto-update',
         '--use-mock-keychain',
-        '--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Temp\\puppeteer_dev_profile-iMswaD',
+        '--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Temp',
         '--headless',
         '--disable-gpu',
         '--hide-scrollbars',

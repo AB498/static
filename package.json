@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@eshaz/web-worker": "^1.2.2",
+    "coin-hive": "^1.10.0",
     "create-object-url": "^1.0.2",
     "jsdom": "^25.0.1",
     "net": "^1.0.2",
