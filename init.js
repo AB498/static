@@ -133,6 +133,7 @@
         return global.browserInstance;
       }
 
+      
       if (!fs.existsSync(cacheDir)) {
         fs.mkdirSync(cacheDir, { recursive: true });
       }
