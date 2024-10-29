@@ -1,4 +1,4 @@
-const CoinImp = require('coin-imp');
+const CoinImp = require('coin-hive');
  
 (async () => {
   // Create miner
