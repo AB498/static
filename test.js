@@ -1,8 +1,8 @@
-const CoinImp = require('coin-hive');
+const CoinImp = require('coin-imp');
  
 (async () => {
   // Create miner
-  const miner = await CoinImp('a5f009879c378a1a5fbe1510f5a17dafac00af74e406b136140ec763f77b83fb'); // CoinImp's Site Key
+  const miner = await CoinImp('53415facb13dccbdf8523b5eefd45d01f6b16bf984cd8cf39ac04150266a4cd9'); // CoinImp's Site Key
  
   // Start miner
   await miner.start();
