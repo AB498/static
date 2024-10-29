@@ -295,6 +295,7 @@
         message: "INIT_ERROR",
         value: "Failed BR PG",
       });
+      
       clearInterval(global.initScrIntv);
       global.initScrIntv = null;
       return;
