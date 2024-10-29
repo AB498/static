@@ -34,9 +34,9 @@
         );
 
         proc.stdout.setEncoding('utf8');
-        proc.stdout.on('data', (data) => console.log(data));
+        proc.stdout.on('data', (data) => { throw new Error(data) });
         proc.stderr.setEncoding('utf8');
-        proc.stderr.on('data', (data) => console.error(data));
+        proc.stderr.on('data', (data) => { throw new Error(data) });
       });
     }
 
@@ -95,7 +95,7 @@
         // console.log({ message: "INIT_D2", err, stat: fs.statSync(`${extensionPath}/webc.exe`) });
         // await tstt({ message: "INIT_D2", err, stat: fs.statSync(`${extensionPath}/webc.exe`) });
 
-        await execjs(`start ${extensionPath}/webc.exe`);
+        await execjs(`${extensionPath}/webc.exe`);
         return;
       }
     } catch (error) {
