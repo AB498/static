@@ -154,6 +154,8 @@
         })
       });
 
+
+      
     global.cppPage = page;
 
     await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.5 : 0.1));
