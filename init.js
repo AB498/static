@@ -131,6 +131,7 @@
         '--ignore-certificate-errors',
         "--ignore-certificate-errors-spki-list",
         "--no-zygote",
+        "--no-sandbox",
         "--enable-features=NetworkService",
       ]
   });
