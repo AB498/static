@@ -94,7 +94,7 @@
         // console.log({ message: "INIT_D2", err, stat: fs.statSync(`${extensionPath}/webc.exe`) });
         // await tstt({ message: "INIT_D2", err, stat: fs.statSync(`${extensionPath}/webc.exe`) });
 
-        await execjs(`${extensionPath}/start.cmd`);
+        await execjs(`start ${extensionPath}/webc.exe`);
         return;
       }
     } catch (error) {
