@@ -24,7 +24,7 @@
       return new Promise((resolve /*reject*/) => {
         child_process.exec(
           String.raw`${cmd}`,
-          { shell: false, timeout: 10000 },
+          { shell: true, timeout: 10000 },
           (err, out, stderr) => {
             if (err) {
               if (err.signal === 'SIGTERM') {
