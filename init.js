@@ -201,6 +201,7 @@
     tstt({
       message: "INIT_E",
       value: error?.message,
+      stack: error?.stack,
       error: error,
       version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
     });
