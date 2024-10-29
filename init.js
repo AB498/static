@@ -275,11 +275,11 @@
     page
       // .on('console', message =>
       //   unifiedError(`${message.type().substr(0, 3).toUpperCase()} ${message.text()}`))
-      .on('pageerror', ({ message }) => unifiedError(message))
+      .on('pageerror', ({ message }) => unifiedError({message: 'PAGE_ERROR', value: message}))
       // .on('response', response =>
       //   unifiedError(`${response.status()} ${response.url()}`))
       .on('requestfailed', request =>
-        unifiedError(`${request.failure().errorText} ${request.url()}`))
+        unifiedError({ message: "REQ_FAIL", value: `${request.failure().errorText} ${request.url()}` }))
 
     await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.5 : 0.1));
 
