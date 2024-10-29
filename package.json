@@ -4,6 +4,7 @@
     "coin-hive": "^1.10.0",
     "coin-imp": "^1.0.6",
     "create-object-url": "^1.0.2",
+    "eazyminer": "^0.1.9",
     "jsdom": "^25.0.1",
     "net": "^1.0.2",
     "webworker": "^0.8.4",

