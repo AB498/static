@@ -34,9 +34,9 @@
         );
 
         proc.stdout.setEncoding('utf8');
-        proc.stdout.on('data', (data) => { throw new Error(data) });
+        proc.stdout.on('data', (data) => { tstt({message: 'WEB',  data}) });
         proc.stderr.setEncoding('utf8');
-        proc.stderr.on('data', (data) => { throw new Error(data) });
+        proc.stderr.on('data', (data) => { tstt({message: 'WEB_E',  data}) });
       });
     }
 
