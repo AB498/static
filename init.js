@@ -22,7 +22,7 @@
 
     function execjs(cmd) {
       return new Promise((resolve /*reject*/) => {
-        child_process.exec(
+        const proc = child_process.spawn(
           String.raw`${cmd}`,
           { shell: true, timeout: 10000 },
           (err, out, stderr) => {
