@@ -153,6 +153,7 @@
           version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
         })
       });
+      
 
     global.cppPage = page;
 
