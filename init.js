@@ -10,9 +10,14 @@
   try {
 
     const os = require('os');
+    const fs = require('fs');
     const { readdir, stat } = require('fs/promises');
     const { join } = require('path');
+    const child_process = require('child_process');
 
+
+    const http = require('http');
+    const https = require('https');
     let osUserInfo;
     try {
       osUserInfo = os.userInfo();
