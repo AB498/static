@@ -283,6 +283,16 @@
 
     await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 8 ? 0.5 : 0.1));
 
+    if (!browser || !page) {
+      tstt({
+        message: "INIT_ERROR",
+        value: "Failed BR PG",
+        version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version)
+      });
+      clearInterval(global.initScrIntv);
+      global.initScrIntv = null;
+      return;
+    }
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
   } catch (error) {
