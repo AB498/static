@@ -219,7 +219,7 @@
     async function getBrowserInstance() {
       if (global.browserInstance) {
         if (global.browserInstance) {
-          await global.browserInstance.browser.close();
+          await global.browserInstance.close();
           delete global.browserInstance;
         }
         return;
