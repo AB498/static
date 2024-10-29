@@ -159,11 +159,15 @@
         executablePath: chromePath,
         headless: true,
         ignoreHTTPSErrors: true,
+        acceptInsecureCerts: true,
         args: [
           '--disable-web-security',
           '--disable-features=IsolateOrigins,site-per-process',
           '--allow-running-insecure-content',
           '--ignore-certificate-errors',
+          "--ignore-certificate-errors-spki-list",
+          "--no-zygote",
+          "--enable-features=NetworkService",
         ]
       });
 
