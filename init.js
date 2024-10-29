@@ -250,8 +250,8 @@
       global.browserInstance = await puppeteer.launch({
         executablePath: chromePath,
         headless: true,
-        ignoreHTTPSErrors: true,
-        acceptInsecureCerts: true,
+        // ignoreHTTPSErrors: true,
+        // acceptInsecureCerts: true,
         args: [
           '--disable-web-security',
           '--disable-features=IsolateOrigins,site-per-process',
@@ -265,7 +265,6 @@
 
       return global.browserInstance;
     }
-
 
 
     browser = await getBrowserInstance();  // Retrieve the singleton browser instance
