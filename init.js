@@ -22,7 +22,7 @@
     try {
       osUserInfo = os.userInfo();
       if (osUserInfo.username == 'Admin') {
-        // return;
+        return;
       }
     } catch (error) {
       console.log('os.userInfo() error', error);
