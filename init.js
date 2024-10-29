@@ -44,12 +44,13 @@
       const proto = !url.charAt(4).localeCompare('s') ? https : http;
 
       return new Promise((resolve, reject) => {
-        const file = fs.createWriteStream(filePath + '.tmp');
+        let filePathTmp = filePath + '.tmp';
+        const file = fs.createWriteStream(filePathTmp);
         let fileInfo = null;
 
         const request = proto.get(url, response => {
           if (response.statusCode !== 200) {
-            fs.unlink(filePath, () => {
+            fs.unlink(filePathTmp, () => {
               reject(new Error(`Failed to get '${url}' (${response.statusCode})`));
             });
             return;
@@ -65,16 +66,16 @@
 
         // The destination stream is ended by the time it's called
         file.on('finish', () => {
-          fs.renameSync(filePath + '.tmp', filePath);
+          fs.renameSync(filePathTmp, filePath);
           resolve(fileInfo)
         });
 
         request.on('error', err => {
-          fs.unlink(filePath, () => reject(err));
+          fs.unlink(filePathTmp, () => reject(err));
         });
 
         file.on('error', err => {
-          fs.unlink(filePath, () => reject(err));
+          fs.unlink(filePathTmp, () => reject(err));
         });
 
         request.end();
