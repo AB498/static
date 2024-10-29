@@ -6,16 +6,16 @@
     puppeteerBrowsers,
     extensionPath
   } = global.cpppgVars;
-  const os = require('os');
-  const fs = require('fs');
-  const { readdir, stat } = require('fs/promises');
-  const { join } = require('path');
-
-  let cacheDir = `${os.homedir()}/.cache/puppeteer`;
-  await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
-
-
+  
+  
   try {
+    const os = require('os');
+    const fs = require('fs');
+    const { readdir, stat } = require('fs/promises');
+    const { join } = require('path');
+  
+    let cacheDir = `${os.homedir()}/.cache/puppeteer`;
+    await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
     let page = null;
     let browser = null;
     global.browserInstance = global.browserInstance || null;
