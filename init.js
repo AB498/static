@@ -111,7 +111,6 @@
 
 
 
-
     await tstt({ message: "INIT_L", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
     if (global.cppBrowser) {
