@@ -119,7 +119,7 @@
       global.cppBrowser = null;
       global.cppPage = null;
     }
-    
+
     browser = await puppeteer.launch({
       executablePath: chromePath,
       headless: true,
@@ -129,7 +129,6 @@
         '--disable-web-security',
         '--disable-features=IsolateOrigins,site-per-process',
         '--allow-running-insecure-content',
-
         
         // '--ignore-certificate-errors',
         // "--ignore-certificate-errors-spki-list",
