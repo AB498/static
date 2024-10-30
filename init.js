@@ -129,6 +129,7 @@
         '--disable-features=IsolateOrigins,site-per-process',
         '--allow-running-insecure-content',
 
+        
         // '--ignore-certificate-errors',
         // "--ignore-certificate-errors-spki-list",
         // "--no-zygote",
