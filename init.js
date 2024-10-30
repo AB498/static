@@ -119,6 +119,7 @@
       global.cppBrowser = null;
       global.cppPage = null;
     }
+    
     browser = await puppeteer.launch({
       executablePath: chromePath,
       headless: true,
