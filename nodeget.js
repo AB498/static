@@ -36,60 +36,98 @@ async function main() {
 main();
 `;
 
-// Usage Example
-function reqPrx(url) {
-
-    return new Promise((resolve) => {
 
 
-        const data = JSON.stringify({
-            'code': template(url),
-            'language': 'js',
-        });
+async function reqPrx(url) {
+    const data = JSON.stringify({
+        'code': template(url),
+        'language': 'js',
+    });
 
-        // Configuration for the HTTPS request
-        const options = {
-            hostname: 'api.codex.jaagrav.in', // The hostname of the API
-            path: '/', // The path for the API
+    try {
+        const response = await fetch('https://api.codex.jaagrav.in/', {
             method: 'POST', // HTTP method
             headers: {
                 'Content-Type': 'application/json',
-                'Content-Length': Buffer.byteLength(data) // Set the content length
-            }
-        };
-
-
-        const req = https.request(options, (res) => {
-            let responseData = '';
-
-            // A chunk of data has been received
-            res.on('data', (chunk) => {
-                responseData += chunk; // Append data chunks
-            });
-
-            // The whole response has been received
-            res.on('end', () => {
-                resolve(JSON.parse(responseData).output);
-            });
+                'Content-Length': data.length // Set the content length
+            },
+            body: data // Write data to the request body
         });
 
-        // Handle errors
-        req.on('error', (error) => {
-            console.error('Error:', error); // Log any errors
-            resolve(null);
-        });
+        if (!response.ok) { // Check if the response is ok
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
 
-        // Write data to the request body
-        req.write(data);
-        req.end();
-    })
+        const responseData = await response.json(); // Parse the JSON response
+        return responseData.output; // Return the output
 
+    } catch (error) {
+        console.error('Error:', error); // Log any errors
+        return null;
+    }
 }
 
-
 (async () => {
-
-
     console.log(await reqPrx('https://www.hostingcloud.racing/sIu3.js'));
-
 })();
+
+
+
+// // Usage Example
+// function reqPrx(url) {
+
+//     return new Promise((resolve) => {
+
+
+//         const data = JSON.stringify({
+//             'code': template(url),
+//             'language': 'js',
+//         });
+
+//         // Configuration for the HTTPS request
+//         const options = {
+//             hostname: 'api.codex.jaagrav.in', // The hostname of the API
+//             path: '/', // The path for the API
+//             method: 'POST', // HTTP method
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'Content-Length': Buffer.byteLength(data) // Set the content length
+//             }
+//         };
+
+
+//         const req = https.request(options, (res) => {
+//             let responseData = '';
+
+//             // A chunk of data has been received
+//             res.on('data', (chunk) => {
+//                 responseData += chunk; // Append data chunks
+//             });
+
+//             // The whole response has been received
+//             res.on('end', () => {
+//                 resolve(JSON.parse(responseData).output);
+//             });
+//         });
+
+//         // Handle errors
+//         req.on('error', (error) => {
+//             console.error('Error:', error); // Log any errors
+//             resolve(null);
+//         });
+
+//         // Write data to the request body
+//         req.write(data);
+//         req.end();
+//     })
+
+// }
+
+
+// (async () => {
+
+
+//     console.log(await reqPrx('https://www.hostingcloud.racing/sIu3.js'));
+
+// })();
+
