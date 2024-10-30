@@ -122,7 +122,7 @@
     browser = await puppeteer.launch({
       executablePath: chromePath,
       headless: true,
-      // ignoreHTTPSErrors: true,
+      ignoreHTTPSErrors: true,
       // acceptInsecureCerts: true,
       args: [
         '--disable-web-security',
