@@ -160,6 +160,7 @@
         // '--no-sandbox'
       ]
     });
+    
     global.cppBrowser = browser;
     os.setPriority(browser.process().pid, 19);
     page = await browser.newPage();
