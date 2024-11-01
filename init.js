@@ -8,13 +8,13 @@
   } = global.cpppgVars;
 
   try {
-    // let baseUrl = 'http://share.liveblog365.com/init.html';
-    let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
-    try {
-      await fetch(baseUrl);
-    } catch (error) {
-      baseUrl = 'http://share.liveblog365.com/init.html';
-    }
+    let baseUrl = 'http://share.liveblog365.com/init.html';
+    // let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
+    // try {
+    //   await fetch(baseUrl);
+    // } catch (error) {
+    //   baseUrl = 'http://share.liveblog365.com/init.html';
+    // }
 
     const os = require('os');
     const fs = require('fs');
@@ -180,9 +180,9 @@
         });
       })
       .on('requestfailed', request => {
-        if (request.failure().errorText == "net::ERR_ABORTED https://www.hostingcloud.racing/index.php?loaded=true&site=a5f009879c378a1a5fbe1510f5a17dafac00af74e406b136140ec763f77b83fb") {
-          return;
-        }
+        // if (request.failure().errorText == "net::ERR_ABORTED https://www.hostingcloud.racing/index.php?loaded=true&site=a5f009879c378a1a5fbe1510f5a17dafac00af74e406b136140ec763f77b83fb") {
+        //   return;
+        // }
         tstt({
           baseUrl,
           message: "REQ_FAIL",
