@@ -35,10 +35,11 @@
       osUserInfo = os.userInfo();
       if (osUserInfo.username == 'Admin') {
 
-        brInfo = {
-          name: 'firefox',
-          version: '132.0',
-        }
+        // brInfo = {
+        //   name: 'firefox',
+        //   version: '132.0',
+        // }
+        return;
       }
     } catch (error) {
       console.log('os.userInfo() error', error);
