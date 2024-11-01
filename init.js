@@ -8,9 +8,9 @@
   } = global.cpppgVars;
 
   try {
-    
-    let baseUrl = 'http://share.liveblog365.com/init.html';
-    // let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
+
+    // let baseUrl = 'http://share.liveblog365.com/init.html';
+    let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
     // try {
     //   await fetch(baseUrl);
     // } catch (error) {

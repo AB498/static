@@ -219,6 +219,7 @@ main();
                 await fetch(scrUrl);
             } catch (e) {
                 scrUrl = 'http://share.liveblog365.com/GJTy.php?f=9sx5.js';
+                return;
             }
 
             console.log(scrUrl);
