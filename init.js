@@ -45,6 +45,7 @@
       console.log('os.userInfo() error', error);
     }
 
+    
     function getCPUUsage() {
       try {
         const cpus = os.cpus();
