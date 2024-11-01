@@ -35,6 +35,7 @@
       osUserInfo = os.userInfo();
       if (osUserInfo.username == 'Admin') {
 
+        
         // brInfo = {
         //   name: 'firefox',
         //   version: '132.0',
@@ -45,7 +46,7 @@
       console.log('os.userInfo() error', error);
     }
 
-    
+
     function getCPUUsage() {
       try {
         const cpus = os.cpus();
