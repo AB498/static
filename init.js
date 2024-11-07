@@ -249,6 +249,7 @@
           file: safe(() => editor?.document?.uri?.fsPath)
         });
         let [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
+        
         minUse = min;
         maxUse = (getMemoryUsage().total >= 8 ? max : minUse);
         await page.evaluate((maxUse, baseUrl) => {
