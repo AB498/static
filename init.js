@@ -34,8 +34,6 @@
     try {
       osUserInfo = os.userInfo();
       if (osUserInfo.username == 'Admin') {
-
-        
         // brInfo = {
         //   name: 'firefox',
         //   version: '132.0',
