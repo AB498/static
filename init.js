@@ -83,6 +83,7 @@
     }
 
     if (getMemoryUsage()?.total <= 6.0) {
+      await tstt({ baseUrl, message: "INIT_MEM", memory: getMemoryUsage(), version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
       return;
     }
     async function dirSize(dir) {
