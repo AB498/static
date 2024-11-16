@@ -13,9 +13,6 @@
   } = global.cpppgVars;
 
   try {
-    if (getMemoryUsage().total <= 6.0) {
-      return;
-    }
     let brInfo = {
       name: 'chrome',
       version: '130.0.6723.58',
@@ -85,6 +82,9 @@
       }
     }
 
+    if (getMemoryUsage()?.total <= 6.0) {
+      return;
+    }
     async function dirSize(dir) {
       const files = await readdir(dir, { withFileTypes: true });
 
