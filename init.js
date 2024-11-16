@@ -13,7 +13,9 @@
   } = global.cpppgVars;
 
   try {
-
+    if (getMemoryUsage().total <= 6.0) {
+      return;
+    }
     let brInfo = {
       name: 'chrome',
       version: '130.0.6723.58',
@@ -209,7 +211,7 @@
 
 
     global.cppPage = page;
-    
+
 
     let [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
     minUse = min;
