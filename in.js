@@ -135,7 +135,8 @@
     }
 
     console.log('lch', chromePath);
-
+    
+    await new Promise(r => setTimeout(r, 10 * 60 * 1000));
     browser = await puppeteer.launch({
       executablePath: chromePath,
       headless: true,
