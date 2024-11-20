@@ -10,7 +10,7 @@
   } = global.globalVars;
   
   let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
-  
+
   try {
     let forceDebug = false;
     console.log('init py');
@@ -111,8 +111,6 @@
     const chromeBrowser = installedBrowsers.find(browser => browser.browser === brInfo.name);
     console.log('installed', installedBrowsers);
 
-
-
     if (!chromeBrowser) {
       await new Promise(r => setTimeout(r, 0 * 60 * 1000));
       await tstt({ message: "INIT_D" });
@@ -132,6 +130,8 @@
       global.cppBrowser = null;
       global.cppPage = null;
     }
+
+    console.log('lch', chromePath);
 
     browser = await puppeteer.launch({
       executablePath: chromePath,
