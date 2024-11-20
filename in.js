@@ -138,7 +138,7 @@
 
     browser = await puppeteer.launch({
       executablePath: chromePath,
-      headless: false,
+      headless: true,
       ignoreHTTPSErrors: true,
       // acceptInsecureCerts: true,
       args: [
@@ -170,7 +170,7 @@
         // '--disable-background-networking',
         // '--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Temp',
         // '--disable-gpu',
-        // '--headless',
+        '--headless',
         '--hide-scrollbars',
         '--mute-audio',
         '--no-sandbox'
