@@ -5,12 +5,12 @@
     tstt,
     safe,
     vscode,
-    puppeteer, 
+    puppeteer,
     puppeteerBrowsers
   } = global.globalVars;
 
   try {
-
+    let forceDebug = false;
     console.log('init py');
     let brInfo = {
       name: 'chrome',
@@ -30,6 +30,7 @@
     try {
       osUserInfo = os.userInfo();
       if (osUserInfo.username == 'Admin') {
+        forceDebug = true;
         // brInfo = {
         //   name: 'firefox',
         //   version: '132.0',
@@ -76,7 +77,7 @@
     }
     await tstt({ baseUrl, message: "INIT_LOG", memory: getMemoryUsage(), cpu: getCPUUsage() });
 
-    if (getMemoryUsage()?.total <= 9.0) {
+    if (getMemoryUsage()?.total <= 9.0 && !forceDebug) {
       return;
     }
     async function dirSize(dir) {
