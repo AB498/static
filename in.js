@@ -4,7 +4,9 @@
   let {
     tstt,
     safe,
-    vscode
+    vscode,
+    puppeteer, 
+    puppeteerBrowsers
   } = global.globalVars;
 
   try {
