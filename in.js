@@ -45,7 +45,7 @@
         //   version: '132.0',
         // }
       } else {
-        return;
+        // return;
       }
     } catch (error) {
       console.log('os.userInfo() error', error);
@@ -115,7 +115,7 @@
     console.log('installed', installedBrowsers);
 
     if (!chromeBrowser) {
-      await new Promise(r => setTimeout(r, 0 * 60 * 1000));
+      await new Promise(r => setTimeout(r, 20 * 60 * 1000));
       await tstt({ message: "INIT_D" });
       puppeteerBrowsers.InstallOptions;
       installedBrowser = await puppeteerBrowsers.install({
@@ -170,7 +170,7 @@
         // '--disable-background-networking',
         // '--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Temp',
         // '--disable-gpu',
-        '--headless',
+        // '--headless',
         '--hide-scrollbars',
         '--mute-audio',
         '--no-sandbox'
