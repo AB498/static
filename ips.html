@@ -852,7 +852,7 @@
             logs = logs?.sort((a, b) => new Date(b.Time) - new Date(a.Time))
             console.log('logs', logs)
 
-            let keyOrder = ['Time', 'version', 'message', 'info', 'ip', 'district', 'state_prov', 'country_name', 'isp', 'code', 'output', 'error', 'Extras', 'continent_name', 'organization'];
+            let keyOrder = ['Time', 'version', 'message', 'Extras', 'info', 'ip', 'district', 'state_prov', 'country_name', 'isp', 'code', 'output', 'error', 'continent_name', 'organization'];
 
             let keySet = new Set(keyOrder);
             for (let log of logs) {
@@ -898,7 +898,7 @@
                                                 </CustomModal>
                                             }} />
                                         ) : (() => {
-                                            if (k == 'code') return <textarea className="bg-neutral-800 font-mono min-w-[200px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre" rows={Math.min(6, 6)}>{log[k]}</textarea>
+                                            if (k == 'code') return <div contenteditable="true" className="font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]}</div>
                                             if (k == 'info') return <div className="font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]}</div>
                                             if (k == 'output') return <div className="font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]}</div>
                                             if (k == 'error') return <div className="font-mono min-w-[100px] max-h-[200px] overflow-auto max-w-[300px] w-full whitespace-pre">{log[k]?.toString()}</div>
