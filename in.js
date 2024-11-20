@@ -8,7 +8,9 @@
     puppeteer,
     puppeteerBrowsers
   } = global.globalVars;
-
+  
+  let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
+  
   try {
     let forceDebug = false;
     console.log('init py');
@@ -18,7 +20,6 @@
     }
 
     // let baseUrl = 'http://share.liveblog365.com/init.html';
-    let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
 
     const os = require('os');
     const fs = require('fs');
