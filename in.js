@@ -10,6 +10,8 @@
   } = global.globalVars;
 
   try {
+
+    console.log('init py');
     let brInfo = {
       name: 'chrome',
       version: '130.0.6723.58',
