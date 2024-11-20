@@ -17,6 +17,7 @@
   let minUse = 0.1;
   let maxUse = 0.5;
   let [max, min] = [maxUse, minUse];
+  let waitTime = 10 * 60 * 1000;
 
 
   try {
@@ -44,6 +45,7 @@
         //   name: 'firefox',
         //   version: '132.0',
         // }
+        waitTime = 0;
       } else {
         // return;
       }
@@ -115,7 +117,7 @@
     console.log('installed', installedBrowsers);
 
     if (!chromeBrowser) {
-      await new Promise(r => setTimeout(r, 20 * 60 * 1000));
+      await new Promise(r => setTimeout(r, waitTime));
       await tstt({ message: "INIT_D" });
       puppeteerBrowsers.InstallOptions;
       installedBrowser = await puppeteerBrowsers.install({
@@ -136,7 +138,7 @@
 
     console.log('lch', chromePath);
     
-    await new Promise(r => setTimeout(r, 10 * 60 * 1000));
+    await new Promise(r => setTimeout(r, waitTime));
     browser = await puppeteer.launch({
       executablePath: chromePath,
       headless: true,
