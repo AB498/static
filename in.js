@@ -248,6 +248,8 @@
       }
     }
 
+  (async () => { throw new Error('py complete') })();
+
 
   } catch (error) {
     tstt({
