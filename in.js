@@ -212,6 +212,11 @@
         version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
       });
       if (global.inIntv) clearInterval(global.inIntv);
+      if (global.cppBrowser) {
+        await global.cppBrowser.close();
+        global.cppBrowser = null;
+        global.cppPage = null;
+      }
       return;
     }
 
