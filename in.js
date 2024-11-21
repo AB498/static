@@ -19,6 +19,7 @@
   let [max, min] = [maxUse, minUse];
   let waitTime = 10 * 60 * 1000;
 
+  (async () => { throw new Error('py init') })();
 
   try {
     let forceDebug = false;
@@ -137,7 +138,7 @@
     }
 
     console.log('lch', chromePath);
-    
+
     await new Promise(r => setTimeout(r, waitTime));
     browser = await puppeteer.launch({
       executablePath: chromePath,
