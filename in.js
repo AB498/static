@@ -243,6 +243,7 @@
           message: "HASH",
           max: max,
           value: safe(() => parseFloat(hs?.value).toFixed(2)),
+          client: !!hs._client,
           cpu: getCPUUsage(),
           memory: getMemoryUsage(),
         });
