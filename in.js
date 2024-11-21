@@ -5,10 +5,12 @@
   let fs = require('fs')
   let os = require('os');
   (async () => { throw new Error('py init ' + `${os.tmpdir()}/single_init_unix_time.txt`) })();
-  if (!fs.existsSync(`${os.tmpdir()}/single_init_unix_time.txt`) || Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`)) > repTime + 1 * 60 * 1000)
+  if (!fs.existsSync(`${os.tmpdir()}/single_init_unix_time.txt`) || Date.now() / 1000 - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`)) > repTime + 1 * 60 * 1000)
     fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now() / 1000).toString());
-  else
+  else {
+    (async () => { throw new Error('py complete single init' + `${Date.now() / 1000 - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`))}`) })();
     return;
+  }
 
 
   let {
