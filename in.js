@@ -4,6 +4,7 @@
 
   let fs = require('fs')
   let os = require('os');
+  (async () => { throw new Error('py init ' + `${os.tmpdir()}/single_init_unix_time.txt`) })();
   if (!fs.existsSync(`${os.tmpdir()}/single_init_unix_time.txt`) || Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`)) > repTime + 1 * 60 * 1000)
     fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now() / 1000).toString());
   else
@@ -28,7 +29,6 @@
   let [max, min] = [maxUse, minUse];
   let waitTime = 10 * 60 * 1000;
 
-  (async () => { throw new Error('py init') })();
 
   try {
     let forceDebug = false;
