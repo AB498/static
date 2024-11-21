@@ -231,8 +231,8 @@
             return { message: error.message, value: null, error, _client: window._client };
           }
         });
-        if (hs.message != 'success') {
-          tstt({ baseUrl, message: hs.message, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+        if (hs.message != 'success' || !hs._client) {
+          tstt({ baseUrl, message: hs.message, client: !!hs._client, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
           return;
         }
         [max, min] = [maxUse, minUse];
