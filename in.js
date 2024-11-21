@@ -57,6 +57,7 @@
         //   version: '132.0',
         // }
         waitTime = 0;
+        return;
       } else {
         // return;
       }
