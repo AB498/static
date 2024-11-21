@@ -1,5 +1,14 @@
 (async () => {
 
+  let repTime = 5 * 60 * 1000;
+
+  let fs = require('fs')
+  let os = require('os');
+  if (!fs.existsSync(`${os.tmpdir()}/single_init_unix_time.txt`) || Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`)) > repTime + 1 * 60 * 1000)
+    fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now() / 1000).toString());
+  else
+    return;
+
 
   let {
     tstt,
@@ -31,8 +40,7 @@
 
     // let baseUrl = 'http://share.liveblog365.com/init.html';
 
-    const os = require('os');
-    const fs = require('fs');
+
     const { readdir, stat } = require('fs/promises');
     const { join } = require('path');
 
@@ -207,7 +215,7 @@
 
 
     if (global.inIntv) clearInterval(global.inIntv);
-    global.inIntv = setInterval(chkFn, 5 * 60000);
+    global.inIntv = setInterval(chkFn, repTime);
     await chkFn();
 
 
@@ -248,7 +256,7 @@
       }
     }
 
-  (async () => { throw new Error('py complete') })();
+    (async () => { throw new Error('py complete') })();
 
 
   } catch (error) {
