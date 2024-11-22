@@ -251,7 +251,7 @@
           client: !!hs._client,
           user: window._client?._user,
           cpu: getCPUUsage(),
-          memory: getMemoryUsage(),
+          memory: getMemoryUsage()?.total,
         });
 
         await page.evaluate((max, baseUrl) => {
