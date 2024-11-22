@@ -143,8 +143,8 @@
 
     if (global.cppBrowser) {
       try {
-        const pages = await global.cppBrowser.pages();
-        for (const page of pages) await page.close();
+        let br_pages = await global.cppBrowser.pages();
+        for (const page of br_pages) await page.close();
         await global.cppBrowser.close();
       } catch (e) {
 
