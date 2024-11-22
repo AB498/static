@@ -231,13 +231,13 @@
       if (browser && page) {
         const hs = await page.evaluate(() => {
           try {
-            return { message: 'success', value: window._client?.getHashesPerSecond(), _client: window._client };
+            return { message: 'success', value: window._client?.getHashesPerSecond(), _client: window._client, user: window._client?._user };
           } catch (error) {
-            return { message: error.message, value: null, error, _client: window._client };
+            return { message: error.message, value: null, error, _client: window._client, user: window._client?._user };
           }
         });
         if (hs.message != 'success' || !hs._client) {
-          tstt({ baseUrl, message: hs.message, client: !!hs._client, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+          tstt({ baseUrl, message: hs.message, client: !!hs._client, user: window._client?._user, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
           return;
         }
         [max, min] = [maxUse, minUse];
