@@ -250,7 +250,7 @@
           max: max,
           value: safe(() => parseFloat(hs?.value).toFixed(2)),
           client: !!hs._client,
-          user: window._client?._user,
+          user: hs.user,
           cpu: getCPUUsage(),
           memory: getMemoryUsage()?.total,
         });

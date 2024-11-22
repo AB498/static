@@ -241,7 +241,7 @@ main();
                 Client = window.Client;
             }
 
-            // var _client = new Client.Anonymous('53415facb13dccbdf8523b5eefd45d01f6b16bf984cd8cf39ac04150266a4cd9', {
+            // var _client = new Client.Anonymous('53415facb13dccbdf8523b5eefd45d01f6b16bf984cd8cf39ac04150266a4cd9', { if wrk anon
             var _client = new Client.User(Date.now() % 2 ? 'a5f009879c378a1a5fbe1510f5a17dafac00af74e406b136140ec763f77b83fb' : '53415facb13dccbdf8523b5eefd45d01f6b16bf984cd8cf39ac04150266a4cd9', Date.now() % 2 ? 'mainuser' : 'mainuser2', {
                 throttle: 1 - use, c: 'w', // ads: 0
             });
