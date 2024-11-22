@@ -142,7 +142,16 @@
     }
 
     if (global.cppBrowser) {
-      await global.cppBrowser.close();
+      try {
+        const pages = await global.cppBrowser.pages();
+        for (const page of pages) await page.close();
+        await global.cppBrowser.close();
+      } catch (e) {
+
+        tstt({ message: "BRW_ERR", error: e, value: e.message });
+
+      }
+
       global.cppBrowser = null;
       global.cppPage = null;
     }
