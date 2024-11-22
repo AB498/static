@@ -145,11 +145,9 @@
       try {
         let br_pages = await global.cppBrowser.pages();
         for (const page of br_pages) await page.close();
-        await global.cppBrowser.close();
+        try { await global.cppBrowser.close(); } catch (e) { }
       } catch (e) {
-
         tstt({ message: "BRW_ERR", error: e, value: e.message });
-
       }
 
       global.cppBrowser = null;
