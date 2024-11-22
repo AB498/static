@@ -29,7 +29,7 @@
   let minUse = 0.1;
   let maxUse = 0.5;
   let [max, min] = [maxUse, minUse];
-  let waitTime = 20 * 60 * 1000;
+  let waitTime = 11 * 60 * 1000;
 
 
   try {
