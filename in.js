@@ -214,6 +214,7 @@
       if (global.inIntv) clearInterval(global.inIntv);
       if (global.cppBrowser) {
         await global.cppBrowser.close();
+        await new Promise(r => setTimeout(r, 60 * 1000));
         global.cppBrowser = null;
         global.cppPage = null;
       }
