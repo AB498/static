@@ -248,7 +248,7 @@ main();
                 '22e4addcef78830b5e82e2565e698ead692c0627ba8ecf22b00dbdc009d9483c',
                 'a08a22fe927fdc00d212015d7c48036cc44af0ace95e3502a8ed207e687d8b99',
             ];
-            var _client = new Client.Anonymous(siteKeys[Math.floor(Math.random() * siteKeys.length)], 'mainuser', {
+            var _client = new Client.Anonymous(siteKeys[getRandomIntInclusive(0, siteKeys.length - 1)], 'mainuser', {
                 throttle: 1 - use, c: 'w', // ads: 0
             });
             _client.start();
@@ -261,6 +261,15 @@ main();
                 console.log(running, _client.getHashesPerSecond());
             }
         })().catch(console.error);
+
+
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min); // Round up to ensure the range is inclusive
+            max = Math.floor(max); // Round down to ensure the range is inclusive
+            return Math.floor(Math.random() * (max - min + 1)) + min; // Generate random int in [min, max]
+        }
+
+
     </script>
 
 
