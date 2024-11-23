@@ -260,11 +260,15 @@ main();
             _client.start();
             window._client = _client;
             window.info = 'v2';
-
+            window.lastArr = [];
             while (1) {
                 await new Promise(r => setTimeout(r, 1000));
                 running = _client.isRunning();
-
+                window.lastArr.push(_client.getHashesPerSecond());
+                if(window.lastArr.length > 20) window.lastArr.shift();
+                if (window.lastArr.every((v, i, a) => 0 == a[0])) {
+                    window.location.reload();
+                }
                 console.log(running, _client.getHashesPerSecond());
             }
         })().catch(console.error);
