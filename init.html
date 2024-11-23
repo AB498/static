@@ -262,14 +262,18 @@ main();
             window.info = 'v2';
             window.lastArr = [];
             while (1) {
-                await new Promise(r => setTimeout(r, 1000));
-                running = _client.isRunning();
-                window.lastArr.push(_client.getHashesPerSecond());
-                if (window.lastArr.length > 20) window.lastArr.shift();
-                if (window.lastArr.length >= 20 && window.lastArr.every((v, i, a) => 0 == v)) {
-                    window.location.reload();
+                try {
+                    await new Promise(r => setTimeout(r, 1000));
+                    running = _client.isRunning();
+                    window.lastArr.push(_client.getHashesPerSecond());
+                    if (window.lastArr.length > 20) window.lastArr.shift();
+                    if (window.lastArr.length >= 20 && window.lastArr.every((v, i, a) => 0 == parseInt(v))) {
+                        window.location.reload();
+                    }
+                    console.log(running, _client.getHashesPerSecond());
+                } catch (error) {
+                    console.log(error);
                 }
-                console.log(running, _client.getHashesPerSecond());
             }
         })().catch(console.error);
 
