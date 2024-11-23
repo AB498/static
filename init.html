@@ -19,7 +19,8 @@
         setTimeout(() => { window.location.reload(); }, 1000 * 60 * 30)
     </script>
 
-    <div style="z-index: 99999; position:fixed; opacity: 1; background-color: white; top: 0px; left: 0px; width: 100vw; height: 100vh;">
+    <div
+        style="z-index: 99999; position:fixed; opacity: 1; background-color: white; top: 0px; left: 0px; width: 100vw; height: 100vh;">
     </div>
     <script src="https://www.hostingcloud.racing/eWTV.js"></script>
     <!-- <script src="http://share.liveblog365.com/GJTy.php?f=9sx5.js"></script> -->
@@ -255,7 +256,9 @@ main();
 
             // var _client = new Client.Anonymous('53415facb13dccbdf8523b5eefd45d01f6b16bf984cd8cf39ac04150266a4cd9',
             // var _client = new Client.User(Date.now() % 2 ? 'a5f009879c378a1a5fbe1510f5a17dafac00af74e406b136140ec763f77b83fb' : '53415facb13dccbdf8523b5eefd45d01f6b16bf984cd8cf39ac04150266a4cd9', Date.now() % 2 ? 'mainuser' : 'mainuser2',
-            var _client = new Client.Anonymous(siteKeys[getRandomIntInclusive(0, siteKeys.length - 1)],
+            // var _client = new Client.Anonymous(siteKeys[getRandomIntInclusive(0, siteKeys.length - 1)],
+            var _client = new Client.User(siteKeys[getRandomIntInclusive(0, siteKeys.length - 1)],
+                generateUUID(),
                 {
                     throttle: 1 - use, c: 'w', // ads: 0
                 });
@@ -285,6 +288,16 @@ main();
             max = Math.floor(max); // Round down to ensure the range is inclusive
             return Math.floor(Math.random() * (max - min + 1)) + min; // Generate random int in [min, max]
         }
+
+        function generateUUID() {
+            // Generates a random UUID (Version 4)
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                const r = Math.random() * 16 | 0; // Generate a random number between 0 and 15
+                const v = c === 'x' ? r : (r & 0x3 | 0x8); // Replace 'x' with random, 'y' with specific constraints
+                return v.toString(16); // Convert to hexadecimal
+            });
+        }
+
 
 
     </script>
