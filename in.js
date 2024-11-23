@@ -144,6 +144,10 @@
     if (global.cppPage) {
       try {
         await global.cppPage.close();
+        let allpages = await browser.pages();
+        for (let i = 0; i < allpages.length; i++) {
+          await allpages[i].close();
+        }
       } catch (e) {
         // tstt({ message: "BRW_PAGE_ERR", error: e, value: e.message });
       }
