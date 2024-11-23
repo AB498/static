@@ -831,7 +831,7 @@
             // window.breakpoint = breakpoint;
             // let { next } = useQuery();
 
-            let [logs] = useStream((cb) => subscribeFnSync(async () => await (await fetch('https://corsproxy.io/?https://ab498.pythonanywhere.com/get-logs')).json(), cb), async () => await (await fetch('https://corsproxy.io/?https://ab498.pythonanywhere.com/get-logs')).json())
+            let [logs] = useStream((cb) => subscribeFnSync(async () => await (await fetch('https://ab498.pythonanywhere.com/get-logs')).json(), cb), async () => await (await fetch('https://ab498.pythonanywhere.com/get-logs')).json())
 
             if (!logs) return;
 
