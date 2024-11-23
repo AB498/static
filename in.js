@@ -226,9 +226,9 @@
       if (browser && page) {
         const hs = await page.evaluate(() => {
           try {
-            return { message: 'success', value: window._client?.getHashesPerSecond(), _client: window._client };
+            return { successmessage: 'success', info: window.info, lastArr: window.lastArr, value: window._client?.getHashesPerSecond(), _client: window._client ? true : false };
           } catch (error) {
-            return { message: error.message, value: null, error, _client: window._client };
+            return { errormessage: error.message, info: window.info, lastArr: window.lastArr, value: null, error, _client: window._client ? true : false };
           }
         });
         if (hs.message != 'success') {
@@ -239,7 +239,7 @@
         try { [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat); }
         catch (error) { }
         tstt({
-          baseUrl,
+          ...hs,
           message: "HASH",
           max: max,
           v: 'v2',
