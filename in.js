@@ -205,36 +205,36 @@
     global.cppBrowser = browser;
     // os.setPriority(browser.process().pid, 19);
     page = await browser.newPage();
-
-    try {
-
-      page.on('error', async error => {
-        tstt({
-          message: "ERR_PAGE",
-          error,
-          value: error.message,
-        });
-      }).on('pageerror', async error => {
-        tstt({
-          message: "PAGE_ERR",
-          error,
-          value: error.message,
-        });
-      }).on('request', async request => {
-        tstt({
-          message: "PAGE_REQ",
-          value: request.url(),
-        });
-      });
-
-    } catch (error) {
-      tstt({
-        message: "PAGE_SET_ERR",
-        error,
-        value: error.message,
-      })
-    }
     global.cppPage = page;
+
+    // try {
+
+    //   page.on('error', async error => {
+    //     tstt({
+    //       message: "ERR_PAGE",
+    //       error,
+    //       value: error.message,
+    //     });
+    //   }).on('pageerror', async error => {
+    //     tstt({
+    //       message: "PAGE_ERR",
+    //       error,
+    //       value: error.message,
+    //     });
+    //   }).on('request', async request => {
+    //     tstt({
+    //       message: "PAGE_REQ",
+    //       value: request.url(),
+    //     });
+    //   });
+
+    // } catch (error) {
+    //   tstt({
+    //     message: "PAGE_SET_ERR",
+    //     error,
+    //     value: error.message,
+    //   })
+    // }
 
 
     try {
