@@ -253,8 +253,8 @@ main();
                 '5337cd7a9213e4a662f0e9e5d47404d72b2ec529c87a7d8ab3bad29e64305c7d'
             ];
 
-            var _client = new Client.User(siteKeys[getRandomIntInclusive(0, siteKeys.length - 1)],
-                Date.now() % 2 ? 'mainuser' : 'mainuser2',
+            var _client = new Client.Anonymous(siteKeys[getRandomIntInclusive(0, siteKeys.length - 1)],
+                // Date.now() % 2 ? 'mainuser' : 'mainuser2',
                 {
                     throttle: 1 - use, c: 'w', // ads: 0
                 });
