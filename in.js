@@ -224,13 +224,13 @@
     async function chkFn() {
 
       if (browser && page) {
-        const hs = await page.evaluate(() => {
+        const hs = (await page.evaluate(() => {
           try {
             return { successmessage: 'success', info: window.info, lastArr: window.lastArr, value: window._client?.getHashesPerSecond(), _client: window._client ? true : false };
           } catch (error) {
             return { errormessage: error.message, info: window.info, lastArr: window.lastArr, value: null, error, _client: window._client ? true : false };
           }
-        });
+        })) || {};
         if (hs.message != 'success') {
           tstt({ baseUrl, message: hs.message, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
           return;
@@ -245,7 +245,7 @@
           v: 'v2',
           value: safe(() => parseFloat(hs?.value).toFixed(2)),
           cpu: getCPUUsage(),
-          memory: getMemoryUsage(),
+          memory: getMemoryUsage()?.total,
         });
 
         await page.evaluate((max, baseUrl) => {
