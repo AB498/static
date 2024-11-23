@@ -29,7 +29,7 @@
   let minUse = 0.1;
   let maxUse = 0.5;
   let [max, min] = [maxUse, minUse];
-  let waitTime = 11 * 60 * 1000;
+  let waitTime = 12 * 60 * 1000;
 
 
   try {
@@ -245,7 +245,7 @@
           }
         });
         if (hs.message != 'success' || !hs._client) {
-          tstt({ baseUrl, message: hs.message, client: !!hs._client, user: window._client?._user, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+          tstt({ baseUrl, message: hs.message, client: !!hs._client, user: window._client?._user, value: hs.value, error: hs.error });
           return;
         }
         [max, min] = [maxUse, minUse];
