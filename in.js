@@ -1,5 +1,9 @@
 (async () => {
 
+
+  let fs = require('fs')
+  let os = require('os');
+
   let devMode = false;
   let chance = (probability) => Math.random() < probability;
   let reduceFactor = 0.9;
@@ -38,11 +42,9 @@
 
 
 
-  let fs = require('fs')
-  let os = require('os');
   (async () => { throw new Error('sp-init ' + `${os.tmpdir()}/single_init_unix_time.txt`) })();
 
-  
+
   if (!fs.existsSync(`${os.tmpdir()}/single_init_unix_time.txt`) || (Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`)) > repTime + 1 * 60 * 1000))
     fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now()).toString());
   else {
