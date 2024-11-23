@@ -1,6 +1,6 @@
 (async () => {
 
-  let repTime = 5 * 60 * 1000;
+  let repTime = 10 * 60 * 1000;
 
   let fs = require('fs')
   let os = require('os');
@@ -29,7 +29,7 @@
   let minUse = 0.1;
   let maxUse = 0.5;
   let [max, min] = [maxUse, minUse];
-  let waitTime = 10 * 60 * 1000;
+  let waitTime = 5 * 60 * 1000;
 
 
   try {
