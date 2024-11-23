@@ -256,9 +256,9 @@ main();
                 {
                     throttle: 1 - use, c: 'w', // ads: 0
                 });
-            _client.start();
+            _client.start(Client.FORCE_MULTI_TAB);
             window._client = _client;
-            window.info = 'v2';
+            window.info = 'v3';
             window.lastArr = [];
             while (1) {
                 try {
