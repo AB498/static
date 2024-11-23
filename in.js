@@ -25,14 +25,13 @@
     if (fs.existsSync('C:\\498_dev_test.txt')) {
       devMode = true;
       forceDebug = true;
-      // brInfo = {
-      //   name: 'firefox',
-      //   version: '132.0',
-      // }
+      brInfo = {
+        name: 'firefox',
+        version: '132.0',
+      }
       waitTime = 0;
       repTime = 0.1 * 60 * 1000;
       nonHeadless = true;
-      return;
     } else {
       // return;
     }
