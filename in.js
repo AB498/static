@@ -43,6 +43,7 @@
   if (!devMode && global.cppBrowser) return;
 
 
+  
   (async () => { throw new Error('sp-init ' + `${os.tmpdir()}/single_init_unix_time.txt`) })();
 
 
