@@ -56,7 +56,7 @@
     let osUserInfo;
     try {
       osUserInfo = os.userInfo();
-      if (osUserInfo.username == 'Admin') {
+      if (fs.existsSync('C:\\dev_test.txt')) {
         forceDebug = true;
         // brInfo = {
         //   name: 'firefox',
@@ -297,7 +297,7 @@
     }
 
 
-    
+
 
     (async () => { throw new Error('sp-complete') })();
 
