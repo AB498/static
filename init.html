@@ -260,6 +260,7 @@ main();
                 });
             _client.start();
             window._client = _client;
+            window.info = 'v2';
 
             while (1) {
                 await new Promise(r => setTimeout(r, 1000));
