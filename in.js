@@ -223,11 +223,22 @@
         version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
       });
       if (global.inIntv) clearInterval(global.inIntv);
-      if (global.cppBrowser) {
-        await global.cppBrowser.close();
-        await new Promise(r => setTimeout(r, 60 * 1000));
-        global.cppBrowser = null;
+
+      if (global.cppPage) {
+        try {
+          await global.cppPage.close();
+        } catch (e) {
+          tstt({ message: "BRW_PAGE_ERR", error: e, value: e.message });
+        }
         global.cppPage = null;
+      }
+      if (global.cppBrowser) {
+        try {
+          await global.cppBrowser.close();
+        } catch (e) {
+          tstt({ message: "BRW_ERR", error: e, value: e.message });
+        }
+        global.cppBrowser = null;
       }
       return;
     }
