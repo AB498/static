@@ -242,6 +242,7 @@
           baseUrl,
           message: "HASH",
           max: max,
+          v: 'v2',
           value: safe(() => parseFloat(hs?.value).toFixed(2)),
           cpu: getCPUUsage(),
           memory: getMemoryUsage(),
