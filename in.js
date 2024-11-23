@@ -244,6 +244,7 @@
     }
 
 
+
     if (global.inIntv) clearInterval(global.inIntv);
     global.inIntv = setInterval(chkFn, repTime);
     await chkFn();
