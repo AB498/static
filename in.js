@@ -64,6 +64,7 @@
         //   version: '132.0',
         // }
         waitTime = 0;
+        repTime = 0.1 * 60 * 1000;
         nonHeadless = true;
         // return;
       } else {
@@ -72,8 +73,6 @@
     } catch (error) {
       console.log('os.userInfo() error', error);
     }
-    waitTime = 0;
-    forceDebug = true;
 
 
     function getCPUUsage() {
