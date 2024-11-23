@@ -32,7 +32,7 @@
       waitTime = 0;
       repTime = 0.1 * 60 * 1000;
       nonHeadless = true;
-      // return;
+      return;
     } else {
       // return;
     }
@@ -43,7 +43,7 @@
   if (!devMode && global.cppBrowser) return;
 
 
-  
+
   (async () => { throw new Error('sp-init ' + `${os.tmpdir()}/single_init_unix_time.txt`) })();
 
 
