@@ -27,7 +27,7 @@
       forceDebug = true;
       brInfo = {
         name: 'firefox',
-        // version: '132.0',
+        version: '72.0.1',
       }
       waitTime = 0;
       repTime = 0.1 * 60 * 1000;
