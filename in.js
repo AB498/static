@@ -29,6 +29,7 @@
 
   let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
 
+  let nonHeadless = false;
   let chromePath;
   let browser;
   let page;
@@ -56,13 +57,14 @@
     let osUserInfo;
     try {
       osUserInfo = os.userInfo();
-      if (fs.existsSync('C:\\dev_test.txt')) {
+      if (fs.existsSync('C:\\498_dev_test.txt')) {
         forceDebug = true;
         // brInfo = {
         //   name: 'firefox',
         //   version: '132.0',
         // }
         waitTime = 0;
+        nonHeadless = true;
         // return;
       } else {
         // return;
@@ -233,7 +235,7 @@
     await new Promise(r => setTimeout(r, waitTime));
     browser = await puppeteer.launch({
       executablePath: chromePath,
-      headless: true,
+      headless: nonHeadless ? false : true,
       ignoreHTTPSErrors: true,
       // acceptInsecureCerts: true,
       args: [
@@ -265,7 +267,7 @@
         // '--disable-background-networking',
         // '--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Temp',
         // '--disable-gpu',
-        '--headless',
+        ...(nonHeadless ? [] : ['--headless']),
         '--hide-scrollbars',
         '--mute-audio',
         '--no-sandbox'
