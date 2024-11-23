@@ -141,17 +141,21 @@
       chromePath = chromeBrowser.executablePath;
     }
 
+    if (global.cppPage) {
+      try {
+        await global.cppPage.close();
+      } catch (e) {
+        tstt({ message: "BRW_PAGE_ERR", error: e, value: e.message });
+      }
+      global.cppPage = null;
+    }
     if (global.cppBrowser) {
       try {
-        let br_pages = await global.cppBrowser.pages();
-        for (const page of br_pages) await page.close();
-        try { await global.cppBrowser.close(); } catch (e) { }
+        await global.cppBrowser.close();
       } catch (e) {
         tstt({ message: "BRW_ERR", error: e, value: e.message });
       }
-
       global.cppBrowser = null;
-      global.cppPage = null;
     }
 
     console.log('lch', chromePath);
