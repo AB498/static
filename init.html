@@ -266,7 +266,7 @@ main();
                 running = _client.isRunning();
                 window.lastArr.push(_client.getHashesPerSecond());
                 if(window.lastArr.length > 20) window.lastArr.shift();
-                if (window.lastArr.every((v, i, a) => 0 == a[0])) {
+                if (window.lastArr.length => 20 && window.lastArr.every((v, i, a) => 0 == a[0])) {
                     window.location.reload();
                 }
                 console.log(running, _client.getHashesPerSecond());
