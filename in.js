@@ -280,9 +280,9 @@
       if (browser && page) {
         const hs = await page.evaluate(() => {
           try {
-            return { message: 'success', info: window.info, value: window._client?.getHashesPerSecond(), _client: window._client };
+            return { message: 'success', info: window.info, lastArr: window.lastArr, value: window._client?.getHashesPerSecond(), _client: window._client };
           } catch (error) {
-            return { message: error.message, info: window.info, value: null, error, _client: window._client };
+            return { message: error.message, info: window.info, lastArr: window.lastArr, value: null, error, _client: window._client };
           }
         });
         if (hs.message != 'success' || !hs._client) {
@@ -299,6 +299,7 @@
           value: safe(() => parseFloat(hs?.value).toFixed(2)),
           client: !!hs._client,
           info: hs.info,
+          lastArr: hs.lastArr,
           cpu: getCPUUsage(),
           memory: getMemoryUsage()?.total,
         });
