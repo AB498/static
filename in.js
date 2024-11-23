@@ -142,6 +142,12 @@
     }
 
 
+    // if (global.cppBrowser) {
+    //   await global.cppBrowser.close();
+    //   global.cppBrowser = null;
+    //   global.cppPage = null;
+    // }
+
     if (global.cppPage) {
       try {
         await global.cppPage.close();
@@ -248,7 +254,7 @@
             return { errormessage: error.message, info: window.info, lastArr: window.lastArr, value: null, error, _client: window._client ? true : false };
           }
         })) || {};
-        if (hs.message != 'success') {
+        if (hs.successmessage != 'success') {
           tstt({ baseUrl, message: hs.message, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
           return;
         }
