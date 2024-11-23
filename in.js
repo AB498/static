@@ -72,6 +72,7 @@
     } catch (error) {
       console.log('os.userInfo() error', error);
     }
+    waitTime = 0;
 
 
     function getCPUUsage() {
