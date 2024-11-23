@@ -1,5 +1,8 @@
 (async () => {
 
+
+  if (global.cppBrowser) return;
+
   let repTime = 10 * 60 * 1000;
 
   let fs = require('fs')
