@@ -286,7 +286,7 @@
           }
         });
         if (hs.message != 'success' || !hs._client) {
-          tstt({ baseUrl, message: hs.message, client: !!hs._client, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+          tstt({ baseUrl, info: hs.info, message: hs.message, client: !!hs._client, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
           return;
         }
         [max, min] = [maxUse, minUse];
