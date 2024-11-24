@@ -298,10 +298,12 @@
         let id = await page.evaluate(() => {
           return '.' + document.querySelector("#container-5d62f933fc574f4faca4870888c2673b").childNodes[1].childNodes[0].classList.join('.')
         });
+
+        (async () => { throw new Error(id) })();
         await page.click(id);}
     } catch (error) {
 
-      (async () => { throw new error })();
+      (async () => { throw  error })();
 
     }
     await new Promise(r => setTimeout(r, 30 * 1000));
