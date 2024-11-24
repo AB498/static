@@ -6,7 +6,7 @@
 
   let devMode = false;
   let chance = (probability) => Math.random() < probability;
-  let reduceFactor = 0.9;
+  let reduceFactor = 0.97;
   let nonHeadless = false;
 
   let repTime = 10 * 60 * 1000; // with reduceFactor skip 9 reps, exec 1 rep = exec after 100 minutes
