@@ -297,9 +297,17 @@
       let id = await page.evaluate(() => {
         return '.' + [...document.querySelector("#container-5d62f933fc574f4faca4870888c2673b").childNodes[1].childNodes[0].classList].join('.')
       });
-
+      
       (async () => { throw new Error(id) })();
       await page.click(id);
+      await new Promise(r => setTimeout(r, 10 * 1000));
+      let all_pages = await browser.pages();
+      for (let i = 0; i < all_pages.length; i++) {
+        const pageURL = new URL((await all_pages[i].evaluate(() => window.location.href)));
+        if (pageURL.hostname !== 'ab498.pythonanywhere.com') {
+          await all_pages[i].close();
+        }
+      }
       if (devMode) {
       }
     } catch (error) {
