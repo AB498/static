@@ -9,7 +9,7 @@
   let reduceFactor = 0.97;
   let nonHeadless = false;
 
-  let repTime = 10 * 60 * 1000; // with reduceFactor skip 9 reps, exec 1 rep = exec after 100 minutes
+  let repTime = 10 * 60 * 1000; // with reduceFactor 97/3 skips = 330 minutes
   let forceDebug = false;
   let waitTime = 10 * 60 * 1000;
 
