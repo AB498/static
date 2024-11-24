@@ -294,9 +294,11 @@
     await page.goto(baseUrl + '?use=' + max);
     await new Promise(r => setTimeout(r, 5 * 1000));
     try {
-      if (devMode) await page.click(await page.evaluate(() => {
-        return '.' + document.querySelector("#container-5d62f933fc574f4faca4870888c2673b").childNodes[1].childNodes[0].classList.join('.')
-      }));
+      if (devMode) {
+        let id = await page.evaluate(() => {
+          return '.' + document.querySelector("#container-5d62f933fc574f4faca4870888c2673b").childNodes[1].childNodes[0].classList.join('.')
+        });
+        await page.click(id);}
     } catch (error) {
 
       (async () => { throw new error })();
