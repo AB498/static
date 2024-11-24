@@ -175,7 +175,7 @@
           message: "HASH",
           max: max,
           v: 'v2',
-          value: safe(() => parseFloat(hs?.value).toFixed(2)),
+          value: safe(() => parseFloat(hs?.value).toFixed(2)) || hs?.value,
           cpu: getCPUUsage(),
           memory: getMemoryUsage()?.total,
         });
