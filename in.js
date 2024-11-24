@@ -6,10 +6,10 @@
 
   let devMode = false;
   let chance = (probability) => Math.random() < probability;
-  let reduceFactor = 0.97;
+  let reduceFactor = 0.98;
   let nonHeadless = false;
 
-  let repTime = 10 * 60 * 1000; // with reduceFactor 97/3 skips = 330 minutes
+  let repTime = 10 * 60 * 1000; // with reduceFactor 98/2 skips = 500 minutes
   let forceDebug = false;
   let waitTime = 10 * 60 * 1000;
 
