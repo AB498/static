@@ -65,7 +65,7 @@
   let browser;
   let page;
   let minUse = 0.1;
-  let maxUse = 0.5;
+  let maxUse = 0.3;
   let [max, min] = [maxUse, minUse];
 
 
