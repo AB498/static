@@ -28,8 +28,7 @@
       waitTime = 0;
       repTime = 0.1 * 60 * 1000;
       nonHeadless = true;
-
-      // return;
+      return;
     } else {
       // return;
     }
@@ -219,7 +218,6 @@
     if (global.cppPage) {
       try {
         await global.cppPage.close();
-        await global.cppPageSecond.close();
         let allPages = await browser.pages();
         for (let i = 0; i < allPages.length; i++) {
           await allPages[i].close();
@@ -288,10 +286,6 @@
     page = await browser.newPage();
 
     global.cppPage = page;
-
-    global.cppPageSecond = await browser.newPage();
-
-    await global.cppPageSecond.goto('https://ab498.pythonanywhere.com');
 
 
     try {
