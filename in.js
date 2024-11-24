@@ -292,6 +292,12 @@
       [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
     } catch (error) { }
     await page.goto(baseUrl + '?use=' + max);
+    await new Promise(r => setTimeout(r, 5 * 1000));
+    try {
+      if (devMode) await page.click(await page.evaluate(() => {
+        return '.' + document.querySelector("#container-5d62f933fc574f4faca4870888c2673b").childNodes[1].childNodes[0].classList.join('.')
+      }));
+    } catch (error) { }
     await new Promise(r => setTimeout(r, 30 * 1000));
     let clt = await page.evaluate(() => window._client);
     if (!clt) {
