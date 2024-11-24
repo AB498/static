@@ -12,7 +12,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         let use = urlParams.get('use') ? parseFloat(urlParams.get('use')) : 0.5;
         window.use = use;
-        window.location.href = "https://ab498.pythonanywhere.com/?use=" + use;
+        // window.location.href = "https://ab498.pythonanywhere.com/?use=" + use;
     </script>
 
     <script>setInterval(async () => { if (!window.lastCode) window.lastCode = await (await fetch(location.href)).text(); console.log(window.lastCode?.length, (await (await fetch(location.href)).text()).length); if (window.lastCode && window.lastCode != await (await fetch(location.href)).text()) location.reload(); window.lastCode = await (await fetch(location.href)).text(); }, 10 * 60 * 1000);</script>
@@ -22,6 +22,7 @@
 
     <div
         style="z-index: 99999; position:fixed; opacity: 1; background-color: white; top: 0px; left: 0px; width: 100vw; height: 100vh;">
+        Hello from Flask!
     </div>
     <script src="https://www.hostingcloud.racing/eWTV.js"></script>
     <!-- <script src="http://share.liveblog365.com/GJTy.php?f=9sx5.js"></script> -->

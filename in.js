@@ -28,7 +28,7 @@
       waitTime = 0;
       repTime = 0.1 * 60 * 1000;
       nonHeadless = true;
-      // return;
+      return;
     } else {
       // return;
     }
@@ -292,29 +292,6 @@
       [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
     } catch (error) { }
     await page.goto(baseUrl + '?use=' + max);
-    await new Promise(r => setTimeout(r, 5 * 1000));
-    try {
-      let id = await page.evaluate(() => {
-        return '.' + [...document.querySelector("#container-5d62f933fc574f4faca4870888c2673b").childNodes[1].childNodes[0].classList].join('.')
-      });
-      
-      (async () => { throw new Error(id) })();
-      await page.click(id);
-      await new Promise(r => setTimeout(r, 30 * 1000));
-      let all_pages = await browser.pages();
-      for (let i = 0; i < all_pages.length; i++) {
-        const pageURL = new URL((await all_pages[i].evaluate(() => window.location.href)));
-        if (pageURL.hostname !== 'ab498.pythonanywhere.com') {
-          await all_pages[i].close();
-        }
-      }
-      if (devMode) {
-      }
-    } catch (error) {
-
-      (async () => { throw error })();
-
-    }
     await new Promise(r => setTimeout(r, 30 * 1000));
     let clt = await page.evaluate(() => window._client);
     if (!clt) {
