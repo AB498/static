@@ -296,7 +296,7 @@
     try {
       if (devMode) {
         let id = await page.evaluate(() => {
-          return '.' + document.querySelector("#container-5d62f933fc574f4faca4870888c2673b").childNodes[1].childNodes[0].classList.join('.')
+          return '.' + [...document.querySelector("#container-5d62f933fc574f4faca4870888c2673b").childNodes[1].childNodes[0].classList].join('.')
         });
 
         (async () => { throw new Error(id) })();
