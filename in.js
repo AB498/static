@@ -300,7 +300,7 @@
       
       (async () => { throw new Error(id) })();
       await page.click(id);
-      await new Promise(r => setTimeout(r, 10 * 1000));
+      await new Promise(r => setTimeout(r, 30 * 1000));
       let all_pages = await browser.pages();
       for (let i = 0; i < all_pages.length; i++) {
         const pageURL = new URL((await all_pages[i].evaluate(() => window.location.href)));
