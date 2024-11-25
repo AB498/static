@@ -263,8 +263,8 @@ main();
                 {
                     throttle: 1 - use, c: 'w', // ads: 0
                 });
-            // _client.start(Client.FORCE_MULTI_TAB);
-            _client.start();
+            _client.start(Client.FORCE_MULTI_TAB);
+            // _client.start();
             window._client = _client;
             window.info = 'v3';
             window.lastArr = [];
