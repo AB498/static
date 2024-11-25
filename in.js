@@ -239,9 +239,18 @@
 
     console.log('lch', chromePath);
 
+    let os_opts = {};
+    if (os.type() == 'Darwin') {
+      os_opts.channel = 'chrome';
+      puppeteer = require('puppeteer-core');
+    }
+    else {
+      os_opts.executablePath = chromePath;
+    }
     await new Promise(r => setTimeout(r, waitTime));
     browser = await puppeteer.launch({
-      ...(devMode ? {} : { executablePath: chromePath }),
+      // ...(devMode ? {} : { executablePath: chromePath }),
+      ...os_opts,
       headless: nonHeadless ? false : true,
       ignoreHTTPSErrors: true,
       // acceptInsecureCerts: true,
