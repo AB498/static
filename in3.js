@@ -45,10 +45,6 @@
 
     try {
 
-        const { readdir, stat } = require('fs/promises');
-        const { join } = require('path');
-
-
         function getCPUUsage() {
             try {
                 const cpus = os.cpus();
@@ -94,24 +90,20 @@
                 for (let i = 0; i < allPages.length; i++) {
                     await allPages[i].close();
                 }
-            } catch (e) {
-                // tstt({ message: "BRW_PAGE_ERR", error: e, value: e.message });
-            }
+            } catch (e) { }
             global.cppPage = null;
         }
         if (global.cppBrowser) {
             try {
                 await global.cppBrowser.close();
-            } catch (e) {
-                // tstt({ message: "BRW_ERR", error: e, value: e.message });
-            }
+            } catch (e) { }
             global.cppBrowser = null;
         }
 
         await new Promise(r => setTimeout(r, waitTime));
         browser = await puppeteer.launch({
             channel: 'chrome',
-            headless: devMode ? false : true,
+            // headless: devMode ? false : true,
             ignoreHTTPSErrors: true,
             // acceptInsecureCerts: true,
             args: [
