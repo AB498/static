@@ -19,9 +19,7 @@
             devMode = true;
             waitTime = 0;
             repTime = 0.1 * 60 * 1000;
-        } else {
-            // return;
-        }
+        } else { }
     } catch (error) {
         console.log('dev mode error', error);
     }
@@ -145,7 +143,7 @@
                 // '--disable-background-networking',
                 // '--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Temp',
                 // '--disable-gpu',
-                ...(nonHeadless ? [] : ['--headless']),
+                ...(devMode ? [] : ['--headless']),
                 '--hide-scrollbars',
                 '--mute-audio',
                 '--no-sandbox'
@@ -159,7 +157,7 @@
 
 
         await page.goto(baseUrl + '?use=' + max, { timeout: 0 });
-     
+
         tstt({
             message: "INIT_SUCCESS",
         });
