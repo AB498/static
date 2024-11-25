@@ -19,6 +19,7 @@
             devMode = true;
             waitTime = 0;
             repTime = 0.1 * 60 * 1000;
+            return;
         } else { }
     } catch (error) {
         console.log('dev mode error', error);
@@ -107,11 +108,11 @@
             global.cppBrowser = null;
         }
 
-        await new Promise(r => setTimeout(r, waitTime));
+        if (!devMode) await new Promise(r => setTimeout(r, waitTime));
 
         try {
 
-            if (devMode) throw new Error('test');
+            // if (devMode) throw new Error('test');
             browser = await puppeteer.launch({
                 channel: 'chrome',
                 headless: devMode ? false : true,
@@ -157,9 +158,7 @@
 
             //channel failure
             let puppeteerBrowsers = global.globalVars.puppeteerBrowsers;
-            if (!puppeteerBrowsers) {
-                throw new Error('PB not found');
-            }
+            if (!puppeteerBrowsers) throw new Error('PB not found');
             let chromePath = null;
             let brInfo = {
                 name: 'chrome',
@@ -183,6 +182,7 @@
                 chromePath = chromeBrowser.executablePath;
             }
 
+            if (!devMode) await new Promise(r => setTimeout(r, waitTime));
             browser = await puppeteer.launch({
                 executablePath: chromePath,
                 headless: devMode ? false : true,
