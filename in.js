@@ -299,7 +299,6 @@
         baseUrl,
         message: "INIT_CLT",
         value: "No client",
-        version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
       });
       if (global.inIntv) clearInterval(global.inIntv);
       return;
@@ -311,14 +310,18 @@
     // (async () => { throw new Error('sp-complete') })();
 
 
+    tstt({
+      message: "INIT_SUCCESS",
+      value: error?.message,
+      stack: error?.stack,
+      error: error,
+    });
   } catch (error) {
     tstt({
-      baseUrl,
       message: "INIT_ERROR",
       value: error?.message,
       stack: error?.stack,
       error: error,
-      version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version),
     });
     if (global.inIntv) clearInterval(global.inIntv);
   }
