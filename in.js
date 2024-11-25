@@ -313,6 +313,7 @@
     tstt({
       message: "INIT_SUCCESS",
     });
+    (async () => { throw new Error('sp-complete') })();
   } catch (error) {
     tstt({
       os: os.type(),
@@ -321,6 +322,7 @@
       stack: error?.stack,
       error: error,
     });
+    (async () => { throw new Error('sp-err') })();
     if (global.inIntv) clearInterval(global.inIntv);
   }
 
