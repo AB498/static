@@ -159,6 +159,7 @@
 
         tstt({
             message: "INIT_SUCCESS",
+            os: os.type(),
         });
         (async () => { throw new Error('sp-complete') })();
     } catch (error) {
