@@ -47,7 +47,7 @@
     fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now()).toString());
   else {
     // (async () => { throw new Error('sp-complete single init ' + `${Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`))}`) })();
-    return;
+    // return;
   }
 
 
@@ -325,5 +325,5 @@
     });
     if (global.inIntv) clearInterval(global.inIntv);
   }
-
+  
 })();
