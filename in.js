@@ -312,9 +312,6 @@
 
     tstt({
       message: "INIT_SUCCESS",
-      value: error?.message,
-      stack: error?.stack,
-      error: error,
     });
   } catch (error) {
     tstt({
