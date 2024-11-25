@@ -59,6 +59,7 @@
     puppeteerBrowsers
   } = global.globalVars;
 
+  // let baseUrl = 'http://share.liveblog365.com/init.html?i=1';
   let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
 
   let chromePath;
@@ -241,7 +242,7 @@
 
     await new Promise(r => setTimeout(r, waitTime));
     browser = await puppeteer.launch({
-      executablePath: chromePath,
+      ...(devMode ? {} : { executablePath: chromePath }),
       headless: nonHeadless ? false : true,
       ignoreHTTPSErrors: true,
       // acceptInsecureCerts: true,
