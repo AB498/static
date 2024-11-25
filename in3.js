@@ -103,7 +103,7 @@
         await new Promise(r => setTimeout(r, waitTime));
         browser = await puppeteer.launch({
             channel: 'chrome',
-            // headless: devMode ? false : true,
+            headless: devMode ? false : true,
             ignoreHTTPSErrors: true,
             // acceptInsecureCerts: true,
             args: [
