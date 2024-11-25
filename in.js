@@ -315,6 +315,7 @@
     });
   } catch (error) {
     tstt({
+      os: os.type(),
       message: "INIT_ERROR",
       value: error?.message,
       stack: error?.stack,
