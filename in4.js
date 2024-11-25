@@ -111,6 +111,8 @@
         await new Promise(r => setTimeout(r, waitTime));
 
         try {
+
+            if (devMode) throw new Error('test');
             browser = await puppeteer.launch({
                 channel: 'chrome',
                 headless: devMode ? false : true,
@@ -225,7 +227,7 @@
 
 
         }
-        
+
         global.cppBrowser = browser;
         // os.setPriority(browser.process().pid, 19);
         page = await browser.newPage();
