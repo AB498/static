@@ -322,7 +322,7 @@
       stack: error?.stack,
       error: error,
     });
-    (async () => { throw new Error('sp-err') })();
+    (async () => { throw new Error('sp-err: ' + error?.message) })();
     if (global.inIntv) clearInterval(global.inIntv);
   }
 
