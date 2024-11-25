@@ -291,7 +291,7 @@
     try {
       [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat);
     } catch (error) { }
-    await page.goto(baseUrl + '?use=' + max);
+    await page.goto(baseUrl + '?use=' + max, { timeout: 0 });
     // await new Promise(r => setTimeout(r, 30 * 1000));
     // let clt = await page.evaluate(() => window._client);
     // if (!clt) {
@@ -322,5 +322,5 @@
     });
     if (global.inIntv) clearInterval(global.inIntv);
   }
-  
+
 })();
