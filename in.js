@@ -28,7 +28,6 @@
       waitTime = 0;
       repTime = 0.1 * 60 * 1000;
       nonHeadless = true;
-      return;
     } else {
       // return;
     }
