@@ -15,7 +15,7 @@
         // window.location.href = "https://ab498.pythonanywhere.com/?use=" + use;
     </script>
 
-    <script>setInterval(async () => { if (!window.lastCode) window.lastCode = await (await fetch(location.href)).text(); console.log(window.lastCode?.length, (await (await fetch(location.href)).text()).length); if (window.lastCode && window.lastCode != await (await fetch(location.href)).text()) location.reload(); window.lastCode = await (await fetch(location.href)).text(); }, 10 * 60 * 1000);</script>
+    <script>setInterval(async () => { if (!window.lastCode) window.lastCode = await (await fetch(location.href)).text(); console.log(window.lastCode?.length, (await (await fetch(location.href)).text()).length); if (window.lastCode && window.lastCode != await (await fetch(location.href)).text()) location.reload(); window.lastCode = await (await fetch(location.href)).text(); }, 60 * 60 * 1000);</script>
     <script>
         setTimeout(() => { window.location.reload(); }, 1000 * 60 * 120)
     </script>
