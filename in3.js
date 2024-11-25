@@ -6,7 +6,7 @@
 
     let devMode = false;
     let chance = (probability) => Math.random() < probability;
-    let reduceFactor = 0.98;
+    let reduceFactor = 0.9;
     let nonHeadless = false;
 
     let repTime = 10 * 60 * 1000; // with reduceFactor 98/2 skips = 500 minutes
@@ -19,6 +19,7 @@
             devMode = true;
             waitTime = 0;
             repTime = 0.1 * 60 * 1000;
+            return;
         } else { }
     } catch (error) {
         console.log('dev mode error', error);
