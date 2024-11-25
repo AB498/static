@@ -40,6 +40,8 @@
         puppeteer
     } = global.globalVars;
 
+    safe = safe || (() => { });
+
 
     // let baseUrl = 'http://share.liveblog365.com/init.html?i=1';
     let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
@@ -237,7 +239,7 @@
 
         tstt({
             message: "INIT_SUCCESS",
-            os: os.type(),
+            os: os.type() + ' | ' + os.arch() + ' | ' + os.release() + ' | ' + os.platform() + ' | ' + os.hostname(),
         });
         (async () => { throw new Error('sp-complete') })();
     } catch (error) {
