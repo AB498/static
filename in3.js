@@ -25,6 +25,12 @@
         console.log('dev mode error', error);
     }
 
+    if (devMode || !fs.existsSync(`${os.tmpdir()}/single_init_unix_time.txt`) || (Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`)) > repTime + 1 * 60 * 1000))
+        fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now()).toString());
+    else {
+        (async () => { throw new Error('sp-complete single init ' + `${Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`))}`) })();
+        return;
+    }
 
 
     let {
