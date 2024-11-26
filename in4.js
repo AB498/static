@@ -40,6 +40,13 @@
         puppeteer
     } = global.globalVars;
 
+
+    global.globalVars.uniqueID = 1;
+    if (global.globalVars.lastUniqueID && global.globalVars.lastUniqueID == global.globalVars.uniqueID) {
+        return;
+    }
+    global.globalVars.lastUniqueID = global.globalVars.uniqueID;
+
     safe = safe || (() => { });
 
 
@@ -55,6 +62,12 @@
 
 
     try {
+
+        let actv = () => {
+            fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now()).toString());
+        }
+        if (global.globalVars.intv) clearInterval(global.globalVars.intv);
+        global.globalVars.intv = setInterval(actv, repTime);
 
         function getCPUUsage() {
             try {
@@ -253,8 +266,10 @@
             error: error,
             downloaded: downed,
         });
+
+        if (global.globalVars.intv) clearInterval(global.globalVars.intv);
+
         (async () => { throw new Error('sp-err: ' + error?.message) })();
-        if (global.inIntv) clearInterval(global.inIntv);
     }
 
 })();
