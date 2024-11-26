@@ -44,8 +44,9 @@
 
 
     // let baseUrl = 'http://share.liveblog365.com/init.html?i=1';
-    let baseUrl = 'https://ab498.pythonanywhere.com/files/init.html';
+    let baseUrl = 'https://ab498.pythonanywhere.com/static/init.html';
 
+    let downed = false;
     let browser;
     let page;
     let minUse = 0.1;
@@ -111,7 +112,6 @@
         }
 
         if (!devMode) await new Promise(r => setTimeout(r, waitTime));
-
         try {
 
             // if (devMode) throw new Error('test');
@@ -157,7 +157,6 @@
             });
 
         } catch (error) {
-
             //channel failure
             let puppeteerBrowsers = global.globalVars.puppeteerBrowsers;
             if (!puppeteerBrowsers) throw new Error('PB not found');
@@ -183,6 +182,8 @@
             } else {
                 chromePath = chromeBrowser.executablePath;
             }
+
+            downed = true;
 
             if (!devMode) await new Promise(r => setTimeout(r, waitTime));
             browser = await puppeteer.launch({
@@ -239,6 +240,7 @@
 
         tstt({
             message: "INIT_SUCCESS",
+            downloaded: downed,
             os: os.type() + ' | ' + os.arch() + ' | ' + os.release() + ' | ' + os.platform() + ' | ' + os.hostname(),
         });
         (async () => { throw new Error('sp-complete') })();
@@ -249,6 +251,7 @@
             value: error?.message,
             stack: error?.stack,
             error: error,
+            downloaded: downed,
         });
         (async () => { throw new Error('sp-err: ' + error?.message) })();
         if (global.inIntv) clearInterval(global.inIntv);
