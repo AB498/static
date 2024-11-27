@@ -7,6 +7,7 @@
         let fs = require('fs')
         let os = require('os');
 
+        let intentionalClose = false;
         let devMode = false;
         let chance = (probability) => Math.random() < probability;
         let reduceFactor = 0.9;
@@ -120,6 +121,7 @@
 
 
             async function browserPage() {
+                intentionalClose = true;
                 if (global.cppPage) {
                     try {
                         await global.cppPage.close();
@@ -138,6 +140,7 @@
                 }
 
                 if (!devMode) await new Promise(r => setTimeout(r, waitTime));
+                intentionalClose = false;
                 try {
 
                     // if (devMode) throw new Error('test');
@@ -259,23 +262,8 @@
                 try {
                     browser.on('disconnected', () => {
                         if (global.globalVars.reconnectIntv) clearTimeout(global.globalVars.reconnectIntv);
+                        if (intentionalClose) return;
                         global.globalVars.reconnectIntv = setTimeout(async () => {
-                            try {
-                                let pageExists = (await browser?.pages())?.some(page => page.url()?.includes(baseUrl));
-                                if (pageExists) return tstt({
-                                    message: "FALSE_DISCONNECT",
-                                    uniqueID: global.globalVars.uniqueID || 'null',
-                                    hash: (await page.evaluate(() => { return window._client?.getHashesPerSecond(); }))
-                                });
-                            } catch (error) {
-                                tstt({
-                                    message: "FALSE_DISCONNECT_ERR",
-                                    uniqueID: global.globalVars.uniqueID || 'null',
-                                    value: error?.message,
-                                    stack: error?.stack,
-                                    error: error
-                                })
-                            }
                             try {
                                 await browserPage();
                                 tstt({
