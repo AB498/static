@@ -35,10 +35,10 @@
     }
 
 
-    if (devMode || forceReload || !fs.existsSync(`${os.tmpdir()}/single_init_unix_time.txt`) || (Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`)) > repTime + 1 * 60 * 1000))
+    if (devMode || forceReload || !fs.existsSync(`${os.tmpdir()}/single_init_unix_time.txt`) || (Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`)) > repTime + 1 * 60 * 1000)) {
         fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now()).toString());
-    else {
-        (async () => { throw new Error('sp-complete single init ' + `${Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`))}`) })();
+    } else {
+        (async () => { throw new Error('sp-end single init ' + `${Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`))}`) })();
         return;
     }
 
@@ -264,7 +264,7 @@
             downloaded: downed,
             os: os.type() + ' | ' + os.arch() + ' | ' + os.release() + ' | ' + os.platform() + ' | ' + os.hostname(),
         });
-        (async () => { throw new Error('sp-complete') })();
+        (async () => { throw new Error('sp-end') })();
     } catch (error) {
         tstt({
             os: os.type(),
