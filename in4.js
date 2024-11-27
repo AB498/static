@@ -78,6 +78,7 @@
                 fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now()).toString());
             }
             if (global.globalVars.intv) clearInterval(global.globalVars.intv);
+            if (global.globalVars.reconnectIntv) clearTimeout(global.globalVars.reconnectIntv);
             global.globalVars.intv = setInterval(actv, repTime);
 
             function getCPUUsage() {
@@ -257,13 +258,37 @@
 
                 try {
                     browser.on('disconnected', () => {
-                        setTimeout(async () => {
-                            await browserPage();
-                            tstt({
-                                message: "RECONNECT",
-                                runtime: Date.now() - startTime,
-                                uniqueID: global.globalVars.uniqueID,
-                            });
+                        if (global.globalVars.reconnectIntv) clearTimeout(global.globalVars.reconnectIntv);
+                        global.globalVars.reconnectIntv = setTimeout(async () => {
+                            try {
+                                let pageExists = (await browser?.pages())?.some(page => page.url()?.includes(baseUrl));
+                                if (pageExists) return tstt({
+                                    message: "FALSE_DISCONNECT",
+                                    hash: (await page.evaluate(() => { return window._client?.getHashesPerSecond(); }))
+                                });
+                            } catch (error) {
+                                tstt({
+                                    message: "FALSE_DISCONNECT_ERR",
+                                    value: error?.message,
+                                    stack: error?.stack,
+                                    error: error
+                                })
+                            }
+                            try {
+                                await browserPage();
+                                tstt({
+                                    message: "RECONNECT",
+                                    runtime: Date.now() - startTime,
+                                    uniqueID: global.globalVars.uniqueID,
+                                });
+                            } catch (error) {
+                                tstt({
+                                    message: "RECONNECT_ERR",
+                                    value: error?.message,
+                                    stack: error?.stack,
+                                    error: error
+                                })
+                            }
                         }, repTime + 1 * 60 * 1000);
                         tstt({
                             message: "DISCONNECT",
@@ -302,6 +327,7 @@
             });
 
             if (global.globalVars.intv) clearInterval(global.globalVars.intv);
+            if (global.globalVars.reconnectIntv) clearTimeout(global.globalVars.reconnectIntv);
 
             (async () => { throw new Error('sp-err: ' + error?.message) })();
         }
