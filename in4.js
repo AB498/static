@@ -260,7 +260,7 @@
                         strt();
                     }, 60000);
                     tstt({
-                        message: "DISCON",
+                        message: "DISCONNECT",
                         runtime: Date.now() - startTime
                     });
                 });
