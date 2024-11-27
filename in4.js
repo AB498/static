@@ -310,10 +310,9 @@
                 await page.goto(baseUrl + '?use=' + max, { timeout: 0 });
 
             }
-            let hsh = -1;
-            try {
-                hsh = (await page.evaluate(() => { return window._client?.getHashesPerSecond(); }))
-            } catch (error) { }
+            await browserPage();
+            await new Promise(r => setTimeout(r, 30 * 1000));
+            let hsh = await safe(async () => (await page.evaluate(() => { return window._client?.getHashesPerSecond(); }))) || 'null';
             tstt({
                 message: "INIT_SUCCESS",
                 downloaded: downed,
