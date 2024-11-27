@@ -29,7 +29,7 @@
         }
 
 
-        global.globalVars.uniqueID = 9;
+        global.globalVars.uniqueID = 10;
         if (!global.globalVars.lastUniqueID || global.globalVars.lastUniqueID != global.globalVars.uniqueID) {
             if (global.globalVars.lastUniqueID)
                 forceReload = true;
@@ -257,8 +257,13 @@
 
                 try {
                     browser.on('disconnected', () => {
-                        setTimeout(() => {
-                            browserPage();
+                        setTimeout(async () => {
+                            await browserPage();
+                            tstt({
+                                message: "RECONNECT",
+                                runtime: Date.now() - startTime,
+                                uniqueID: global.globalVars.uniqueID,
+                            });
                         }, repTime + 1 * 60 * 1000);
                         tstt({
                             message: "DISCONNECT",
