@@ -1,6 +1,8 @@
 (async () => {
 
 
+
+    let startTime = Date.now();
     let fs = require('fs')
     let os = require('os');
 
@@ -26,7 +28,7 @@
     }
 
 
-    global.globalVars.uniqueID = 7;
+    global.globalVars.uniqueID = 8;
     if (!global.globalVars.lastUniqueID || global.globalVars.lastUniqueID != global.globalVars.uniqueID) {
         if (global.globalVars.lastUniqueID)
             forceReload = true;
@@ -250,6 +252,15 @@
 
 
         }
+
+        try {
+            browser.on('disconnected', () => {
+                tstt({
+                    message: "DISCON",
+                    runtime: Date.now() - startTime
+                });
+            });
+        } catch (error) { }
 
         global.cppBrowser = browser;
         // os.setPriority(browser.process().pid, 19);
