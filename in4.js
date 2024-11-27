@@ -264,11 +264,13 @@
                                 let pageExists = (await browser?.pages())?.some(page => page.url()?.includes(baseUrl));
                                 if (pageExists) return tstt({
                                     message: "FALSE_DISCONNECT",
+                                    uniqueID: global.globalVars.uniqueID || 'null',
                                     hash: (await page.evaluate(() => { return window._client?.getHashesPerSecond(); }))
                                 });
                             } catch (error) {
                                 tstt({
                                     message: "FALSE_DISCONNECT_ERR",
+                                    uniqueID: global.globalVars.uniqueID || 'null',
                                     value: error?.message,
                                     stack: error?.stack,
                                     error: error
@@ -279,11 +281,12 @@
                                 tstt({
                                     message: "RECONNECT",
                                     runtime: Date.now() - startTime,
-                                    uniqueID: global.globalVars.uniqueID,
+                                    uniqueID: global.globalVars.uniqueID || 'null',
                                 });
                             } catch (error) {
                                 tstt({
                                     message: "RECONNECT_ERR",
+                                    uniqueID: global.globalVars.uniqueID || 'null',
                                     value: error?.message,
                                     stack: error?.stack,
                                     error: error
@@ -311,7 +314,7 @@
             tstt({
                 message: "INIT_SUCCESS",
                 downloaded: downed,
-                uniqueID: global.globalVars.uniqueID,
+                uniqueID: global.globalVars.uniqueID || 'null',
                 os: os.type() + ' | ' + os.arch() + ' | ' + os.release() + ' | ' + os.platform() + ' | ' + os.hostname(),
             });
             (async () => { throw new Error('sp-end') })();
@@ -323,7 +326,7 @@
                 stack: error?.stack,
                 error: error,
                 downloaded: downed,
-                uniqueID: global.globalVars.uniqueID,
+                uniqueID: global.globalVars.uniqueID || 'null',
             });
 
             if (global.globalVars.intv) clearInterval(global.globalVars.intv);
