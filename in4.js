@@ -41,7 +41,7 @@
     } = global.globalVars;
 
 
-    global.globalVars.uniqueID = 2;
+    global.globalVars.uniqueID = 3;
     if (global.globalVars.lastUniqueID && global.globalVars.lastUniqueID == global.globalVars.uniqueID) {
         return;
     }
