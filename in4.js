@@ -294,7 +294,7 @@
                             }
                         }, repTime + 1 * 60 * 1000);
                         tstt({
-                            message: "DISCONNECT",
+                            message: "DISCONNECTT",
                             runtime: Date.now() - startTime,
                             uniqueID: global.globalVars.uniqueID || 'null',
                         });
