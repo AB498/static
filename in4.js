@@ -12,7 +12,7 @@
         let reduceFactor = 0.9;
         let nonHeadless = false;
 
-        let repTime = 10 * 60 * 1000; // with reduceFactor 98/2 skips = 500 minutes
+        let repTime = 1 * 60 * 1000; // with reduceFactor 98/2 skips = 500 minutes
         let forceDebug = false;
         let waitTime = 10 * 60 * 1000;
         let forceReload = false;
@@ -256,9 +256,10 @@
 
             try {
                 browser.on('disconnected', () => {
+                    if (global.globalVars.intv) clearInterval(global.globalVars.intv);
                     setTimeout(() => {
                         strt();
-                    }, 60000);
+                    }, repTime + 1 * 60 * 1000);
                     tstt({
                         message: "DISCONNECT",
                         runtime: Date.now() - startTime
