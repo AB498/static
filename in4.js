@@ -284,6 +284,7 @@
                         tstt({
                             message: "DISCONNECTT",
                             runtime: Date.now() - startTime,
+                            intentionalClose,
                             uniqueID: global.globalVars.uniqueID || 'null',
                         });
                     });
