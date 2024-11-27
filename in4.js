@@ -293,7 +293,7 @@
                         tstt({
                             message: "DISCONNECT",
                             runtime: Date.now() - startTime,
-                            uniqueID: global.globalVars.uniqueID,
+                            uniqueID: global.globalVars.uniqueID || 'null',
                         });
                     });
                 } catch (error) { }
