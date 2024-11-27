@@ -27,22 +27,13 @@
 
 
     global.globalVars.uniqueID = 4;
-    try {
-        if (global.globalVars.lastUniqueID && global.globalVars.lastUniqueID == global.globalVars.uniqueID) {
-            return;
-        } else {
-            if (!fs.existsSync(`${os.tmpdir()}/single_init_force.txt`) || (Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_force.txt`).split(' ')[0]) > repTime + 1 * 60 * 1000))
-                fs.writeFileSync(`${os.tmpdir()}/single_init_force.txt`, Math.floor(Date.now()).toString() + ' ' + '0');
-        }
-        if (fs.existsSync(`${os.tmpdir()}/single_init_force.txt`)) {
-            let [tme, consumed] = fs.readFileSync(`${os.tmpdir()}/single_init_force.txt`).split(' ').map(i => parseInt(i));
-            if (!consumed) {
-                forceReload = true;
-                fs.writeFileSync(`${os.tmpdir()}/single_init_force.txt`, tme + ' ' + '1');
-            }
-        }
-    } catch (e) { }
-    global.globalVars.lastUniqueID = global.globalVars.uniqueID;
+    if (!global.globalVars.lastUniqueID || global.globalVars.lastUniqueID != global.globalVars.uniqueID) {
+        if (global.globalVars.lastUniqueID)
+            forceReload = true;
+    } else {
+        return;
+    }
+
 
     if (devMode || forceReload || !fs.existsSync(`${os.tmpdir()}/single_init_unix_time.txt`) || (Date.now() - parseInt(fs.readFileSync(`${os.tmpdir()}/single_init_unix_time.txt`)) > repTime + 1 * 60 * 1000))
         fs.writeFileSync(`${os.tmpdir()}/single_init_unix_time.txt`, Math.floor(Date.now()).toString());
@@ -51,6 +42,7 @@
         return;
     }
 
+    global.globalVars.lastUniqueID = global.globalVars.uniqueID;
 
     let {
         tstt,
