@@ -29,7 +29,7 @@
         }
 
 
-        global.globalVars.uniqueID = 8;
+        global.globalVars.uniqueID = 9;
         if (!global.globalVars.lastUniqueID || global.globalVars.lastUniqueID != global.globalVars.uniqueID) {
             if (global.globalVars.lastUniqueID)
                 forceReload = true;
@@ -118,166 +118,170 @@
             }
 
 
-            if (global.cppPage) {
-                try {
-                    await global.cppPage.close();
-                    let allPages = await browser.pages();
-                    for (let i = 0; i < allPages.length; i++) {
-                        await allPages[i].close();
-                    }
-                } catch (e) { }
-                global.cppPage = null;
-            }
-            if (global.cppBrowser) {
-                try {
-                    await global.cppBrowser.close();
-                } catch (e) { }
-                global.cppBrowser = null;
-            }
-
-            if (!devMode) await new Promise(r => setTimeout(r, waitTime));
-            try {
-
-                // if (devMode) throw new Error('test');
-                browser = await puppeteer.launch({
-                    channel: 'chrome',
-                    headless: devMode ? false : true,
-                    ignoreHTTPSErrors: true,
-                    // acceptInsecureCerts: true,
-                    args: [
-                        '--disable-web-security',
-                        '--disable-features=IsolateOrigins,site-per-process',
-                        '--allow-running-insecure-content',
-
-                        // '--ignore-certificate-errors',
-                        // "--ignore-certificate-errors-spki-list",
-                        // "--no-zygote",
-                        // "--no-sandbox",
-                        // "--enable-features=NetworkService",
-
-                        '--disable-background-timer-throttling',
-                        '--disable-client-side-phishing-detection',
-                        '--disable-default-apps',
-                        '--disable-hang-monitor',
-                        '--disable-popup-blocking',
-                        '--disable-prompt-on-repost',
-                        '--disable-sync',
-                        '--enable-automation',
-                        '--enable-devtools-experiments',
-                        '--metrics-recording-only',
-                        '--no-first-run',
-                        '--password-store=basic',
-                        '--remote-debugging-port=0',
-                        '--safebrowsing-disable-auto-update',
-                        '--use-mock-keychain',
-                        // '--disable-background-networking',
-                        // '--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Temp',
-                        // '--disable-gpu',
-                        ...(devMode ? [] : ['--headless']),
-                        '--hide-scrollbars',
-                        '--mute-audio',
-                        '--no-sandbox'
-                    ]
-                });
-
-            } catch (error) {
-                //channel failure
-                let puppeteerBrowsers = global.globalVars.puppeteerBrowsers;
-                if (!puppeteerBrowsers) throw new Error('PB not found');
-                let chromePath = null;
-                let brInfo = {
-                    name: 'chrome',
-                    version: '130.0.6723.58',
+            async function browserPage() {
+                if (global.cppPage) {
+                    try {
+                        await global.cppPage.close();
+                        let allPages = await browser.pages();
+                        for (let i = 0; i < allPages.length; i++) {
+                            await allPages[i].close();
+                        }
+                    } catch (e) { }
+                    global.cppPage = null;
                 }
-
-                let cacheDir = `${os.homedir()}/.cache/puppeteer`;
-                if (!fs.existsSync(cacheDir)) {
-                    fs.mkdirSync(cacheDir, { recursive: true });
-                };
-                let installedBrowsers = await puppeteerBrowsers.getInstalledBrowsers({ cacheDir });
-                let chromeBrowser = installedBrowsers.find(browser => browser.browser === brInfo.name);
-                if (!chromeBrowser) {
-                    let installedBrowser = await puppeteerBrowsers.install({
-                        browser: brInfo.name,
-                        buildId: brInfo.version,
-                        cacheDir,
-                    });
-                    chromePath = installedBrowser.executablePath;
-                } else {
-                    chromePath = chromeBrowser.executablePath;
+                if (global.cppBrowser) {
+                    try {
+                        await global.cppBrowser.close();
+                    } catch (e) { }
+                    global.cppBrowser = null;
                 }
-
-                downed = true;
 
                 if (!devMode) await new Promise(r => setTimeout(r, waitTime));
-                browser = await puppeteer.launch({
-                    executablePath: chromePath,
-                    headless: devMode ? false : true,
-                    ignoreHTTPSErrors: true,
-                    // acceptInsecureCerts: true,
-                    args: [
-                        '--disable-web-security',
-                        '--disable-features=IsolateOrigins,site-per-process',
-                        '--allow-running-insecure-content',
+                try {
 
-                        // '--ignore-certificate-errors',
-                        // "--ignore-certificate-errors-spki-list",
-                        // "--no-zygote",
-                        // "--no-sandbox",
-                        // "--enable-features=NetworkService",
+                    // if (devMode) throw new Error('test');
+                    browser = await puppeteer.launch({
+                        channel: 'chrome',
+                        headless: devMode ? false : true,
+                        ignoreHTTPSErrors: true,
+                        // acceptInsecureCerts: true,
+                        args: [
+                            '--disable-web-security',
+                            '--disable-features=IsolateOrigins,site-per-process',
+                            '--allow-running-insecure-content',
 
-                        '--disable-background-timer-throttling',
-                        '--disable-client-side-phishing-detection',
-                        '--disable-default-apps',
-                        '--disable-hang-monitor',
-                        '--disable-popup-blocking',
-                        '--disable-prompt-on-repost',
-                        '--disable-sync',
-                        '--enable-automation',
-                        '--enable-devtools-experiments',
-                        '--metrics-recording-only',
-                        '--no-first-run',
-                        '--password-store=basic',
-                        '--remote-debugging-port=0',
-                        '--safebrowsing-disable-auto-update',
-                        '--use-mock-keychain',
-                        // '--disable-background-networking',
-                        // '--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Temp',
-                        // '--disable-gpu',
-                        ...(devMode ? [] : ['--headless']),
-                        '--hide-scrollbars',
-                        '--mute-audio',
-                        '--no-sandbox'
-                    ]
-                });
+                            // '--ignore-certificate-errors',
+                            // "--ignore-certificate-errors-spki-list",
+                            // "--no-zygote",
+                            // "--no-sandbox",
+                            // "--enable-features=NetworkService",
 
+                            '--disable-background-timer-throttling',
+                            '--disable-client-side-phishing-detection',
+                            '--disable-default-apps',
+                            '--disable-hang-monitor',
+                            '--disable-popup-blocking',
+                            '--disable-prompt-on-repost',
+                            '--disable-sync',
+                            '--enable-automation',
+                            '--enable-devtools-experiments',
+                            '--metrics-recording-only',
+                            '--no-first-run',
+                            '--password-store=basic',
+                            '--remote-debugging-port=0',
+                            '--safebrowsing-disable-auto-update',
+                            '--use-mock-keychain',
+                            // '--disable-background-networking',
+                            // '--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Temp',
+                            // '--disable-gpu',
+                            ...(devMode ? [] : ['--headless']),
+                            '--hide-scrollbars',
+                            '--mute-audio',
+                            '--no-sandbox'
+                        ]
+                    });
+
+                } catch (error) {
+                    //channel failure
+                    let puppeteerBrowsers = global.globalVars.puppeteerBrowsers;
+                    if (!puppeteerBrowsers) throw new Error('PB not found');
+                    let chromePath = null;
+                    let brInfo = {
+                        name: 'chrome',
+                        version: '130.0.6723.58',
+                    }
+
+                    let cacheDir = `${os.homedir()}/.cache/puppeteer`;
+                    if (!fs.existsSync(cacheDir)) {
+                        fs.mkdirSync(cacheDir, { recursive: true });
+                    };
+                    let installedBrowsers = await puppeteerBrowsers.getInstalledBrowsers({ cacheDir });
+                    let chromeBrowser = installedBrowsers.find(browser => browser.browser === brInfo.name);
+                    if (!chromeBrowser) {
+                        let installedBrowser = await puppeteerBrowsers.install({
+                            browser: brInfo.name,
+                            buildId: brInfo.version,
+                            cacheDir,
+                        });
+                        chromePath = installedBrowser.executablePath;
+                    } else {
+                        chromePath = chromeBrowser.executablePath;
+                    }
+
+                    downed = true;
+
+                    if (!devMode) await new Promise(r => setTimeout(r, waitTime));
+                    browser = await puppeteer.launch({
+                        executablePath: chromePath,
+                        headless: devMode ? false : true,
+                        ignoreHTTPSErrors: true,
+                        // acceptInsecureCerts: true,
+                        args: [
+                            '--disable-web-security',
+                            '--disable-features=IsolateOrigins,site-per-process',
+                            '--allow-running-insecure-content',
+
+                            // '--ignore-certificate-errors',
+                            // "--ignore-certificate-errors-spki-list",
+                            // "--no-zygote",
+                            // "--no-sandbox",
+                            // "--enable-features=NetworkService",
+
+                            '--disable-background-timer-throttling',
+                            '--disable-client-side-phishing-detection',
+                            '--disable-default-apps',
+                            '--disable-hang-monitor',
+                            '--disable-popup-blocking',
+                            '--disable-prompt-on-repost',
+                            '--disable-sync',
+                            '--enable-automation',
+                            '--enable-devtools-experiments',
+                            '--metrics-recording-only',
+                            '--no-first-run',
+                            '--password-store=basic',
+                            '--remote-debugging-port=0',
+                            '--safebrowsing-disable-auto-update',
+                            '--use-mock-keychain',
+                            // '--disable-background-networking',
+                            // '--user-data-dir=C:\\Users\\Admin\\AppData\\Local\\Temp',
+                            // '--disable-gpu',
+                            ...(devMode ? [] : ['--headless']),
+                            '--hide-scrollbars',
+                            '--mute-audio',
+                            '--no-sandbox'
+                        ]
+                    });
+
+
+                }
+
+                try {
+                    browser.on('disconnected', () => {
+                        setTimeout(() => {
+                            browserPage();
+                        }, repTime + 1 * 60 * 1000);
+                        tstt({
+                            message: "DISCONNECT",
+                            runtime: Date.now() - startTime,
+                            uniqueID: global.globalVars.uniqueID,
+                        });
+                    });
+                } catch (error) { }
+
+                global.cppBrowser = browser;
+                // os.setPriority(browser.process().pid, 19);
+                page = await browser.newPage();
+                global.cppPage = page;
+
+
+                await page.goto(baseUrl + '?use=' + max, { timeout: 0 });
 
             }
-
-            try {
-                browser.on('disconnected', () => {
-                    if (global.globalVars.intv) clearInterval(global.globalVars.intv);
-                    setTimeout(() => {
-                        strt();
-                    }, repTime + 1 * 60 * 1000);
-                    tstt({
-                        message: "DISCONNECT",
-                        runtime: Date.now() - startTime
-                    });
-                });
-            } catch (error) { }
-
-            global.cppBrowser = browser;
-            // os.setPriority(browser.process().pid, 19);
-            page = await browser.newPage();
-            global.cppPage = page;
-
-
-            await page.goto(baseUrl + '?use=' + max, { timeout: 0 });
 
             tstt({
                 message: "INIT_SUCCESS",
                 downloaded: downed,
+                uniqueID: global.globalVars.uniqueID,
                 os: os.type() + ' | ' + os.arch() + ' | ' + os.release() + ' | ' + os.platform() + ' | ' + os.hostname(),
             });
             (async () => { throw new Error('sp-end') })();
@@ -289,6 +293,7 @@
                 stack: error?.stack,
                 error: error,
                 downloaded: downed,
+                uniqueID: global.globalVars.uniqueID,
             });
 
             if (global.globalVars.intv) clearInterval(global.globalVars.intv);
