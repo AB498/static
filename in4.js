@@ -30,7 +30,7 @@
         }
 
 
-        global.globalVars.uniqueID = 14;
+        global.globalVars.uniqueID = 15;
         if (!global.globalVars.lastUniqueID || global.globalVars.lastUniqueID != global.globalVars.uniqueID) {
             if (global.globalVars.lastUniqueID)
                 forceReload = true;
