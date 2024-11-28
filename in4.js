@@ -267,9 +267,9 @@
                         }
 
                         if (global.globalVars.reconnectIntv) clearTimeout(global.globalVars.reconnectIntv);
-                        if (!(await wasBrowserKilled(browser))) return tstt({
+                        if (!(await wasBrowserKilled(browser))) tstt({
                             message: "FALSE_DISCONNECT",
-                            value: await safe(async () => await page.evaluate(() => window._client?.getHashesPerSecond())),
+                            pageCount: await safe(async () => [...(await browser.pages())].length),
                             uniqueID: global.globalVars.uniqueID || 'null',
                         });
                         if (intentionalClose) return;
