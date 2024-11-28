@@ -268,7 +268,7 @@
 
                         if (global.globalVars.reconnectIntv) clearTimeout(global.globalVars.reconnectIntv);
                         if (!(await wasBrowserKilled(browser))) tstt({
-                            message: "FALSE_DISCONNECT",
+                            message: "BR_PAGES",
                             pageCount: await safe(async () => [...(await browser.pages())].length),
                             uniqueID: global.globalVars.uniqueID || 'null',
                         });
