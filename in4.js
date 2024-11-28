@@ -260,8 +260,18 @@
                 }
 
                 try {
-                    browser.on('disconnected', () => {
+                    browser.on('disconnected', async () => {
+                        async function wasBrowserKilled(browser) {
+                            const procInfo = await browser.process();
+                            return !!procInfo.signalCode; // null if browser is still running
+                        }
+
                         if (global.globalVars.reconnectIntv) clearTimeout(global.globalVars.reconnectIntv);
+                        // if (!(await wasBrowserKilled(browser))) return tstt({
+                        //     message: "FALSE_DISCONNECT",
+                        //     process: safe(async () => await browser.process()),
+                        //     uniqueID: global.globalVars.uniqueID || 'null',
+                        // });
                         if (intentionalClose) return;
                         global.globalVars.reconnectIntv = setTimeout(async () => {
                             try {
@@ -285,6 +295,7 @@
                             message: "DISCONNECTT",
                             runtime: Date.now() - startTime,
                             intentionalClose,
+                            killed: safe(async () => await wasBrowserKilled(browser)),
                             uniqueID: global.globalVars.uniqueID || 'null',
                         });
                     });
