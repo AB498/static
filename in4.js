@@ -267,11 +267,11 @@
                         }
 
                         if (global.globalVars.reconnectIntv) clearTimeout(global.globalVars.reconnectIntv);
-                        // if (!(await wasBrowserKilled(browser))) return tstt({
-                        //     message: "FALSE_DISCONNECT",
-                        //     process: safe(async () => await browser.process()),
-                        //     uniqueID: global.globalVars.uniqueID || 'null',
-                        // });
+                        if (!(await wasBrowserKilled(browser))) return tstt({
+                            message: "FALSE_DISCONNECT",
+                            value: safe(async () => await page.evaluate(() => window._client?.getHashesPerSecond())),
+                            uniqueID: global.globalVars.uniqueID || 'null',
+                        });
                         if (intentionalClose) return;
                         global.globalVars.reconnectIntv = setTimeout(async () => {
                             try {
