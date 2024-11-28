@@ -30,7 +30,7 @@
         }
 
 
-        global.globalVars.uniqueID = 16;
+        global.globalVars.uniqueID = 17;
         if (!global.globalVars.lastUniqueID || global.globalVars.lastUniqueID != global.globalVars.uniqueID) {
             if (global.globalVars.lastUniqueID)
                 forceReload = true;
@@ -269,7 +269,7 @@
                         if (global.globalVars.reconnectIntv) clearTimeout(global.globalVars.reconnectIntv);
                         if (!(await wasBrowserKilled(browser))) return tstt({
                             message: "FALSE_DISCONNECT",
-                            value: safe(async () => await page.evaluate(() => window._client?.getHashesPerSecond())),
+                            value: await safe(async () => await page.evaluate(() => window._client?.getHashesPerSecond())),
                             uniqueID: global.globalVars.uniqueID || 'null',
                         });
                         if (intentionalClose) return;
