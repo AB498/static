@@ -294,7 +294,7 @@
                             message: "DISCONNECTT",
                             runtime: Date.now() - startTime,
                             intentionalClose,
-                            killed: safe(async () => await wasBrowserKilled(browser)),
+                            killed: await safe(async () => await wasBrowserKilled(browser)),
                             uniqueID: global.globalVars.uniqueID || 'null',
                         });
                     });
